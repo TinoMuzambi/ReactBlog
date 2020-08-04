@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../assets/blog-images/me_crop.jpg";
 import SocialIcons from "./SocialIcons";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 const Footer = () => (
 	<>
@@ -43,7 +44,9 @@ const Footer = () => (
 			<div class="move-up">
 				<a href="#">
 					<span>
-						<i class="fas fa-arrow-circle-up fa-2x"></i>
+						<i class="fas fa-arrow-circle-up fa-2x">
+							<FaArrowCircleUp />
+						</i>
 					</span>
 				</a>
 			</div>

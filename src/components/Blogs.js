@@ -1,17 +1,21 @@
 import React from "react";
-import blogs from "../data/blogs";
 import img from "../assets/blog-images/me_crop.jpg";
-import { FaUser, FaCalendar } from "react-icons/fa";
+import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
-const Blogs = () => (
+const Blogs = ({ blogs }) => (
 	<>
 		<section className="container" id="blogs">
 			<div className="posts">
 				<h1>Blogs</h1>
 				{blogs.map((blog, key) => (
-					<div className="post-content" data-aos="zoom-in" data-aos-delay="200">
+					<div
+						className="post-content"
+						data-aos="zoom-in"
+						data-aos-delay="200"
+						key={key}
+					>
 						<div className="post-image">
 							<div>
 								<img src={img} className="img" alt="shower" />
@@ -37,7 +41,10 @@ const Blogs = () => (
 							<p>{blog.content[0]}</p>
 							<Link to={`/blogs/${blog.url}`}>
 								<button className="btn post-btn">
-									Read More &nbsp; <i className="fas fa-arrow-right"></i>
+									Read More &nbsp;{" "}
+									<i className="fas fa-arrow-right">
+										<FaArrowRight />
+									</i>
 								</button>
 							</Link>
 						</div>

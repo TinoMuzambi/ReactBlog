@@ -9,6 +9,8 @@ const blogs = [
 		image: "../assets/blog-images/shower_thoughts.jpg",
 		alt: "shower",
 		content: [``],
+		disqusURL: "https://blog.tinomuzambi.com/blogs/shower_thoughts",
+		disqusIdentifier: "tino_shower_thoughts0",
 	},
 	{
 		id: 1,
@@ -19,6 +21,8 @@ const blogs = [
 		image: "../assets/blog-images/walls.jpg",
 		alt: "walls",
 		content: [``],
+		disqusURL: "https://blog.tinomuzambi.com/blogs/upgrade_your_walls",
+		disqusIdentifier: "upgrade_your_walls_tino",
 	},
 	{
 		id: 2,
@@ -30,6 +34,8 @@ const blogs = [
 		image: "../assets/blog-images/editing.PNG",
 		alt: "editing",
 		content: [``],
+		disqusURL: "https://blog.tinomuzambi.com/blogs/photo_and_video_editing",
+		disqusIdentifier: "tino_photo_video_edits",
 	},
 	{
 		id: 3,
@@ -41,6 +47,8 @@ const blogs = [
 		image: "../assets/blog-images/me_crop.jpg",
 		alt: "me",
 		content: [``],
+		disqusURL: "https://blog.tinomuzambi.com/blogs/a_little_about_me",
+		disqusIdentifier: "tino_about_me",
 	},
 	{
 		id: 4,
@@ -52,6 +60,8 @@ const blogs = [
 		image: "../assets/blog-images/voicenotes.png",
 		alt: "voicenotes",
 		content: [``],
+		disqusURL: "https://blog.tinomuzambi.com/blogs/why_i_hate_voicenotes",
+		disqusIdentifier: "tinomuzambi",
 	},
 ];
 

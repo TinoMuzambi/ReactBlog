@@ -14,7 +14,7 @@ class Highlight extends Component {
 						data-aos-delay="200"
 						key={key}
 					>
-						<Link to={`/blogs/${highlight.title}`}>
+						<Link to={`/blogs/${highlight.url}`}>
 							<img src={img} alt={highlight.alt} />
 							<div className="blog-title">
 								<h3>{highlight.title}</h3>

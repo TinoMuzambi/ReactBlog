@@ -8,6 +8,9 @@ import Highlights from "./components/Highlights";
 import Blogs from "./components/Blogs";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import Blog from "./components/Blog";
+import Category from "./components/Category";
+import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
 
@@ -119,22 +122,25 @@ class App extends Component {
 												this.blogs = section;
 											}}
 										>
-											<Blogs />
+											<Blogs blogs={blogs} />
 										</section>
 										<Sidebar />
 									</div>
-									<section
-										className="footer"
-										ref={(section) => {
-											this.footer = section;
-										}}
-									>
-										<Footer />
-									</section>
 								</div>
 							)}
+							exact
 						/>
+						<Route path="/blogs/:name" component={Blog} />
+						<Route path="/categories/:name" component={Category} />
 					</Switch>
+					<section
+						className="footer"
+						ref={(section) => {
+							this.footer = section;
+						}}
+					>
+						<Footer />
+					</section>
 				</Router>
 			</>
 		);
