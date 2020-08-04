@@ -110,4 +110,8 @@ p {
 	color: var(--text-light);
 }
 
+.text-center {
+	text-align: center;
+}
+
 /* ------x------- Global Classes -------x-------*/

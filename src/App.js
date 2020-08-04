@@ -8,8 +8,15 @@ import Highlights from "./components/Highlights";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
 import "./App.css";
+import AOS from "aos";
 
 class App extends Component {
+	componentDidMount() {
+		AOS.init();
+		let owl_carousel = require("owl.carousel");
+		window.fn = owl_carousel;
+	}
+
 	render() {
 		return (
 			<>
@@ -17,7 +24,7 @@ class App extends Component {
 					<nav className="nav">
 						<div className="nav-menu flex-row">
 							<div className="nav-brand">
-								<a href="#" className="text-gray">
+								<a href="https://blog.tinomuzambi.com" className="text-gray">
 									Blog.TinoMuzambi
 								</a>
 							</div>

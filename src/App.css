@@ -114,3 +114,71 @@
 h3 {
 	margin: 0.3rem;
 }
+
+/* --------x------ Site title --------x------- */
+
+/* --------------- Blog Carousel ------------ */
+
+.blog {
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 100%;
+	background-size: 65%;
+}
+
+.blog img {
+	height: 21rem;
+}
+
+.blog .blog-post {
+	padding-top: 6rem;
+}
+
+.blog-post .blog-content {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 80%;
+	margin: 3rem 2rem;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-content .blog-title {
+	padding: 2rem 0;
+}
+
+.blog-content .btn-blog {
+	padding: 0.7rem 2rem;
+	background: var(--sky);
+	margin: 0.5rem;
+	outline: none;
+}
+
+.blog-content span {
+	display: block;
+}
+
+.container .owl-nav {
+	position: absolute;
+	top: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next {
+	color: var(--text-gray);
+	background: transparent;
+	font-size: 2rem;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+	background: transparent;
+	color: var(--midnight);
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+	outline: none;
+}
+
+/* -------x------- Blog Carousel -----x------ */
