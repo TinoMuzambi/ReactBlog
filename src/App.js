@@ -1,11 +1,130 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import scrollToComponent from "react-scroll-to-component";
+import { FaBars } from "react-icons/fa";
+import SocialIcons from "./components/SocialIcons";
+import About from "./components/About";
+import Highlights from "./components/Highlights";
+import Blogs from "./components/Blogs";
+import Footer from "./components/Footer";
 import "./App.css";
 
 class App extends Component {
 	render() {
 		return (
 			<>
-				<h1>Blog.TinoMuzambi</h1>
+				<Router>
+					<nav className="nav">
+						<div className="nav-menu flex-row">
+							<div className="nav-brand">
+								<a href="#" className="text-gray">
+									Blog.TinoMuzambi
+								</a>
+							</div>
+							<div className="toggle-collapse">
+								<div className="toggle-icons">
+									<span className="fas fa-bars">
+										<FaBars />
+									</span>
+								</div>
+							</div>
+							<div>
+								<ul className="nav-items">
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.about, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										About
+									</li>
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.activities, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										Activities
+									</li>
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.videos, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										Videos
+									</li>
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.events, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										Events
+									</li>
+								</ul>
+							</div>
+							<SocialIcons />
+						</div>
+					</nav>
+					<Switch>
+						<Route
+							path="/"
+							render={(props) => (
+								<div>
+									<section
+										className="about"
+										ref={(section) => {
+											this.about = section;
+										}}
+									>
+										<About />
+									</section>
+									<section
+										className="highlights"
+										ref={(section) => {
+											this.highlights = section;
+										}}
+									>
+										<Highlights />
+									</section>
+									<section
+										className="blogs"
+										ref={(section) => {
+											this.blogs = section;
+										}}
+									>
+										<Blogs />
+									</section>
+									<section
+										className="footer"
+										ref={(section) => {
+											this.footer = section;
+										}}
+									>
+										<Footer />
+									</section>
+								</div>
+							)}
+						/>
+					</Switch>
+				</Router>
 			</>
 		);
 	}
