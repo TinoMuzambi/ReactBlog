@@ -6,6 +6,7 @@ import SocialIcons from "./components/SocialIcons";
 import About from "./components/About";
 import Highlights from "./components/Highlights";
 import Blogs from "./components/Blogs";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import "./App.css";
 import AOS from "aos";
@@ -111,14 +112,17 @@ class App extends Component {
 									>
 										<Highlights />
 									</section>
-									<section
-										className="blogs"
-										ref={(section) => {
-											this.blogs = section;
-										}}
-									>
-										<Blogs />
-									</section>
+									<div className="site-content">
+										<section
+											className="blogs"
+											ref={(section) => {
+												this.blogs = section;
+											}}
+										>
+											<Blogs />
+										</section>
+										<Sidebar />
+									</div>
 									<section
 										className="footer"
 										ref={(section) => {

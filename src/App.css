@@ -266,3 +266,45 @@ h3 {
 }
 
 /* -------x-------- Site Content --------x-------*/
+
+/* --------------- Sidebar ----------------------- */
+
+.site-content > .sidebar .category-list {
+	font-family: var(--Livvic), "Verdana";
+}
+
+.site-content > .sidebar .category-list .list-items {
+	background: var(--sky);
+	padding: 0.4rem 1rem;
+	margin: 0.8rem 0;
+	border-radius: 3rem;
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-content > .sidebar .category-list .list-items a {
+	color: black;
+}
+
+.site-content .sidebar .other-posts .post-content {
+	padding: 1rem 0;
+}
+
+.site-content .sidebar .other-posts h2 {
+	padding-top: 8rem;
+}
+
+.site-content .sidebar .other-posts .post-info {
+	padding: 0.4rem 0.1rem !important;
+	bottom: 0 !important;
+	left: 1.5rem !important;
+	border-radius: 0 !important;
+	background: white !important;
+}
+
+.site-content .sidebar .other-posts .post-title a {
+	font-size: 1rem;
+}
+
+/* -------x------- Sidebar -----------x----------- */
