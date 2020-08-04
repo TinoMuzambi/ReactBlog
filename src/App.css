@@ -265,6 +265,41 @@ h3 {
 	color: var(--white);
 }
 
+.site-content .post-content blockquote {
+	text-indent: -0.45em;
+	font-size: 80px;
+	width: 100%;
+	font-family: "Abel", serif;
+}
+@supports (hanging-punctuation: first) {
+	.site-content .post-content blockquote {
+		text-indent: 0;
+		hanging-punctuation: first;
+	}
+}
+
+.site-content .post-content blockquote::before {
+	content: open-quote;
+}
+/*.site-content .post-content blockquote::after {*/
+/*    content: close-quote;*/
+/*}*/
+.site-content .post-content blockquote {
+	quotes: "“" "”" "‘" "’";
+}
+
+.site-content .youtube-item p {
+	text-align: center;
+}
+.site-content .cycling-sites {
+	width: 100%;
+}
+.site-content .picsart-list {
+	font-family: var(--Lexend), "Verdana";
+	list-style: initial;
+	color: gray;
+}
+
 /* -------x-------- Site Content --------x-------*/
 
 /* --------------- Sidebar ----------------------- */
@@ -385,6 +420,10 @@ footer.footer .move-up span:hover {
 	.blog {
 		height: 110vh;
 	}
+
+	.site-content .post-content .post-image img {
+		width: 100%;
+	}
 }
 
 /*        X     Viewport less then or equal to 2560px      X     */
@@ -427,6 +466,14 @@ footer.footer .move-up span:hover {
 	footer.footer .container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	.site-content .youtube-items {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+
+	.site-content .cycling-sites {
+		height: 360px;
+	}
 }
 
 /*      x       Viewport less then or equal to 1130px    x     */
@@ -459,6 +506,10 @@ footer.footer .move-up span:hover {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
+	.site-content .youtube-items {
+		grid-template-columns: repeat(1, 1fr) !important;
+	}
+
 	.nav .nav-items .nav-link:hover {
 		background-color: transparent !important;
 		text-decoration: none !important;
@@ -466,6 +517,10 @@ footer.footer .move-up span:hover {
 
 	.nav .nav-items .nav-link:hover a {
 		color: var(--text-gray) !important;
+	}
+
+	.site-content .cycling-sites {
+		height: 260px;
 	}
 }
 
@@ -510,6 +565,10 @@ footer.footer .move-up span:hover {
 
 	.nav .nav-items .nav-link:hover a {
 		color: var(--midnight) !important;
+	}
+
+	.site-content .cycling-sites {
+		height: 215px;
 	}
 }
 

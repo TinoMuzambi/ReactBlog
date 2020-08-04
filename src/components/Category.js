@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import categories from "../data/categories";
 import blogs from "../data/blogs";
 import Blogs from "./Blogs";
+import Sidebar from "./Sidebar";
 
 class Category extends Component {
 	constructor(props) {
@@ -23,8 +24,13 @@ class Category extends Component {
 		console.log(filteredBlogs);
 		return (
 			<>
-				<h1>{category.name}</h1>
-				<Blogs blogs={filteredBlogs} />
+				<div class="site-content">
+					<div class="posts">
+						<h1>{category.name}</h1>
+						<Blogs blogs={filteredBlogs} />
+					</div>
+					<Sidebar />
+				</div>
 			</>
 		);
 	}
