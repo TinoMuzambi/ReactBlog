@@ -87,3 +87,30 @@
 }
 
 /* -------x------- navbar ---------x------- */
+
+/* --------------- Site title ---------------- */
+.site-title {
+	background: url("./assets/background.jpg");
+	background-size: cover;
+	height: 93vh;
+	display: flex;
+	justify-content: center;
+}
+
+.site-title img {
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	border: 2px solid #6caed5;
+}
+
+.site-title .site-background {
+	padding-top: 10rem;
+	text-align: center;
+	color: var(--white);
+}
+
+.site-title h1,
+h3 {
+	margin: 0.3rem;
+}
