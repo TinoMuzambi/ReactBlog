@@ -2,14 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import blogs from "../data/blogs";
 import img from "../assets/blog-images/me_crop.jpg";
-// import $ from "jquery";
-// import OwlCarousel from "react-owl-carousel";
-// import "owl.carousel/dist/assets/owl.carousel.css";
-// import "owl.carousel/dist/assets/owl.theme.default.css";
-
-// window.jQuery = $;
-// window.$ = $;
-// global.jQuery = $;
 
 class Highlight extends Component {
 	render() {

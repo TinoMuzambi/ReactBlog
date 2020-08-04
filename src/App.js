@@ -47,43 +47,43 @@ class App extends Component {
 											})
 										}
 									>
-										About
+										Home
 									</li>
 									<li
 										className="nav-link"
 										onClick={() =>
-											scrollToComponent(this.activities, {
+											scrollToComponent(this.highlights, {
 												offset: 0,
 												align: "top",
 												duration: 1500,
 											})
 										}
 									>
-										Activities
+										Highlights
 									</li>
 									<li
 										className="nav-link"
 										onClick={() =>
-											scrollToComponent(this.videos, {
+											scrollToComponent(this.blogs, {
 												offset: 0,
 												align: "top",
 												duration: 1500,
 											})
 										}
 									>
-										Videos
+										Blogs
 									</li>
 									<li
 										className="nav-link"
 										onClick={() =>
-											scrollToComponent(this.events, {
+											scrollToComponent(this.footer, {
 												offset: 0,
 												align: "top",
 												duration: 1500,
 											})
 										}
 									>
-										Events
+										Contact
 									</li>
 								</ul>
 							</div>
