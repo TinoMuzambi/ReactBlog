@@ -4,7 +4,7 @@ const blogs = [
 		future: false,
 		title: "Shower Thoughts",
 		url: "shower_thoughts",
-		date: "Thursday 16 July 2020",
+		date: "Monday 03 August 2020",
 		category: "Random",
 		readTime: "4 minutes",
 		image: "../assets/blog-images/shower_thoughts.jpg",

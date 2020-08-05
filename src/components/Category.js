@@ -12,6 +12,10 @@ class Category extends Component {
 		};
 	}
 
+	componentDidUpdate() {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		const name = this.state.name;
 		const category = categories.find(

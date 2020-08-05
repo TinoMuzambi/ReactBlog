@@ -14,6 +14,7 @@ import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
 import "./aos.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 class App extends Component {
 	componentDidMount() {
@@ -32,6 +33,7 @@ class App extends Component {
 		return (
 			<>
 				<Router>
+					<ScrollToTop />
 					<nav className="nav">
 						<div className="nav-menu flex-row">
 							<div className="nav-brand">

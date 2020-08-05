@@ -14,6 +14,10 @@ class Blog extends Component {
 		};
 	}
 
+	componentDidUpdate() {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		const title = this.state.name;
 		const blog = blogs.find((blog) => blog.url === title);
