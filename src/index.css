@@ -110,6 +110,10 @@ p {
 	color: var(--text-light);
 }
 
+img {
+	object-fit: cover;
+}
+
 .text-center {
 	text-align: center;
 }

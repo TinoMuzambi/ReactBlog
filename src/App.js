@@ -4,7 +4,7 @@ import scrollToComponent from "react-scroll-to-component";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./components/SocialIcons";
 import About from "./components/About";
-import Highlights from "./components/Highlights";
+import Featured from "./components/Featured";
 import Blogs from "./components/Blogs";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
@@ -74,7 +74,7 @@ class App extends Component {
 									<li
 										className="nav-link"
 										onClick={() =>
-											scrollToComponent(this.highlights, {
+											scrollToComponent(this.featured, {
 												offset: 0,
 												align: "top",
 												duration: 1500,
@@ -126,12 +126,12 @@ class App extends Component {
 										<About />
 									</section>
 									<section
-										className="highlights"
+										className="featured"
 										ref={(section) => {
-											this.highlights = section;
+											this.featured = section;
 										}}
 									>
-										<Highlights />
+										<Featured />
 									</section>
 									<section className="container" id="blogs">
 										<div className="site-content">
