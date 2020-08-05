@@ -132,7 +132,7 @@ class Blog extends Component {
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
-						<Sidebar />
+						<Sidebar blogs={blogs} />
 					</div>
 				</section>
 			</>

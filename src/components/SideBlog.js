@@ -1,12 +1,11 @@
 import React from "react";
 import img from "../assets/blog-images/me_crop.jpg";
-import futureBlogs from "../data/future-blogs";
 import { FaCalendar } from "react-icons/fa";
 
-const SideBlog = () => (
+const SideBlog = ({ blogs }) => (
 	<>
 		<h2>Future Blogs</h2>
-		{futureBlogs.map((blog, key) => (
+		{blogs.map((blog, key) => (
 			<div className="post-content" data-aos="flip-up" data-aos-delay="200">
 				<div className="post-image">
 					<div>

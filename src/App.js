@@ -124,7 +124,7 @@ class App extends Component {
 										>
 											<Blogs blogs={blogs} />
 										</section>
-										<Sidebar />
+										<Sidebar blogs={blogs} />
 									</div>
 								</div>
 							)}

@@ -29,7 +29,7 @@ class Category extends Component {
 						<h1>{category.name}</h1>
 						<Blogs blogs={filteredBlogs} />
 					</div>
-					<Sidebar />
+					<Sidebar blogs={blogs} />
 				</div>
 			</>
 		);

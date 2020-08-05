@@ -1,6 +1,7 @@
 const blogs = [
 	{
 		id: 0,
+		future: false,
 		title: "Shower Thoughts",
 		url: "shower_thoughts",
 		date: "Thursday 16 July 2020",
@@ -14,6 +15,7 @@ const blogs = [
 	},
 	{
 		id: 1,
+		future: false,
 		title: "Upgrade Your Walls",
 		url: "upgrade_your_walls",
 		category: "Random",
@@ -26,6 +28,7 @@ const blogs = [
 	},
 	{
 		id: 2,
+		future: false,
 		title: "Photo & Video Editing",
 		url: "photo_and_video_editing",
 		date: "Wednesday 24 June 2020",
@@ -39,6 +42,7 @@ const blogs = [
 	},
 	{
 		id: 3,
+		future: false,
 		title: "A Little About Me",
 		url: "a_little_about_me",
 		date: "Tuesday 09 June 2020",
@@ -52,6 +56,7 @@ const blogs = [
 	},
 	{
 		id: 4,
+		future: false,
 		title: "Why I Hate Voicenotes",
 		url: "why_i_hate_voicenotes",
 		date: "Saturday 30 May 2020",
@@ -62,6 +67,30 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/why_i_hate_voicenotes",
 		disqusIdentifier: "tinomuzambi",
+	},
+	{
+		id: 5,
+		future: true,
+		title: "My Relationship with my Keyboard",
+		url: "",
+		date: "Very Soon",
+		category: "Tech",
+		readTime: "4 minutes",
+		image: "../assets/blog-images/dark-keyboard.jpg",
+		alt: "keyboard",
+		content: [``],
+	},
+	{
+		id: 6,
+		future: true,
+		title: "Phone or Laptop?",
+		url: "",
+		date: "Soon",
+		category: "Tech",
+		readTime: "5 minutes",
+		image: "../assets/blog-images/keyboard.jpg",
+		alt: "laptop",
+		content: [``],
 	},
 ];
 
