@@ -37,7 +37,7 @@ const Blogs = ({ blogs }) => (
 							</div>
 						</div>
 						<div className="post-title">
-							<a>{blog.title}</a>
+							<Link to={`/blogs/${blog.url}`}>{blog.title}</Link>
 							<p>{blog.content[0]}</p>
 							<Link to={`/blogs/${blog.url}`}>
 								<button className="btn post-btn">
@@ -48,6 +48,7 @@ const Blogs = ({ blogs }) => (
 								</button>
 							</Link>
 						</div>
+						<hr></hr>
 					</div>
 				))}
 			</div>

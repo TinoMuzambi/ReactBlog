@@ -5,9 +5,10 @@ import img from "../assets/blog-images/me_crop.jpg";
 
 class Highlight extends Component {
 	render() {
+		const filteredBlogs = blogs.slice(0, 3);
 		return (
 			<>
-				{blogs.map((highlight, key) => (
+				{filteredBlogs.map((highlight, key) => (
 					<div
 						className="blog-content"
 						data-aos="fade-right"

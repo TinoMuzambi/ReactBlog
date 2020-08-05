@@ -8,6 +8,10 @@ import IG6 from "../assets/instagram/me_sprinting.JPG";
 import SocialIcons from "./SocialIcons";
 import { FaArrowCircleUp, FaCopyright } from "react-icons/fa";
 
+const scrollTop = () => {
+	window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
 const Footer = () => (
 	<>
 		<footer className="footer" id="contact-me">
@@ -54,13 +58,11 @@ const Footer = () => (
 				</h4>
 			</div>
 			<div className="move-up">
-				<a href="#">
-					<span>
-						<i className="fas fa-arrow-circle-up fa-2x">
-							<FaArrowCircleUp />
-						</i>
-					</span>
-				</a>
+				<span onClick={scrollTop}>
+					<i className="fas fa-arrow-circle-up fa-2x">
+						<FaArrowCircleUp />
+					</i>
+				</span>
 			</div>
 		</footer>
 	</>

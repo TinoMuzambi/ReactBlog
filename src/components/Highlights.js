@@ -1,43 +1,25 @@
-import React from "react";
+import React, { Component, useEffect } from "react";
 import Highlight from "./Highlight";
-import blogs from "../data/blogs";
-import $ from "jquery";
-import OwlCarousel from "react-owl-carousel2";
-import "react-owl-carousel2/lib/styles.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-window.jQuery = $;
-window.$ = $;
-global.jQuery = $;
-const options = {
-	autoplay: false,
-};
+// import $ from "jquery";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
-const Highlights = () => (
-	<>
-		<div className="blog" id="highlights">
-			<div className="container">
-				<h1 className="text-center">Highlights</h1>
-				<OwlCarousel
-					className="owl-carousel owl-theme blog-post"
-					options={options}
-				>
-					<Highlight highlights={blogs} />
-					<div className="owl-navigation">
-						<span className="owl-nav-prev">
-							<span className="fas fa-long-arrow-alt-left">
-								<FaArrowLeft />
-							</span>
-						</span>
-						<span className="owl-nav-next">
-							<span className="fas fa-long-arrow-alt-right">
-								<FaArrowRight />
-							</span>
-						</span>
+class Highlights extends Component {
+	render() {
+		// window.jQuery = $;
+		// window.$ = $;
+		// global.jQuery = $;
+
+		return (
+			<>
+				<div className="blog" id="highlights">
+					<div className="container">
+						<h1 className="text-center">Highlights</h1>
+						<div className="">{/* <Highlight /> */}</div>
 					</div>
-				</OwlCarousel>
-			</div>
-		</div>
-	</>
-);
+				</div>
+			</>
+		);
+	}
+}
 
 export default Highlights;

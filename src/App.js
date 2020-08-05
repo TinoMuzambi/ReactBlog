@@ -17,10 +17,19 @@ import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.toggleCollapse = this.toggleCollapse.bind(this);
+	}
+
 	componentDidMount() {
 		AOS.init();
-		let owl_carousel = require("owl.carousel");
-		window.fn = owl_carousel;
+	}
+
+	toggleCollapse() {
+		const nav = document.querySelector("nav");
+		nav.toggleAttribute("collapse");
+		// alert("Yo");
 	}
 
 	render() {
@@ -34,16 +43,16 @@ class App extends Component {
 			<>
 				<Router>
 					<ScrollToTop />
-					<nav className="nav">
+					<nav className="nav" id="nav">
 						<div className="nav-menu flex-row">
 							<div className="nav-brand">
-								<a href="https://blog.tinomuzambi.com" className="text-gray">
+								<a href="" className="text-gray">
 									Blog.TinoMuzambi
 								</a>
 							</div>
 							<div className="toggle-collapse">
 								<div className="toggle-icons">
-									<span className="fas fa-bars">
+									<span className="fas fa-bars" onClick={this.toggleCollapse}>
 										<FaBars />
 									</span>
 								</div>
@@ -124,17 +133,19 @@ class App extends Component {
 									>
 										<Highlights />
 									</section>
-									<div className="site-content">
-										<section
-											className="blogs"
-											ref={(section) => {
-												this.blogs = section;
-											}}
-										>
-											<Blogs blogs={homeBlogs} />
-										</section>
-										<Sidebar blogs={filteredBlogs} />
-									</div>
+									<section className="container" id="blogs">
+										<div className="site-content">
+											<section
+												className="blogs"
+												ref={(section) => {
+													this.blogs = section;
+												}}
+											>
+												<Blogs blogs={homeBlogs} />
+											</section>
+											<Sidebar blogs={filteredBlogs} />
+										</div>
+									</section>
 								</div>
 							)}
 							exact
