@@ -22,6 +22,12 @@ class App extends Component {
 	}
 
 	render() {
+		const filteredBlogs = blogs.filter((eachItem) => {
+			return eachItem["future"] === true;
+		});
+		const homeBlogs = blogs.filter((eachItem) => {
+			return eachItem["future"] === false;
+		});
 		return (
 			<>
 				<Router>
@@ -122,9 +128,9 @@ class App extends Component {
 												this.blogs = section;
 											}}
 										>
-											<Blogs blogs={blogs} />
+											<Blogs blogs={homeBlogs} />
 										</section>
-										<Sidebar blogs={blogs} />
+										<Sidebar blogs={filteredBlogs} />
 									</div>
 								</div>
 							)}

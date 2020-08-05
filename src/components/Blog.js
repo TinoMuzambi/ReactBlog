@@ -23,27 +23,37 @@ class Blog extends Component {
 			identifier: blog.disqusIdentifier,
 			title: blog.title,
 		};
+
+		const filteredBlogs = blogs
+			.filter((eachItem) => {
+				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
+			})
+			.slice(0, 3);
 		return (
 			<>
-				<section class="container" id="blogs">
-					<div class="site-content">
-						<div class="posts">
-							<div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-								<div class="post-title">
+				<section className="container" id="blogs">
+					<div className="site-content">
+						<div className="posts">
+							<div
+								className="post-content"
+								data-aos="zoom-in"
+								data-aos-delay="200"
+							>
+								<div className="post-title">
 									<h1>{blog.title}</h1>
 									<h3>
-										<i class="fas fa-user text-gray">
+										<i className="fas fa-user text-gray">
 											<FaUser />
 										</i>
 										&nbsp;Me&nbsp;&nbsp;
-										<i class="fas fa-calendar-alt text-gray">
+										<i className="fas fa-calendar-alt text-gray">
 											<FaCalendar />
 										</i>
 										&nbsp;<Moment format="MMM DD, YYYY">{blog.date}</Moment>
 									</h3>
-									<div class="post-image">
+									<div className="post-image">
 										<div>
-											<img src={img} class="img" alt="shower" />
+											<img src={img} className="img" alt="shower" />
 										</div>
 									</div>
 								</div>
@@ -105,9 +115,9 @@ class Blog extends Component {
 									<br />
 								</p>
 
-								<div class="post-image">
+								<div className="post-image">
 									<div>
-										<img src={img} class="img" alt="time" />
+										<img src={img} className="img" alt="time" />
 									</div>
 								</div>
 
@@ -132,7 +142,7 @@ class Blog extends Component {
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
-						<Sidebar blogs={blogs} />
+						<Sidebar blogs={filteredBlogs} />
 					</div>
 				</section>
 			</>

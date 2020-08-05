@@ -6,7 +6,12 @@ const SideBlog = ({ blogs }) => (
 	<>
 		<h2>Future Blogs</h2>
 		{blogs.map((blog, key) => (
-			<div className="post-content" data-aos="flip-up" data-aos-delay="200">
+			<div
+				className="post-content"
+				data-aos="flip-up"
+				data-aos-delay="200"
+				key={key}
+			>
 				<div className="post-image">
 					<div>
 						<img src={img} className="img" alt={blog.alt} />

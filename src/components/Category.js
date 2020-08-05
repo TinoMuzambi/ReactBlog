@@ -20,8 +20,11 @@ class Category extends Component {
 		const filteredBlogs = blogs.filter((eachItem) => {
 			return eachItem["category"].toLowerCase().includes(name.toLowerCase());
 		});
-		console.log(blogs);
-		console.log(filteredBlogs);
+		const sideBlogs = blogs
+			.filter((eachItem) => {
+				return !eachItem["category"].toLowerCase().includes(name.toLowerCase());
+			})
+			.slice(0, 3);
 		return (
 			<>
 				<div class="site-content">
@@ -29,7 +32,7 @@ class Category extends Component {
 						<h1>{category.name}</h1>
 						<Blogs blogs={filteredBlogs} />
 					</div>
-					<Sidebar blogs={blogs} />
+					<Sidebar blogs={sideBlogs} />
 				</div>
 			</>
 		);
