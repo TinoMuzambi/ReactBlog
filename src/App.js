@@ -13,6 +13,7 @@ import Category from "./components/Category";
 import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
+import "./aos.css";
 
 class App extends Component {
 	componentDidMount() {

@@ -1,5 +1,10 @@
 import React from "react";
-import img from "../assets/blog-images/me_crop.jpg";
+import IG1 from "../assets/instagram/watch.JPG";
+import IG2 from "../assets/instagram/closed_rose.jpg";
+import IG3 from "../assets/instagram/sutherland.jpg";
+import IG4 from "../assets/instagram/me_sutherland.jpg";
+import IG5 from "../assets/instagram/me_selfie.jpg";
+import IG6 from "../assets/instagram/me_sprinting.JPG";
 import SocialIcons from "./SocialIcons";
 import { FaArrowCircleUp } from "react-icons/fa";
 
@@ -18,14 +23,14 @@ const Footer = () => (
 					<h2>Instagram</h2>
 					<a href="https://bit.ly/TinoInstagram" target="_blank">
 						<div className="flex-row">
-							<img src={img} alt="insta1" />
-							<img src={img} alt="insta2" />
-							<img src={img} alt="insta3" />
+							<img src={IG1} alt="insta1" />
+							<img src={IG2} alt="insta2" />
+							<img src={IG3} alt="insta3" />
 						</div>
 						<div className="flex-row">
-							<img src={img} alt="insta4" />
-							<img src={img} alt="insta5" />
-							<img src={img} alt="insta6" />
+							<img src={IG4} alt="insta4" />
+							<img src={IG5} alt="insta5" />
+							<img src={IG6} alt="insta6" />
 						</div>
 					</a>
 				</div>
