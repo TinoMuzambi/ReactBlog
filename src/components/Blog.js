@@ -22,6 +22,7 @@ class Blog extends Component {
 			url: blog.disqusURL,
 			identifier: blog.disqusIdentifier,
 			title: blog.title,
+			disqus_developer: 1,
 		};
 
 		const filteredBlogs = blogs
@@ -135,10 +136,10 @@ class Blog extends Component {
 
 							{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
 
-							{/* <Disqus.DicussionEmbed
-							shortname={disqusShortname}
-							config={disqusConfig}
-						/> */}
+							<Disqus.DicussionEmbed
+								shortname={disqusShortname}
+								config={disqusConfig}
+							/>
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
