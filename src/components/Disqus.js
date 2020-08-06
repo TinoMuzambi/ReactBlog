@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 
 const Disqus = ({ url, id, src }) => {
-	console.log(url);
-	console.log(id);
-	console.log(src);
-
 	useEffect(() => {
 		const DISQUS_SCRIPT = "disq_script";
 		const sd = document.getElementById(DISQUS_SCRIPT);

@@ -5,6 +5,7 @@ import { FaUser, FaCalendar } from "react-icons/fa";
 import img from "../assets/blog-images/me_crop.jpg";
 import Moment from "react-moment";
 import Disqus from "./Disqus";
+import images from "./Images";
 
 class Blog extends Component {
 	constructor(props) {
@@ -17,6 +18,7 @@ class Blog extends Component {
 	render() {
 		const title = this.state.name;
 		const blog = blogs.find((blog) => blog.url === title);
+		const { image } = blog;
 		const filteredBlogs = blogs
 			.filter((eachItem) => {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
@@ -46,7 +48,11 @@ class Blog extends Component {
 									</h3>
 									<div className="post-image">
 										<div>
-											<img src={img} className="img" alt={blog.alt} />
+											<img
+												src={images[blog.id]}
+												className="img"
+												alt={blog.alt}
+											/>
 										</div>
 									</div>
 								</div>
@@ -128,10 +134,6 @@ class Blog extends Component {
 
 							{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
 
-							{/* <Disqus.DicussionEmbed
-								shortname={disqusShortname}
-								config={disqusConfig}
-							/> */}
 							<Disqus
 								title={blog.title}
 								url={blog.disqusURL}
@@ -141,7 +143,7 @@ class Blog extends Component {
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
-						<Sidebar blogs={filteredBlogs} />
+						<Sidebar blogs={filteredBlogs} future={false} />
 					</div>
 				</section>
 			</>

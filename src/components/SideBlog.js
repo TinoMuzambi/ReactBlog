@@ -1,10 +1,11 @@
 import React from "react";
-import img from "../assets/blog-images/me_crop.jpg";
+import images from "./Images";
 import { FaCalendar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const SideBlog = ({ blogs }) => (
+const SideBlog = ({ blogs, future }) => (
 	<>
-		<h2>Future Blogs</h2>
+		<h2>{future ? "Future" : "Other"} Blogs</h2>
 		{blogs.map((blog, key) => (
 			<div
 				className="post-content"
@@ -14,7 +15,7 @@ const SideBlog = ({ blogs }) => (
 			>
 				<div className="post-image">
 					<div>
-						<img src={img} className="img" alt={blog.alt} />
+						<img src={images[blog.id]} className="img" alt={blog.alt} />
 					</div>
 					<div className="post-info flex-row">
 						<span>
@@ -26,7 +27,11 @@ const SideBlog = ({ blogs }) => (
 					</div>
 				</div>
 				<div className="post-title">
-					<a title="Coming at some point...">{blog.title}</a>
+					{future ? (
+						<a title="Coming at some point...">{blog.title}</a>
+					) : (
+						<Link to={`/blogs/${blog.url}`}>{blog.title} </Link>
+					)}
 				</div>
 			</div>
 		))}

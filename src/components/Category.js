@@ -32,7 +32,7 @@ class Category extends Component {
 						<h1>{category.name}</h1>
 						<Blogs blogs={filteredBlogs} />
 					</div>
-					<Sidebar blogs={sideBlogs} />
+					<Sidebar blogs={sideBlogs} future={false} />
 				</div>
 			</>
 		);

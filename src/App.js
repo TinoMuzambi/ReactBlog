@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	withRouter,
+} from "react-router-dom";
 import scrollToComponent from "react-scroll-to-component";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./components/SocialIcons";
@@ -143,14 +148,14 @@ class App extends Component {
 											>
 												<Blogs blogs={homeBlogs} />
 											</section>
-											<Sidebar blogs={filteredBlogs} />
+											<Sidebar blogs={filteredBlogs} future={true} />
 										</div>
 									</section>
 								</div>
 							)}
 							exact
 						/>
-						<Route path="/blogs/:name" component={Blog} />
+						<Route path="/blogs/:name" component={withRouter(Blog)} />
 						<Route path="/categories/:name" component={Category} />
 					</Switch>
 					<section

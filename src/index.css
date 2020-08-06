@@ -123,4 +123,8 @@ img {
 	display: none;
 }
 
+.point {
+	cursor: pointer;
+}
+
 /* ------x------- Global Classes -------x-------*/

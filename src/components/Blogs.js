@@ -1,8 +1,8 @@
 import React from "react";
-import img from "../assets/blog-images/me_crop.jpg";
 import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
+import images from "./Images";
 
 const Blogs = ({ blogs }) => (
 	<>
@@ -18,7 +18,7 @@ const Blogs = ({ blogs }) => (
 					>
 						<div className="post-image">
 							<div>
-								<img src={img} className="img" alt="shower" />
+								<img src={images[blog.id]} className="img" alt="shower" />
 							</div>
 							<div className="post-info flex-row">
 								<span>
