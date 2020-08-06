@@ -46,7 +46,7 @@ class App extends Component {
 		});
 		return (
 			<>
-				<Router>
+				<Router forceRefresh={true}>
 					<ScrollToTop />
 					<nav className="nav" id="nav">
 						<div className="nav-menu flex-row">

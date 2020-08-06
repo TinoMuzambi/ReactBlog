@@ -26,6 +26,7 @@ const SideBlog = ({ blogs, future }) => (
 						</span>
 					</div>
 				</div>
+
 				<div className="post-title">
 					{future ? (
 						<a title="Coming at some point...">{blog.title}</a>
