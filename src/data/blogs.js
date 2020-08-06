@@ -11,9 +11,10 @@ const blogs = [
 		alt: "shower",
 		content: [``],
 		disqusURL:
-			"https://react-blog.tinomuzambi.vercel.app//blogs/shower_thoughts",
+			"https://react-blog.tinomuzambi.vercel.app/blogs/shower_thoughts",
 		disqusIdentifier: "tino_shower_thoughts0",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		disqusShortname: "blogtinomuzambi",
 		lastPublished: false,
 	},
 	{
@@ -27,9 +28,10 @@ const blogs = [
 		alt: "walls",
 		content: [``],
 		disqusURL:
-			"https://react-blog.tinomuzambi.vercel.app//blogs/upgrade_your_walls",
+			"https://react-blog.tinomuzambi.vercel.app/blogs/upgrade_your_walls",
 		disqusIdentifier: "upgrade_your_walls_tino",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		disqusShortname: "blogtinomuzambi",
 		lastPublished: false,
 	},
 	{
@@ -44,9 +46,10 @@ const blogs = [
 		alt: "editing",
 		content: [``],
 		disqusURL:
-			"https://react-blog.tinomuzambi.vercel.app//blogs/photo_and_video_editing",
+			"https://react-blog.tinomuzambi.vercel.app/blogs/photo_and_video_editing",
 		disqusIdentifier: "tino_photo_video_edits",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		disqusShortname: "blogtinomuzambi",
 		lastPublished: false,
 	},
 	{
@@ -61,9 +64,10 @@ const blogs = [
 		alt: "me",
 		content: [``],
 		disqusURL:
-			"https://react-blog.tinomuzambi.vercel.app//blogs/a_little_about_me",
+			"https://react-blog.tinomuzambi.vercel.app/blogs/a_little_about_me",
 		disqusIdentifier: "tino_about_me",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
+		disqusShortname: "tinomuzambi",
 		lastPublished: false,
 	},
 	{
@@ -78,9 +82,10 @@ const blogs = [
 		alt: "voicenotes",
 		content: [``],
 		disqusURL:
-			"https://react-blog.tinomuzambi.vercel.app//blogs/why_i_hate_voicenotes",
+			"https://react-blog.tinomuzambi.vercel.app/blogs/why_i_hate_voicenotes",
 		disqusIdentifier: "tinomuzambi",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
+		disqusShortname: "tinomuzambi",
 		lastPublished: true,
 	},
 	{

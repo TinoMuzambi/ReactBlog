@@ -17,8 +17,6 @@ class Blog extends Component {
 	render() {
 		const title = this.state.name;
 		const blog = blogs.find((blog) => blog.url === title);
-		const disqusShortname = "blogtinomuzambi";
-
 		const filteredBlogs = blogs
 			.filter((eachItem) => {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
@@ -135,8 +133,9 @@ class Blog extends Component {
 								config={disqusConfig}
 							/> */}
 							<Disqus
+								title={blog.title}
 								url={blog.disqusURL}
-								id={blog.disqusIdentifier}
+								identifier={blog.disqusIdentifier}
 								src={blog.disqusSrc}
 							/>
 
