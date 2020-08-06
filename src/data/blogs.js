@@ -12,6 +12,8 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/shower_thoughts",
 		disqusIdentifier: "tino_shower_thoughts0",
+		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		lastPublished: false,
 	},
 	{
 		id: 1,
@@ -25,6 +27,8 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/upgrade_your_walls",
 		disqusIdentifier: "upgrade_your_walls_tino",
+		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		lastPublished: false,
 	},
 	{
 		id: 2,
@@ -39,6 +43,8 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/photo_and_video_editing",
 		disqusIdentifier: "tino_photo_video_edits",
+		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		lastPublished: false,
 	},
 	{
 		id: 3,
@@ -53,6 +59,8 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/a_little_about_me",
 		disqusIdentifier: "tino_about_me",
+		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
+		lastPublished: false,
 	},
 	{
 		id: 4,
@@ -67,6 +75,8 @@ const blogs = [
 		content: [``],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/why_i_hate_voicenotes",
 		disqusIdentifier: "tinomuzambi",
+		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
+		lastPublished: true,
 	},
 	{
 		id: 5,

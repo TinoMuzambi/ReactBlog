@@ -48,7 +48,7 @@ const Blogs = ({ blogs }) => (
 								</button>
 							</Link>
 						</div>
-						<hr></hr>
+						<hr className={`${blog.lastPublished ? "is-hidden" : ""}`}></hr>
 					</div>
 				))}
 			</div>

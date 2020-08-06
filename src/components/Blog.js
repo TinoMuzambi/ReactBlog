@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import img from "../assets/blog-images/me_crop.jpg";
 import Moment from "react-moment";
-import Disqus from "disqus-react";
+import Disqus from "./Disqus";
 
 class Blog extends Component {
 	constructor(props) {
@@ -18,12 +18,6 @@ class Blog extends Component {
 		const title = this.state.name;
 		const blog = blogs.find((blog) => blog.url === title);
 		const disqusShortname = "blogtinomuzambi";
-		const disqusConfig = {
-			url: blog.disqusURL,
-			identifier: blog.disqusIdentifier,
-			title: blog.title,
-			disqus_developer: 1,
-		};
 
 		const filteredBlogs = blogs
 			.filter((eachItem) => {
@@ -54,7 +48,7 @@ class Blog extends Component {
 									</h3>
 									<div className="post-image">
 										<div>
-											<img src={img} className="img" alt="shower" />
+											<img src={img} className="img" alt={blog.alt} />
 										</div>
 									</div>
 								</div>
@@ -136,9 +130,14 @@ class Blog extends Component {
 
 							{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
 
-							<Disqus.DicussionEmbed
+							{/* <Disqus.DicussionEmbed
 								shortname={disqusShortname}
 								config={disqusConfig}
+							/> */}
+							<Disqus
+								url={blog.disqusURL}
+								id={blog.disqusIdentifier}
+								src={blog.disqusSrc}
 							/>
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}

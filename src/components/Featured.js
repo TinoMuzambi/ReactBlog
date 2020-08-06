@@ -8,8 +8,13 @@ class Featured extends Component {
 		return (
 			<>
 				<div className="container">
-					<div className="featured" id="featured">
-						<h1 className="featured-title">Featured Video</h1>
+					<div
+						className="featured"
+						id="featured"
+						data-aos="fade-in"
+						data-aos-delay="200"
+					>
+						<h1 className="featured-title text-center">Featured Video</h1>
 						<div className="video-container">
 							<Iframe
 								url={video[0].url}
