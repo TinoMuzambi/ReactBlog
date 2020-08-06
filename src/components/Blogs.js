@@ -38,7 +38,7 @@ const Blogs = ({ blogs }) => (
 						</div>
 						<div className="post-title">
 							<Link to={`/blogs/${blog.url}`}>{blog.title}</Link>
-							<p>{blog.content[0]}</p>
+							<p>{}</p>
 							<Link to={`/blogs/${blog.url}`}>
 								<button className="btn post-btn">
 									Read More &nbsp;{" "}

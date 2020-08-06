@@ -5,6 +5,13 @@ import img3 from "../assets/blog-images/me_crop.jpg";
 import img4 from "../assets/blog-images/voicenotes.png";
 import img5 from "../assets/blog-images/dark_keyboard.jpg";
 import img6 from "../assets/blog-images/keyboard.jpg";
+import img7 from "../assets/blog-images/time.jpg";
+import img8 from "../assets/blog-images/hitfilm.PNG";
+import img9 from "../assets/blog-images/windows_editor.PNG";
+import img10 from "../assets/blog-images/inshot.jpg";
+import img11 from "../assets/blog-images/GIMP.PNG";
+import img12 from "../assets/blog-images/picsart.jpg";
+import img13 from "../assets/blog-images/canva.PNG";
 
 const images = [];
 images.push(img0);
@@ -14,5 +21,12 @@ images.push(img3);
 images.push(img4);
 images.push(img5);
 images.push(img6);
+images.push(img7);
+images.push(img8);
+images.push(img9);
+images.push(img10);
+images.push(img11);
+images.push(img12);
+images.push(img13);
 
 export default images;
