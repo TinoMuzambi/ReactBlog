@@ -5,7 +5,6 @@ import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
 import Disqus from "./Disqus";
 import images from "./Images";
-import parse from "html-react-parser";
 
 class Blog extends Component {
 	constructor(props) {
@@ -56,7 +55,7 @@ class Blog extends Component {
 										</div>
 									</div>
 								</div>
-								{/* <div className="blog-html">parse({blog.content})</div> */}
+								<div className="blog-html"></div>
 							</div>
 
 							{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}

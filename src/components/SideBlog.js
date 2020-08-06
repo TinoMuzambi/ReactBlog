@@ -2,6 +2,7 @@ import React from "react";
 import images from "./Images";
 import { FaCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
 
 const SideBlog = ({ blogs, future }) => (
 	<>
@@ -22,7 +23,7 @@ const SideBlog = ({ blogs, future }) => (
 							<i className="fas fa-calendar-alt text-gray">
 								<FaCalendar />
 							</i>
-							&nbsp;&nbsp;{blog.date}
+							&nbsp;&nbsp;<Moment format="MMMM DD, YYYY">{blog.date}</Moment>
 						</span>
 					</div>
 				</div>
