@@ -303,6 +303,11 @@ h3 {
 	font-size: 1rem;
 }
 
+.side-future {
+	font-family: var(--Anton);
+	font-weight: 200;
+}
+
 /* -------x------- Sidebar -----------x----------- */
 
 /* ----------------- Footer --------------------- */

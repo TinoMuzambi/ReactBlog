@@ -155,7 +155,7 @@ class App extends Component {
 							)}
 							exact
 						/>
-						<Route path="/blogs/:name" component={withRouter(Blog)} />
+						<Route path="/blogs/:name" component={Blog} />
 						<Route path="/categories/:name" component={Category} />
 					</Switch>
 					<section

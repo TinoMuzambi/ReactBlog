@@ -16,7 +16,13 @@ const SideBlog = ({ blogs, future }) => (
 			>
 				<div className="post-image">
 					<div>
-						<img src={images[blog.id]} className="img" alt={blog.alt} />
+						{future ? (
+							<img src={images[blog.id]} className="img" alt={blog.alt} />
+						) : (
+							<Link to={`/blogs/${blog.url}`}>
+								<img src={images[blog.id]} className="img" alt={blog.alt} />{" "}
+							</Link>
+						)}
 					</div>
 					<div className="post-info flex-row">
 						<span>
@@ -35,7 +41,9 @@ const SideBlog = ({ blogs, future }) => (
 
 				<div className="post-title">
 					{future ? (
-						<h3 title="Coming at some point...">{blog.title}</h3>
+						<h3 title="Coming at some point..." className="side-future">
+							{blog.title}
+						</h3>
 					) : (
 						<Link to={`/blogs/${blog.url}`}>{blog.title} </Link>
 					)}
