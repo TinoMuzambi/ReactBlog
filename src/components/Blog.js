@@ -66,7 +66,7 @@ class Blog extends Component {
 									<div className="post-image">
 										<div>
 											<img
-												src={image}
+												src={images[blog.id]}
 												className="img"
 												alt={blog.alt}
 											/>
