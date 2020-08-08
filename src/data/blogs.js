@@ -11,8 +11,7 @@ const blogs = [
 		readTime: "4 minutes",
 		image: `../assets/blog-images/shower_thoughts.jpg`,
 		alt: "shower",
-		content: [
-			`<p>
+		content: `<p style="font-size: 1rem;">
 		I had a shower thought, about taking a shower. The thought intrigued me and I haven't stopped
 		thinking about it. It intrigued me so much that I couldn’t keep it to myself any longer, so I’ve
 		come to share it with you. I think I’ll make this a series, so with that said, welcome to the
@@ -56,7 +55,6 @@ const blogs = [
 		reacts to changes in temperature. Would you be willing to stand in a shower to find out the
 		answer? Do you think this whole idea is just ridiculous? Let’s hear it.<br><br>
 	</p>`,
-		],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/shower_thoughts",
 		disqusIdentifier: "tino_shower_thoughts0",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
@@ -73,8 +71,7 @@ const blogs = [
 		readTime: "5 minutes",
 		image: "../assets/blog-images/walls.jpg",
 		alt: "walls",
-		content: [
-			`<p>
+		content: `<p style="font-size: 1rem;">
 		The year is 2014. I had just transitioned into high school and giant game company, Supercell’s
 		<i><i>Clash of Clans</i></i> is gaining traction. Everyone is playing the game before school,
 		after school and
@@ -141,7 +138,6 @@ const blogs = [
 		about air
 		troops.<br><br>
 	</p>`,
-		],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/upgrade_your_walls",
 		disqusIdentifier: "upgrade_your_walls_tino",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
@@ -158,14 +154,13 @@ const blogs = [
 		readTime: "35 minutes",
 		image: "../assets/blog-images/editing.PNG",
 		alt: "editing",
-		content: [
-			`<p>
+		content: `<p style="font-size: 1rem;">
 		Before you even read this blog, you <strong>absolutely imperatively have to</strong> go watch
 		this 21-minute
 		video I made otherwise nothing will make sense. No jokes, dead serious... Okay you don’t have
 		to,
 		but it would be great if you did, cause I’ll be making quite a few references to it.
-	</p>
+	</p><br><br/>
 
 	<iframe class="cycling-sites" height="700" src="https://www.youtube.com/embed/qagP8gTp5QE"
 			frameborder="0"
@@ -307,7 +302,6 @@ const blogs = [
 		favourite tools in the comments and let’s share and discover new things. Catch you in the next
 		blog.<br><br>
 	</p>`,
-		],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/photo_and_video_editing",
 		disqusIdentifier: "tino_photo_video_edits",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
@@ -324,8 +318,7 @@ const blogs = [
 		readTime: "5 minutes",
 		image: "../assets/blog-images/me_crop.jpg",
 		alt: "me",
-		content: [
-			`<p>
+		content: `<p style="font-size: 1rem;">
 		I was thinking about how much to divulge in this blog to let you sufficiently in on my life, but
 		also keep myself employable and then I remembered the <i>Iceberg Theory</i>. This theory alludes
 		to how only a small part (about ten percent) of an iceberg is visible above water, with the rest
@@ -413,7 +406,6 @@ const blogs = [
 		get in
 		contact. Stay tuned to blog.tinomuzambi.com for more blogs coming soon.<br><br>
 	</p>`,
-		],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/a_little_about_me",
 		disqusIdentifier: "tino_about_me",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
@@ -430,8 +422,7 @@ const blogs = [
 		readTime: "7 minutes",
 		image: "../assets/blog-images/voicenotes.png",
 		alt: "voicenotes",
-		content: [
-			`<p>
+		content: `<p style="font-size: 1rem;">
 		You probably think the image above is fake and I generated it with Photoshop or some app and
 		you’d be right.
 		(Shoutout FakeChatForWhatsApp) But it’s actually based on a true story no cap. Yeah, I got a
@@ -502,7 +493,6 @@ const blogs = [
 		don’t have voicenote etiquette? Are you the one who doesn’t have voicenote etiquette? I’d love
 		to engage and stay tuned to blog.tinomuzambi.com for more blogs coming soon.<br><br>
 	</p>`,
-		],
 		disqusURL: "https://blog.tinomuzambi.com/blogs/why_i_hate_voicenotes",
 		disqusIdentifier: "tinomuzambi",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
@@ -519,7 +509,7 @@ const blogs = [
 		readTime: "4 minutes",
 		image: "../assets/blog-images/dark_keyboard.jpg",
 		alt: "keyboard",
-		content: [``],
+		content: ``,
 	},
 	{
 		id: 6,
@@ -531,7 +521,7 @@ const blogs = [
 		readTime: "5 minutes",
 		image: "../assets/blog-images/keyboard.jpg",
 		alt: "laptop",
-		content: [``],
+		content: ``,
 	},
 ];
 

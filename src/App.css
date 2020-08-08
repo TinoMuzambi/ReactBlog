@@ -242,9 +242,7 @@ h3 {
 .site-content .post-content blockquote::before {
 	content: open-quote;
 }
-/*.site-content .post-content blockquote::after {*/
-/*    content: close-quote;*/
-/*}*/
+
 .site-content .post-content blockquote {
 	quotes: "“" "”" "‘" "’";
 }

@@ -3,6 +3,7 @@ import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import images from "./Images";
+import ReactHtmlParser from "react-html-parser";
 
 const Blogs = ({ blogs, category }) => (
 	<>
@@ -40,7 +41,9 @@ const Blogs = ({ blogs, category }) => (
 					<div className="post-title">
 						<Link to={`/blogs/${blog.url}`}>
 							{blog.title}
-							<p>{}</p>
+							{ReactHtmlParser(
+								blog.content.slice(0, blog.content.indexOf("<br>")) + "</p>"
+							)}
 							<button className="btn post-btn">
 								Read More &nbsp;{" "}
 								<i className="fas fa-arrow-right">

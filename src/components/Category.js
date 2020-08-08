@@ -18,13 +18,18 @@ class Category extends Component {
 			(category) => category.name.toLowerCase() === name
 		);
 		document.title = category.name + " | Blog.TinoMuzambi";
-		const filteredBlogs = blogs.filter((eachItem) => {
-			return eachItem["category"].toLowerCase().includes(name.toLowerCase());
-		});
+		const filteredBlogs = blogs
+			.filter((eachItem) => {
+				return eachItem["category"].toLowerCase().includes(name.toLowerCase());
+			})
+			.filter((eachItem) => {
+				return !eachItem["future"] === true;
+			});
 		const sideBlogs = blogs
 			.filter((eachItem) => {
 				return !eachItem["category"].toLowerCase().includes(name.toLowerCase());
 			})
+
 			.slice(0, 3);
 		return (
 			<>
