@@ -24,7 +24,7 @@ const Disqus = ({ url, id, src }) => {
 				config: disqus_config,
 			});
 		}
-	}, []);
+	}, [id, src, url]);
 	return <div id="disqus_thread"></div>;
 };
 

@@ -17,6 +17,7 @@ class Category extends Component {
 		const category = categories.find(
 			(category) => category.name.toLowerCase() === name
 		);
+		document.title = category.name + " | Blog.TinoMuzambi";
 		const filteredBlogs = blogs.filter((eachItem) => {
 			return eachItem["category"].toLowerCase().includes(name.toLowerCase());
 		});

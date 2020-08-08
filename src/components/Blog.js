@@ -18,7 +18,7 @@ class Blog extends Component {
 	render() {
 		const title = this.state.name;
 		const blog = blogs.find((blog) => blog.url === title);
-		const { image } = blog;
+		document.title = blog.title + " | Blog.TinoMuzambi";
 		const filteredBlogs = blogs
 			.filter((eachItem) => {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());

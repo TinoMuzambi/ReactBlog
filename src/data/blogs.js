@@ -1,5 +1,3 @@
-import React from "react";
-import Iframe from "react-iframe";
 import images from "../components/Images";
 
 const blogs = [

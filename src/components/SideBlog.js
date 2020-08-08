@@ -35,7 +35,7 @@ const SideBlog = ({ blogs, future }) => (
 
 				<div className="post-title">
 					{future ? (
-						<a title="Coming at some point...">{blog.title}</a>
+						<h3 title="Coming at some point...">{blog.title}</h3>
 					) : (
 						<Link to={`/blogs/${blog.url}`}>{blog.title} </Link>
 					)}
