@@ -26,7 +26,7 @@ class Blog extends Component {
 			.slice(0, 3);
 		return (
 			<>
-				<section className="container" id="blogs">
+				<div className="container" id="blogs">
 					<div className="site-content">
 						<div className="posts">
 							<div
@@ -72,7 +72,7 @@ class Blog extends Component {
 						</div>
 						<Sidebar blogs={filteredBlogs} future={false} />
 					</div>
-				</section>
+				</div>
 			</>
 		);
 	}

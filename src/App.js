@@ -4,6 +4,7 @@ import {
 	Route,
 	Switch,
 	withRouter,
+	Link,
 } from "react-router-dom";
 import scrollToComponent from "react-scroll-to-component";
 import { FaBars } from "react-icons/fa";
@@ -45,14 +46,14 @@ class App extends Component {
 		});
 		return (
 			<>
-				<Router forceRefresh={true}>
+				<Router>
 					<ScrollToTop />
 					<nav className="nav" id="nav">
 						<div className="nav-menu flex-row">
 							<div className="nav-brand">
-								<a href="" className="text-gray">
+								<Link to="/" className="text-gray">
 									Blog.TinoMuzambi
-								</a>
+								</Link>
 							</div>
 							<div className="toggle-collapse">
 								<div className="toggle-icons">
@@ -85,7 +86,7 @@ class App extends Component {
 											})
 										}
 									>
-										Highlights
+										Featured
 									</li>
 									<li
 										className="nav-link"
@@ -145,7 +146,7 @@ class App extends Component {
 													this.blogs = section;
 												}}
 											>
-												<Blogs blogs={homeBlogs} />
+												<Blogs blogs={homeBlogs} category={false} />
 											</section>
 											<Sidebar blogs={filteredBlogs} future={true} />
 										</div>

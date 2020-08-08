@@ -27,12 +27,14 @@ class Category extends Component {
 			.slice(0, 3);
 		return (
 			<>
-				<div class="site-content">
-					<div class="posts">
-						<h1>{category.name}</h1>
-						<Blogs blogs={filteredBlogs} />
+				<div className="container">
+					<div class="site-content">
+						<div class="posts">
+							<h1>{category.name}</h1>
+							<Blogs blogs={filteredBlogs} category={true} />
+						</div>
+						<Sidebar blogs={sideBlogs} future={false} />
 					</div>
-					<Sidebar blogs={sideBlogs} future={false} />
 				</div>
 			</>
 		);
