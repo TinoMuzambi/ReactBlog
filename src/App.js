@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Link,
+} from "react-router-dom";
 import scrollToComponent from "react-scroll-to-component";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./components/SocialIcons";
@@ -113,6 +118,7 @@ class App extends Component {
 					</nav>
 					<Switch>
 						<Route
+							exact
 							path="/"
 							render={(props) => (
 								<div>
@@ -147,10 +153,9 @@ class App extends Component {
 									</section>
 								</div>
 							)}
-							exact
 						/>
-						<Route path="/blogs/:name" component={Blog} />
-						<Route path="/categories/:name" component={Category} />
+						<Route  path="/blogs/:name" component={Blog} />
+						<Route  path="/categories/:name" component={Category} />
 					</Switch>
 					<section
 						className="footer"

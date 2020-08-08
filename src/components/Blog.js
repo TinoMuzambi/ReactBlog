@@ -11,8 +11,23 @@ class Blog extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: props.match.params.name,
+			name: props.match.params.name
 		};
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log('Received Props');
+		if (this.props.match.url !== nextProps.match.url) { // Check if the url is different
+			console.log('URL Changed');
+			return this.setState({
+				name: nextProps.match.params.name // Updates the name of the blog we are interested in.
+			})
+		} else {
+			this.setState({
+				name: this.props.match.params.name // Makes sure the name is the current blog's name.
+			})
+			console.log('URL Same');
+		}
 	}
 
 	render() {
@@ -24,6 +39,8 @@ class Blog extends Component {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
 			})
 			.slice(0, 3);
+
+		
 		return (
 			<>
 				<div className="container" id="blogs">
@@ -49,7 +66,7 @@ class Blog extends Component {
 									<div className="post-image">
 										<div>
 											<img
-												src={images[blog.id]}
+												src={image}
 												className="img"
 												alt={blog.alt}
 											/>
