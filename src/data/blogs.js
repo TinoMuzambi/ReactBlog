@@ -46,11 +46,9 @@ const blogs = [
 		is tiring, bad for your skin and ain’t nobody got time for that.<br>
 	</p>
 
-	<div className
-Name="post-image-in">
+	<div>
 		<div>
-			<img src=${images[7]} className
-Name="img" alt="time">
+			<img src=${images[7]} class="img" alt="time" style="width: 100%; object-fit: cover;">
 		</div>
 	</div>
 
@@ -171,11 +169,11 @@ Name="img" alt="time">
 		but it would be great if you did, cause I’ll be making quite a few references to it.
 	</p>
 
-	{<iframe className="cycling-sites" height="700" src="https://www.youtube.com/embed/qagP8gTp5QE"
+	<iframe class="cycling-sites" height="700" src="https://www.youtube.com/embed/qagP8gTp5QE"
 			frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen>
-	</iframe>}
+	</iframe>
 
 	<p>
 		So I’m gonna be running you through some of the tools I use to edit photos and videos both on my
@@ -185,9 +183,9 @@ Name="img" alt="time">
 	</p>
 	<h2>Hitfilm Express</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[8]} className="img" alt="Hitfilm Express">
+			<img src=${images[8]} class="img" alt="Hitfilm Express">
 		</div>
 	</div>
 
@@ -204,9 +202,9 @@ Name="img" alt="time">
 
 	<h2>Windows Video Editor</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[9]} className="img" alt="Windows Video Editor">
+			<img src=${images[9]} class="img" alt="Windows Video Editor">
 		</div>
 	</div>
 
@@ -222,9 +220,9 @@ Name="img" alt="time">
 
 	<h2>InShot</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[10]} className="img" alt="InShot">
+			<img src=${images[10]} class="img" alt="InShot">
 		</div>
 	</div>
 	<p>
@@ -236,9 +234,9 @@ Name="img" alt="time">
 
 	<h2>GIMP</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[11]} className="img" alt="GIMP">
+			<img src=${images[11]} class="img" alt="GIMP">
 		</div>
 	</div>
 	<p>
@@ -255,16 +253,16 @@ Name="img" alt="time">
 
 	<h2>PicsArt</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[12]} className="img" alt="PicsArt">
+			<img src=${images[12]} class="img" alt="PicsArt">
 		</div>
 	</div>
 
 	<p>
 		PicsArt is one of the best photo editors for mobile there is out there. It does a lot, here are a few:
 	</p>
-	<ul className="picsart-list">
+	<ul class="picsart-list">
 		<li>Cropping</li>
 		<li>Filters</li>
 		<li>Drawing on top of other pictures</li>
@@ -281,9 +279,9 @@ Name="img" alt="time">
 
 	<h2>Canva</h2>
 
-	<div className="post-image">
+	<div class="post-image">
 		<div>
-			<img src=${images[13]} className="img" alt="Canva">
+			<img src=${images[13]} class="img" alt="Canva">
 		</div>
 	</div>
 
@@ -362,22 +360,22 @@ Name="img" alt="time">
 		never heard of the genre, here are some fire songs you’ve gotta hear:<br><br>
 	</p>
 
-	<div className="youtube-items" style="display: grid; grid-template-columns: repeat(3, 1fr)">
-		<div className="youtube-item" style="padding-right: 10px">
+	<div class="youtube-items" style="display: grid; grid-template-columns: repeat(3, 1fr)">
+		<div class="youtube-item" style="padding-right: 10px">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/by2Tnwi180E"
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			<p>My favourite song period</p>
 		</div>
-		<div className="youtube-item" style="padding-right: 10px">
+		<div class="youtube-item" style="padding-right: 10px">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/5kbkVcN9G8g"
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			<p>This one will make you cry</p>
 		</div>
-		<div className="youtube-item">
+		<div class="youtube-item">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/-lbHwg2H4zc"
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

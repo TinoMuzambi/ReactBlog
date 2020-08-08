@@ -23,7 +23,12 @@ const SideBlog = ({ blogs, future }) => (
 							<i className="fas fa-calendar-alt text-gray">
 								<FaCalendar />
 							</i>
-							&nbsp;&nbsp;<Moment format="MMMM DD, YYYY">{blog.date}</Moment>
+							&nbsp;&nbsp;
+							{future ? (
+								"TBA"
+							) : (
+								<Moment format="MMMM DD, YYYY">{blog.date}</Moment>
+							)}
 						</span>
 					</div>
 				</div>

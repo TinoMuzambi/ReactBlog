@@ -34,7 +34,6 @@ class App extends Component {
 	toggleCollapse() {
 		const nav = document.querySelector("nav");
 		nav.toggleAttribute("collapse");
-		// alert("Yo");
 	}
 
 	render() {

@@ -174,10 +174,6 @@ h3 {
 	overflow: hidden;
 }
 
-.post-image-in {
-	width: 100%;
-}
-
 .site-content .post-content > .post-image .img {
 	width: 100%;
 	transition: all 1s ease;
@@ -233,7 +229,7 @@ h3 {
 .site-content .post-content blockquote {
 	text-indent: -0.45em;
 	font-size: 80px;
-	width: 100%;
+	width: 95%;
 	font-family: "Abel", serif;
 }
 @supports (hanging-punctuation: first) {
@@ -366,6 +362,7 @@ footer.footer .move-up {
 
 footer.footer .move-up span {
 	color: var(--midnight);
+	font-size: 30px;
 }
 
 footer.footer .move-up span:hover {
