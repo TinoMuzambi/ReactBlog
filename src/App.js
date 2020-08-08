@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	withRouter,
-	Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import scrollToComponent from "react-scroll-to-component";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./components/SocialIcons";

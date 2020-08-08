@@ -37,7 +37,11 @@ class Category extends Component {
 					<div class="site-content">
 						<div class="posts">
 							<h1>{category.name}</h1>
-							<Blogs blogs={filteredBlogs} category={true} />
+							{filteredBlogs.length > 0 ? (
+								<Blogs blogs={filteredBlogs} category={true} />
+							) : (
+								<h2>Nothing here yet...</h2>
+							)}
 						</div>
 						<Sidebar blogs={sideBlogs} future={false} />
 					</div>
