@@ -5,8 +5,8 @@ import SocialIcons from "./SocialIcons";
 import { Link } from "react-router-dom";
 
 const toggleCollapse = () => {
-	const nav = document.querySelector("nav");
-	nav.toggleAttribute("collapse");
+	const nav = document.querySelector(".nav");
+	nav.classList.toggle("collapse");
 };
 
 const Navbar = ({ root }) => (
