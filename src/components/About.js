@@ -1,11 +1,10 @@
 import React from "react";
-import Me from "../assets/blog-images/me.jpg";
 
 const About = () => (
 	<>
 		<section className="site-title">
 			<div className="site-background" data-aos="fade-up" data-aos-delay="100">
-				<img src={Me} alt="me" />
+				<img src={"/assets/blog-images/me.jpg"} alt="me" />
 				<h1>Tino Muzambi</h1>
 				<h2>
 					<s>Software Developer</s>&nbsp;Blogger

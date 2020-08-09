@@ -1,10 +1,4 @@
 import React from "react";
-import IG1 from "../assets/instagram/watch.JPG";
-import IG2 from "../assets/instagram/closed_rose.jpg";
-import IG3 from "../assets/instagram/sutherland.jpg";
-import IG4 from "../assets/instagram/me_sutherland.jpg";
-import IG5 from "../assets/instagram/me_selfie.jpg";
-import IG6 from "../assets/instagram/me_sprinting.JPG";
 import SocialIcons from "./SocialIcons";
 import { FaArrowCircleUp, FaCopyright } from "react-icons/fa";
 
@@ -31,14 +25,14 @@ const Footer = () => (
 						rel="noopener noreferrer"
 					>
 						<div className="flex-row">
-							<img src={IG1} alt="insta1" />
-							<img src={IG2} alt="insta2" />
-							<img src={IG3} alt="insta3" />
+							<img src={"/assets/instagram/watch.JPG"} alt="insta1" />
+							<img src={"/assets/instagram/closed_rose.jpg"} alt="insta2" />
+							<img src={"/assets/instagram/sutherland.jpg"} alt="insta3" />
 						</div>
 						<div className="flex-row">
-							<img src={IG4} alt="insta4" />
-							<img src={IG5} alt="insta5" />
-							<img src={IG6} alt="insta6" />
+							<img src={"/assets/instagram/me_sutherland.jpg"} alt="insta4" />
+							<img src={"/assets/instagram/me_selfie.jpg"} alt="insta5" />
+							<img src={"/assets/instagram/me_sprinting.JPG"} alt="insta6" />
 						</div>
 					</a>
 				</div>

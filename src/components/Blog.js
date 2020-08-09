@@ -4,7 +4,6 @@ import Sidebar from "./Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
 import Disqus from "./Disqus";
-import images from "./Images";
 import ReactHtmlParser from "react-html-parser";
 
 class Blog extends Component {
@@ -61,11 +60,7 @@ class Blog extends Component {
 									</h3>
 									<div className="post-image">
 										<div>
-											<img
-												src={images[blog.id]}
-												className="img"
-												alt={blog.alt}
-											/>
+											<img src={blog.image} className="img" alt={blog.alt} />
 										</div>
 									</div>
 								</div>

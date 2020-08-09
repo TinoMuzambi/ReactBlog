@@ -2,7 +2,6 @@ import React from "react";
 import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
-import images from "./Images";
 import ReactHtmlParser from "react-html-parser";
 
 const Blogs = ({ blogs, category }) => (
@@ -19,7 +18,7 @@ const Blogs = ({ blogs, category }) => (
 					<div className="post-image">
 						<div>
 							<Link to={`/blogs/${blog.url}`}>
-								<img src={images[blog.id]} className="img" alt="shower" />
+								<img src={blog.image} className="img" alt="shower" />
 							</Link>
 						</div>
 						<div className="post-info flex-row">

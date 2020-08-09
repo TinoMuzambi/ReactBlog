@@ -1,5 +1,4 @@
 import React from "react";
-import images from "./Images";
 import { FaCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -18,10 +17,10 @@ const SideBlog = ({ blogs, future }) => (
 				<div className="post-image">
 					<div>
 						{future ? (
-							<img src={images[blog.id]} className="img" alt={blog.alt} />
+							<img src={blog.image} className="img" alt={blog.alt} />
 						) : (
 							<Link to={`/blogs/${blog.url}`}>
-								<img src={images[blog.id]} className="img" alt={blog.alt} />{" "}
+								<img src={blog.image} className="img" alt={blog.alt} />{" "}
 							</Link>
 						)}
 					</div>

@@ -1,5 +1,3 @@
-import images from "../components/Images";
-
 const blogs = [
 	{
 		id: 0,
@@ -9,7 +7,7 @@ const blogs = [
 		date: "Monday 03 August 2020",
 		category: "Random",
 		readTime: "4 minutes",
-		image: `../assets/blog-images/shower_thoughts.jpg`,
+		image: `/assets/blog-images/shower_thoughts.jpg`,
 		alt: "shower",
 		content: `<p style="font-size: 1rem;">
 		I had a shower thought, about taking a shower. The thought intrigued me and I haven't stopped
@@ -45,7 +43,7 @@ const blogs = [
 
 	<div>
 		<div>
-			<img src=${images[7]} class="img" alt="time" style="width: 100%; object-fit: cover;">
+			<img src=${"/assets/blog-images/time.jpg"} class="img" alt="time" style="width: 100%; object-fit: cover;">
 		</div>
 	</div>
 
@@ -69,7 +67,7 @@ const blogs = [
 		date: "Thursday 16 July 2020",
 		category: "Random",
 		readTime: "5 minutes",
-		image: "../assets/blog-images/walls.jpg",
+		image: "/assets/blog-images/walls.jpg",
 		alt: "walls",
 		content: `<p style="font-size: 1rem;">
 		The year is 2014. I had just transitioned into high school and giant game company, Supercell’s
@@ -152,7 +150,7 @@ const blogs = [
 		date: "Wednesday 24 June 2020",
 		category: "Tech",
 		readTime: "35 minutes",
-		image: "../assets/blog-images/editing.PNG",
+		image: "/assets/blog-images/editing.PNG",
 		alt: "editing",
 		content: `<p style="font-size: 1rem;">
 		Before you even read this blog, you <strong>absolutely imperatively have to</strong> go watch
@@ -178,7 +176,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[8]} class="img" alt="Hitfilm Express">
+			<img src=${"/assets/blog-images/hitfilm.PNG"} class="img" alt="Hitfilm Express">
 		</div>
 	</div>
 
@@ -197,7 +195,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[9]} class="img" alt="Windows Video Editor">
+			<img src=${"/assets/blog-images/windows_editor.PNG"} class="img" alt="Windows Video Editor">
 		</div>
 	</div>
 
@@ -215,7 +213,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[10]} class="img" alt="InShot">
+			<img src=${"/assets/blog-images/inshot.jpg"} class="img" alt="InShot">
 		</div>
 	</div>
 	<p>
@@ -229,7 +227,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[11]} class="img" alt="GIMP">
+			<img src=${"/assets/blog-images/GIMP.PNG"} class="img" alt="GIMP">
 		</div>
 	</div>
 	<p>
@@ -248,7 +246,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[12]} class="img" alt="PicsArt">
+			<img src=${"/assets/blog-images/picsart.jpg"} class="img" alt="PicsArt">
 		</div>
 	</div>
 
@@ -274,7 +272,7 @@ const blogs = [
 
 	<div class="post-image">
 		<div>
-			<img src=${images[13]} class="img" alt="Canva">
+			<img src=${"/assets/blog-images/canva.PNG"} class="img" alt="Canva">
 		</div>
 	</div>
 
@@ -316,7 +314,7 @@ const blogs = [
 		date: "Tuesday 09 June 2020",
 		category: "Lifestyle",
 		readTime: "5 minutes",
-		image: "../assets/blog-images/me_crop.jpg",
+		image: "/assets/blog-images/me_crop.jpg",
 		alt: "me",
 		content: `<p style="font-size: 1rem;">
 		I was thinking about how much to divulge in this blog to let you sufficiently in on my life, but
@@ -420,7 +418,7 @@ const blogs = [
 		date: "Saturday 30 May 2020",
 		category: "Lifestyle",
 		readTime: "7 minutes",
-		image: "../assets/blog-images/voicenotes.png",
+		image: "/assets/blog-images/voicenotes.png",
 		alt: "voicenotes",
 		content: `<p style="font-size: 1rem;">
 		You probably think the image above is fake and I generated it with Photoshop or some app and
@@ -507,7 +505,7 @@ const blogs = [
 		date: "Very Soon",
 		category: "Tech",
 		readTime: "4 minutes",
-		image: "../assets/blog-images/dark_keyboard.jpg",
+		image: "/assets/blog-images/dark_keyboard.jpg",
 		alt: "keyboard",
 		content: ``,
 	},
@@ -519,7 +517,7 @@ const blogs = [
 		date: "Soon",
 		category: "Tech",
 		readTime: "5 minutes",
-		image: "../assets/blog-images/keyboard.jpg",
+		image: "/assets/blog-images/keyboard.jpg",
 		alt: "laptop",
 		content: ``,
 	},

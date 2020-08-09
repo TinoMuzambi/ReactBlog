@@ -90,7 +90,7 @@
 
 /* --------------- Site title ---------------- */
 .site-title {
-	background: url("./assets/background.jpg");
+	background: url("/assets/background.jpg");
 	background-size: cover;
 	height: 100vh;
 	display: flex;
@@ -314,7 +314,7 @@ h3 {
 footer.footer {
 	height: 100%;
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-		url("./assets/background.jpg");
+		url("/assets/background.jpg");
 	position: relative;
 }
 
