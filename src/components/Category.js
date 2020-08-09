@@ -12,6 +12,18 @@ class Category extends Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		if (this.props.match.url !== nextProps.match.url) {
+			return this.setState({
+				name: nextProps.match.params.name,
+			});
+		} else {
+			this.setState({
+				name: this.props.match.params.name,
+			});
+		}
+	}
+
 	render() {
 		const name = this.state.name;
 		const category = categories.find(

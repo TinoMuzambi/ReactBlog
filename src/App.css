@@ -93,7 +93,7 @@
 .site-title {
 	background: url("./assets/background.jpg");
 	background-size: cover;
-	height: 93vh;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 }
