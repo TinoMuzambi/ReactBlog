@@ -1,11 +1,11 @@
 import React from "react";
 import images from "./Images";
 import { FaCalendar } from "react-icons/fa";
-import { Link, withRouter} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Moment from "react-moment";
 
-const SideBlog = ({ blogs, future}) => (
+const SideBlog = ({ blogs, future }) => (
 	<>
 		<h2>{future ? "Future" : "Other"} Blogs</h2>
 		{blogs.map((blog, key) => (
@@ -42,13 +42,11 @@ const SideBlog = ({ blogs, future}) => (
 
 				<div className="post-title">
 					{future ? (
-						<h3 title="Coming at some point...">
+						<h3 className="side-future" title="Coming at some point...">
 							{blog.title}
 						</h3>
 					) : (
-						<Link to={`/blogs/${blog.url}`}>
-						{blog.title} 
-						</Link>
+						<Link to={`/blogs/${blog.url}`}>{blog.title}</Link>
 					)}
 				</div>
 			</div>

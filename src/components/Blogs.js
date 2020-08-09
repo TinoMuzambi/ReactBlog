@@ -34,7 +34,7 @@ const Blogs = ({ blogs, category }) => (
 									<FaCalendar />
 								</i>
 								&nbsp;&nbsp;
-								<Moment format="MMM DD, YYYY">{blog.date}</Moment>
+								<Moment format="MMMM DD, YYYY">{blog.date}</Moment>
 							</span>
 						</div>
 					</div>

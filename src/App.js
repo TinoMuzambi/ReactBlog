@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	Link,
-} from "react-router-dom";
-import scrollToComponent from "react-scroll-to-component";
-import { FaBars } from "react-icons/fa";
-import SocialIcons from "./components/SocialIcons";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Featured from "./components/Featured";
 import Blogs from "./components/Blogs";
@@ -22,18 +15,8 @@ import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.toggleCollapse = this.toggleCollapse.bind(this);
-	}
-
 	componentDidMount() {
 		AOS.init();
-	}
-
-	toggleCollapse() {
-		const nav = document.querySelector("nav");
-		nav.toggleAttribute("collapse");
 	}
 
 	render() {
@@ -47,75 +30,7 @@ class App extends Component {
 			<>
 				<Router>
 					<ScrollToTop />
-					<nav className="nav" id="nav">
-						<div className="nav-menu flex-row">
-							<div className="nav-brand">
-								<Link to="/" className="text-gray">
-									Blog.TinoMuzambi
-								</Link>
-							</div>
-							<div className="toggle-collapse">
-								<div className="toggle-icons">
-									<span className="fas fa-bars" onClick={this.toggleCollapse}>
-										<FaBars />
-									</span>
-								</div>
-							</div>
-							<div>
-								<ul className="nav-items">
-									<li
-										className="nav-link"
-										onClick={() =>
-											scrollToComponent(this.about, {
-												offset: 0,
-												align: "top",
-												duration: 1500,
-											})
-										}
-									>
-										Home
-									</li>
-									<li
-										className="nav-link"
-										onClick={() =>
-											scrollToComponent(this.featured, {
-												offset: 0,
-												align: "top",
-												duration: 1500,
-											})
-										}
-									>
-										Featured
-									</li>
-									<li
-										className="nav-link"
-										onClick={() =>
-											scrollToComponent(this.blogs, {
-												offset: 0,
-												align: "top",
-												duration: 1500,
-											})
-										}
-									>
-										Blogs
-									</li>
-									<li
-										className="nav-link"
-										onClick={() =>
-											scrollToComponent(this.footer, {
-												offset: 0,
-												align: "top",
-												duration: 1500,
-											})
-										}
-									>
-										Contact
-									</li>
-								</ul>
-							</div>
-							<SocialIcons />
-						</div>
-					</nav>
+					<Navbar root={this} />
 					<Switch>
 						<Route
 							exact
@@ -154,8 +69,8 @@ class App extends Component {
 								</div>
 							)}
 						/>
-						<Route  path="/blogs/:name" component={Blog} />
-						<Route  path="/categories/:name" component={Category} />
+						<Route path="/blogs/:name" component={Blog} />
+						<Route path="/categories/:name" component={Category} />
 					</Switch>
 					<section
 						className="footer"

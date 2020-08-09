@@ -11,7 +11,7 @@ class Featured extends Component {
 					<div
 						className="featured"
 						id="featured"
-						data-aos="fade-in"
+						data-aos="zoom-in-up"
 						data-aos-delay="200"
 					>
 						<h1 className="featured-title text-center">Featured Video</h1>
