@@ -4,7 +4,6 @@
 	background: white;
 	padding: 0 2rem;
 	height: 0;
-	min-height: 7vh;
 	overflow: hidden;
 	transition: height 1s ease-in-out;
 }
@@ -23,8 +22,10 @@
 }
 
 .nav .toggle-collapse .toggle-icons {
-	display: flex;
-	justify-content: flex-end;
+	display: inline-block;
+	position: absolute;
+	top: -0.3rem;
+	right: 0;
 	padding: 1.7rem 0;
 	outline: 0;
 }
@@ -52,8 +53,7 @@
 }
 
 .nav .nav-items .nav-link:hover {
-	background-color: var(--midnight);
-	min-height: 10vh;
+	color: var(--midnight);
 	transition: 0.5s;
 	cursor: pointer;
 }
@@ -64,7 +64,6 @@
 
 .nav .nav-brand {
 	outline: 0;
-	/* display: inline-block; */
 }
 
 .nav .nav-brand a {
