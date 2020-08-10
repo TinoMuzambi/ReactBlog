@@ -8,11 +8,17 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Blog from "./components/Blog";
 import Category from "./components/Category";
+import Preload from "./components/Preload";
 import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
 import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
+
+window.addEventListener("load", () => {
+	const preload = document.querySelector(".preload");
+	preload.classList.add("preload-finish");
+});
 
 class App extends Component {
 	componentDidMount() {
@@ -31,6 +37,7 @@ class App extends Component {
 			<>
 				<Router>
 					<ScrollToTop />
+					<Preload />
 					<Navbar root={this} />
 					<Switch>
 						<Route
