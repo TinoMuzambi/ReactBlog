@@ -9,10 +9,16 @@ class Category extends Component {
 		super(props);
 		this.state = {
 			name: props.match.params.name,
-			blogItems: props.blogs,
+			blogItems: blogs,
 			pageOfItems: [],
 		};
 	}
+
+	customStyles = {
+		ul: {
+			display: "inline-block",
+		},
+	};
 
 	componentDidMount() {
 		const nav = document.querySelector(".nav");
@@ -24,7 +30,7 @@ class Category extends Component {
 		nav.classList.remove("collapse");
 	}
 
-	UNSAFE_componentWillReceiveProps(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		if (this.props.match.url !== nextProps.match.url) {
 			return this.setState({
 				name: nextProps.match.params.name,
@@ -42,14 +48,14 @@ class Category extends Component {
 			(category) => category.name.toLowerCase() === name
 		);
 		document.title = category.name + " | Blog.TinoMuzambi";
-		const filteredBlogs = blogs
+		const filteredBlogs = this.state.blogItems
 			.filter((eachItem) => {
 				return eachItem["category"].toLowerCase().includes(name.toLowerCase());
 			})
 			.filter((eachItem) => {
 				return !eachItem["future"] === true;
 			});
-		const sideBlogs = blogs
+		const sideBlogs = this.state.blogItems
 			.filter((eachItem) => {
 				return !eachItem["category"].toLowerCase().includes(name.toLowerCase());
 			})

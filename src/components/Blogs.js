@@ -18,6 +18,10 @@ class Blogs extends Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({ pageOfItems: nextProps.blogs });
+	}
+
 	handlePageChange(pageOfItems) {
 		this.setState({ pageOfItems });
 		scrollToComponent(this.props.root.blogs, {
