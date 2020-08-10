@@ -27,7 +27,7 @@ class Featured extends Component {
 
 						<h2>{video.title}</h2>
 						<h3>
-							Updated on: <Moment format="MMM DD, YYYY">{video.date}</Moment>
+							Updated on <Moment format="MMM DD, YYYY">{video.date}</Moment>
 						</h3>
 						<p>{ReactHtmlParser(video.description)}</p>
 					</div>

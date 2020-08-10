@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Blog from "./components/Blog";
 import Category from "./components/Category";
 import Preload from "./components/Preload";
+import Search from "./components/Search";
 import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
@@ -21,6 +22,20 @@ window.addEventListener("load", () => {
 });
 
 class App extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			queryText: "",
+		};
+
+		this.searchBlogs = this.searchBlogs.bind(this);
+	}
+
+	searchBlogs(query) {
+		this.setState({ queryText: query });
+	}
+
 	componentDidMount() {
 		AOS.init();
 		document.title = "Blog.TinoMuzambi";
@@ -30,8 +45,23 @@ class App extends Component {
 		const filteredBlogs = blogs.filter((eachItem) => {
 			return eachItem["future"] === true;
 		});
-		const homeBlogs = blogs.filter((eachItem) => {
+
+		let homeBlogs = blogs.filter((eachItem) => {
 			return eachItem["future"] === false;
+		});
+
+		homeBlogs = homeBlogs.filter((eachItem) => {
+			return (
+				eachItem["title"]
+					.toLowerCase()
+					.includes(this.state.queryText.toLowerCase()) ||
+				eachItem["category"]
+					.toLowerCase()
+					.includes(this.state.queryText.toLowerCase()) ||
+				eachItem["content"]
+					.toLowerCase()
+					.includes(this.state.queryText.toLowerCase())
+			);
 		});
 		return (
 			<>
@@ -61,6 +91,9 @@ class App extends Component {
 									>
 										<Featured />
 									</section>
+									<div className="search-wrapper">
+										<Search searchBlogs={this.searchBlogs} />
+									</div>
 									<section className="container" id="blogs">
 										<div className="site-content">
 											<section

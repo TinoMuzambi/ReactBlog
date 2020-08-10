@@ -34,6 +34,7 @@ class Blogs extends Component {
 	customStyles = {
 		ul: {
 			display: "inline-block",
+			paddingBottom: "5rem",
 		},
 	};
 
