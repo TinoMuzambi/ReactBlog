@@ -127,4 +127,8 @@ img {
 	cursor: pointer;
 }
 
+.no-click {
+	pointer-events: none;
+}
+
 /* ------x------- Global Classes -------x-------*/
