@@ -529,6 +529,7 @@ footer.footer .move-up span:hover {
 	.site-content {
 		grid-template-columns: 100%;
 	}
+
 	.search-wrapper {
 		grid-template-columns: 100%;
 	}
@@ -568,6 +569,15 @@ footer.footer .move-up span:hover {
 		height: 160vh;
 	}
 
+	.search-wrapper {
+		/* float: right; */
+	}
+
+	.search-input {
+		margin-right: 3.2rem;
+		/* padding: 0.2rem; */
+	}
+
 	.site-content .post-content > .post-image .post-info {
 		display: none;
 	}
@@ -603,3 +613,13 @@ footer.footer .move-up span:hover {
 }
 
 /*        x      Viewport less then or equal to 520px       x     */
+
+/*              Viewport less then or equal to 320px            */
+
+@media only screen and (max-width: 320px) {
+	.search-input {
+		margin-right: 0.2rem;
+	}
+}
+
+/*        x      Viewport less then or equal to 320px       x     */

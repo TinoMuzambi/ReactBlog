@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
+import {
+	FaUser,
+	FaCalendar,
+	FaArrowRight,
+	FaChevronLeft,
+	FaChevronRight,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
@@ -36,6 +42,11 @@ class Blogs extends Component {
 			display: "inline-block",
 			paddingBottom: "5rem",
 		},
+	};
+
+	customLabels = {
+		previous: <FaChevronLeft />,
+		next: <FaChevronRight />,
 	};
 
 	render() {
@@ -99,6 +110,7 @@ class Blogs extends Component {
 							onChangePage={this.handlePageChange}
 							pageSize={4}
 							styles={this.customStyles}
+							labels={this.customLabels}
 						/>
 					</div>
 				</div>
