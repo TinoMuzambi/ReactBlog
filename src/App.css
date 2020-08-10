@@ -106,7 +106,6 @@
 
 .site-title .site-background {
 	padding-top: 10rem;
-	text-align: center;
 	color: var(--white);
 }
 
@@ -246,12 +245,6 @@ h3 {
 	quotes: "“" "”" "‘" "’";
 }
 
-.site-content .youtube-item p {
-	text-align: center;
-}
-.site-content .cycling-sites {
-	width: 100%;
-}
 .site-content .picsart-list {
 	font-family: var(--Lexend), "Verdana";
 	list-style: initial;
@@ -513,7 +506,6 @@ footer.footer .move-up span:hover {
 
 	footer .rights {
 		padding: 0 1.4rem;
-		text-align: center;
 	}
 
 	nav .toggle-collapse {

@@ -45,7 +45,6 @@ class Blog extends Component {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
 			})
 			.slice(0, 3);
-		// console.log(this.props.match.path);
 		return (
 			<>
 				<div className="container" id="blogs">

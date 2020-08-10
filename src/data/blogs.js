@@ -357,21 +357,21 @@ const blogs = [
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
-			<p>My favourite song period</p>
+			<p class="text-center">My favourite song period</p>
 		</div>
 		<div class="youtube-item" style="padding-right: 10px">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/5kbkVcN9G8g"
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
-			<p>This one will make you cry</p>
+			<p class="text-center">This one will make you cry</p>
 		</div>
 		<div class="youtube-item">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/-lbHwg2H4zc"
 					frameborder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
-			<p>You'll want headphones for this one</p>
+			<p class="text-center">You'll want headphones for this one</p>
 		</div>
 	</div>
 

@@ -45,7 +45,6 @@ class Navbar extends Component {
 											})
 										}
 									>
-										{" "}
 										Home
 									</li>
 								) : (

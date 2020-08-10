@@ -17,6 +17,13 @@ import ScrollToTop from "./components/ScrollToTop";
 class App extends Component {
 	componentDidMount() {
 		AOS.init();
+		document.title = "Blog.TinoMuzambi";
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.match.url !== prevProps.match.url) {
+			console.log("Route change!");
+		}
 	}
 
 	render() {
