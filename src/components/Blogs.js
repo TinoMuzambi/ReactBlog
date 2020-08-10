@@ -3,15 +3,31 @@ import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
-import Pagination from "react-js-pagination";
+import JwPagination from "jw-react-pagination";
 
 class Blogs extends Component {
+	constructor(props) {
+		super(props);
+
+		this.handlePageChange = this.handlePageChange.bind(this);
+
+		this.state = {
+			blogItems: props.blogs,
+			pageOfItems: [],
+		};
+	}
+
+	handlePageChange(pageOfItems) {
+		console.log("Updated page items");
+		this.setState({ pageOfItems });
+	}
+
 	render() {
 		return (
 			<>
 				<div className="posts">
 					{this.props.category ? "" : <h1>Blogs</h1>}
-					{this.props.blogs.map((blog, key) => (
+					{this.state.pageOfItems.map((blog, key) => (
 						<div
 							className="post-content"
 							data-aos="zoom-in"
@@ -61,6 +77,11 @@ class Blogs extends Component {
 							></hr>
 						</div>
 					))}
+					<JwPagination
+						items={this.state.blogItems}
+						onChangePage={this.handlePageChange}
+						pageSize={2}
+					/>
 				</div>
 			</>
 		);
