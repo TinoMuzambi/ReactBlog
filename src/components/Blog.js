@@ -14,6 +14,16 @@ class Blog extends Component {
 		};
 	}
 
+	componentDidMount() {
+		const nav = document.querySelector(".nav");
+		nav.classList.remove("collapse");
+	}
+
+	componentWillUnmount() {
+		const nav = document.querySelector(".nav");
+		nav.classList.remove("collapse");
+	}
+
 	componentWillReceiveProps(nextProps) {
 		if (this.props.match.url !== nextProps.match.url) {
 			return this.setState({

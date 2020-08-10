@@ -160,11 +160,13 @@ const blogs = [
 		but it would be great if you did, cause I’ll be making quite a few references to it.
 	</p><br><br/>
 
-	<iframe class="cycling-sites" height="700" src="https://www.youtube.com/embed/qagP8gTp5QE"
-			frameborder="0"
-			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen>
-	</iframe>
+	<div class="video-container">
+		<iframe class="video" src="https://www.youtube.com/embed/qagP8gTp5QE"
+				frameborder="0"
+				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen>
+		</iframe>
+	</div>
 
 	<p>
 		So I’m gonna be running you through some of the tools I use to edit photos and videos both on my
