@@ -48,9 +48,9 @@ class Navbar extends Component {
 										Home
 									</li>
 								) : (
-									<li className="nav-link">
-										<Link to="/">Home</Link>
-									</li>
+									<Link to="/">
+										<li className="nav-link">Home</li>
+									</Link>
 								)}
 								{location.pathname === "/" ? (
 									<li
