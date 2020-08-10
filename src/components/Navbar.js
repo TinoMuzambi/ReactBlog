@@ -5,10 +5,6 @@ import SocialIcons from "./SocialIcons";
 import { Link, withRouter } from "react-router-dom";
 
 class Navbar extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
-
 	toggleCollapse = () => {
 		const nav = document.querySelector(".nav");
 		nav.classList.toggle("collapse");
