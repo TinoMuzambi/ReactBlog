@@ -204,7 +204,6 @@ h3 {
 }
 
 .search-input {
-	position: relative;
 	border-radius: 0;
 	padding: 1rem;
 	float: right;
@@ -213,6 +212,10 @@ h3 {
 	font-family: var(--Lexend);
 	outline: none;
 	border: solid 2px black;
+}
+
+.search-input:hover {
+	border: solid 2px gray;
 }
 
 .site-content .post-content > .post-image,
