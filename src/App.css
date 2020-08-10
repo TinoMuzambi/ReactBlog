@@ -196,7 +196,7 @@ h3 {
 	width: 100%;
 }
 
-A.search-wrapper {
+.search-wrapper {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 70% 30%;
