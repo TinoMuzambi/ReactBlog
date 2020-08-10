@@ -20,12 +20,6 @@ class App extends Component {
 		document.title = "Blog.TinoMuzambi";
 	}
 
-	componentDidUpdate(prevProps) {
-		if (this.props.match.url !== prevProps.match.url) {
-			console.log("Route change!");
-		}
-	}
-
 	render() {
 		const filteredBlogs = blogs.filter((eachItem) => {
 			return eachItem["future"] === true;

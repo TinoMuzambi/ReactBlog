@@ -22,7 +22,7 @@ class Category extends Component {
 		nav.classList.remove("collapse");
 	}
 
-	componentWillReceiveProps(nextProps) {
+	UNSAFE_componentWillReceiveProps(nextProps) {
 		if (this.props.match.url !== nextProps.match.url) {
 			return this.setState({
 				name: nextProps.match.params.name,
