@@ -53,34 +53,38 @@ class Navbar extends Component {
 										<Link to="/">Home</Link>
 									</li>
 								)}
-								<li
-									className={
-										location.pathname === "/" ? "nav-link" : "nav-link no-click"
-									}
-									onClick={() =>
-										scrollToComponent(this.props.root.featured, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Featured
-								</li>
-								<li
-									className={
-										location.pathname === "/" ? "nav-link" : "nav-link no-click"
-									}
-									onClick={() =>
-										scrollToComponent(this.props.root.blogs, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Blogs
-								</li>
+								{location.pathname === "/" ? (
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.props.root.featured, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										Featured
+									</li>
+								) : (
+									""
+								)}
+								{location.pathname === "/" ? (
+									<li
+										className="nav-link"
+										onClick={() =>
+											scrollToComponent(this.props.root.blogs, {
+												offset: 0,
+												align: "top",
+												duration: 1500,
+											})
+										}
+									>
+										Blogs
+									</li>
+								) : (
+									""
+								)}
 								<li
 									className="nav-link"
 									onClick={() =>
@@ -91,7 +95,7 @@ class Navbar extends Component {
 										})
 									}
 								>
-									Contact
+									Socials
 								</li>
 							</ul>
 						</div>
