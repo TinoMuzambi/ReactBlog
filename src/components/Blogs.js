@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
 import JwPagination from "jw-react-pagination";
+import scrollToComponent from "react-scroll-to-component";
 
 class Blogs extends Component {
 	constructor(props) {
@@ -18,9 +19,19 @@ class Blogs extends Component {
 	}
 
 	handlePageChange(pageOfItems) {
-		console.log("Updated page items");
 		this.setState({ pageOfItems });
+		scrollToComponent(this.props.root.blogs, {
+			offset: 0,
+			align: "top",
+			duration: 1500,
+		});
 	}
+
+	customStyles = {
+		ul: {
+			display: "inline-block",
+		},
+	};
 
 	render() {
 		return (
@@ -77,11 +88,14 @@ class Blogs extends Component {
 							></hr>
 						</div>
 					))}
-					<JwPagination
-						items={this.state.blogItems}
-						onChangePage={this.handlePageChange}
-						pageSize={2}
-					/>
+					<div className="text-center">
+						<JwPagination
+							items={this.state.blogItems}
+							onChangePage={this.handlePageChange}
+							pageSize={4}
+							styles={this.customStyles}
+						/>
+					</div>
 				</div>
 			</>
 		);

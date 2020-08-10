@@ -62,7 +62,7 @@ class App extends Component {
 													this.blogs = section;
 												}}
 											>
-												<Blogs blogs={homeBlogs} category={false} />
+												<Blogs blogs={homeBlogs} category={false} root={this} />
 											</section>
 											<Sidebar blogs={filteredBlogs} future={true} />
 										</div>

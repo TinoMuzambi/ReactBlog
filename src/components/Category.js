@@ -9,6 +9,8 @@ class Category extends Component {
 		super(props);
 		this.state = {
 			name: props.match.params.name,
+			blogItems: props.blogs,
+			pageOfItems: [],
 		};
 	}
 
@@ -60,7 +62,7 @@ class Category extends Component {
 						<div class="posts">
 							<h1>{category.name}</h1>
 							{filteredBlogs.length > 0 ? (
-								<Blogs blogs={filteredBlogs} category={true} />
+								<Blogs blogs={filteredBlogs} category={true} root={this} />
 							) : (
 								<h2>Nothing here yet...</h2>
 							)}
