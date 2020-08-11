@@ -6,12 +6,13 @@ import { Link, withRouter } from "react-router-dom";
 
 class Navbar extends Component {
 	toggleCollapse = () => {
+		// Toggle collapse class on navbar.
 		const nav = document.querySelector(".nav");
 		nav.classList.toggle("collapse");
 	};
 
 	render() {
-		const { location } = this.props;
+		const { location } = this.props; // Destructuring location from props.
 		return (
 			<>
 				<nav className="nav" id="nav">
@@ -30,6 +31,7 @@ class Navbar extends Component {
 						</div>
 						<div>
 							<ul className="nav-items">
+								{/* Either scroll or go home depending on location. */}
 								{location.pathname === "/" ? (
 									<li
 										className="nav-link"
@@ -48,6 +50,7 @@ class Navbar extends Component {
 										<li className="nav-link">Home</li>
 									</Link>
 								)}
+								{/* Conditionally render element based on location */}
 								{location.pathname === "/" ? (
 									<li
 										className="nav-link"
@@ -64,6 +67,7 @@ class Navbar extends Component {
 								) : (
 									""
 								)}
+								{/* Conditionally render element based on location */}
 								{location.pathname === "/" ? (
 									<li
 										className="nav-link"
@@ -94,7 +98,7 @@ class Navbar extends Component {
 								</li>
 							</ul>
 						</div>
-						<SocialIcons />
+						<SocialIcons /> {/* Social Icons section */}
 					</div>
 				</nav>
 			</>

@@ -16,35 +16,32 @@ class Blogs extends Component {
 	constructor(props) {
 		super(props);
 
-		this.handlePageChange = this.handlePageChange.bind(this);
+		this.handlePageChange = this.handlePageChange.bind(this); // Binding handlePageChange method.
 
 		this.state = {
-			blogItems: props.blogs,
-			pageOfItems: [],
+			blogItems: props.blogs, // Set state to list of blogs.
+			displayBlogs: [], // Blogs currently being displayed.
 		};
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({ pageOfItems: nextProps.blogs });
+		// Ensure blog content changes when url changes.
+		this.setState({ displayBlogs: nextProps.blogs });
 	}
 
-	handlePageChange(pageOfItems) {
-		this.setState({ pageOfItems });
+	handlePageChange(displayBlogs) {
+		// Handing pagination page changes.
+		this.setState({ displayBlogs });
 		scrollToComponent(this.props.root.blogs, {
+			// Scroll to top of blogs section.
 			offset: 0,
 			align: "top",
 			duration: 1500,
 		});
 	}
 
-	customStyles = {
-		ul: {
-			display: "inline-block",
-			paddingBottom: "5rem",
-		},
-	};
-
 	customLabels = {
+		// Custom labels for pagination.
 		previous: <FaChevronLeft />,
 		next: <FaChevronRight />,
 	};
@@ -53,8 +50,9 @@ class Blogs extends Component {
 		return (
 			<>
 				<div className="posts">
-					{this.props.category ? "" : <h1>Blogs</h1>}
-					{this.state.pageOfItems.map((blog, key) => (
+					{this.props.category ? "" : <h1>Blogs</h1>}{" "}
+					{/* Conditionally render element. */}
+					{this.state.displayBlogs.map((blog, key) => (
 						<div
 							className="post-content"
 							data-aos="zoom-in"
@@ -88,7 +86,8 @@ class Blogs extends Component {
 									{blog.title}
 									{ReactHtmlParser(
 										blog.content.slice(0, blog.content.indexOf("<br>")) + "</p>"
-									)}
+									)}{" "}
+									{/* Parse first paragraph of HTML blog content. */}
 									<button className="btn post-btn">
 										Read More &nbsp;{" "}
 										<i className="fas fa-arrow-right">
@@ -101,10 +100,13 @@ class Blogs extends Component {
 								className={`${
 									key === this.props.blogs.length - 1 ? "is-hidden" : ""
 								}`}
-							></hr>
+							></hr>{" "}
+							{/* Conditionally render element */}
 						</div>
 					))}
 					<div className="text-center">
+						{" "}
+						{/* Pagination element */}
 						<JwPagination
 							items={this.state.blogItems}
 							onChangePage={this.handlePageChange}

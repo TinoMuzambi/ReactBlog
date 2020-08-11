@@ -17,6 +17,7 @@ import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 window.addEventListener("load", () => {
+	// Get rid of preloader once everything's loaded
 	const preload = document.querySelector(".preload");
 	preload.classList.add("preload-finish");
 });
@@ -26,39 +27,43 @@ class App extends Component {
 		super();
 
 		this.state = {
-			queryText: "",
+			queryText: "", // Query text for searching.
 		};
 
-		this.searchBlogs = this.searchBlogs.bind(this);
+		this.searchBlogs = this.searchBlogs.bind(this); // Binding search method.
 	}
 
 	searchBlogs(query) {
+		// Search by updating queryText state.
 		this.setState({ queryText: query });
 	}
 
 	componentDidMount() {
-		AOS.init();
+		AOS.init(); // Initialise animate on scroll library.
 		document.title = "Blog.TinoMuzambi";
 	}
 
 	render() {
 		const filteredBlogs = blogs.filter((eachItem) => {
+			// Only get future blogs for sidebar.
 			return eachItem["future"] === true;
 		});
 
 		let homeBlogs = blogs.filter((eachItem) => {
+			// Only get published blogs for main content.
 			return eachItem["future"] === false;
 		});
 
 		homeBlogs = homeBlogs.filter((eachItem) => {
+			// Only display blogs matching search.
 			return (
-				eachItem["title"]
+				eachItem["title"] // Search in title.
 					.toLowerCase()
 					.includes(this.state.queryText.toLowerCase()) ||
-				eachItem["category"]
+				eachItem["category"] // Search in category.
 					.toLowerCase()
 					.includes(this.state.queryText.toLowerCase()) ||
-				eachItem["content"]
+				eachItem["content"] // Search in content.
 					.toLowerCase()
 					.includes(this.state.queryText.toLowerCase())
 			);
@@ -66,9 +71,10 @@ class App extends Component {
 		return (
 			<>
 				<Router>
-					<ScrollToTop />
-					<Preload />
-					<Navbar root={this} />
+					<ScrollToTop /> {/* Scroll to top on page load. */}
+					<Preload /> {/* Preloader for showing before page loads. */}
+					<Navbar root={this} />{" "}
+					{/* Navbar - gets ref to this for scrolling to anchors. */}
 					<Switch>
 						<Route
 							exact
@@ -81,7 +87,7 @@ class App extends Component {
 											this.about = section;
 										}}
 									>
-										<About />
+										<About /> {/* About section */}
 									</section>
 									<section
 										className="featured"
@@ -89,10 +95,10 @@ class App extends Component {
 											this.featured = section;
 										}}
 									>
-										<Featured />
+										<Featured /> {/* Featured section */}
 									</section>
 									<div className="search-wrapper">
-										<Search searchBlogs={this.searchBlogs} />
+										<Search searchBlogs={this.searchBlogs} /> {/* Search box */}
 									</div>
 									<section className="container" id="blogs">
 										<div className="site-content">
@@ -102,16 +108,22 @@ class App extends Component {
 													this.blogs = section;
 												}}
 											>
-												<Blogs blogs={homeBlogs} category={false} root={this} />
+												<Blogs blogs={homeBlogs} category={false} root={this} />{" "}
+												{/* Blogs section - pass list of blogs, false for category
+												and ref to this for scrolling to anchors */}
 											</section>
-											<Sidebar blogs={filteredBlogs} future={true} />
+											<Sidebar blogs={filteredBlogs} future={true} />{" "}
+											{/* Sidebar section - pass list of blogs, true for future to signal
+											showing future blogs.*/}
 										</div>
 									</section>
 								</div>
 							)}
 						/>
-						<Route path="/blogs/:name" component={Blog} />
-						<Route path="/categories/:name" component={Category} />
+						<Route path="/blogs/:name" component={Blog} />{" "}
+						{/* Blog route for displaying blog content. */}
+						<Route path="/categories/:name" component={Category} />{" "}
+						{/* Category route for displaying per category blogs. */}
 					</Switch>
 					<section
 						className="footer"
@@ -119,7 +131,7 @@ class App extends Component {
 							this.footer = section;
 						}}
 					>
-						<Footer />
+						<Footer /> {/* Footer section */}
 					</section>
 				</Router>
 			</>

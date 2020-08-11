@@ -3,6 +3,7 @@ import SocialIcons from "./SocialIcons";
 import { FaArrowCircleUp, FaCopyright } from "react-icons/fa";
 
 const scrollTop = () => {
+	// Scroll to top handler.
 	window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
@@ -38,16 +39,16 @@ const Footer = () => (
 				</div>
 				<div className="follow" data-aos="fade-left" data-aos-delay="200">
 					<h2>Follow me</h2>
-					<p>Hit Me Up</p>
-					<SocialIcons />
+					<p>Find Me Here</p>
+					<SocialIcons /> {/* Social Icons section */}
 				</div>
 			</div>
 			<div className="rights flex-row text-center">
 				<h4 className="text-gray">
-					Made with HTML, CSS & JS.{" "}
+					Made with HTML, CSS & JS.
 					<i className="fas fa-copyright">
 						<FaCopyright />
-					</i>{" "}
+					</i>
 					Copyright Tino Muzambi 2020
 				</h4>
 			</div>

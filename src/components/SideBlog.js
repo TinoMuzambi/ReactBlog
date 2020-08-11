@@ -6,7 +6,8 @@ import Moment from "react-moment";
 
 const SideBlog = ({ blogs, future }) => (
 	<>
-		<h2>{future ? "Future" : "Other"} Blogs</h2>
+		<h2>{future ? "Future" : "Other"} Blogs</h2>{" "}
+		{/* Either show future or other. */}
 		{blogs.map((blog, key) => (
 			<div
 				className="post-content"
@@ -16,6 +17,7 @@ const SideBlog = ({ blogs, future }) => (
 			>
 				<div className="post-image">
 					<div>
+						{/* If future just show image, else show image with link to that blog. */}
 						{future ? (
 							<img src={blog.image} className="img" alt={blog.alt} />
 						) : (
@@ -30,6 +32,7 @@ const SideBlog = ({ blogs, future }) => (
 								<FaCalendar />
 							</i>
 							&nbsp;&nbsp;
+							{/* If future, show TBA for date, else show published date.*/}
 							{future ? (
 								"TBA"
 							) : (
@@ -40,6 +43,7 @@ const SideBlog = ({ blogs, future }) => (
 				</div>
 
 				<div className="post-title">
+					{/* If future show title with future tag, else show link to that blog. */}
 					{future ? (
 						<h3 className="side-future" title="Coming at some point...">
 							{blog.title}

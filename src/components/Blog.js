@@ -10,21 +10,22 @@ class Blog extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: props.match.params.name,
+			name: props.match.params.name, // Getting name from props to find right blog to display.
 		};
 	}
 
 	componentDidMount() {
-		const nav = document.querySelector(".nav");
+		const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
 		nav.classList.remove("collapse");
 	}
 
 	componentWillUnmount() {
-		const nav = document.querySelector(".nav");
+		const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
 		nav.classList.remove("collapse");
 	}
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
+		// Ensure blog content changes when url changes.
 		if (this.props.match.url !== nextProps.match.url) {
 			return this.setState({
 				name: nextProps.match.params.name,
@@ -37,10 +38,10 @@ class Blog extends Component {
 	}
 
 	render() {
-		const title = this.state.name;
+		const title = this.state.name; // Finding relevant blog.
 		const blog = blogs.find((blog) => blog.url === title);
-		document.title = blog.title + " | Blog.TinoMuzambi";
-		const filteredBlogs = blogs
+		document.title = blog.title + " | Blog.TinoMuzambi"; // Update document title to reflect blog.
+		const filteredBlogs = blogs // Getting list that doesn't include current blog for other blogs section.
 			.filter((eachItem) => {
 				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
 			})
@@ -73,7 +74,8 @@ class Blog extends Component {
 										</div>
 									</div>
 								</div>
-								<div className="blog-html">{ReactHtmlParser(blog.content)}</div>
+								<div className="blog-html">{ReactHtmlParser(blog.content)}</div>{" "}
+								{/* Parsing HTML blog content */}
 							</div>
 
 							{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
@@ -87,7 +89,8 @@ class Blog extends Component {
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
-						<Sidebar blogs={filteredBlogs} future={false} />
+						<Sidebar blogs={filteredBlogs} future={false} />{" "}
+						{/* Sidebar section populated with links to other blogs. */}
 					</div>
 				</div>
 			</>

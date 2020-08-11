@@ -6,10 +6,10 @@ const Sidebar = ({ blogs, future }) => (
 	<>
 		<aside className="sidebar">
 			<div className="category">
-				<Categories />
+				<Categories /> {/* Categories section. */}
 			</div>
 			<div className="other-posts">
-				<SideBlog blogs={blogs} future={future} />
+				<SideBlog blogs={blogs} future={future} /> {/* Sidebar section. */}
 			</div>
 		</aside>
 	</>

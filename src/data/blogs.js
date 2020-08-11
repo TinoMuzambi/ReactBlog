@@ -57,7 +57,6 @@ const blogs = [
 		disqusIdentifier: "tino_shower_thoughts0",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
 		disqusShortname: "blogtinomuzambi",
-		lastPublished: false,
 	},
 	{
 		id: 1,
@@ -140,7 +139,6 @@ const blogs = [
 		disqusIdentifier: "upgrade_your_walls_tino",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
 		disqusShortname: "blogtinomuzambi",
-		lastPublished: false,
 	},
 	{
 		id: 2,
@@ -306,7 +304,6 @@ const blogs = [
 		disqusIdentifier: "tino_photo_video_edits",
 		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
 		disqusShortname: "blogtinomuzambi",
-		lastPublished: false,
 	},
 	{
 		id: 3,
@@ -410,7 +407,6 @@ const blogs = [
 		disqusIdentifier: "tino_about_me",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
 		disqusShortname: "tinomuzambi",
-		lastPublished: false,
 	},
 	{
 		id: 4,
@@ -497,7 +493,6 @@ const blogs = [
 		disqusIdentifier: "tinomuzambi",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
 		disqusShortname: "tinomuzambi",
-		lastPublished: true,
 	},
 	{
 		id: 5,
