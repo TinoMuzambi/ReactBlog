@@ -10,6 +10,7 @@ import Blog from "./components/Blog";
 import Category from "./components/Category";
 import Preload from "./components/Preload";
 import Search from "./components/Search";
+import NotFoundPage from "./components/NotFoundPage";
 import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
@@ -124,6 +125,7 @@ class App extends Component {
 						{/* Blog route for displaying blog content. */}
 						<Route path="/categories/:name" component={Category} />{" "}
 						{/* Category route for displaying per category blogs. */}
+						<Route component={NotFoundPage} />
 					</Switch>
 					<section
 						className="footer"

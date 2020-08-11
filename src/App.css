@@ -279,11 +279,6 @@ h3 {
 	font-family: var(--Lexend);
 }
 
-.inactive-link {
-	pointer-events: none;
-	cursor: default;
-}
-
 .site-content .pagination .pages {
 	background: var(--text-gray);
 	color: var(--white);
@@ -314,10 +309,6 @@ h3 {
 	font-family: var(--Lexend), "Verdana";
 	list-style: initial;
 	color: gray;
-}
-
-.pagination {
-	margin: 0 auto;
 }
 
 /* -------x-------- Site Content --------x-------*/
@@ -437,6 +428,29 @@ footer.footer .move-up span:hover {
 }
 
 /* ---------x------- Footer ----------x---------- */
+
+/* ----------------- 404 --------------------- */
+
+.not-found-page {
+	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.not-found-title {
+	color: white;
+}
+
+.not-found-subtitle {
+	text-decoration: underline;
+	color: rgb(190, 190, 190);
+}
+
+/* ---------x------- 404 ----------x---------- */
 
 /*              Viewport less then or equal to 2560px            */
 
@@ -569,13 +583,8 @@ footer.footer .move-up span:hover {
 		height: 160vh;
 	}
 
-	.search-wrapper {
-		/* float: right; */
-	}
-
 	.search-input {
 		margin-right: 3.2rem;
-		/* padding: 0.2rem; */
 	}
 
 	.site-content .post-content > .post-image .post-info {
