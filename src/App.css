@@ -375,11 +375,15 @@ h3 {
 	color: var(--white);
 }
 
+.page-holder {
+	padding: 20px 0;
+}
+
 .site-content .post-content blockquote {
 	text-indent: -0.45em;
 	font-size: 80px;
 	width: 95%;
-	font-family: "Abel", serif;
+	font-family: var(--Abel);
 }
 @supports (hanging-punctuation: first) {
 	.site-content .post-content blockquote {
@@ -397,7 +401,7 @@ h3 {
 }
 
 .site-content .picsart-list {
-	font-family: var(--Lexend), "Verdana";
+	font-family: var(--Lexend);
 	list-style: initial;
 	color: gray;
 }

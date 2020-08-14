@@ -104,8 +104,7 @@ class Blogs extends Component {
 							{/* Conditionally render element */}
 						</div>
 					))}
-					<div className="text-center">
-						{" "}
+					<div className="page-holder text-center">
 						{/* Pagination element */}
 						<JwPagination
 							items={this.state.blogItems}

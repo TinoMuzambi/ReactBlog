@@ -80,7 +80,7 @@ class App extends Component {
 				<Router>
 					<ScrollToTop /> {/* Scroll to top on page load. */}
 					<Preload /> {/* Preloader for showing before page loads. */}
-					<Navbar root={this} />{" "}
+					<Navbar root={this} />
 					{/* Navbar - gets ref to this for scrolling to anchors. */}
 					<Switch>
 						<Route
