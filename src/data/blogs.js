@@ -313,7 +313,7 @@ const blogs = [
 		date: "Tuesday 09 June 2020",
 		category: "Lifestyle",
 		readTime: "5 minutes",
-		image: "/assets/blog-images/me_crop.jpg",
+		image: "/assets/blog-images/me.jpg",
 		alt: "me",
 		content: `<p style="font-size: 1rem;">
 		I was thinking about how much to divulge in this blog to let you sufficiently in on my life, but
