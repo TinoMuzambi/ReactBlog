@@ -507,18 +507,20 @@ footer.footer .rights h4 a {
 }
 
 footer.footer .move-up {
-	position: absolute;
-	right: 6%;
-	top: 50%;
+	position: fixed;
+	bottom: 5%;
+	right: 1%;
+	opacity: 0.3;
+	z-index: 0;
 }
 
 footer.footer .move-up span {
-	color: var(--midnight);
-	font-size: 30px;
+	color: skyblue;
+	font-size: 50px;
 }
 
 footer.footer .move-up span:hover {
-	color: var(--white);
+	color: var(--midnight);
 	cursor: pointer;
 }
 
