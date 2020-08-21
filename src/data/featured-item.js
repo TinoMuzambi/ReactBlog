@@ -1,7 +1,7 @@
 const item = {
-	title: "The Road to Restoration (Official Trailer) | Aug. 14, 2020",
-	date: "Friday 14 August 2020",
-	url: "https://www.youtube.com/embed/DNL8SEZQpHE",
-	description: `<i>Restoration</i> is coming. August 21st.`,
+	title: "Lecrae - Nothing Left To Hide feat. Gwen Bunn (Official Lyric Video)",
+	date: "Friday 21 August 2020",
+	url: "https://www.youtube.com/watch?v=gjMh2BrcRTk",
+	description: `<i>Restoration</i> is here.`,
 };
 export default item;
