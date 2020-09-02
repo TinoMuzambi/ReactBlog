@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import blogs from "../data/blogs";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
-import Disqus from "./Disqus";
+import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
 
 class Blog extends Component {

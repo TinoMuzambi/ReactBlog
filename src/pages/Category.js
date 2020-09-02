@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import categories from "../data/categories";
 import blogs from "../data/blogs";
 import Blogs from "./Blogs";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 
 class Category extends Component {
 	constructor(props) {
