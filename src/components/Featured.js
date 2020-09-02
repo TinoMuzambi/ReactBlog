@@ -15,7 +15,7 @@ class Featured extends Component {
 						data-aos="zoom-in-up"
 						data-aos-delay="200"
 					>
-						<h1 className="featured-title text-center">Featured item</h1>
+						<h1 className="featured-title text-center">Featured Item</h1>
 						<div className="item-container">
 							<ReactPlayer
 								url={item.url}
