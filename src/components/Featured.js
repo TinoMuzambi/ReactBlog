@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Iframe from "react-iframe";
+import ReactPlayer from "react-player/youtube";
 import item from "../data/featured-item";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
@@ -17,7 +17,14 @@ class Featured extends Component {
 					>
 						<h1 className="featured-title text-center">Featured item</h1>
 						<div className="item-container">
-							<Iframe url={item.url} id={0} className="item" allowFullScreen />
+							<ReactPlayer
+								url={item.url}
+								id={0}
+								className="item"
+								width="100%"
+								height="100%"
+								controls="true"
+							/>
 						</div>
 						<h2>{item.title}</h2>
 						<h3>

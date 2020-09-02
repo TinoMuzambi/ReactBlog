@@ -1,7 +1,7 @@
 const item = {
-	title: "Lecrae - Nothing Left To Hide feat. Gwen Bunn (Official Lyric Video)",
-	date: "Friday 21 August 2020",
-	url: "https://www.youtube.com/embed/gjMh2BrcRTk",
-	description: `<i>Restoration</i> is here.`,
+	title: "Best Friends (Live) | Hillsong Young & Free",
+	date: "Wednesday 02 September 2020",
+	url: "https://www.youtube.com/watch?v=EuasXoRa45M",
+	description: `All of my best friends are sick of pretending.`,
 };
 export default item;
