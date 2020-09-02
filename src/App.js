@@ -88,6 +88,7 @@ class App extends Component {
 							path="/"
 							render={(props) => (
 								<div>
+									{(document.title = "Blog.TinoMuzambi")}
 									<section
 										className="about"
 										ref={(section) => {
