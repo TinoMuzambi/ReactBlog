@@ -349,6 +349,8 @@
   display: grid;
   -ms-grid-columns: 70% 30%;
       grid-template-columns: 70% 30%;
+  /* --------------- Sidebar ----------------------- */
+  /* -------x------- Sidebar -----------x----------- */
 }
 
 .site-content .post-content {
@@ -452,12 +454,6 @@
   color: gray;
 }
 
-.page-holder {
-  padding: 20px 0;
-}
-
-/* -------x-------- Site Content --------x-------*/
-/* --------------- Sidebar ----------------------- */
 .site-content > .sidebar .category-list {
   font-family: var(--Livvic), "Verdana";
 }
@@ -480,15 +476,15 @@
   color: black;
 }
 
-.site-content .sidebar .other-posts .post-content {
+.site-content > .sidebar .other-posts .post-content {
   padding: 1rem 0;
 }
 
-.site-content .sidebar .other-posts h2 {
+.site-content > .sidebar .other-posts h2 {
   padding-top: 8rem;
 }
 
-.site-content .sidebar .other-posts .post-info {
+.site-content > .sidebar .other-posts .post-info {
   padding: 0.4rem 0.1rem !important;
   bottom: 0 !important;
   left: 1.5rem !important;
@@ -496,18 +492,22 @@
   background: white !important;
 }
 
-.site-content .sidebar .other-posts .post-title a {
+.site-content > .sidebar .other-posts .post-title a {
   font-size: 1rem;
 }
 
-.side-future {
+.site-content > .sidebar .other-posts .post-title .side-future {
   font-family: var(--Anton);
   font-weight: 100;
   font-size: 1rem;
   color: var(--text-gray);
 }
 
-/* -------x------- Sidebar -----------x----------- */
+.page-holder {
+  padding: 20px 0;
+}
+
+/* -------x-------- Site Content --------x-------*/
 /* ----------------- Footer --------------------- */
 footer.footer {
   height: 100%;
