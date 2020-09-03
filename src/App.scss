@@ -691,47 +691,62 @@ footer {
 @media only screen and (max-width: 520px) {
 	.nav {
 		min-height: 6.5vh;
+
+		.toggle-collapse {
+			width: 80% !important;
+
+			.toggle-icons {
+				margin: -0.7rem;
+			}
+		}
+
+		.nav-items .nav-link {
+			&:hover {
+				background-color: transparent !important;
+				text-decoration: none !important;
+
+				a {
+					color: var(--midnight) !important;
+				}
+			}
+		}
 	}
 
 	.blog {
 		height: 160vh;
 	}
 
-	.search-input {
-		margin-right: 3.2rem;
+	.search-wrapper {
+		.search-input {
+			margin-right: 3.2rem;
+		}
 	}
 
-	.site-content .post-content > .post-image .post-info {
-		display: none;
+	.site-content {
+		.post-content {
+			& > .post-image .post-info {
+				display: none;
+			}
+
+			blockquote {
+				font-size: 60px;
+				margin-left: 1rem;
+			}
+		}
+
+		.cycling-sites {
+			height: 215px;
+		}
 	}
 
-	footer .container > div {
-		padding: 1rem 0.9rem !important;
-	}
+	footer {
+		.container > div {
+			padding: 1rem 0.9rem !important;
+		}
 
-	footer .rights {
-		padding: 0 1.4rem;
-	}
-
-	nav .toggle-collapse {
-		width: 80% !important;
-	}
-
-	nav .toggle-collapse .toggle-icons {
-		margin: -0.7rem;
-	}
-
-	.nav .nav-items .nav-link:hover {
-		background-color: transparent !important;
-		text-decoration: none !important;
-	}
-
-	.nav .nav-items .nav-link:hover a {
-		color: var(--midnight) !important;
-	}
-
-	.site-content .cycling-sites {
-		height: 215px;
+		.rights {
+			padding: 0 1.4rem;
+		}
 	}
 }
 
@@ -740,8 +755,23 @@ footer {
 /*              Viewport less then or equal to 320px            */
 
 @media only screen and (max-width: 320px) {
-	.search-input {
-		margin-right: 0.2rem;
+	.site-content {
+		.posts h1 {
+			font-size: 1.5rem;
+		}
+
+		.post-content {
+			blockquote {
+				font-size: 40px;
+			}
+		}
+	}
+
+	.search-wrapper {
+		.search-input {
+			padding: 0.5rem;
+			margin: 1.5rem 3rem 0 0;
+		}
 	}
 }
 
