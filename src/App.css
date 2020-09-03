@@ -509,21 +509,21 @@
 
 /* -------x-------- Site Content --------x-------*/
 /* ----------------- Footer --------------------- */
-footer.footer {
+footer {
   height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("/assets/background.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/assets/background.jpg");
   position: relative;
 }
 
-footer.footer .container {
+footer .container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
 
-footer.footer .container > div {
+footer .container > div {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -532,38 +532,38 @@ footer.footer .container > div {
   padding: 3rem 0.9rem;
 }
 
-footer.footer .container h2 {
+footer .container h2 {
   color: var(--white);
 }
 
-footer.footer .instagram div > img {
+footer .instagram div > img {
   display: inline-block;
   width: 25%;
   height: 50%;
   margin: 0.3rem 0.4rem;
 }
 
-footer.footer .follow div span {
+footer .follow div span {
   color: var(--white);
   padding: 0 0.4rem;
 }
 
-footer.footer .follow div span:hover {
+footer .follow div span:hover {
   color: #a1c4cf;
 }
 
-footer.footer .rights {
+footer .rights {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: var(--Josefin), "Verdana";
+  font-family: var(--Josefin);
 }
 
-footer.footer .rights h4 a {
+footer .rights h4 a {
   color: var(--white);
 }
 
-footer.footer .move-up {
+footer .move-up {
   position: fixed;
   bottom: 5%;
   right: 1%;
@@ -571,12 +571,12 @@ footer.footer .move-up {
   z-index: 0;
 }
 
-footer.footer .move-up span {
+footer .move-up span {
   color: skyblue;
   font-size: 50px;
 }
 
-footer.footer .move-up span:hover {
+footer .move-up span:hover {
   color: var(--midnight);
   cursor: pointer;
 }
@@ -654,7 +654,7 @@ footer.footer .move-up span:hover {
   .site-content .sidebar .other-posts .post-info {
     display: none !important;
   }
-  footer.footer .container {
+  footer .container {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
@@ -694,7 +694,7 @@ footer.footer .move-up span:hover {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
   }
-  footer.footer .container {
+  footer .container {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
@@ -729,7 +729,7 @@ footer.footer .move-up span:hover {
   .site-content .post-content > .post-image .post-info {
     display: none;
   }
-  footer.footer .container > div {
+  footer .container > div {
     padding: 1rem 0.9rem !important;
   }
   footer .rights {

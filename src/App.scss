@@ -471,69 +471,69 @@
 
 /* ----------------- Footer --------------------- */
 
-footer.footer {
+footer {
 	height: 100%;
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
 		url("/assets/background.jpg");
 	position: relative;
-}
 
-footer.footer .container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-}
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 
-footer.footer .container > div {
-	flex-grow: 1;
-	flex-basis: 0;
-	padding: 3rem 0.9rem;
-}
+		& > div {
+			flex-grow: 1;
+			flex-basis: 0;
+			padding: 3rem 0.9rem;
+		}
 
-footer.footer .container h2 {
-	color: var(--white);
-}
+		h2 {
+			color: var(--white);
+		}
+	}
 
-footer.footer .instagram div > img {
-	display: inline-block;
-	width: 25%;
-	height: 50%;
-	margin: 0.3rem 0.4rem;
-}
+	.instagram div > img {
+		display: inline-block;
+		width: 25%;
+		height: 50%;
+		margin: 0.3rem 0.4rem;
+	}
 
-footer.footer .follow div span {
-	color: var(--white);
-	padding: 0 0.4rem;
-}
+	.follow div span {
+		color: var(--white);
+		padding: 0 0.4rem;
 
-footer.footer .follow div span:hover {
-	color: #a1c4cf;
-}
+		&:hover {
+			color: #a1c4cf;
+		}
+	}
 
-footer.footer .rights {
-	justify-content: center;
-	font-family: var(--Josefin), "Verdana";
-}
+	.rights {
+		justify-content: center;
+		font-family: var(--Josefin);
 
-footer.footer .rights h4 a {
-	color: var(--white);
-}
+		h4 a {
+			color: var(--white);
+		}
+	}
 
-footer.footer .move-up {
-	position: fixed;
-	bottom: 5%;
-	right: 1%;
-	opacity: 0.3;
-	z-index: 0;
-}
+	.move-up {
+		position: fixed;
+		bottom: 5%;
+		right: 1%;
+		opacity: 0.3;
+		z-index: 0;
 
-footer.footer .move-up span {
-	color: skyblue;
-	font-size: 50px;
-}
+		span {
+			color: skyblue;
+			font-size: 50px;
 
-footer.footer .move-up span:hover {
-	color: var(--midnight);
-	cursor: pointer;
+			&:hover {
+				color: var(--midnight);
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 /* ---------x------- Footer ----------x---------- */
@@ -614,7 +614,7 @@ footer.footer .move-up span:hover {
 		display: none !important;
 	}
 
-	footer.footer .container {
+	footer .container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
@@ -657,7 +657,7 @@ footer.footer .move-up span:hover {
 		grid-template-columns: 100%;
 	}
 
-	footer.footer .container {
+	footer .container {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
@@ -700,7 +700,7 @@ footer.footer .move-up span:hover {
 		display: none;
 	}
 
-	footer.footer .container > div {
+	footer .container > div {
 		padding: 1rem 0.9rem !important;
 	}
 
