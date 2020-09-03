@@ -16,6 +16,7 @@ import "./App.css";
 import AOS from "aos";
 import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
+import { Helmet } from "react-helmet";
 
 window.addEventListener("load", () => {
 	// Get rid of preloader once everything's loaded
@@ -41,7 +42,6 @@ class App extends Component {
 
 	componentDidMount() {
 		AOS.init(); // Initialise animate on scroll library.
-		document.title = "Blog.TinoMuzambi";
 
 		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
 		const timeoutID = setTimeout(function () {
@@ -88,7 +88,9 @@ class App extends Component {
 							path="/"
 							render={(props) => (
 								<div>
-									{(document.title = "Blog.TinoMuzambi")}
+									<Helmet>
+										<title>Blog.TinoMuzambi</title>
+									</Helmet>
 									<section
 										className="about"
 										ref={(section) => {
