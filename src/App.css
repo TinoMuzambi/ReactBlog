@@ -603,11 +603,11 @@ footer .move-up span:hover {
           align-items: center;
 }
 
-.not-found-title {
+.not-found-page .title {
   color: white;
 }
 
-.not-found-subtitle {
+.not-found-page .subtitle {
   text-decoration: underline;
   color: #bebebe;
 }

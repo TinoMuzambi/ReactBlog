@@ -548,15 +548,15 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
 
-.not-found-title {
-	color: white;
-}
+	.title {
+		color: white;
+	}
 
-.not-found-subtitle {
-	text-decoration: underline;
-	color: rgb(190, 190, 190);
+	.subtitle {
+		text-decoration: underline;
+		color: rgb(190, 190, 190);
+	}
 }
 
 /* ---------x------- 404 ----------x---------- */
