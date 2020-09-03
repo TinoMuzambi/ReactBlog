@@ -210,10 +210,6 @@
   outline: 0;
 }
 
-.collapse {
-  height: 25rem;
-}
-
 .nav .nav-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,10 +235,6 @@
   color: var(--white);
 }
 
-.nav .nav-brand {
-  outline: 0;
-}
-
 .nav .nav-brand a {
   font-size: 1.6rem;
   padding: 0.5rem 0;
@@ -261,6 +253,10 @@
 
 .nav .social span:hover {
   color: var(--midnight);
+}
+
+.collapse {
+  height: 25rem;
 }
 
 /* -------x------- navbar ---------x------- */
