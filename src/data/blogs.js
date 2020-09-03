@@ -158,12 +158,14 @@ const blogs = [
 		but it would be great if you did, cause I’ll be making quite a few references to it.
 	</p><br><br/>
 
-	<div class="item-container">
-		<iframe class="item" src="https://www.youtube.com/embed/qagP8gTp5QE"
-				frameborder="0"
-				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen>
-		</iframe>
+	<div class="featured">
+		<div class="item-container">
+			<iframe class="item" src="https://www.youtube.com/embed/qagP8gTp5QE"
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+			</iframe>
+		</div>
 	</div>
 
 	<p>
