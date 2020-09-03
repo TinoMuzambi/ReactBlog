@@ -317,18 +317,7 @@
 }
 
 /* -------x------- Featured Item -----x------ */
-/* ---------------- Site Content ----------------*/
-.site-content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70% 30%;
-      grid-template-columns: 70% 30%;
-}
-
-.post-content {
-  width: 100%;
-}
-
+/* ---------------- Search ----------------*/
 .search-wrapper {
   width: 100%;
   display: -ms-grid;
@@ -338,7 +327,7 @@
   position: absolute;
 }
 
-.search-input {
+.search-wrapper .search-input {
   border-radius: 0;
   padding: 1rem;
   float: right;
@@ -349,12 +338,25 @@
   border: solid 2px black;
 }
 
-.search-input:hover {
+.search-wrapper .search-input:hover {
   border: solid 2px gray;
 }
 
+/* -------x------- Search -----x------ */
+/* ---------------- Site Content ----------------*/
+.site-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+}
+
+.site-content .post-content {
+  width: 100%;
+}
+
 .site-content .post-content > .post-image,
-.post-title {
+.site-content .post-content .post-title {
   padding: 1rem 2rem;
   position: relative;
 }
@@ -387,12 +389,12 @@
   margin: 0 0.5rem;
 }
 
-.post-content .post-title a {
+.site-content .post-content .post-title a {
   font-family: var(--Anton);
   font-size: 1.5rem;
 }
 
-.post-content .post-title .editing-title {
+.site-content .post-content .post-title .editing-title {
   font-family: var(--Lexend);
   color: var(--text-gray);
   font-size: 1.1rem;
@@ -403,6 +405,25 @@
   padding: 0.7rem 1.5rem;
   background: var(--sky);
   outline: none;
+}
+
+.site-content .post-content blockquote {
+  text-indent: -0.45em;
+  font-size: 80px;
+  width: 95%;
+  font-family: var(--Abel);
+  quotes: "“" "”" "‘" "’";
+}
+
+.site-content .post-content blockquote::before {
+  content: open-quote;
+}
+
+@supports (hanging-punctuation: first) {
+  .site-content .post-content .site-content .post-content blockquote {
+    text-indent: 0;
+    hanging-punctuation: first;
+  }
 }
 
 .site-content .pagination {
@@ -425,36 +446,14 @@
   color: var(--white);
 }
 
-.page-holder {
-  padding: 20px 0;
-}
-
-.site-content .post-content blockquote {
-  text-indent: -0.45em;
-  font-size: 80px;
-  width: 95%;
-  font-family: var(--Abel);
-}
-
-@supports (hanging-punctuation: first) {
-  .site-content .post-content blockquote {
-    text-indent: 0;
-    hanging-punctuation: first;
-  }
-}
-
-.site-content .post-content blockquote::before {
-  content: open-quote;
-}
-
-.site-content .post-content blockquote {
-  quotes: "“" "”" "‘" "’";
-}
-
 .site-content .picsart-list {
   font-family: var(--Lexend);
   list-style: initial;
   color: gray;
+}
+
+.page-holder {
+  padding: 20px 0;
 }
 
 /* -------x-------- Site Content --------x-------*/
