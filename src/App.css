@@ -260,7 +260,7 @@
 }
 
 /* x Navbar Section */
-/* --------------- Site title ---------------- */
+/* Site Title */
 .site-title {
   background: url("/assets/background.jpg");
   background-size: cover;
@@ -290,8 +290,8 @@
   margin: 0.3rem;
 }
 
-/* --------x------ Site title --------x------- */
-/* --------------- Featured Item ------------ */
+/* x Site Title x */
+/* Featured Item */
 .featured {
   width: 100%;
   display: -ms-grid;
@@ -316,8 +316,8 @@
   top: 0;
 }
 
-/* -------x------- Featured Item -----x------ */
-/* ---------------- Search ----------------*/
+/* x Featured Item */
+/* Search */
 .search-wrapper {
   width: 100%;
   display: -ms-grid;
@@ -342,15 +342,15 @@
   border: solid 2px gray;
 }
 
-/* -------x------- Search -----x------ */
-/* ---------------- Site Content ----------------*/
+/* x Search */
+/* Site Content */
 .site-content {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 70% 30%;
       grid-template-columns: 70% 30%;
-  /* --------------- Sidebar ----------------------- */
-  /* -------x------- Sidebar -----------x----------- */
+  /* Sidebar */
+  /* x Sidebar x */
 }
 
 .site-content .post-content {
@@ -507,8 +507,8 @@
   padding: 20px 0;
 }
 
-/* -------x-------- Site Content --------x-------*/
-/* ----------------- Footer --------------------- */
+/* x Site Content x */
+/* Footer */
 footer {
   height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("/assets/background.jpg");
@@ -581,8 +581,8 @@ footer .move-up span:hover {
   cursor: pointer;
 }
 
-/* ---------x------- Footer ----------x---------- */
-/* ----------------- 404 --------------------- */
+/* x Footer x */
+/* 404 */
 .not-found-page {
   background-image: -webkit-gradient(linear, left top, right top, from(#4facfe), to(#00f2fe));
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
@@ -612,7 +612,7 @@ footer .move-up span:hover {
   color: #bebebe;
 }
 
-/* ---------x------- 404 ----------x---------- */
+/* x 404 x */
 /*              Viewport less then or equal to 2560px            */
 @media only screen and (max-width: 2560px) {
   .nav {
@@ -654,16 +654,16 @@ footer .move-up span:hover {
   .site-content .sidebar .other-posts .post-info {
     display: none !important;
   }
-  footer .container {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
   .site-content .youtube-items {
     -ms-grid-columns: (1fr)[2] !important;
         grid-template-columns: repeat(2, 1fr) !important;
   }
   .site-content .cycling-sites {
     height: 360px;
+  }
+  footer .container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -672,9 +672,6 @@ footer .move-up span:hover {
 @media only screen and (max-width: 750px) {
   .nav {
     min-height: 6.5vh;
-  }
-  .blog {
-    height: 160vh;
   }
   .nav .nav-menu,
   .nav .nav-items {
@@ -686,9 +683,26 @@ footer .move-up span:hover {
   .nav .toggle-collapse {
     display: initial;
   }
+  .nav .nav-items .nav-link:hover {
+    background-color: transparent !important;
+    text-decoration: none !important;
+  }
+  .nav .nav-items .nav-link:hover a {
+    color: var(--text-gray) !important;
+  }
+  .blog {
+    height: 160vh;
+  }
   .site-content {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
+  }
+  .site-content .youtube-items {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .site-content .cycling-sites {
+    height: 260px;
   }
   .search-wrapper {
     -ms-grid-columns: 100%;
@@ -697,20 +711,6 @@ footer .move-up span:hover {
   footer .container {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
-  }
-  .site-content .youtube-items {
-    -ms-grid-columns: (1fr)[1] !important;
-        grid-template-columns: repeat(1, 1fr) !important;
-  }
-  .nav .nav-items .nav-link:hover {
-    background-color: transparent !important;
-    text-decoration: none !important;
-  }
-  .nav .nav-items .nav-link:hover a {
-    color: var(--text-gray) !important;
-  }
-  .site-content .cycling-sites {
-    height: 260px;
   }
 }
 
