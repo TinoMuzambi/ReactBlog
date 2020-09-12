@@ -1,5 +1,17 @@
 const blogs = [
 	{
+		id: 7,
+		future: true,
+		title: "My Desk Setup",
+		url: "",
+		date: "Very Soon",
+		category: "Tech",
+		readTime: "4 minutes",
+		image: "/assets/blog-images/keyboard.jpg",
+		alt: "keyboard",
+		content: ``,
+	},
+	{
 		id: 6,
 		future: true,
 		title: "My Relationship with my Keyboard",
