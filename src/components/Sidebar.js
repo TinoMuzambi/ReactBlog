@@ -1,5 +1,5 @@
 import React from "react";
-import Categories from "../pages/Categories";
+import Categories from "../components/Categories";
 import SideBlog from "./SideBlog";
 
 const Sidebar = ({ blogs, future }) => (
