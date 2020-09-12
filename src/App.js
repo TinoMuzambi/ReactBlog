@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Featured from "./components/Featured";
 import Blogs from "./pages/Blogs";
+import NotFoundPage from "./pages/NotFoundPage";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import Blog from "./pages/Blog";
-import Category from "./pages/Category";
 import Preload from "./pages/Preload";
 import Search from "./components/Search";
-import NotFoundPage from "./pages/NotFoundPage";
 import blogs from "./data/blogs";
+import { AiOutlineReload } from "react-icons/ai";
 import "./App.css";
 import AOS from "aos";
 import "./aos.css";
@@ -75,6 +74,8 @@ class App extends Component {
 					.includes(this.state.queryText.toLowerCase())
 			);
 		});
+		const Blog = lazy(() => import("./pages/Blog"));
+		const Category = lazy(() => import("./pages/Category"));
 		return (
 			<>
 				<Router>
@@ -130,10 +131,19 @@ class App extends Component {
 								</div>
 							)}
 						/>
-						<Route path="/blogs/:name" component={Blog} />{" "}
-						{/* Blog route for displaying blog content. */}
-						<Route path="/categories/:name" component={Category} />{" "}
-						{/* Category route for displaying per category blogs. */}
+						{/* Lazy loading components that don't need to be rendered immediately. */}
+						<Suspense
+							fallback={
+								<div className="icon-wrapper">
+									<AiOutlineReload className="icon" />
+								</div>
+							}
+						>
+							<Route path="/blogs/:name" component={Blog} />
+							{/* Blog route for displaying blog content. */}
+							<Route path="/categories/:name" component={Category} />
+							{/* Category route for displaying per category blogs. */}
+						</Suspense>
 						<Route component={NotFoundPage} />
 					</Switch>
 					<section

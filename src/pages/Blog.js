@@ -41,9 +41,12 @@ class Blog extends Component {
 		const title = this.state.name; // Finding relevant blog.
 		const blog = blogs.find((blog) => blog.url === title);
 		document.title = blog.title + " | Blog.TinoMuzambi"; // Update document title to reflect blog.
-		const filteredBlogs = blogs // Getting list that doesn't include current blog for other blogs section.
+		const filteredBlogs = blogs // Getting list that doesn't include current blog nor future blogs for other blogs section.
 			.filter((eachItem) => {
-				return !eachItem["url"].toLowerCase().includes(title.toLowerCase());
+				return (
+					!eachItem["url"].toLowerCase().includes(title.toLowerCase()) &&
+					!eachItem["future"] === true
+				);
 			})
 			.slice(0, 3);
 		return (
@@ -89,7 +92,7 @@ class Blog extends Component {
 
 							{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						</div>
-						<Sidebar blogs={filteredBlogs} future={false} />{" "}
+						<Sidebar blogs={filteredBlogs} future={blog.future} />{" "}
 						{/* Sidebar section populated with links to other blogs. */}
 					</div>
 				</div>

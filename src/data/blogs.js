@@ -1,6 +1,103 @@
 const blogs = [
 	{
-		id: 0,
+		id: 7,
+		future: true,
+		title: "My Desk Setup",
+		url: "",
+		date: "Very Soon",
+		category: "Tech",
+		readTime: "4 minutes",
+		image: "/assets/blog-images/keyboard.jpg",
+		alt: "keyboard",
+		content: ``,
+	},
+	{
+		id: 6,
+		future: true,
+		title: "My Relationship with my Keyboard",
+		url: "",
+		date: "Very Soon",
+		category: "Tech",
+		readTime: "4 minutes",
+		image: "/assets/blog-images/dark_keyboard.jpg",
+		alt: "keyboard",
+		content: ``,
+	},
+	{
+		id: 5,
+		future: false,
+		title: "Phone or Laptop?",
+		url: "phone_or_laptop",
+		date: "Saturday 12 September 2020",
+		category: "Tech",
+		readTime: "5 minutes",
+		image: "/assets/blog-images/phone_or_laptop.jpg",
+		alt: "phone or laptop",
+		content: `<p style="font-size: 1rem;">
+		Here’s a thought experiment. If you were to choose between two futures, one where
+		laptops/computers become obsolete and only smartphones exist or the opposite, one where
+		smartphones become obsolete and laptops/computers become obsolete,
+		which future would you lean towards because I know for sure where I’m headed.<br><br>
+		I'll make the case for both starting with a future consisting solely of smartphones. Smartphones
+		have come a long way, from the early Android days to the Blackberry era to the revolutionary
+		iPhone, the introduction of phablets and today where phablets are now a norm. Even in terms of
+		computing power, phones have become so powerful that they’re even comparable with some laptops.
+		What Apple is doing with their bionic chips is particularly impressive. For reference Apple’s
+		A12X Bionic chip was able to outdo an Intel i7 chip by a sizeable margin.<br><br>
+	</p>
+	<div class="two-grid">
+		<div class="grid-item">
+			<img src="../assets/blog-images/a12x.png" class="grid-image" alt="a12x">
+			<p>A12X</p>
+		</div>
+		<div class="grid-item">
+			<img src="../assets/blog-images/i7.png" class="grid-image" alt="i7">
+			<p>i7</p>
+		</div>
+	</div>
+
+
+	<p>
+		Of course, for peak performance no phone will outperform a highly specced PC because of form
+		factor, heat and such but for most tasks, we can see that phones are now more than powerful
+		enough, especially given that the A12X is now more than a year old. Phones also have the
+		advantage of being extremely portable, extremely light and extremely easy to use. It goes
+		without saying that desktop operating systems are way more complicated than smartphone
+		operating systems. I mean, Windows 10 has the system settings, Control Panel, the registry
+		editor and the Command Prompt whereas Android just has one settings page<br><br>
+		One area where I for sure would suffer, is the typing experience. Especially for me, a
+		programmer, whose job is to sit and type words into a computer. Having that now on a
+		comparatively tiny phone screen would be a huge inconvenience. Touch keyboards will just never
+		feel as good as clacking away at a physical keyboard even with the best haptics in the world.
+		With that said, here’s a bold statement: there’s nothing you can do on your phone that you can’t
+		do on a laptop, but the opposite isn’t true. <br><br>
+		Laptops too have evolved over the years and nowadays you can find an LTE, 4K OLED touchscreen,
+		2-in-1, stylus-supported laptop that flies. Okay maybe not that last part but the point is
+		laptops are very versatile and for whatever use case you have, there’s likely a laptop for you.
+		Even though desktop operating systems are more complicated, they’re at the same time more
+		capable and productivity focused than their mobile counterparts. The best thing is that that
+		doesn’t introduce any caveats for when you wanna kick back and relax. They’re arguably better at
+		that as well because Netflix will look much better on a big screen than it will on a phone
+		screen. Games will run much better on the beefier hardware and creatives will have a much more
+		immersive experience on the higher quality screens.<br><br>
+		It’ll still be awkward trying to take a group selfie on a laptop or putting a laptop to your ear
+		to take a “phone” call but the fact remains, it’s possible. You’d have a really hard time
+		running Photoshop or typing a thesis on a phone. Granted, in a future with only smartphones,
+		these would be optimised for the mobile experience. But do you really wanna type a 5000 word
+		essay on a phone? Because I for one don’t.
+	<hr>
+	<p>
+		Which future would you prefer? Don’t be swayed by my bulletproof water tight argument, I wanna
+		hear your thoughts. Do you agree with my bold statement? If you were wondering about tablets,
+		they’re obsolete too. Same goes for foldables. I’ll see you in the comments.<br><br>
+	</p>`,
+		disqusURL: "https://blog.tinomuzambi.com/blogs/phone_or_laptop",
+		disqusIdentifier: "tino_phone_laptop",
+		disqusSrc: "https://blogtinomuzambi.disqus.com/embed.js",
+		disqusShortname: "blogtinomuzambi",
+	},
+	{
+		id: 4,
 		future: false,
 		title: "Shower Thoughts",
 		url: "shower_thoughts",
@@ -59,7 +156,7 @@ const blogs = [
 		disqusShortname: "blogtinomuzambi",
 	},
 	{
-		id: 1,
+		id: 3,
 		future: false,
 		title: "Upgrade Your Walls",
 		url: "upgrade_your_walls",
@@ -308,14 +405,14 @@ const blogs = [
 		disqusShortname: "blogtinomuzambi",
 	},
 	{
-		id: 3,
+		id: 1,
 		future: false,
 		title: "A Little About Me",
 		url: "a_little_about_me",
 		date: "Tuesday 09 June 2020",
 		category: "Lifestyle",
 		readTime: "5 minutes",
-		image: "/assets/blog-images/me.jpg",
+		image: "/assets/blog-images/my_iceberg.jpg",
 		alt: "me",
 		content: `<p style="font-size: 1rem;">
 		I was thinking about how much to divulge in this blog to let you sufficiently in on my life, but
@@ -411,7 +508,7 @@ const blogs = [
 		disqusShortname: "tinomuzambi",
 	},
 	{
-		id: 4,
+		id: 0,
 		future: false,
 		title: "Why I Hate Voicenotes",
 		url: "why_i_hate_voicenotes",
@@ -495,30 +592,6 @@ const blogs = [
 		disqusIdentifier: "tinomuzambi",
 		disqusSrc: "https://tinomuzambi.disqus.com/embed.js",
 		disqusShortname: "tinomuzambi",
-	},
-	{
-		id: 5,
-		future: true,
-		title: "My Relationship with my Keyboard",
-		url: "",
-		date: "Very Soon",
-		category: "Tech",
-		readTime: "4 minutes",
-		image: "/assets/blog-images/dark_keyboard.jpg",
-		alt: "keyboard",
-		content: ``,
-	},
-	{
-		id: 6,
-		future: true,
-		title: "Phone or Laptop?",
-		url: "",
-		date: "Soon",
-		category: "Tech",
-		readTime: "5 minutes",
-		image: "/assets/blog-images/keyboard.jpg",
-		alt: "laptop",
-		content: ``,
 	},
 ];
 

@@ -51,7 +51,10 @@ class Category extends Component {
 			});
 		const sideBlogs = this.state.blogItems // Getting list that doesn't include current blog for sidebar section.
 			.filter((eachItem) => {
-				return !eachItem["category"].toLowerCase().includes(name.toLowerCase());
+				return (
+					!eachItem["category"].toLowerCase().includes(name.toLowerCase()) &&
+					!eachItem["future"] === true
+				);
 			})
 
 			.slice(0, 3);

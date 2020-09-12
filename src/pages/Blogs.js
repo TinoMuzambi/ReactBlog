@@ -50,7 +50,7 @@ class Blogs extends Component {
 		return (
 			<>
 				<div className="posts">
-					{this.props.category ? "" : <h1>Blogs</h1>}{" "}
+					{this.props.category ? "" : <h1>Blogs</h1>}
 					{/* Conditionally render element. */}
 					{this.state.displayBlogs.map((blog, key) => (
 						<div
