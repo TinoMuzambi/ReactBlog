@@ -37,8 +37,8 @@ const blogs = [
 		Here’s a thought experiment. If you were to choose between two futures, one where
 		laptops/computers become obsolete and only smartphones exist or the opposite, one where
 		smartphones become obsolete and laptops/computers become obsolete,
-		Which future would you lean towards because I know for sure where I’m headed.<br><br>
-		I'll make the case for both starting with a future consisting of solely smartphones. Smartphones
+		which future would you lean towards because I know for sure where I’m headed.<br><br>
+		I'll make the case for both starting with a future consisting solely of smartphones. Smartphones
 		have come a long way, from the early Android days to the Blackberry era to the revolutionary
 		iPhone, the introduction of phablets and today where phablets are now a norm. Even in terms of
 		computing power, phones have become so powerful that they’re even comparable with some laptops.
@@ -65,7 +65,7 @@ const blogs = [
 		without saying that desktop operating systems are way more complicated than smartphone
 		operating systems. I mean, Windows 10 has the system settings, Control Panel, the registry
 		editor and the Command Prompt whereas Android just has one settings page<br><br>
-		One area where I for sure would suffer is the typing experience. Especially for me, a
+		One area where I for sure would suffer, is the typing experience. Especially for me, a
 		programmer, whose job is to sit and type words into a computer. Having that now on a
 		comparatively tiny phone screen would be a huge inconvenience. Touch keyboards will just never
 		feel as good as clacking away at a physical keyboard even with the best haptics in the world.
