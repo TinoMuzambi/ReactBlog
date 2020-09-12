@@ -756,6 +756,10 @@ footer {
 		.cycling-sites {
 			height: 215px;
 		}
+
+		.two-grid {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	footer {
