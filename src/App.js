@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -6,11 +6,8 @@ import Featured from "./components/Featured";
 import Blogs from "./pages/Blogs";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import Blog from "./pages/Blog";
-import Category from "./pages/Category";
 import Preload from "./pages/Preload";
 import Search from "./components/Search";
-import NotFoundPage from "./pages/NotFoundPage";
 import blogs from "./data/blogs";
 import "./App.css";
 import AOS from "aos";
@@ -75,6 +72,9 @@ class App extends Component {
 					.includes(this.state.queryText.toLowerCase())
 			);
 		});
+		const Blog = lazy(() => import("./pages/Blog"));
+		const Category = lazy(() => import("./pages/Category"));
+		const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 		return (
 			<>
 				<Router>
@@ -130,11 +130,13 @@ class App extends Component {
 								</div>
 							)}
 						/>
-						<Route path="/blogs/:name" component={Blog} />{" "}
-						{/* Blog route for displaying blog content. */}
-						<Route path="/categories/:name" component={Category} />{" "}
-						{/* Category route for displaying per category blogs. */}
-						<Route component={NotFoundPage} />
+						<Suspense fallback={<div>Loading...</div>}>
+							<Route path="/blogs/:name" component={Blog} />
+							{/* Blog route for displaying blog content. */}
+							<Route path="/categories/:name" component={Category} />
+							{/* Category route for displaying per category blogs. */}
+							<Route component={NotFoundPage} />
+						</Suspense>
 					</Switch>
 					<section
 						className="footer"
