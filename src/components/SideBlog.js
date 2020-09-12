@@ -6,7 +6,7 @@ import Moment from "react-moment";
 
 const SideBlog = ({ blogs, future }) => (
 	<>
-		<h2>{future ? "Future" : "Other"} Blogs</h2>{" "}
+		<h2>{future ? "Future" : "Other"} Blogs</h2>
 		{/* Either show future or other. */}
 		{blogs.map((blog, key) => (
 			<div
@@ -22,7 +22,7 @@ const SideBlog = ({ blogs, future }) => (
 							<img src={blog.image} className="img" alt={blog.alt} />
 						) : (
 							<Link to={`/blogs/${blog.url}`}>
-								<img src={blog.image} className="img" alt={blog.alt} />{" "}
+								<img src={blog.image} className="img" alt={blog.alt} />
 							</Link>
 						)}
 					</div>
