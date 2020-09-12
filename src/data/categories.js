@@ -1,7 +1,7 @@
 const categories = [
 	{
 		name: "Tech",
-		count: 1,
+		count: 2,
 	},
 	{
 		name: "Lifestyle",
@@ -11,10 +11,10 @@ const categories = [
 		name: "Random",
 		count: 2,
 	},
-	{
-		name: "Plugs",
-		count: 0,
-	},
+	// {
+	// 	name: "Plugs",
+	// 	count: 0,
+	// },
 ];
 
 export default categories;
