@@ -130,6 +130,7 @@ class App extends Component {
 								</div>
 							)}
 						/>
+						{/* Lazy loading components that don't need to be rendered immediately. */}
 						<Suspense fallback={<div>Loading...</div>}>
 							<Route path="/blogs/:name" component={Blog} />
 							{/* Blog route for displaying blog content. */}

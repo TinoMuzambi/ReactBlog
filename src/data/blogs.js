@@ -35,9 +35,9 @@ const blogs = [
 		alt: "phone or laptop",
 		content: `<p style="font-size: 1rem;">
 		Here’s a thought experiment. If you were to choose between two futures, one where
-		laptops/computers become obsolete and only smartphones exist or the opposite. One where
-		smartphones become obsolete and laptops/computers become obsolete and we only have smartphones.
-		Which future are you leaning towards because I know for sure where I’m headed.<br><br>
+		laptops/computers become obsolete and only smartphones exist or the opposite, one where
+		smartphones become obsolete and laptops/computers become obsolete,
+		Which future would you lean towards because I know for sure where I’m headed.<br><br>
 		I'll make the case for both starting with a future consisting of solely smartphones. Smartphones
 		have come a long way, from the early Android days to the Blackberry era to the revolutionary
 		iPhone, the introduction of phablets and today where phablets are now a norm. Even in terms of
@@ -58,11 +58,11 @@ const blogs = [
 
 
 	<p>
-		Of course, for peak performance no phone will out perform a highly specced PC because of form
+		Of course, for peak performance no phone will outperform a highly specced PC because of form
 		factor, heat and such but for most tasks, we can see that phones are now more than powerful
-		enough. Especially given that the A12X is now more than a year old. Phones also have the
+		enough, especially given that the A12X is now more than a year old. Phones also have the
 		advantage of being extremely portable, extremely light and extremely easy to use. It goes
-		without saying that desktop operating systems are weigh more complicated than smartphone
+		without saying that desktop operating systems are way more complicated than smartphone
 		operating systems. I mean, Windows 10 has the system settings, Control Panel, the registry
 		editor and the Command Prompt whereas Android just has one settings page<br><br>
 		One area where I for sure would suffer is the typing experience. Especially for me, a
@@ -81,7 +81,7 @@ const blogs = [
 		screen. Games will run much better on the beefier hardware and creatives will have a much more
 		immersive experience on the higher quality screens.<br><br>
 		It’ll still be awkward trying to take a group selfie on a laptop or putting a laptop to your ear
-		to take a “phone” call but the fact remains that it’s possible. You’d have a really hard time
+		to take a “phone” call but the fact remains, it’s possible. You’d have a really hard time
 		running Photoshop or typing a thesis on a phone. Granted, in a future with only smartphones,
 		these would be optimised for the mobile experience. But do you really wanna type a 5000 word
 		essay on a phone? Because I for one don’t.
