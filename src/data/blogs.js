@@ -472,7 +472,7 @@ const blogs = [
 	</div>
 
 	<p>
-		If I’ve got you hooked and you happened to be an Apple Music subscriber, go listen to my <a
+		If I’ve got you hooked and you happen to be an Apple Music subscriber, go listen to my <a
 			href="https://bit.ly/TinoCHH"
 			target="_blank" style="color: skyblue">playlist </a>for
 		more heat. If you're <a
