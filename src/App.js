@@ -4,9 +4,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Featured from "./components/Featured";
 import Blogs from "./pages/Blogs";
-import NotFoundPage from "./pages/NotFoundPage";
 import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
 import Preload from "./pages/Preload";
 import Search from "./components/Search";
 import blogs from "./data/blogs";
@@ -76,6 +74,8 @@ class App extends Component {
 		});
 		const Blog = lazy(() => import("./pages/Blog"));
 		const Category = lazy(() => import("./pages/Category"));
+		const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+		const Footer = lazy(() => import("./components/Footer"));
 		return (
 			<>
 				<Router>
@@ -143,17 +143,25 @@ class App extends Component {
 							{/* Blog route for displaying blog content. */}
 							<Route path="/categories/:name" component={Category} />
 							{/* Category route for displaying per category blogs. */}
+							<Route component={NotFoundPage} />
 						</Suspense>
-						<Route component={NotFoundPage} />
 					</Switch>
-					<section
-						className="footer"
-						ref={(section) => {
-							this.footer = section;
-						}}
+					<Suspense
+						fallback={
+							<div className="icon-wrapper">
+								<AiOutlineReload className="icon" />
+							</div>
+						}
 					>
-						<Footer /> {/* Footer section */}
-					</section>
+						<section
+							className="footer"
+							ref={(section) => {
+								this.footer = section;
+							}}
+						>
+							<Footer /> {/* Footer section */}
+						</section>
+					</Suspense>
 				</Router>
 			</>
 		);
