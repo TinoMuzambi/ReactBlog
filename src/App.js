@@ -6,6 +6,7 @@ import Featured from "./components/Featured";
 import Blogs from "./pages/Blogs";
 import Sidebar from "./components/Sidebar";
 import Preload from "./pages/Preload";
+import NotFoundPage from "./pages/NotFoundPage";
 import Search from "./components/Search";
 import blogs from "./data/blogs";
 import { AiOutlineReload } from "react-icons/ai";
@@ -74,7 +75,6 @@ class App extends Component {
 		});
 		const Blog = lazy(() => import("./pages/Blog"));
 		const Category = lazy(() => import("./pages/Category"));
-		const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 		const Footer = lazy(() => import("./components/Footer"));
 		return (
 			<>
@@ -143,8 +143,8 @@ class App extends Component {
 							{/* Blog route for displaying blog content. */}
 							<Route path="/categories/:name" component={Category} />
 							{/* Category route for displaying per category blogs. */}
-							<Route component={NotFoundPage} />
 						</Suspense>
+						<Route component={NotFoundPage} />
 					</Switch>
 					<Suspense
 						fallback={
