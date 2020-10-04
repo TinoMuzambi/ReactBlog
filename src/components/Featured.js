@@ -17,13 +17,18 @@ class Featured extends Component {
 					>
 						<h1 className="featured-title text-center">Featured Item</h1>
 						<div className="item-container">
-							<ReactPlayer
+							{/* <ReactPlayer
 								url={item.url}
 								id={0}
 								className="item"
 								width="100%"
 								height="100%"
 								controls="true"
+							/> */}
+							<img
+								src="https://img.cinemablend.com/filter:scale/quill/f/5/2/7/f/8/f527f8e67ac1c1b93e2a05bcc70f3bed59f51d2e.jpg?mw=600"
+								alt="social dilemma"
+								className="item"
 							/>
 						</div>
 						<h2>{item.title}</h2>

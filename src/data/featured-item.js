@@ -1,7 +1,7 @@
 const item = {
-	title: "Best Friends (Live) | Hillsong Young & Free",
-	date: "Wednesday 02 September 2020",
+	title: "The Social Dilemma",
+	date: "Monday 05 October 2020",
 	url: "https://www.youtube.com/watch?v=EuasXoRa45M",
-	description: `All of my best friends are sick of pretending.`,
+	description: `The Social Dilemma, streaming on Netflix. I'd definitely recommend the watch.`,
 };
 export default item;
