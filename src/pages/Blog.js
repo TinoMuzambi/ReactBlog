@@ -41,7 +41,6 @@ class Blog extends Component {
 	render() {
 		const title = this.state.name; // Finding relevant blog.
 		const blog = blogs.find((blog) => blog.url === title);
-		// document.title = blog.title + " | Blog.TinoMuzambi"; // Update document title to reflect blog.
 		const filteredBlogs = blogs // Getting list that doesn't include current blog nor future blogs for other blogs section.
 			.filter((eachItem) => {
 				return (

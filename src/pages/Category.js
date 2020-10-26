@@ -3,6 +3,7 @@ import categories from "../data/categories";
 import blogs from "../data/blogs";
 import Blogs from "./Blogs";
 import Sidebar from "../components/Sidebar";
+import { Helmet } from "react-helmet";
 
 class Category extends Component {
 	constructor(props) {
@@ -41,7 +42,6 @@ class Category extends Component {
 		const category = categories.find(
 			(category) => category.name.toLowerCase() === name
 		);
-		document.title = category.name + " | Blog.TinoMuzambi"; // Update document title to reflect category.
 		const filteredBlogs = this.state.blogItems // Getting list that doesn't include current category for other blogs section.
 			.filter((eachItem) => {
 				return eachItem["category"].toLowerCase().includes(name.toLowerCase());
@@ -60,6 +60,11 @@ class Category extends Component {
 			.slice(0, 3);
 		return (
 			<>
+				<Helmet>
+					<title>{category.name + " | Blog.TinoMuzambi"}</title>
+					<meta name={category.name} content={category.name} />
+					<meta itemprop="image" content={category.image} />
+				</Helmet>
 				<div className="container">
 					<div class="site-content">
 						<div class="posts">
