@@ -63,7 +63,36 @@ class Category extends Component {
 				<Helmet>
 					<title>{category.name + " | Blog.TinoMuzambi"}</title>
 					<meta name="description" content={category.name} />
+
+					{/* <!-- Google / Search Engine Tags --> */}
+					<meta
+						itemprop="name"
+						content={category.name + " | Blog.TinoMuzambi"}
+					/>
+					<meta itemprop="description" content={category.name} />
 					<meta itemprop="image" content={category.image} />
+
+					{/* <!-- Facebook Meta Tags --> */}
+					<meta
+						property="og:url"
+						content={"https://blog.tinomuzambi.com/categories/" + category.url}
+					/>
+					<meta property="og:type" content="website" />
+					<meta
+						property="og:title"
+						content={category.name + " | Blog.TinoMuzambi"}
+					/>
+					<meta property="og:description" content={category.name} />
+					<meta property="og:image" content={category.image} />
+
+					{/* <!-- Twitter Meta Tags --> */}
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta
+						name="twitter:title"
+						content={category.name + " | Blog.TinoMuzambi"}
+					/>
+					<meta name="twitter:description" content={category.name} />
+					<meta name="twitter:image" content={category.image} />
 				</Helmet>
 				<div className="container">
 					<div class="site-content">
