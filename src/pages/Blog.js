@@ -54,7 +54,33 @@ class Blog extends Component {
 				<Helmet>
 					<title>{blog.title + " | Blog.TinoMuzambi"}</title>
 					<meta name="description" content={blog.title} />
+
+					{/* <!-- Google / Search Engine Tags --> */}
+					<meta itemprop="name" content={blog.title + " | Blog.TinoMuzambi"} />
+					<meta itemprop="description" content={blog.title} />
 					<meta itemprop="image" content={blog.image} />
+
+					{/* <!-- Facebook Meta Tags --> */}
+					<meta
+						property="og:url"
+						content={"https://blog.tinomuzambi.com/blogs/" + blog.url}
+					/>
+					<meta property="og:type" content="website" />
+					<meta
+						property="og:title"
+						content={blog.title + " | Blog.TinoMuzambi"}
+					/>
+					<meta property="og:description" content={blog.title} />
+					<meta property="og:image" content={blog.image} />
+
+					{/* <!-- Twitter Meta Tags --> */}
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta
+						name="twitter:title"
+						content={blog.title + " | Blog.TinoMuzambi"}
+					/>
+					<meta name="twitter:description" content={blog.title} />
+					<meta name="twitter:image" content={blog.image} />
 				</Helmet>
 				<div className="container" id="blogs">
 					<div className="site-content">
