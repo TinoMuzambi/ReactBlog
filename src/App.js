@@ -92,7 +92,33 @@ class App extends Component {
 									<Helmet>
 										<title>Blog.TinoMuzambi</title>
 										<meta name="description" content="Blog.TinoMuzambi" />
+
+										{/* <!-- Google / Search Engine Tags --> */}
+										<meta itemprop="name" content="Blog.TinoMuzambi" />
+										<meta itemprop="description" content="Blog.TinoMuzambi" />
 										<meta itemprop="image" content="/logo512.png" />
+
+										{/* <!-- Facebook Meta Tags --> */}
+										<meta
+											property="og:url"
+											content="https://blog.tinomuzambi.com"
+										/>
+										<meta property="og:type" content="website" />
+										<meta property="og:title" content="Blog.TinoMuzambi" />
+										<meta
+											property="og:description"
+											content="Blog.TinoMuzambi"
+										/>
+										<meta property="og:image" content="/logo512.png" />
+
+										{/* <!-- Twitter Meta Tags --> */}
+										<meta name="twitter:card" content="summary_large_image" />
+										<meta name="twitter:title" content="Blog.TinoMuzambi" />
+										<meta
+											name="twitter:description"
+											content="Blog.TinoMuzambi"
+										/>
+										<meta name="twitter:image" content="/logo512.png" />
 									</Helmet>
 									<section
 										className="about"
