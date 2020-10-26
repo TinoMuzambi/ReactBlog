@@ -5,6 +5,7 @@ import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
 import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
+import { Helmet } from "react-helmet";
 
 class Blog extends Component {
 	constructor(props) {
@@ -40,7 +41,7 @@ class Blog extends Component {
 	render() {
 		const title = this.state.name; // Finding relevant blog.
 		const blog = blogs.find((blog) => blog.url === title);
-		document.title = blog.title + " | Blog.TinoMuzambi"; // Update document title to reflect blog.
+		// document.title = blog.title + " | Blog.TinoMuzambi"; // Update document title to reflect blog.
 		const filteredBlogs = blogs // Getting list that doesn't include current blog nor future blogs for other blogs section.
 			.filter((eachItem) => {
 				return (
@@ -51,6 +52,11 @@ class Blog extends Component {
 			.slice(0, 3);
 		return (
 			<>
+				<Helmet>
+					<title>{blog.title + " | Blog.TinoMuzambi"}</title>
+					<meta name={blog.title} content={blog.category} />
+					<meta itemprop="image" content={blog.image} />
+				</Helmet>
 				<div className="container" id="blogs">
 					<div className="site-content">
 						<div className="posts">
