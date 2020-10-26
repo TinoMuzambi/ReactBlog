@@ -53,7 +53,7 @@ class Blog extends Component {
 			<>
 				<Helmet>
 					<title>{blog.title + " | Blog.TinoMuzambi"}</title>
-					<meta name={blog.title} content={blog.category} />
+					<meta name="description" content={blog.title} />
 					<meta itemprop="image" content={blog.image} />
 				</Helmet>
 				<div className="container" id="blogs">

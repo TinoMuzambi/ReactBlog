@@ -62,7 +62,7 @@ class Category extends Component {
 			<>
 				<Helmet>
 					<title>{category.name + " | Blog.TinoMuzambi"}</title>
-					<meta name={category.name} content={category.name} />
+					<meta name="description" content={category.name} />
 					<meta itemprop="image" content={category.image} />
 				</Helmet>
 				<div className="container">

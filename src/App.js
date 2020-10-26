@@ -91,7 +91,7 @@ class App extends Component {
 								<div>
 									<Helmet>
 										<title>Blog.TinoMuzambi</title>
-										<meta name="Blog.TinoMuzambi" content="Blog.TinoMuzambi" />
+										<meta name="description" content="Blog.TinoMuzambi" />
 										<meta itemprop="image" content="/logo512.png" />
 									</Helmet>
 									<section
