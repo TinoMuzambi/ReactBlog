@@ -1,7 +1,7 @@
 const item = {
-	title: "The Social Dilemma",
-	date: "Monday 05 October 2020",
-	url: "https://www.youtube.com/watch?v=EuasXoRa45M",
-	description: `The Social Dilemma, streaming on Netflix. I'd definitely recommend the watch.`,
+	title: "Emotions - A kinetic typography",
+	date: "Monday 02 November 2020",
+	url: "https://www.youtube.com/watch?v=Kt8vGm8_ekQ",
+	description: `Words feeling human emotions`,
 };
 export default item;
