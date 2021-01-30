@@ -10,7 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Search from "./components/Search";
 import blogs from "./data/blogs";
 import { AiOutlineReload } from "react-icons/ai";
-import "./App.css";
+import "./css/App.min.css";
 import AOS from "aos";
 import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
