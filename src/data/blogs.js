@@ -85,6 +85,7 @@ const blogs = [
 		running Photoshop or typing a thesis on a phone. Granted, in a future with only smartphones,
 		these would be optimised for the mobile experience. But do you really wanna type a 5000 word
 		essay on a phone? Because I for one don’t.
+	</p>
 	<hr>
 	<p>
 		Which future would you prefer? Don’t be swayed by my bulletproof water tight argument, I wanna
@@ -492,6 +493,7 @@ const blogs = [
 		to the question “Who are you?” doesn’t lie in your profession or your hobbies, but instead it
 		goes much deeper. It’s in one’s beliefs, morals, fears, the thoughts that keeps one awake at
 		night. But I’m not about to expose myself like that.<br><br>
+	</p>
 	<hr>
 	<p>
 		I hope you enjoyed getting to know a little bit more about me. If you listened to the songs and
