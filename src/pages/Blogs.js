@@ -13,19 +13,19 @@ import JwPagination from "jw-react-pagination";
 import scrollToComponent from "react-scroll-to-component";
 import { useLocation } from "react-router-dom";
 
-const Blogs = ({ match, blogs, root, category }) => {
+const Blogs = ({ blogs, root, category }) => {
 	const [blogItems] = useState(blogs); // Set state to list of blogs.
 	const [displayBlogs, setDisplayBlogs] = useState([]); // Blogs currently being displayed.
 	const location = useLocation();
 
 	useEffect(() => {
 		location.pathname !== "/" && setDisplayBlogs(blogs); // Ensure blog content changes when url changes.
-	}, [location.pathname, blogs]);
+	}, [location.pathname, blogs, root]);
 
 	const handlePageChange = (displayBlogs) => {
 		// Handing pagination page changes.
 		setDisplayBlogs(displayBlogs);
-		scrollToComponent(root.blogs, {
+		scrollToComponent(root.blogsRef, {
 			// Scroll to top of blogs section.
 			offset: 0,
 			align: "top",

@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./SocialIcons";
 
-const Navbar = ({ root }) => {
+const Navbar = ({ about, featured, blogsRef, footer }) => {
 	const toggleCollapse = () => {
 		// Toggle collapse class on navbar.
 		const nav = document.querySelector(".nav");
@@ -37,7 +37,7 @@ const Navbar = ({ root }) => {
 								<li
 									className="nav-link"
 									onClick={() =>
-										scrollToComponent(root.about, {
+										scrollToComponent(about.current, {
 											offset: 0,
 											align: "top",
 											duration: 1500,
@@ -56,7 +56,7 @@ const Navbar = ({ root }) => {
 								<li
 									className="nav-link"
 									onClick={() =>
-										scrollToComponent(root.featured, {
+										scrollToComponent(featured.current, {
 											offset: 0,
 											align: "top",
 											duration: 1500,
@@ -73,7 +73,7 @@ const Navbar = ({ root }) => {
 								<li
 									className="nav-link"
 									onClick={() =>
-										scrollToComponent(root.blogs, {
+										scrollToComponent(blogsRef.current, {
 											offset: 0,
 											align: "top",
 											duration: 1500,
@@ -88,7 +88,7 @@ const Navbar = ({ root }) => {
 							<li
 								className="nav-link"
 								onClick={() =>
-									scrollToComponent(root.footer, {
+									scrollToComponent(footer.current, {
 										offset: 0,
 										align: "top",
 										duration: 1500,
