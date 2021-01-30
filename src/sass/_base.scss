@@ -119,56 +119,9 @@ img {
 
 /* Site Title */
 
-.site-title {
-	background: url("/assets/background.jpg");
-	background-size: cover;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-
-	img {
-		border-radius: 50%;
-		width: 250px;
-		height: 250px;
-		border: 2px solid #6caed5;
-	}
-
-	.site-background {
-		padding-top: 10rem;
-		color: var(--white);
-	}
-
-	h1,
-	h3 {
-		margin: 0.3rem;
-	}
-}
-
 /* x Site Title x */
 
 /* Featured Item */
-
-.featured {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 100%;
-
-	.item-container {
-		overflow: hidden;
-		padding-top: 50%;
-		position: relative;
-
-		.item {
-			width: 100%;
-			height: 100%;
-			margin: auto;
-			border: none;
-			left: 0;
-			position: absolute;
-			top: 0;
-		}
-	}
-}
 
 /* x Featured Item */
 
