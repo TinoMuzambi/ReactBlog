@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Featured from "./components/Featured";
@@ -14,6 +14,7 @@ import "./css/App.min.css";
 import AOS from "aos";
 import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
@@ -23,6 +24,7 @@ const App = () => {
 	const featured = useRef(null);
 	const blogsRef = useRef(null);
 	const footer = useRef(null);
+	const location = useLocation();
 
 	const searchBlogs = (query) => {
 		// Search by updating queryText state.
@@ -43,6 +45,7 @@ const App = () => {
 			// Get rid of preloader once everything's loaded
 			preload.classList.add("finish");
 		});
+
 		return () => {
 			window.removeEventListener("load", () => {
 				// Get rid of preloader once everything's loaded
@@ -50,6 +53,11 @@ const App = () => {
 			});
 		};
 	}, []);
+
+	useEffect(() => {
+		const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
+		nav.classList.remove("collapse");
+	}, [location.pathname]);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
@@ -80,91 +88,76 @@ const App = () => {
 	const Footer = lazy(() => import("./components/Footer"));
 	return (
 		<>
-			<Router>
-				<ScrollToTop /> {/* Scroll to top on page load. */}
-				<Preload /> {/* Preloader for showing before page loads. */}
-				<Navbar
-					about={about}
-					featured={featured}
-					blogsRef={blogsRef}
-					footer={footer}
-				/>
-				{/* Navbar - gets ref to this for scrolling to anchors. */}
-				<Switch>
-					<Route
-						exact
-						path="/"
-						render={(props) => (
-							<div>
-								<Helmet>
-									<title>Blog.TinoMuzambi</title>
-									<meta name="description" content="Blog.TinoMuzambi" />
+			<ScrollToTop /> {/* Scroll to top on page load. */}
+			<Preload /> {/* Preloader for showing before page loads. */}
+			<Navbar
+				about={about}
+				featured={featured}
+				blogsRef={blogsRef}
+				footer={footer}
+			/>
+			{/* Navbar - gets ref to this for scrolling to anchors. */}
+			<Switch>
+				<Route
+					exact
+					path="/"
+					render={(props) => (
+						<div>
+							<Helmet>
+								<title>Blog.TinoMuzambi</title>
+								<meta name="description" content="Blog.TinoMuzambi" />
 
-									{/* <!-- Google / Search Engine Tags --> */}
-									<meta itemprop="name" content="Blog.TinoMuzambi" />
-									<meta itemprop="description" content="Blog.TinoMuzambi" />
-									<meta itemprop="image" content="/logo512.png" />
+								{/* <!-- Google / Search Engine Tags --> */}
+								<meta itemprop="name" content="Blog.TinoMuzambi" />
+								<meta itemprop="description" content="Blog.TinoMuzambi" />
+								<meta itemprop="image" content="/logo512.png" />
 
-									{/* <!-- Facebook Meta Tags --> */}
-									<meta
-										property="og:url"
-										content="https://blog.tinomuzambi.com"
-									/>
-									<meta property="og:type" content="website" />
-									<meta property="og:title" content="Blog.TinoMuzambi" />
-									<meta property="og:description" content="Blog.TinoMuzambi" />
-									<meta property="og:image" content="/logo512.png" />
+								{/* <!-- Facebook Meta Tags --> */}
+								<meta
+									property="og:url"
+									content="https://blog.tinomuzambi.com"
+								/>
+								<meta property="og:type" content="website" />
+								<meta property="og:title" content="Blog.TinoMuzambi" />
+								<meta property="og:description" content="Blog.TinoMuzambi" />
+								<meta property="og:image" content="/logo512.png" />
 
-									{/* <!-- Twitter Meta Tags --> */}
-									<meta name="twitter:card" content="summary_large_image" />
-									<meta name="twitter:title" content="Blog.TinoMuzambi" />
-									<meta name="twitter:description" content="Blog.TinoMuzambi" />
-									<meta name="twitter:image" content="/logo512.png" />
-								</Helmet>
-								<section className="about" ref={about}>
-									<About /> {/* About section */}
-								</section>
-								<section className="featured" ref={featured}>
-									<Featured /> {/* Featured section */}
-								</section>
-								<div className="search-wrapper">
-									<Search searchBlogs={searchBlogs} /> {/* Search box */}
-								</div>
-								<section className="container" id="blogs">
-									<div className="site-content">
-										<section className="blogs" ref={blogsRef}>
-											<Blogs
-												blogs={homeBlogs}
-												category={false}
-												blogsRef={blogsRef}
-												search={searching}
-											/>
-											{/* Blogs section - pass list of blogs, false for category
+								{/* <!-- Twitter Meta Tags --> */}
+								<meta name="twitter:card" content="summary_large_image" />
+								<meta name="twitter:title" content="Blog.TinoMuzambi" />
+								<meta name="twitter:description" content="Blog.TinoMuzambi" />
+								<meta name="twitter:image" content="/logo512.png" />
+							</Helmet>
+							<section className="about" ref={about}>
+								<About /> {/* About section */}
+							</section>
+							<section className="featured" ref={featured}>
+								<Featured /> {/* Featured section */}
+							</section>
+							<div className="search-wrapper">
+								<Search searchBlogs={searchBlogs} /> {/* Search box */}
+							</div>
+							<section className="container" id="blogs">
+								<div className="site-content">
+									<section className="blogs" ref={blogsRef}>
+										<Blogs
+											blogs={homeBlogs}
+											category={false}
+											blogsRef={blogsRef}
+											search={searching}
+										/>
+										{/* Blogs section - pass list of blogs, false for category
 												and ref to this for scrolling to anchors */}
-										</section>
-										<Sidebar blogs={filteredBlogs} future={true} />
-										{/* Sidebar section - pass list of blogs, true for future to signal
+									</section>
+									<Sidebar blogs={filteredBlogs} future={true} />
+									{/* Sidebar section - pass list of blogs, true for future to signal
 											showing future blogs.*/}
-									</div>
-								</section>
-							</div>
-						)}
-					/>
-					{/* Lazy loading components that don't need to be rendered immediately. */}
-					<Suspense
-						fallback={
-							<div className="icon-wrapper">
-								<AiOutlineReload className="icon" />
-							</div>
-						}
-					>
-						<Route path="/blogs/:name" component={Blog} />
-						{/* Blog route for displaying blog content. */}
-						<Route path="/categories/:name" component={Category} />
-						{/* Category route for displaying per category blogs. */}
-					</Suspense>
-					<Route component={NotFoundPage} />
-				</Switch>
+								</div>
+							</section>
+						</div>
+					)}
+				/>
+				{/* Lazy loading components that don't need to be rendered immediately. */}
 				<Suspense
 					fallback={
 						<div className="icon-wrapper">
@@ -172,11 +165,24 @@ const App = () => {
 						</div>
 					}
 				>
-					<section className="footer" ref={footer}>
-						<Footer /> {/* Footer section */}
-					</section>
+					<Route path="/blogs/:name" component={Blog} />
+					{/* Blog route for displaying blog content. */}
+					<Route path="/categories/:name" component={Category} />
+					{/* Category route for displaying per category blogs. */}
 				</Suspense>
-			</Router>
+				<Route component={NotFoundPage} />
+			</Switch>
+			<Suspense
+				fallback={
+					<div className="icon-wrapper">
+						<AiOutlineReload className="icon" />
+					</div>
+				}
+			>
+				<section className="footer" ref={footer}>
+					<Footer /> {/* Footer section */}
+				</section>
+			</Suspense>
 		</>
 	);
 };
