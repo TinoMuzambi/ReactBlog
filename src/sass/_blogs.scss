@@ -12,7 +12,7 @@
 		}
 
 		& > .post-image .post-info {
-			background: var(--sky);
+			background: $sky;
 			padding: 1rem;
 			position: absolute;
 			bottom: 0;
@@ -39,20 +39,20 @@
 
 		.post-title {
 			a {
-				font-family: var(--Anton);
+				font-family: $Anton;
 				font-size: 1.5rem;
 			}
 
 			.editing-title {
-				font-family: var(--Lexend);
-				color: var(--text-gray);
+				font-family: $Lexend;
+				color: $text-gray;
 				font-size: 1.1rem;
 			}
 
 			.post-btn {
 				border-radius: 0;
 				padding: 0.7rem 1.5rem;
-				background: var(--sky);
+				background: $sky;
 				outline: none;
 			}
 		}
@@ -61,7 +61,7 @@
 			text-indent: -0.45em;
 			font-size: 80px;
 			width: 95%;
-			font-family: var(--Abel);
+			font-family: $Abel;
 			quotes: "“" "”" "‘" "’";
 
 			&::before {
@@ -79,24 +79,24 @@
 
 	.pagination {
 		justify-content: center;
-		color: var(--text-gray);
+		color: $text-gray;
 		margin: 4rem 0;
 
 		a {
 			padding: 0.6rem 0.9rem;
 			border-radius: 2rem;
 			margin: 0 0.3rem;
-			font-family: var(--Lexend);
+			font-family: $Lexend;
 		}
 
 		.pages {
-			background: var(--text-gray);
-			color: var(--white);
+			background: $text-gray;
+			color: $white;
 		}
 	}
 
 	.picsart-list {
-		font-family: var(--Lexend);
+		font-family: $Lexend;
 		list-style: initial;
 		color: gray;
 	}
