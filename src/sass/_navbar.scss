@@ -38,7 +38,7 @@
 	}
 
 	.nav-items {
-		display: flex;
+		@extend %flex;
 		margin: 0;
 
 		.nav-link {

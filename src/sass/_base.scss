@@ -28,12 +28,29 @@ body {
 
 %flex {
 	display: flex;
+}
+
+@mixin flexColCenter {
+	@extend %flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin flexRowCenter {
+	@extend %flex;
+	justify-content: center;
+}
+
+@mixin flexAllRow {
+	@extend %flex;
+	justify-content: center;
 	align-items: center;
 }
 
-@mixin flexCenter {
+@mixin flexAllCol {
 	@extend %flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 }
 
@@ -51,8 +68,7 @@ a {
 }
 
 .flex-row {
-	display: flex;
-	flex-direction: row;
+	@extend %flex;
 	flex-wrap: wrap;
 }
 

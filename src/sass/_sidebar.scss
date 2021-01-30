@@ -9,7 +9,7 @@
 				margin: 0.8rem 0;
 				border-radius: 3rem;
 				width: 70%;
-				display: flex;
+				@extend %flex;
 				justify-content: space-between;
 
 				a {

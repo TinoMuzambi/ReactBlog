@@ -2,8 +2,7 @@
 	background: url("/assets/background.jpg");
 	background-size: cover;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
+	@include flexRowCenter;
 
 	img {
 		border-radius: 50%;
