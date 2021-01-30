@@ -12,6 +12,10 @@ footer {
 			flex-grow: 1;
 			flex-basis: 0;
 			padding: 3rem 0.9rem;
+
+			@include mq(520px) {
+				padding: 1rem 0.9rem !important;
+			}
 		}
 
 		h2 {
@@ -46,6 +50,10 @@ footer {
 	.rights {
 		justify-content: center;
 		font-family: $Josefin;
+
+		@include mq(520px) {
+			padding: 0 1.4rem;
+		}
 
 		h4 a {
 			color: $white;

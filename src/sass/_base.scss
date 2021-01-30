@@ -169,69 +169,6 @@ img {
 /*              Viewport less then or equal to 520px            */
 
 @media only screen and (max-width: 520px) {
-	.nav {
-		min-height: 6.5vh;
-
-		.toggle-collapse {
-			width: 80% !important;
-
-			.toggle-icons {
-				margin: -0.7rem;
-			}
-		}
-
-		.nav-items .nav-link {
-			&:hover {
-				background-color: transparent !important;
-				text-decoration: none !important;
-
-				a {
-					color: $midnight !important;
-				}
-			}
-		}
-	}
-
-	.blog {
-		height: 160vh;
-	}
-
-	.search-wrapper {
-		.search-input {
-			margin-right: 3.2rem;
-		}
-	}
-
-	.site-content {
-		.post-content {
-			& > .post-image .post-info {
-				display: none;
-			}
-
-			blockquote {
-				font-size: 60px;
-				margin-left: 1rem;
-			}
-		}
-
-		.cycling-sites {
-			height: 215px;
-		}
-
-		.two-grid {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
-
-	footer {
-		.container > div {
-			padding: 1rem 0.9rem !important;
-		}
-
-		.rights {
-			padding: 0 1.4rem;
-		}
-	}
 }
 
 /*        x      Viewport less then or equal to 520px       x     */

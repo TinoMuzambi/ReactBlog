@@ -18,6 +18,10 @@
 		outline: none;
 		border: solid 2px black;
 
+		@include mq(520px) {
+			margin-right: 3.2rem;
+		}
+
 		&:hover {
 			border: solid 2px gray;
 		}

@@ -28,6 +28,10 @@
 				bottom: 1.2rem !important;
 				border-radius: 0 !important;
 			}
+
+			@include mq(520px) {
+				display: none;
+			}
 		}
 
 		& > .post-image > div {
@@ -74,6 +78,11 @@
 			font-family: $Abel;
 			quotes: "“" "”" "‘" "’";
 
+			@include mq(520px) {
+				font-size: 60px;
+				margin-left: 1rem;
+			}
+
 			&::before {
 				content: open-quote;
 			}
@@ -115,6 +124,10 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 
+		@include mq(520px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
 		.grid-item {
 			display: grid;
 		}
@@ -147,6 +160,10 @@
 
 		@include mq(750px) {
 			height: 360px;
+		}
+
+		@include mq(52px) {
+			height: 215px;
 		}
 	}
 }

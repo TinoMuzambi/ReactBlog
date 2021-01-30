@@ -17,6 +17,10 @@
 		min-height: 9.5vh;
 	}
 
+	@include mq(520px) {
+		min-height: 6.5vh;
+	}
+
 	&.collapse {
 		height: 25rem;
 	}
@@ -41,6 +45,10 @@
 			display: initial !important;
 		}
 
+		@include mq(520px) {
+			width: 80% !important;
+		}
+
 		.toggle-icons {
 			display: inline-block;
 			position: absolute;
@@ -48,6 +56,10 @@
 			right: 0;
 			padding: 1.7rem 0;
 			outline: 0;
+
+			@include mq(520px) {
+				margin: -0.7rem;
+			}
 
 			i {
 				font-size: 1.4rem;
@@ -85,7 +97,7 @@
 					color: $white;
 
 					@include mq(750px) {
-						color: $text-gray !important;
+						color: $midnight !important;
 					}
 				}
 			}
