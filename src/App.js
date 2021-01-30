@@ -17,6 +17,8 @@ import { Helmet } from "react-helmet";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
+	const [searching, setSearching] = useState(false);
+
 	const thisRef = useRef(null);
 	const about = useRef(null);
 	const featured = useRef(null);
@@ -26,6 +28,7 @@ const App = () => {
 	const searchBlogs = (query) => {
 		// Search by updating queryText state.
 		setQueryText(query);
+		query ? setSearching(true) : setSearching(false);
 	};
 
 	useEffect(() => {
@@ -135,6 +138,7 @@ const App = () => {
 												blogs={homeBlogs}
 												category={false}
 												root={thisRef}
+												search={searching}
 											/>
 											{/* Blogs section - pass list of blogs, false for category
 												and ref to this for scrolling to anchors */}
