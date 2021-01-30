@@ -19,7 +19,7 @@ import { Helmet } from "react-helmet";
 window.addEventListener("load", () => {
 	// Get rid of preloader once everything's loaded
 	const preload = document.querySelector(".preload");
-	preload.classList.add("preload-finish");
+	preload.classList.add("finish");
 });
 
 class App extends Component {
