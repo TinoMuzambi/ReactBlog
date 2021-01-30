@@ -18,6 +18,12 @@
 			bottom: 0;
 			left: 20vw;
 			border-radius: 3rem;
+
+			@include mq(1130px) {
+				left: 2rem !important;
+				bottom: 1.2rem !important;
+				border-radius: 0 !important;
+			}
 		}
 
 		& > .post-image > div {
@@ -119,8 +125,16 @@
 			margin: 1rem auto;
 		}
 	}
-}
 
-.page-holder {
-	padding: 20px 0;
+	.youtube-items {
+		@include mq(1130px) {
+			grid-template-columns: repeat(2, 1fr) !important;
+		}
+	}
+
+	.cycling-sites {
+		@include mq(768px) {
+			height: 360px;
+		}
+	}
 }

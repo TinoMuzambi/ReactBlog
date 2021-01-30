@@ -141,17 +141,6 @@ img {
 /*              Viewport less then or equal to 2560px            */
 
 @media only screen and (max-width: 2560px) {
-	.nav {
-		min-height: 10vh;
-	}
-
-	.blog {
-		height: 110vh;
-	}
-
-	.site-content .post-content .post-image img {
-		width: 100%;
-	}
 }
 
 /*        X     Viewport less then or equal to 2560px      X     */
@@ -159,13 +148,6 @@ img {
 /*              Viewport less then or equal to 1440px            */
 
 @media only screen and (max-width: 1440px) {
-	.nav {
-		min-height: 12vh;
-	}
-
-	.blog {
-		height: 180vh;
-	}
 }
 
 /*        X     Viewport less then or equal to 1440px      X     */
@@ -173,37 +155,6 @@ img {
 /*              Viewport less then or equal to 1130px            */
 
 @media only screen and (max-width: 1130px) {
-	.nav {
-		min-height: 12vh;
-	}
-
-	.blog {
-		height: 170vh;
-	}
-
-	.site-content {
-		.post-content > .post-image .post-info {
-			left: 2rem !important;
-			bottom: 1.2rem !important;
-			border-radius: 0 !important;
-		}
-
-		.sidebar .other-posts .post-info {
-			display: none !important;
-		}
-
-		.youtube-items {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.cycling-sites {
-			height: 360px;
-		}
-	}
-
-	footer .container {
-		grid-template-columns: repeat(2, 1fr);
-	}
 }
 
 /*      x       Viewport less then or equal to 1130px    x     */

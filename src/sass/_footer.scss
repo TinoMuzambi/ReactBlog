@@ -17,6 +17,10 @@ footer {
 		h2 {
 			color: $white;
 		}
+
+		@include mq(1130px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	.instagram div > img {

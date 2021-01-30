@@ -5,6 +5,14 @@
 	overflow: hidden;
 	transition: height 1s ease-in-out;
 
+	@include mq(2560px) {
+		min-height: 10vh;
+	}
+
+	@include mq(1440px) {
+		min-height: 12vh;
+	}
+
 	&.collapse {
 		height: 25rem;
 	}

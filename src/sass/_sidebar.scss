@@ -33,6 +33,10 @@
 				left: 1.5rem !important;
 				border-radius: 0 !important;
 				background: white !important;
+
+				@include mq(1130px) {
+					display: none !important;
+				}
 			}
 
 			.post-title {
