@@ -147,11 +147,11 @@ class App extends Component {
 													this.blogs = section;
 												}}
 											>
-												<Blogs blogs={homeBlogs} category={false} root={this} />{" "}
+												<Blogs blogs={homeBlogs} category={false} root={this} />
 												{/* Blogs section - pass list of blogs, false for category
 												and ref to this for scrolling to anchors */}
 											</section>
-											<Sidebar blogs={filteredBlogs} future={true} />{" "}
+											<Sidebar blogs={filteredBlogs} future={true} />
 											{/* Sidebar section - pass list of blogs, true for future to signal
 											showing future blogs.*/}
 										</div>

@@ -70,8 +70,8 @@ const Category = ({ match }) => {
 				<meta name="twitter:image" content={category.image} />
 			</Helmet>
 			<div className="container" ref={ref}>
-				<div class="site-content">
-					<div class="posts">
+				<div className="site-content">
+					<div className="posts">
 						<h1>{category.name}</h1>
 						{/* Only render component if there are blogs to show for category */}
 						{filteredBlogs.length > 0 ? (
