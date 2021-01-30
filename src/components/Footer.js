@@ -49,7 +49,7 @@ const Footer = () => (
 					<i className="fas fa-copyright">
 						<FaCopyright />
 					</i>
-					Copyright Tino Muzambi 2020
+					Copyright Tino Muzambi 2020 - 2021
 				</h4>
 			</div>
 			<div className="move-up">
