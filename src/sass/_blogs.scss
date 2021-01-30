@@ -9,49 +9,10 @@
 	.post-content {
 		width: 100%;
 
-		& > .post-image,
 		.post-title {
 			padding: 1rem 2rem;
 			position: relative;
-		}
 
-		& > .post-image .post-info {
-			background: $sky;
-			padding: 1rem;
-			position: absolute;
-			bottom: 0;
-			left: 20vw;
-			border-radius: 3rem;
-
-			@include mq(1130px) {
-				left: 2rem !important;
-				bottom: 1.2rem !important;
-				border-radius: 0 !important;
-			}
-
-			@include mq(520px) {
-				display: none;
-			}
-		}
-
-		& > .post-image > div {
-			overflow: hidden;
-		}
-
-		& > .post-image .img {
-			width: 100%;
-			transition: all 1s ease;
-		}
-
-		& > .post-image .img:hover {
-			transform: scale(1.3);
-		}
-
-		& > .post-image .post-info span {
-			margin: 0 0.5rem;
-		}
-
-		.post-title {
 			a {
 				font-family: $Anton;
 				font-size: 1.5rem;
@@ -68,6 +29,47 @@
 				padding: 0.7rem 1.5rem;
 				background: $sky;
 				outline: none;
+			}
+		}
+
+		.post-image {
+			padding: 1rem 2rem;
+			position: relative;
+
+			div {
+				overflow: hidden;
+
+				.img {
+					width: 100%;
+					transition: all 1s ease;
+
+					&:hover {
+						transform: scale(1.3);
+					}
+				}
+			}
+
+			.post-info {
+				background: $sky;
+				padding: 1rem;
+				position: absolute;
+				bottom: 0;
+				left: 20vw;
+				border-radius: 3rem;
+
+				@include mq(1130px) {
+					left: 2rem !important;
+					bottom: 1.2rem !important;
+					border-radius: 0 !important;
+				}
+
+				@include mq(520px) {
+					display: none;
+				}
+
+				span {
+					margin: 0 0.5rem;
+				}
 			}
 		}
 
