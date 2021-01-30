@@ -1,0 +1,182 @@
+.site-content {
+	display: grid;
+	grid-template-columns: 70% 30%;
+
+	.post-content {
+		width: 100%;
+
+		& > .post-image,
+		.post-title {
+			padding: 1rem 2rem;
+			position: relative;
+		}
+
+		& > .post-image .post-info {
+			background: var(--sky);
+			padding: 1rem;
+			position: absolute;
+			bottom: 0;
+			left: 20vw;
+			border-radius: 3rem;
+		}
+
+		& > .post-image > div {
+			overflow: hidden;
+		}
+
+		& > .post-image .img {
+			width: 100%;
+			transition: all 1s ease;
+		}
+
+		& > .post-image .img:hover {
+			transform: scale(1.3);
+		}
+
+		& > .post-image .post-info span {
+			margin: 0 0.5rem;
+		}
+
+		.post-title {
+			a {
+				font-family: var(--Anton);
+				font-size: 1.5rem;
+			}
+
+			.editing-title {
+				font-family: var(--Lexend);
+				color: var(--text-gray);
+				font-size: 1.1rem;
+			}
+
+			.post-btn {
+				border-radius: 0;
+				padding: 0.7rem 1.5rem;
+				background: var(--sky);
+				outline: none;
+			}
+		}
+
+		blockquote {
+			text-indent: -0.45em;
+			font-size: 80px;
+			width: 95%;
+			font-family: var(--Abel);
+			quotes: "“" "”" "‘" "’";
+
+			&::before {
+				content: open-quote;
+			}
+		}
+
+		@supports (hanging-punctuation: first) {
+			.site-content .post-content blockquote {
+				text-indent: 0;
+				hanging-punctuation: first;
+			}
+		}
+	}
+
+	.pagination {
+		justify-content: center;
+		color: var(--text-gray);
+		margin: 4rem 0;
+
+		a {
+			padding: 0.6rem 0.9rem;
+			border-radius: 2rem;
+			margin: 0 0.3rem;
+			font-family: var(--Lexend);
+		}
+
+		.pages {
+			background: var(--text-gray);
+			color: var(--white);
+		}
+	}
+
+	.picsart-list {
+		font-family: var(--Lexend);
+		list-style: initial;
+		color: gray;
+	}
+
+	.two-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		.grid-item {
+			display: grid;
+		}
+
+		.grid-image {
+			width: 100%;
+			height: 300px;
+			object-fit: contain;
+		}
+
+		p {
+			margin: 1rem auto;
+		}
+	}
+
+	/* Sidebar */
+
+	& > .sidebar {
+		.category-list {
+			font-family: var(--Livvic), "Verdana";
+
+			.list-items {
+				background: var(--sky);
+				padding: 0.4rem 1rem;
+				margin: 0.8rem 0;
+				border-radius: 3rem;
+				width: 70%;
+				display: flex;
+				justify-content: space-between;
+
+				a {
+					color: black;
+				}
+			}
+		}
+
+		.other-posts {
+			.post-content {
+				padding: 1rem 0;
+			}
+
+			h2 {
+				padding-top: 8rem;
+			}
+
+			.post-info {
+				padding: 0.4rem 0.1rem !important;
+				bottom: 0 !important;
+				left: 1.5rem !important;
+				border-radius: 0 !important;
+				background: white !important;
+			}
+
+			.post-title {
+				a {
+					font-size: 1rem;
+				}
+
+				.side-future {
+					font-family: var(--Anton);
+					font-weight: 100;
+					font-size: 1rem;
+					color: var(--text-gray);
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	/* x Sidebar x */
+}
+
+.page-holder {
+	padding: 20px 0;
+}
