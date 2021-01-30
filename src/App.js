@@ -33,7 +33,7 @@ const App = () => {
 
 		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
 		const timeoutID = setTimeout(function () {
-			preload.classList.add("preload-finish");
+			preload.classList.add("finish");
 			clearTimeout(timeoutID);
 		}, 7000);
 
