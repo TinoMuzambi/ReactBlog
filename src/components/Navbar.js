@@ -19,7 +19,7 @@ const Navbar = ({ about, featured, blogsRef, footer }) => {
 	return (
 		<>
 			<nav className="nav" id="nav">
-				<div className="nav-menu flex-row">
+				<div className="nav-menu">
 					<div className="nav-brand">
 						<Link to="/" className="text-gray">
 							Blog.TinoMuzambi
@@ -32,75 +32,73 @@ const Navbar = ({ about, featured, blogsRef, footer }) => {
 							</span>
 						</div>
 					</div>
-					<div>
-						<ul className="nav-items">
-							{/* Either scroll or go home depending on location. */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(about.current, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Home
-								</li>
-							) : (
-								<Link to="/">
-									<li className="nav-link">Home</li>
-								</Link>
-							)}
-							{/* Conditionally render element based on location */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(featured.current, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Featured
-								</li>
-							) : (
-								""
-							)}
-							{/* Conditionally render element based on location */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(blogsRef.current, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Blogs
-								</li>
-							) : (
-								""
-							)}
+					<ul className="nav-items">
+						{/* Either scroll or go home depending on location. */}
+						{location.pathname === "/" ? (
 							<li
 								className="nav-link"
 								onClick={() =>
-									scrollToComponent(footer.current, {
+									scrollToComponent(about.current, {
 										offset: 0,
 										align: "top",
 										duration: 1500,
 									})
 								}
 							>
-								Socials
+								Home
 							</li>
-						</ul>
-					</div>
+						) : (
+							<Link to="/">
+								<li className="nav-link">Home</li>
+							</Link>
+						)}
+						{/* Conditionally render element based on location */}
+						{location.pathname === "/" ? (
+							<li
+								className="nav-link"
+								onClick={() =>
+									scrollToComponent(featured.current, {
+										offset: 0,
+										align: "top",
+										duration: 1500,
+									})
+								}
+							>
+								Featured
+							</li>
+						) : (
+							""
+						)}
+						{/* Conditionally render element based on location */}
+						{location.pathname === "/" ? (
+							<li
+								className="nav-link"
+								onClick={() =>
+									scrollToComponent(blogsRef.current, {
+										offset: 0,
+										align: "top",
+										duration: 1500,
+									})
+								}
+							>
+								Blogs
+							</li>
+						) : (
+							""
+						)}
+						<li
+							className="nav-link"
+							onClick={() =>
+								scrollToComponent(footer.current, {
+									offset: 0,
+									align: "top",
+									duration: 1500,
+								})
+							}
+						>
+							Socials
+						</li>
+					</ul>
 					<SocialIcons /> {/* Social Icons section */}
 				</div>
 			</nav>
