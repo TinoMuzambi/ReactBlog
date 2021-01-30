@@ -1,0 +1,81 @@
+.nav {
+	background: white;
+	padding: 0 2rem;
+	height: 0;
+	overflow: hidden;
+	transition: height 1s ease-in-out;
+
+	&.collapse {
+		height: 25rem;
+	}
+
+	.nav-menu {
+		justify-content: space-between;
+	}
+
+	.toggle-collapse {
+		position: absolute;
+		top: 0;
+		width: 90%;
+		cursor: pointer;
+		display: none;
+		outline: 0;
+
+		.toggle-icons {
+			display: inline-block;
+			position: absolute;
+			top: -0.3rem;
+			right: 0;
+			padding: 1.7rem 0;
+			outline: 0;
+
+			i {
+				font-size: 1.4rem;
+				color: var(--text-gray);
+				outline: 0;
+			}
+		}
+	}
+
+	.nav-items {
+		display: flex;
+		margin: 0;
+
+		.nav-link {
+			padding: 1.6rem 1rem;
+			font-size: 1.1rem;
+			position: relative;
+			font-family: var(--Abel), "Verdana";
+
+			&:hover {
+				color: var(--midnight);
+				transition: 0.5s;
+				cursor: pointer;
+
+				a {
+					color: var(--white);
+				}
+			}
+		}
+	}
+
+	.nav-brand a {
+		font-size: 1.6rem;
+		padding: 0.5rem 0;
+		display: inline-block;
+		font-family: var(--Lexend), "Verdana";
+		outline: 0;
+	}
+
+	.social {
+		padding: 1.4rem 0;
+
+		span {
+			padding: 0 0.2rem;
+
+			&:hover {
+				color: var(--midnight);
+			}
+		}
+	}
+}
