@@ -21,6 +21,10 @@ footer {
 		@include mq(1130px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
+
+		@include mq(1130px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	.instagram div > img {

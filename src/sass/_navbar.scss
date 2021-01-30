@@ -13,12 +13,20 @@
 		min-height: 12vh;
 	}
 
+	@include mq(750px) {
+		min-height: 9.5vh;
+	}
+
 	&.collapse {
 		height: 25rem;
 	}
 
 	.nav-menu {
 		justify-content: space-between;
+
+		@include mq(750px) {
+			flex-direction: column;
+		}
 	}
 
 	.toggle-collapse {
@@ -28,6 +36,10 @@
 		cursor: pointer;
 		display: none;
 		outline: 0;
+
+		@include mq(750px) {
+			display: initial !important;
+		}
 
 		.toggle-icons {
 			display: inline-block;
@@ -49,6 +61,10 @@
 		@extend %flex;
 		margin: 0;
 
+		@include mq(750px) {
+			flex-direction: column;
+		}
+
 		.nav-link {
 			padding: 1.6rem 1rem;
 			font-size: 1.1rem;
@@ -60,8 +76,17 @@
 				transition: 0.5s;
 				cursor: pointer;
 
+				@include mq(750px) {
+					background-color: transparent !important;
+					text-decoration: none !important;
+				}
+
 				a {
 					color: $white;
+
+					@include mq(750px) {
+						color: $text-gray !important;
+					}
 				}
 			}
 		}

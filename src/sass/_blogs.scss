@@ -2,6 +2,10 @@
 	display: grid;
 	grid-template-columns: 70% 30%;
 
+	@include mq(750px) {
+		grid-template-columns: 100%;
+	}
+
 	.post-content {
 		width: 100%;
 
@@ -130,10 +134,18 @@
 		@include mq(1130px) {
 			grid-template-columns: repeat(2, 1fr) !important;
 		}
+
+		@include mq(750px) {
+			grid-template-columns: repeat(1, 1fr) !important;
+		}
 	}
 
 	.cycling-sites {
-		@include mq(768px) {
+		@include mq(1130px) {
+			height: 360px;
+		}
+
+		@include mq(750px) {
 			height: 360px;
 		}
 	}
