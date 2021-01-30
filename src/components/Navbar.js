@@ -6,13 +6,15 @@ import { FaBars } from "react-icons/fa";
 import SocialIcons from "./SocialIcons";
 
 const Navbar = ({ about, featured, blogsRef, footer }) => {
+	const location = useLocation();
+
 	const toggleCollapse = () => {
 		// Toggle collapse class on navbar.
 		const nav = document.querySelector(".nav");
-		nav.classList.toggle("collapse");
+		location.pathname === "/"
+			? nav.classList.toggle("collapse")
+			: nav.classList.toggle("collapse-sm");
 	};
-
-	const location = useLocation();
 
 	return (
 		<>

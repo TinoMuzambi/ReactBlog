@@ -12,9 +12,6 @@ const Blog = ({ match }) => {
 
 	useEffect(() => {
 		setName(match.params.name);
-
-		const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
-		nav.classList.remove("collapse");
 	}, [match.url, match.params.name]);
 
 	const title = name; // Finding relevant blog.
