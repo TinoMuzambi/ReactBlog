@@ -31,7 +31,7 @@
 
 			i {
 				font-size: 1.4rem;
-				color: var(--text-gray);
+				color: $text-gray;
 				outline: 0;
 			}
 		}
@@ -45,15 +45,15 @@
 			padding: 1.6rem 1rem;
 			font-size: 1.1rem;
 			position: relative;
-			font-family: var(--Abel), "Verdana";
+			font-family: $Abel;
 
 			&:hover {
-				color: var(--midnight);
+				color: $midnight;
 				transition: 0.5s;
 				cursor: pointer;
 
 				a {
-					color: var(--white);
+					color: $white;
 				}
 			}
 		}
@@ -63,7 +63,7 @@
 		font-size: 1.6rem;
 		padding: 0.5rem 0;
 		display: inline-block;
-		font-family: var(--Lexend), "Verdana";
+		font-family: $Lexend, "Verdana";
 		outline: 0;
 	}
 
@@ -74,7 +74,7 @@
 			padding: 0 0.2rem;
 
 			&:hover {
-				color: var(--midnight);
+				color: $midnight;
 			}
 		}
 	}
