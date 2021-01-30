@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 const Category = ({ match }) => {
 	const [name, setName] = useState(match.params.name); // Getting name from props to find right category to display.
-	const [blogItems, setBlogItems] = useState(blogs); // Set state to list of blogs.
+	const [blogItems] = useState(blogs); // Set state to list of blogs.
 	const ref = useRef(null);
 
 	useEffect(() => {

@@ -14,7 +14,7 @@ import scrollToComponent from "react-scroll-to-component";
 import { useLocation } from "react-router-dom";
 
 const Blogs = ({ match, blogs, root, category }) => {
-	const [blogItems, setBlogItems] = useState(blogs); // Set state to list of blogs.
+	const [blogItems] = useState(blogs); // Set state to list of blogs.
 	const [displayBlogs, setDisplayBlogs] = useState([]); // Blogs currently being displayed.
 	const location = useLocation();
 
