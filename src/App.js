@@ -19,7 +19,6 @@ const App = () => {
 	const [queryText, setQueryText] = useState("");
 	const [searching, setSearching] = useState(false);
 
-	const thisRef = useRef(null);
 	const about = useRef(null);
 	const featured = useRef(null);
 	const blogsRef = useRef(null);
@@ -81,7 +80,7 @@ const App = () => {
 	const Footer = lazy(() => import("./components/Footer"));
 	return (
 		<>
-			<Router ref={thisRef}>
+			<Router>
 				<ScrollToTop /> {/* Scroll to top on page load. */}
 				<Preload /> {/* Preloader for showing before page loads. */}
 				<Navbar
@@ -137,7 +136,7 @@ const App = () => {
 											<Blogs
 												blogs={homeBlogs}
 												category={false}
-												root={thisRef}
+												blogsRef={blogsRef}
 												search={searching}
 											/>
 											{/* Blogs section - pass list of blogs, false for category
