@@ -3,7 +3,7 @@
 	padding: 0 2rem;
 	height: 0;
 	overflow: hidden;
-	transition: height 1s ease-in-out;
+	transition: height 0.5s ease-in-out;
 
 	@include mq(2560px) {
 		min-height: 10vh;
@@ -14,112 +14,127 @@
 	}
 
 	@include mq(750px) {
-		min-height: 9.5vh;
+		min-height: 9vh;
 	}
 
 	@include mq(520px) {
-		min-height: 6.5vh;
+		min-height: 6vh;
 	}
 
 	&.collapse {
 		height: 25rem;
 	}
 
+	&.collapse-sm {
+		height: 15rem;
+	}
+
 	.nav-menu {
+		@extend %flex;
+		align-items: center;
 		justify-content: space-between;
 
 		@include mq(750px) {
 			flex-direction: column;
-		}
-	}
-
-	.toggle-collapse {
-		position: absolute;
-		top: 0;
-		width: 90%;
-		@extend %point;
-		display: none;
-		outline: 0;
-
-		@include mq(750px) {
-			display: initial !important;
+			align-items: initial;
+			margin-top: 0.6rem;
 		}
 
 		@include mq(520px) {
-			width: 80% !important;
+			margin-top: 0.1rem;
 		}
 
-		.toggle-icons {
-			display: inline-block;
-			position: absolute;
-			top: -0.3rem;
-			right: 0;
-			padding: 1.7rem 0;
-			outline: 0;
+		.nav-brand {
+			height: 100%;
 
-			@include mq(520px) {
-				margin: -0.7rem;
-			}
-
-			i {
-				font-size: 1.4rem;
-				color: $text-gray;
+			a {
+				font-size: 1.6rem;
+				display: inline-block;
+				font-family: $Lexend;
 				outline: 0;
 			}
 		}
-	}
 
-	.nav-items {
-		@extend %flex;
-		margin: 0;
+		.toggle-collapse {
+			position: absolute;
+			top: 0;
+			width: 90%;
+			@extend %point;
+			display: none;
+			outline: 0;
 
-		@include mq(750px) {
-			flex-direction: column;
-		}
+			@include mq(750px) {
+				display: initial;
+			}
 
-		.nav-link {
-			padding: 1.6rem 1rem;
-			font-size: 1.1rem;
-			position: relative;
-			font-family: $Abel;
+			@include mq(520px) {
+				width: 80% !important;
+			}
 
-			&:hover {
-				color: $midnight;
-				transition: 0.5s;
-				@extend %point;
+			.toggle-icons {
+				display: inline-block;
+				position: absolute;
+				top: -0.3rem;
+				right: 0;
+				padding: 1.7rem 0;
+				outline: 0;
 
-				@include mq(750px) {
-					background-color: transparent !important;
-					text-decoration: none !important;
+				@include mq(520px) {
+					margin: -0.7rem;
 				}
 
-				a {
-					color: $white;
+				i {
+					font-size: 1.4rem;
+					color: $text-gray;
+					outline: 0;
+				}
+			}
+		}
+
+		.nav-items {
+			@extend %flex;
+			margin: 0;
+
+			@include mq(750px) {
+				flex-direction: column;
+			}
+
+			.nav-link {
+				padding: 1.6rem 1rem;
+				font-size: 1.1rem;
+				position: relative;
+				font-family: $Abel;
+
+				&:hover {
+					color: $midnight;
+					transition: 0.5s;
+					@extend %point;
 
 					@include mq(750px) {
-						color: $midnight !important;
+						background-color: transparent !important;
+						text-decoration: none !important;
+					}
+
+					a {
+						color: $white;
+
+						@include mq(750px) {
+							color: $midnight !important;
+						}
 					}
 				}
 			}
 		}
-	}
 
-	.nav-brand a {
-		font-size: 1.6rem;
-		padding: 0.5rem 0;
-		display: inline-block;
-		font-family: $Lexend, "Verdana";
-		outline: 0;
-	}
+		.social {
+			padding: 1.4rem 0;
 
-	.social {
-		padding: 1.4rem 0;
+			span {
+				padding: 0 0.2rem;
 
-		span {
-			padding: 0 0.2rem;
-
-			&:hover {
-				color: $midnight;
+				&:hover {
+					color: $midnight;
+				}
 			}
 		}
 	}

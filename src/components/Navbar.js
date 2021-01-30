@@ -5,19 +5,21 @@ import { withRouter } from "react-router";
 import { FaBars } from "react-icons/fa";
 import SocialIcons from "./SocialIcons";
 
-const Navbar = ({ root }) => {
+const Navbar = ({ about, featured, blogsRef, footer }) => {
+	const location = useLocation();
+
 	const toggleCollapse = () => {
 		// Toggle collapse class on navbar.
 		const nav = document.querySelector(".nav");
-		nav.classList.toggle("collapse");
+		location.pathname === "/"
+			? nav.classList.toggle("collapse")
+			: nav.classList.toggle("collapse-sm");
 	};
-
-	const location = useLocation();
 
 	return (
 		<>
 			<nav className="nav" id="nav">
-				<div className="nav-menu flex-row">
+				<div className="nav-menu">
 					<div className="nav-brand">
 						<Link to="/" className="text-gray">
 							Blog.TinoMuzambi
@@ -30,75 +32,73 @@ const Navbar = ({ root }) => {
 							</span>
 						</div>
 					</div>
-					<div>
-						<ul className="nav-items">
-							{/* Either scroll or go home depending on location. */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(root.about, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Home
-								</li>
-							) : (
-								<Link to="/">
-									<li className="nav-link">Home</li>
-								</Link>
-							)}
-							{/* Conditionally render element based on location */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(root.featured, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Featured
-								</li>
-							) : (
-								""
-							)}
-							{/* Conditionally render element based on location */}
-							{location.pathname === "/" ? (
-								<li
-									className="nav-link"
-									onClick={() =>
-										scrollToComponent(root.blogs, {
-											offset: 0,
-											align: "top",
-											duration: 1500,
-										})
-									}
-								>
-									Blogs
-								</li>
-							) : (
-								""
-							)}
+					<ul className="nav-items">
+						{/* Either scroll or go home depending on location. */}
+						{location.pathname === "/" ? (
 							<li
 								className="nav-link"
 								onClick={() =>
-									scrollToComponent(root.footer, {
+									scrollToComponent(about.current, {
 										offset: 0,
 										align: "top",
 										duration: 1500,
 									})
 								}
 							>
-								Socials
+								Home
 							</li>
-						</ul>
-					</div>
+						) : (
+							<Link to="/">
+								<li className="nav-link">Home</li>
+							</Link>
+						)}
+						{/* Conditionally render element based on location */}
+						{location.pathname === "/" ? (
+							<li
+								className="nav-link"
+								onClick={() =>
+									scrollToComponent(featured.current, {
+										offset: 0,
+										align: "top",
+										duration: 1500,
+									})
+								}
+							>
+								Featured
+							</li>
+						) : (
+							""
+						)}
+						{/* Conditionally render element based on location */}
+						{location.pathname === "/" ? (
+							<li
+								className="nav-link"
+								onClick={() =>
+									scrollToComponent(blogsRef.current, {
+										offset: 0,
+										align: "top",
+										duration: 1500,
+									})
+								}
+							>
+								Blogs
+							</li>
+						) : (
+							""
+						)}
+						<li
+							className="nav-link"
+							onClick={() =>
+								scrollToComponent(footer.current, {
+									offset: 0,
+									align: "top",
+									duration: 1500,
+								})
+							}
+						>
+							Socials
+						</li>
+					</ul>
 					<SocialIcons /> {/* Social Icons section */}
 				</div>
 			</nav>

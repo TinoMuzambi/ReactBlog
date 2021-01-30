@@ -8,7 +8,7 @@ const About = () => (
 				data-aos="fade-up"
 				data-aos-delay="100"
 			>
-				<img src={"/assets/blog-images/me.jpg"} alt="me" />
+				<img src={"/assets/blog-images/new_me.jpg"} alt="me" />
 				<h1>Tino Muzambi</h1>
 				<h2>
 					<s>Software Developer</s>&nbsp;Blogger
