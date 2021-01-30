@@ -26,6 +26,23 @@ body {
 	--Livvic: "Livvic", sans-serif;
 }
 
+%flex {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flexCenter {
+	@extend %flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin mq($size) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}
+
 /* ---------------- Global Classes ---------------*/
 
 a {
@@ -104,42 +121,6 @@ img {
 }
 
 /* ------x------- Global Classes -------x-------*/
-
-/* Fallback Icon */
-
-/* x Fallback Icon x */
-
-/* Preloader Section */
-
-/* x Preloader Section x */
-
-/* Navbar Section */
-
-/* x Navbar Section */
-
-/* Site Title */
-
-/* x Site Title x */
-
-/* Featured Item */
-
-/* x Featured Item */
-
-/* Search */
-
-/* x Search */
-
-/* Site Content */
-
-/* x Site Content x */
-
-/* Footer */
-
-/* x Footer x */
-
-/* 404 */
-
-/* x 404 x */
 
 /*              Viewport less then or equal to 2560px            */
 
