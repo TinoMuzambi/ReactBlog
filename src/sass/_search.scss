@@ -22,6 +22,11 @@
 			margin-right: 3.2rem;
 		}
 
+		@include mq(320px) {
+			padding: 0.5rem;
+			margin: 1.5rem 3rem 0 0;
+		}
+
 		&:hover {
 			border: solid 2px gray;
 		}

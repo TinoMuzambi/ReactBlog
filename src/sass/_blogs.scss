@@ -83,6 +83,10 @@
 				margin-left: 1rem;
 			}
 
+			@include mq(320px) {
+				font-size: 40px;
+			}
+
 			&::before {
 				content: open-quote;
 			}
@@ -140,6 +144,12 @@
 
 		p {
 			margin: 1rem auto;
+		}
+	}
+
+	.posts h1 {
+		@include mq(320px) {
+			font-size: 1.5rem;
 		}
 	}
 
