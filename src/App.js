@@ -12,7 +12,6 @@ import blogs from "./data/blogs";
 import { AiOutlineReload } from "react-icons/ai";
 import "./css/App.min.css";
 import AOS from "aos";
-import "./aos.css";
 import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 
