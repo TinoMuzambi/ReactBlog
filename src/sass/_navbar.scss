@@ -37,7 +37,7 @@
 		position: absolute;
 		top: 0;
 		width: 90%;
-		cursor: pointer;
+		@extend point;
 		display: none;
 		outline: 0;
 
@@ -86,7 +86,7 @@
 			&:hover {
 				color: $midnight;
 				transition: 0.5s;
-				cursor: pointer;
+				@extend point;
 
 				@include mq(750px) {
 					background-color: transparent !important;

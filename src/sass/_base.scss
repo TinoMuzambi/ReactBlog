@@ -30,6 +30,10 @@ body {
 	display: flex;
 }
 
+%point {
+	@extend point;
+}
+
 @mixin flexColCenter {
 	@extend %flex;
 	justify-content: center;
@@ -96,7 +100,7 @@ button.btn {
 	padding: 1rem 3rem;
 	font-size: 1rem;
 	font-family: $Livvic;
-	cursor: pointer;
+	@extend point;
 }
 
 span {
@@ -126,10 +130,6 @@ img {
 
 .is-hidden {
 	display: none;
-}
-
-.point {
-	cursor: pointer;
 }
 
 .no-click {
