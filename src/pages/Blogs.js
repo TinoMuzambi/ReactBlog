@@ -27,7 +27,7 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 	const handlePageChange = (displayBlogs) => {
 		// Handing pagination page changes.
 		setDisplayBlogs(displayBlogs);
-		scrollToComponent(blogsRef.current, {
+		scrollToComponent(blogsRef?.current, {
 			// Scroll to top of blogs section.
 			offset: 0,
 			align: "top",
