@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
 import JwPagination from "jw-react-pagination";
-import scrollToComponent from "react-scroll-to-component";
 import { useLocation } from "react-router-dom";
 
 const Blogs = ({ blogs, category, search, blogsRef }) => {
@@ -27,13 +26,6 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 	const handlePageChange = (displayBlogs) => {
 		// Handing pagination page changes.
 		setDisplayBlogs(displayBlogs);
-		scrollToComponent(blogsRef?.current, {
-			// Scroll to top of blogs section.
-			offset: 0,
-			align: "top",
-			duration: 1500,
-		});
-		// blogsRef?.current.scrollIntoView({ behavior: "smooth" });
 	};
 
 	const customLabels = {
@@ -97,7 +89,12 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 						{/* Conditionally render element */}
 					</div>
 				))}
-				<div className="page-holder text-center">
+				<div
+					className="page-holder text-center"
+					onClick={() =>
+						blogsRef?.current.scrollIntoView({ behavior: "smooth" })
+					}
+				>
 					{/* Pagination element */}
 					<JwPagination
 						items={blogItems}
