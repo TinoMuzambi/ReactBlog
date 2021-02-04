@@ -33,6 +33,7 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 			align: "top",
 			duration: 1500,
 		});
+		// blogsRef?.current.scrollIntoView({ behavior: "smooth" });
 	};
 
 	const customLabels = {
