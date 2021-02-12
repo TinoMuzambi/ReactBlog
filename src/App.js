@@ -15,6 +15,7 @@ import AOS from "aos";
 import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
+import OpenSearch from "./pages/OpenSearch";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
@@ -170,6 +171,8 @@ const App = () => {
 					{/* Blog route for displaying blog content. */}
 					<Route path="/categories/:name" component={Category} />
 					{/* Category route for displaying per category blogs. */}
+					<Route path="/search/:query" component={OpenSearch} />
+					{/* OpenSearch route for searching site.*/}
 				</Suspense>
 				<Route component={NotFoundPage} />
 			</Switch>
