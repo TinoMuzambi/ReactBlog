@@ -27,6 +27,9 @@ const App = () => {
 	const footer = useRef(null);
 	const location = useLocation();
 
+	const executeScroll = () =>
+		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
+
 	const searchBlogs = (query) => {
 		// Search by updating queryText state.
 		setQueryText(query);
@@ -60,6 +63,11 @@ const App = () => {
 		nav.classList.remove("collapse");
 		nav.classList.remove("collapse-sm");
 	}, [location.pathname]);
+
+	useEffect(() => {
+		const fromOpenSearch = location.state?.fromOpenSearch;
+		fromOpenSearch && executeScroll();
+	}, [location.state]);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
@@ -175,7 +183,9 @@ const App = () => {
 					<Route
 						exact
 						path="/search/:query"
-						render={() => <OpenSearch setQueryText={setQueryText} />}
+						render={() => (
+							<OpenSearch blogsRef={blogsRef} setQueryText={setQueryText} />
+						)}
 					/>
 					{/* OpenSearch route for searching site.*/}
 				</Suspense>
