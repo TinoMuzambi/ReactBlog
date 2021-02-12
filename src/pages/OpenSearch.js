@@ -14,7 +14,7 @@ const OpenSearch = ({ setQueryText, blogsRef }) => {
 				fromOpenSearch: true,
 			},
 		});
-	}, [location.pathname]);
+	}, [location.pathname, history, setQueryText]);
 
 	return null;
 };
