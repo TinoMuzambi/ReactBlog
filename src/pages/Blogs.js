@@ -14,10 +14,11 @@ import { useLocation } from "react-router-dom";
 
 const Blogs = ({ blogs, category, search, blogsRef }) => {
 	const [blogItems] = useState(blogs); // Set state to list of blogs.
-	const [displayBlogs, setDisplayBlogs] = useState([]); // Blogs currently being displayed.
+	const [displayBlogs, setDisplayBlogs] = useState(blogs); // Blogs currently being displayed.
 	const location = useLocation();
 
 	useEffect(() => {
+		console.log(location.pathname);
 		if (location.pathname !== "/" || search) {
 			setDisplayBlogs(blogs); // Ensure blog content changes when url changes.
 		}
