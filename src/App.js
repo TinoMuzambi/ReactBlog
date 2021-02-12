@@ -15,6 +15,7 @@ import AOS from "aos";
 import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
+import OpenSearch from "./pages/OpenSearch";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
@@ -25,6 +26,9 @@ const App = () => {
 	const blogsRef = useRef(null);
 	const footer = useRef(null);
 	const location = useLocation();
+
+	const executeScroll = () =>
+		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
 
 	const searchBlogs = (query) => {
 		// Search by updating queryText state.
@@ -59,6 +63,11 @@ const App = () => {
 		nav.classList.remove("collapse");
 		nav.classList.remove("collapse-sm");
 	}, [location.pathname]);
+
+	useEffect(() => {
+		const fromOpenSearch = location.state?.fromOpenSearch;
+		fromOpenSearch && executeScroll();
+	}, [location.state]);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
@@ -136,7 +145,8 @@ const App = () => {
 								<Featured /> {/* Featured section */}
 							</section>
 							<div className="search-wrapper">
-								<Search searchBlogs={searchBlogs} /> {/* Search box */}
+								<Search query={queryText} searchBlogs={searchBlogs} />{" "}
+								{/* Search box */}
 							</div>
 							<section className="container" id="blogs">
 								<div className="site-content">
@@ -170,6 +180,14 @@ const App = () => {
 					{/* Blog route for displaying blog content. */}
 					<Route path="/categories/:name" component={Category} />
 					{/* Category route for displaying per category blogs. */}
+					<Route
+						exact
+						path="/search/:query"
+						render={() => (
+							<OpenSearch blogsRef={blogsRef} setQueryText={setQueryText} />
+						)}
+					/>
+					{/* OpenSearch route for searching site.*/}
 				</Suspense>
 				<Route component={NotFoundPage} />
 			</Switch>

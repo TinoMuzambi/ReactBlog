@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+ <ShortName>Blog.TinoMuzambi</ShortName>
+ <Description>Blog.TinoMuzambi</Description>
+ <Url type="text/html" method="get" template="http://blog.tinomuzambi.com/search/{searchTerms}"/>
+</OpenSearchDescription>
