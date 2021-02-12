@@ -171,7 +171,11 @@ const App = () => {
 					{/* Blog route for displaying blog content. */}
 					<Route path="/categories/:name" component={Category} />
 					{/* Category route for displaying per category blogs. */}
-					<Route path="/search/:query" component={OpenSearch} />
+					<Route
+						exact
+						path="/search/:query"
+						render={() => <OpenSearch setQueryText={setQueryText} />}
+					/>
 					{/* OpenSearch route for searching site.*/}
 				</Suspense>
 				<Route component={NotFoundPage} />
