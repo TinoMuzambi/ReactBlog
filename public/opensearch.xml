@@ -3,5 +3,5 @@
  <ShortName>Blog.TinoMuzambi</ShortName>
  <Description>Blog.TinoMuzambi</Description>
  <InputEncoding>UTF-8</InputEncoding>
- <Url type="text/html" method="get" template="http://blog.tinomuzambi.com/search/{searchTerms}"/>
+ <Url type="text/html" method="get" template="https://blog.tinomuzambi.com/search/{searchTerms}"/>
 </OpenSearchDescription>
