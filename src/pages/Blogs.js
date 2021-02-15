@@ -18,7 +18,6 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 	const location = useLocation();
 
 	useEffect(() => {
-		console.log(location.pathname);
 		if (location.pathname !== "/" || search) {
 			setDisplayBlogs(blogs); // Ensure blog content changes when url changes.
 		}
