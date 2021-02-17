@@ -23,6 +23,7 @@ const App = () => {
 	const [fetching, setFetching] = useState(true);
 	const [blogs, setBlogs] = useState([]);
 	const [categories, setCategories] = useState([]);
+	const [featuredItem, setFeaturedItem] = useState({});
 
 	const about = useRef(null);
 	const featured = useRef(null);
@@ -144,6 +145,7 @@ const App = () => {
 						url: strictlyFeat.url,
 					};
 					console.log(prettyFeat);
+					setFeaturedItem(prettyFeat);
 				})
 				.catch((error) => {
 					console.log(error);
@@ -239,7 +241,7 @@ const App = () => {
 										<About /> {/* About section */}
 									</section>
 									<section className="featured" ref={featured}>
-										<Featured /> {/* Featured section */}
+										<Featured item={featuredItem} /> {/* Featured section */}
 									</section>
 									<div className="search-wrapper">
 										<Search query={queryText} searchBlogs={searchBlogs} />{" "}
@@ -281,7 +283,12 @@ const App = () => {
 						>
 							<Route path="/blogs/:name" component={Blog} />
 							{/* Blog route for displaying blog content. */}
-							<Route path="/categories/:name" component={Category} />
+							<Route
+								path="/categories/:name"
+								render={() => (
+									<Category categories={categories} blogs={blogs} />
+								)}
+							/>
 							{/* Category route for displaying per category blogs. */}
 							<Route
 								exact

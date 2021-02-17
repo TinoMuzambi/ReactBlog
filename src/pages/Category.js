@@ -1,25 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
-import categories from "../data/categories";
-import blogs from "../data/blogs";
 import Blogs from "./Blogs";
 import Sidebar from "../components/Sidebar";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
-const Category = ({ match }) => {
-	const [name, setName] = useState(match.params.name); // Getting name from props to find right category to display.
+const Category = ({ match, categories, blogs }) => {
+	const location = useLocation();
+	const [name, setName] = useState(location.pathname.substring(12)); // Getting name from props to find right category to display.
 	const [blogItems] = useState(blogs); // Set state to list of blogs.
 	const ref = useRef(null);
 
 	useEffect(() => {
-		setName(match.params.name);
-	}, [match.url, match.params.name]);
+		setName(location.pathname.substring(12));
+	}, [location.pathname]);
 
 	const category = categories.find(
-		(category) => category.name.toLowerCase() === name
+		(category) => category.name.toLowerCase() === "tech"
 	);
 	const filteredBlogs = blogItems // Getting list that doesn't include current category for other blogs section.
 		.filter((eachItem) => {
-			return eachItem["category"].toLowerCase().includes(name.toLowerCase());
+			return eachItem.category.toLowerCase().includes(name.toLowerCase());
 		})
 		.filter((eachItem) => {
 			return !eachItem["future"] === true;
