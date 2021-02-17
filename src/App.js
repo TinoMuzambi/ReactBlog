@@ -37,6 +37,14 @@ const App = () => {
 		query ? setSearching(true) : setSearching(false);
 	};
 
+	const titleCase = (str) => {
+		str = str.toLowerCase().split(" ");
+		for (var i = 0; i < str.length; i++) {
+			str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+		}
+		return str.join(" ");
+	};
+
 	useEffect(() => {
 		AOS.init(); // Initialise animate on scroll library.
 
@@ -79,16 +87,69 @@ const App = () => {
 				type: "memory",
 			},
 		});
-		const getBlogs = async () => {
+		const getBlogs = () => {
 			Storyblok.get("cdn/stories?starts_with=blogs/", {})
 				.then((response) => {
-					console.log(response);
+					const strictlyBlogs = response.data.stories;
+					const prettyBlogs = strictlyBlogs.map((blog) => ({
+						category: titleCase(blog.content.category.cached_url.substring(11)),
+						content: blog.content.content,
+						date: blog.content.date,
+						disqusIdentifier: blog.content.disqusIdentifier,
+						disqusShortname: blog.content.disqusShortname,
+						disqusSrc: blog.content.disqusSrc,
+						disqusURL: blog.content.disqusURL,
+						future: blog.content.future,
+						image: blog.content.media.filename,
+						alt: blog.content.media.alt,
+						readTime: blog.content.readTime,
+						title: blog.content.title,
+						url: blog.content.url,
+						id: blog.content._uid,
+					}));
+					console.log(prettyBlogs);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		};
+		const getCategories = () => {
+			Storyblok.get("cdn/stories?starts_with=categories/", {})
+				.then((response) => {
+					const strictlyCats = response.data.stories;
+					const prettyCats = strictlyCats.map((cat) => ({
+						count: cat.content.count,
+						alt: cat.content.image.alt,
+						image: cat.content.image.filename,
+						name: cat.content.name,
+						url: cat.content.url,
+						id: cat.content._uid,
+					}));
+					console.log(prettyCats);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		};
+		const getFeatured = () => {
+			Storyblok.get("cdn/stories/featured-item/", {})
+				.then((response) => {
+					const strictlyFeat = response.data.story.content;
+					const prettyFeat = {
+						date: strictlyFeat.date,
+						description: strictlyFeat.description,
+						title: strictlyFeat.title,
+						url: strictlyFeat.url,
+					};
+					console.log(prettyFeat);
 				})
 				.catch((error) => {
 					console.log(error);
 				});
 		};
 		getBlogs();
+		getCategories();
+		getFeatured();
 	}, []);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
