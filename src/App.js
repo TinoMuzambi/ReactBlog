@@ -22,6 +22,7 @@ const App = () => {
 	const [searching, setSearching] = useState(false);
 	const [fetching, setFetching] = useState(true);
 	const [blogs, setBlogs] = useState([]);
+	const [categories, setCategories] = useState([]);
 
 	const about = useRef(null);
 	const featured = useRef(null);
@@ -126,6 +127,7 @@ const App = () => {
 						id: cat.content._uid,
 					}));
 					console.log(prettyCats);
+					setCategories(prettyCats);
 				})
 				.catch((error) => {
 					console.log(error);
@@ -257,7 +259,11 @@ const App = () => {
 												{/* Blogs section - pass list of blogs, false for category
 												and ref to this for scrolling to anchors */}
 											</section>
-											<Sidebar blogs={filteredBlogs} future={true} />
+											<Sidebar
+												categories={categories}
+												blogs={filteredBlogs}
+												future={true}
+											/>
 											{/* Sidebar section - pass list of blogs, true for future to signal
 											showing future blogs.*/}
 										</div>
