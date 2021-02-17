@@ -4,18 +4,23 @@ import Sidebar from "../components/Sidebar";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
-const Category = ({ match, categories, blogs }) => {
+const Category = ({ categories, blogs }) => {
 	const location = useLocation();
 	const [name, setName] = useState(location.pathname.substring(12)); // Getting name from props to find right category to display.
 	const [blogItems] = useState(blogs); // Set state to list of blogs.
+	const [cats, setCats] = useState(categories);
 	const ref = useRef(null);
 
 	useEffect(() => {
 		setName(location.pathname.substring(12));
 	}, [location.pathname]);
 
-	const category = categories.find(
-		(category) => category.name.toLowerCase() === "tech"
+	useEffect(() => {
+		setCats(categories);
+	}, [categories]);
+
+	const category = cats.find(
+		(category) => category.name.toLowerCase() === name
 	);
 	const filteredBlogs = blogItems // Getting list that doesn't include current category for other blogs section.
 		.filter((eachItem) => {
