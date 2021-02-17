@@ -16,6 +16,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import OpenSearch from "./pages/OpenSearch";
+import StoryblokClient from "storyblok-js-client";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
@@ -68,6 +69,27 @@ const App = () => {
 		const fromOpenSearch = location.state?.fromOpenSearch;
 		fromOpenSearch && executeScroll();
 	}, [location.state]);
+
+	useEffect(() => {
+		// const BASE_URL = "https://api.storyblok.com/v1/cdn";
+		const Storyblok = new StoryblokClient({
+			accessToken: process.env.REACT_APP_STORYBLOK_KEY,
+			cache: {
+				clear: "auto",
+				type: "memory",
+			},
+		});
+		const getBlogs = async () => {
+			Storyblok.get("cdn/stories?starts_with=blogs/", {})
+				.then((response) => {
+					console.log(response);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		};
+		getBlogs();
+	}, []);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
