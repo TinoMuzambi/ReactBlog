@@ -85,7 +85,9 @@ const App = () => {
 			},
 		});
 		const getBlogs = () => {
-			Storyblok.get("cdn/stories?starts_with=blogs/", {})
+			Storyblok.get("cdn/stories?starts_with=blogs/", {
+				sort_by: "content.date:desc",
+			})
 				.then((response) => {
 					const strictlyBlogs = response.data.stories;
 					const prettyBlogs = strictlyBlogs.map((blog) => ({
@@ -244,12 +246,14 @@ const App = () => {
 									<section className="container" id="blogs">
 										<div className="site-content">
 											<section className="blogs" ref={blogsRef}>
-												<Blogs
-													blogs={homeBlogs}
-													category={false}
-													blogsRef={blogsRef}
-													search={searching}
-												/>
+												{blogs && (
+													<Blogs
+														blogs={homeBlogs}
+														category={false}
+														blogsRef={blogsRef}
+														search={searching}
+													/>
+												)}
 												{/* Blogs section - pass list of blogs, false for category
 												and ref to this for scrolling to anchors */}
 											</section>
