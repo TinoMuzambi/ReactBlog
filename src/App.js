@@ -66,11 +66,13 @@ const App = () => {
 		};
 	}, [fetching]);
 
-	// useEffect(() => {
-	// 	const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
-	// 	nav.classList.remove("collapse");
-	// 	nav.classList.remove("collapse-sm");
-	// }, [location.pathname]);
+	useEffect(() => {
+		if (!fetching) {
+			const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
+			nav.classList.remove("collapse");
+			nav.classList.remove("collapse-sm");
+		}
+	}, [location.pathname, fetching]);
 
 	useEffect(() => {
 		const fromOpenSearch = location.state?.fromOpenSearch;
