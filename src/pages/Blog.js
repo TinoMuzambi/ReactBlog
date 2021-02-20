@@ -6,16 +6,32 @@ import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
+import { getBlogs } from "../utils/fetch";
+import Preload from "./Preload";
 
-const Blog = ({ categories, blogs }) => {
+const Blog = ({ categories }) => {
 	const location = useLocation();
 	const pathname = location.pathname.substring(7);
 
 	const [name, setName] = useState(pathname);
+	const [fetching, setFetching] = useState(true);
+	const [blogs, setBlogs] = useState([]);
 
 	useEffect(() => {
 		setName(pathname);
 	}, [pathname]);
+
+	useEffect(() => {
+		const getData = async () => {
+			setBlogs(getBlogs());
+		};
+		getData();
+		setFetching(false);
+	}, []);
+
+	if (fetching) return <Preload />;
+
+	console.log(blogs);
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);

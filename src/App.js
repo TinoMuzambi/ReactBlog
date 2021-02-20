@@ -15,7 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import OpenSearch from "./pages/OpenSearch";
-import StoryblokClient from "storyblok-js-client";
+import { getBlogs, getCategories, getFeatured } from "./utils/fetch";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
@@ -38,14 +38,6 @@ const App = () => {
 		// Search by updating queryText state.
 		setQueryText(query);
 		query ? setSearching(true) : setSearching(false);
-	};
-
-	const titleCase = (str) => {
-		str = str.toLowerCase().split(" ");
-		for (var i = 0; i < str.length; i++) {
-			str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
-		}
-		return str.join(" ");
 	};
 
 	useEffect(() => {
@@ -80,80 +72,10 @@ const App = () => {
 	}, [location.state]);
 
 	useEffect(() => {
-		// const BASE_URL = "https://api.storyblok.com/v1/cdn";
-		const Storyblok = new StoryblokClient({
-			accessToken: process.env.REACT_APP_STORYBLOK_KEY,
-			cache: {
-				clear: "auto",
-				type: "memory",
-			},
-		});
-		const getBlogs = () => {
-			Storyblok.get("cdn/stories?starts_with=blogs/", {
-				sort_by: "content.date:desc",
-			})
-				.then((response) => {
-					const strictlyBlogs = response.data.stories;
-					const prettyBlogs = strictlyBlogs.map((blog) => ({
-						category: titleCase(blog.content.category.cached_url.substring(11)),
-						content: blog.content.content,
-						date: blog.content.date,
-						disqusIdentifier: blog.content.disqusIdentifier,
-						disqusShortname: blog.content.disqusShortname,
-						disqusSrc: blog.content.disqusSrc,
-						disqusURL: blog.content.disqusURL,
-						future: blog.content.future,
-						image: blog.content.media.filename,
-						alt: blog.content.media.alt,
-						readTime: blog.content.readTime,
-						title: blog.content.title,
-						url: blog.content.url,
-						id: blog.content._uid,
-					}));
-					setBlogs(prettyBlogs);
-				})
-				.catch((error) => {
-					console.error(error);
-				});
-		};
-		const getCategories = () => {
-			Storyblok.get("cdn/stories?starts_with=categories/", {})
-				.then((response) => {
-					const strictlyCats = response.data.stories;
-					const prettyCats = strictlyCats.map((cat) => ({
-						count: cat.content.count,
-						alt: cat.content.image.alt,
-						image: cat.content.image.filename,
-						name: cat.content.name,
-						url: cat.content.url,
-						id: cat.content._uid,
-					}));
-					setCategories(prettyCats);
-				})
-				.catch((error) => {
-					console.err0r(error);
-				});
-		};
-		const getFeatured = () => {
-			Storyblok.get("cdn/stories/featured-item/", {})
-				.then((response) => {
-					const strictlyFeat = response.data.story.content;
-					const prettyFeat = {
-						date: strictlyFeat.date,
-						description: strictlyFeat.description,
-						title: strictlyFeat.title,
-						url: strictlyFeat.url,
-					};
-					setFeaturedItem(prettyFeat);
-				})
-				.catch((error) => {
-					console.error(error);
-				});
-		};
 		const getData = async () => {
-			await getBlogs();
-			await getCategories();
-			await getFeatured();
+			await setBlogs(getBlogs());
+			await setCategories(getCategories());
+			await setFeaturedItem(getFeatured());
 			setFetching(false);
 		};
 		getData();
