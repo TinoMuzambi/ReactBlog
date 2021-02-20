@@ -25,14 +25,14 @@ const Blog = ({ categories }) => {
 		const getData = async () => {
 			const dataBlogs = await getBlogs();
 			setBlogs(dataBlogs);
-			setFetching(false);
+			// setFetching(false);
 		};
 		getData();
 	}, []);
 
 	if (fetching)
 		return (
-			<div className="icon-wrapper">
+			<div className="icon-wrapper large">
 				<AiOutlineReload className="icon" />
 			</div>
 		); /* Preloader for showing before page loads. */

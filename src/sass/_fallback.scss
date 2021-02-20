@@ -1,6 +1,13 @@
 .icon-wrapper {
 	display: grid;
 
+	&.large {
+		height: 100%;
+		width: 100%;
+		background: white;
+		z-index: 5;
+	}
+
 	.icon {
 		font-size: 5rem;
 		color: gray;
