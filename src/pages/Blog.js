@@ -23,13 +23,16 @@ const Blog = ({ categories }) => {
 
 	useEffect(() => {
 		const getData = async () => {
-			setBlogs(getBlogs());
+			const dataBlogs = await getBlogs();
+			console.log(dataBlogs);
+			setBlogs(dataBlogs);
+			setFetching(false);
 		};
 		getData();
-		setFetching(false);
 	}, []);
 
-	if (fetching) return <Preload />;
+	if (fetching)
+		return <Preload />; /* Preloader for showing before page loads. */
 
 	console.log(blogs);
 

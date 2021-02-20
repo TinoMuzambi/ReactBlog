@@ -31,31 +31,22 @@ const App = () => {
 	const footer = useRef(null);
 	const location = useLocation();
 
-	const executeScroll = () =>
-		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
-
-	const searchBlogs = (query) => {
-		// Search by updating queryText state.
-		setQueryText(query);
-		query ? setSearching(true) : setSearching(false);
-	};
-
 	useEffect(() => {
 		AOS.init(); // Initialise animate on scroll library.
 
-		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
+		// const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
 
-		window.addEventListener("load", () => {
-			// Get rid of preloader once everything's loaded
-			!fetching && preload.classList.add("finish");
-		});
+		// window.addEventListener("load", () => {
+		// 	// Get rid of preloader once everything's loaded
+		// 	!fetching && preload.classList.add("finish");
+		// });
 
-		return () => {
-			window.removeEventListener("load", () => {
-				// Get rid of preloader once everything's loaded
-				!fetching && preload.classList.add("finish");
-			});
-		};
+		// return () => {
+		// 	window.removeEventListener("load", () => {
+		// 		// Get rid of preloader once everything's loaded
+		// 		!fetching && preload.classList.add("finish");
+		// 	});
+		// };
 	}, [fetching]);
 
 	useEffect(() => {
@@ -73,13 +64,30 @@ const App = () => {
 
 	useEffect(() => {
 		const getData = async () => {
-			await setBlogs(getBlogs());
-			await setCategories(getCategories());
-			await setFeaturedItem(getFeatured());
+			const dataBlogs = await getBlogs();
+			const dataCategories = await getCategories();
+			const dataFeatured = await getFeatured();
+			setBlogs(dataBlogs);
+			setCategories(dataCategories);
+			setFeaturedItem(dataFeatured);
 			setFetching(false);
 		};
 		getData();
 	}, []);
+
+	if (fetching) {
+		/* Preloader for showing before page loads. */
+		return <Preload />;
+	}
+
+	const executeScroll = () =>
+		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
+
+	const searchBlogs = (query) => {
+		// Search by updating queryText state.
+		setQueryText(query);
+		query ? setSearching(true) : setSearching(false);
+	};
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
@@ -108,14 +116,9 @@ const App = () => {
 	const Blog = lazy(() => import("./pages/Blog"));
 	const Category = lazy(() => import("./pages/Category"));
 	const Footer = lazy(() => import("./components/Footer"));
-
-	if (fetching) {
-		return <Preload />;
-	}
 	return (
 		<>
 			<ScrollToTop /> {/* Scroll to top on page load. */}
-			<Preload /> {/* Preloader for showing before page loads. */}
 			<Navbar
 				about={about}
 				featured={featured}

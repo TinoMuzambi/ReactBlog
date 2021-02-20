@@ -9,10 +9,10 @@ const Storyblok = new StoryblokClient({
 		type: "memory",
 	},
 });
-export const getBlogs = () => {
+export const getBlogs = async () => {
 	let prettyBlogs = [];
 
-	Storyblok.get("cdn/stories?starts_with=blogs/", {
+	await Storyblok.get("cdn/stories?starts_with=blogs/", {
 		sort_by: "content.date:desc",
 	})
 		.then((response) => {
@@ -37,12 +37,12 @@ export const getBlogs = () => {
 		.catch((error) => {
 			console.error(error);
 		});
-
+	// console.log(prettyBlogs);
 	return prettyBlogs;
 };
-export const getCategories = () => {
+export const getCategories = async () => {
 	let prettyCats = [];
-	Storyblok.get("cdn/stories?starts_with=categories/", {})
+	await Storyblok.get("cdn/stories?starts_with=categories/", {})
 		.then((response) => {
 			const strictlyCats = response.data.stories;
 			prettyCats = strictlyCats.map((cat) => ({
@@ -57,11 +57,13 @@ export const getCategories = () => {
 		.catch((error) => {
 			console.err0r(error);
 		});
+
+	console.log(prettyCats);
 	return prettyCats;
 };
-export const getFeatured = () => {
+export const getFeatured = async () => {
 	let prettyFeat = {};
-	Storyblok.get("cdn/stories/featured-item/", {})
+	await Storyblok.get("cdn/stories/featured-item/", {})
 		.then((response) => {
 			const strictlyFeat = response.data.story.content;
 			prettyFeat = {
@@ -75,5 +77,6 @@ export const getFeatured = () => {
 			console.error(error);
 		});
 
+	console.log(prettyFeat);
 	return prettyFeat;
 };
