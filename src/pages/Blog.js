@@ -6,13 +6,17 @@ import Moment from "react-moment";
 import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
-const Blog = ({ match }) => {
-	const [name, setName] = useState(match.params.name);
+const Blog = ({ categories }) => {
+	const location = useLocation();
+	const pathname = location.pathname.substring(7);
+
+	const [name, setName] = useState(pathname);
 
 	useEffect(() => {
-		setName(match.params.name);
-	}, [match.url, match.params.name]);
+		setName(pathname);
+	}, [pathname]);
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);
@@ -98,7 +102,11 @@ const Blog = ({ match }) => {
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 					</div>
-					<Sidebar blogs={filteredBlogs} future={blog.future} />
+					<Sidebar
+						categories={categories}
+						blogs={filteredBlogs}
+						future={blog.future}
+					/>
 					{/* Sidebar section populated with links to other blogs. */}
 				</div>
 			</div>

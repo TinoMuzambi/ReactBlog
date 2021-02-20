@@ -19,7 +19,6 @@ const Category = ({ categories, blogs }) => {
 		setCats(categories);
 	}, [categories]);
 
-	console.log(cats);
 	const category = cats.find(
 		(category) => category.name.toLowerCase() === name
 	);
