@@ -1,7 +1,6 @@
 import React from "react";
 import { FaCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import Moment from "react-moment";
 
 const SideBlog = ({ blogs, future }) => (

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "../components/Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
-import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
-import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
-import { getBlogs } from "../utils/fetch";
 import { AiOutlineReload } from "react-icons/ai";
+import { Helmet } from "react-helmet";
+
+import Sidebar from "../components/Sidebar";
+import Disqus from "../components/Disqus";
+import { getBlogs } from "../utils/fetch";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();

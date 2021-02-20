@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import Blogs from "./Blogs";
-import Sidebar from "../components/Sidebar";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
+
+import Sidebar from "../components/Sidebar";
+import Blogs from "./Blogs";
 
 const Category = ({ categories, blogs }) => {
 	const location = useLocation();

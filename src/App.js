@@ -1,21 +1,22 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
+import { AiOutlineReload } from "react-icons/ai";
+import AOS from "aos";
+import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Featured from "./components/Featured";
-import Blogs from "./pages/Blogs";
 import Sidebar from "./components/Sidebar";
-import Preload from "./pages/Preload";
-import NotFoundPage from "./pages/NotFoundPage";
 import Search from "./components/Search";
-import { AiOutlineReload } from "react-icons/ai";
-import "./css/App.min.css";
-import AOS from "aos";
 import ScrollToTop from "./components/ScrollToTop";
-import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
+import NotFoundPage from "./pages/NotFoundPage";
+import Preload from "./pages/Preload";
+import Blogs from "./pages/Blogs";
 import OpenSearch from "./pages/OpenSearch";
 import { getBlogs, getCategories, getFeatured } from "./utils/fetch";
+import "./css/App.min.css";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
