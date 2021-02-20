@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
-	console.log(Array.from(Array(items.length % pageSize).keys()));
+	const [currItems, setCurrItems] = useState([]);
+	const [currPage, setCurrPage] = useState(0);
+	const noPages = items.length % pageSize;
+
+	const nextPage = () => {
+		setCurrPage(currPage + 1);
+		if (currPage >= noPages - 1) setCurrPage(noPages - 1);
+	};
+	const prevPage = () => {
+		setCurrPage(currPage - 1);
+		if (currPage <= 0) setCurrPage(0);
+	};
 	return (
 		<div className="pagination">
 			<ul>
-				<li>{customLabels.previous}</li>
-				{Array.from(Array(items.length % pageSize).keys()).map((i) => (
+				<li onClick={prevPage}>{customLabels.previous}</li>
+				{Array.from(Array(noPages).keys()).map((i) => (
 					<li>{i + 1}</li>
 				))}
-				<li>{customLabels.next}</li>
+				<li onClick={nextPage}>{customLabels.next}</li>
 			</ul>
 		</div>
 	);
