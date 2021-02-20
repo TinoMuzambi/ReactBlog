@@ -19,6 +19,7 @@ const Category = ({ categories, blogs }) => {
 		setCats(categories);
 	}, [categories]);
 
+	console.log(cats);
 	const category = cats.find(
 		(category) => category.name.toLowerCase() === name
 	);
@@ -82,7 +83,7 @@ const Category = ({ categories, blogs }) => {
 							<h2>Nothing here yet...</h2>
 						)}
 					</div>
-					<Sidebar blogs={sideBlogs} future={false} />
+					<Sidebar blogs={sideBlogs} categories={cats} future={false} />
 					{/* Sidebar section populated with links to other blogs. */}
 				</div>
 			</div>
