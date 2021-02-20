@@ -37,7 +37,6 @@ export const getBlogs = async () => {
 		.catch((error) => {
 			console.error(error);
 		});
-	// console.log(prettyBlogs);
 	return prettyBlogs;
 };
 export const getCategories = async () => {
@@ -58,7 +57,6 @@ export const getCategories = async () => {
 			console.err0r(error);
 		});
 
-	console.log(prettyCats);
 	return prettyCats;
 };
 export const getFeatured = async () => {
@@ -77,6 +75,5 @@ export const getFeatured = async () => {
 			console.error(error);
 		});
 
-	console.log(prettyFeat);
 	return prettyFeat;
 };

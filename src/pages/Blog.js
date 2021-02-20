@@ -24,7 +24,6 @@ const Blog = ({ categories }) => {
 	useEffect(() => {
 		const getData = async () => {
 			const dataBlogs = await getBlogs();
-			console.log(dataBlogs);
 			setBlogs(dataBlogs);
 			setFetching(false);
 		};
@@ -33,8 +32,6 @@ const Blog = ({ categories }) => {
 
 	if (fetching)
 		return <Preload />; /* Preloader for showing before page loads. */
-
-	console.log(blogs);
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);
