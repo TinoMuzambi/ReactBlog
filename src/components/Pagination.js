@@ -18,7 +18,7 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 			<ul>
 				<li onClick={prevPage}>{customLabels.previous}</li>
 				{Array.from(Array(noPages).keys()).map((i) => (
-					<li>{i + 1}</li>
+					<li onClick={() => setCurrPage(i)}>{i + 1}</li>
 				))}
 				<li onClick={nextPage}>{customLabels.next}</li>
 			</ul>
