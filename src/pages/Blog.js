@@ -7,7 +7,7 @@ import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import { getBlogs } from "../utils/fetch";
-import Preload from "./Preload";
+import { AiOutlineReload } from "react-icons/ai";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();
@@ -31,7 +31,11 @@ const Blog = ({ categories }) => {
 	}, []);
 
 	if (fetching)
-		return <Preload />; /* Preloader for showing before page loads. */
+		return (
+			<div className="icon-wrapper">
+				<AiOutlineReload className="icon" />
+			</div>
+		); /* Preloader for showing before page loads. */
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);
