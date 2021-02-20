@@ -34,21 +34,7 @@ const App = () => {
 
 	useEffect(() => {
 		AOS.init(); // Initialise animate on scroll library.
-
-		// const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
-
-		// window.addEventListener("load", () => {
-		// 	// Get rid of preloader once everything's loaded
-		// 	!fetching && preload.classList.add("finish");
-		// });
-
-		// return () => {
-		// 	window.removeEventListener("load", () => {
-		// 		// Get rid of preloader once everything's loaded
-		// 		!fetching && preload.classList.add("finish");
-		// 	});
-		// };
-	}, [fetching]);
+	}, []);
 
 	useEffect(() => {
 		if (!fetching) {
@@ -132,7 +118,7 @@ const App = () => {
 					<Route
 						exact
 						path="/"
-						render={(props) => (
+						render={() => (
 							<>
 								<Helmet>
 									<title>Blog.TinoMuzambi</title>
@@ -166,7 +152,7 @@ const App = () => {
 									<Featured item={featuredItem} /> {/* Featured section */}
 								</section>
 								<div className="search-wrapper">
-									<Search query={queryText} searchBlogs={searchBlogs} />{" "}
+									<Search query={queryText} searchBlogs={searchBlogs} />
 									{/* Search box */}
 								</div>
 								<section className="container" id="blogs">

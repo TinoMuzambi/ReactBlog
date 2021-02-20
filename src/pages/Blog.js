@@ -33,10 +33,11 @@ const Blog = ({ categories }) => {
 
 	if (fetching)
 		return (
+			/* Preloader for showing before page loads. */
 			<div className="icon-wrapper large">
 				<AiOutlineReload className="icon" />
 			</div>
-		); /* Preloader for showing before page loads. */
+		);
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);

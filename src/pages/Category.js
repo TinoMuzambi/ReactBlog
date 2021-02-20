@@ -20,9 +20,7 @@ const Category = ({ categories, blogs }) => {
 		setCats(categories);
 	}, [categories]);
 
-	const category = cats.find(
-		(category) => category.name.toLowerCase() === name
-	);
+	const category = cats.find((cat) => cat.name.toLowerCase() === name);
 	const filteredBlogs = blogItems // Getting list that doesn't include current category for other blogs section.
 		.filter((eachItem) => {
 			return eachItem.category.toLowerCase().includes(name.toLowerCase());
@@ -39,6 +37,7 @@ const Category = ({ categories, blogs }) => {
 		})
 
 		.slice(0, 3);
+
 	return (
 		<>
 			<Helmet>
