@@ -8,7 +8,6 @@ import Sidebar from "./components/Sidebar";
 import Preload from "./pages/Preload";
 import NotFoundPage from "./pages/NotFoundPage";
 import Search from "./components/Search";
-import blogs from "./data/blogs";
 import { AiOutlineReload } from "react-icons/ai";
 import "./css/App.min.css";
 import AOS from "aos";
@@ -16,16 +15,70 @@ import ScrollToTop from "./components/ScrollToTop";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import OpenSearch from "./pages/OpenSearch";
+import { getBlogs, getCategories, getFeatured } from "./utils/fetch";
 
 const App = () => {
 	const [queryText, setQueryText] = useState("");
 	const [searching, setSearching] = useState(false);
+	const [fetching, setFetching] = useState(true);
+	const [blogs, setBlogs] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const [featuredItem, setFeaturedItem] = useState({});
 
 	const about = useRef(null);
 	const featured = useRef(null);
 	const blogsRef = useRef(null);
 	const footer = useRef(null);
 	const location = useLocation();
+
+	useEffect(() => {
+		AOS.init(); // Initialise animate on scroll library.
+
+		// const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
+
+		// window.addEventListener("load", () => {
+		// 	// Get rid of preloader once everything's loaded
+		// 	!fetching && preload.classList.add("finish");
+		// });
+
+		// return () => {
+		// 	window.removeEventListener("load", () => {
+		// 		// Get rid of preloader once everything's loaded
+		// 		!fetching && preload.classList.add("finish");
+		// 	});
+		// };
+	}, [fetching]);
+
+	useEffect(() => {
+		if (!fetching) {
+			const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
+			nav.classList.remove("collapse");
+			nav.classList.remove("collapse-sm");
+		}
+	}, [location.pathname, fetching]);
+
+	useEffect(() => {
+		const fromOpenSearch = location.state?.fromOpenSearch;
+		fromOpenSearch && executeScroll();
+	}, [location.state]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const dataBlogs = await getBlogs();
+			const dataCategories = await getCategories();
+			const dataFeatured = await getFeatured();
+			setBlogs(dataBlogs);
+			setCategories(dataCategories);
+			setFeaturedItem(dataFeatured);
+			setFetching(false);
+		};
+		getData();
+	}, []);
+
+	if (fetching) {
+		/* Preloader for showing before page loads. */
+		return <Preload />;
+	}
 
 	const executeScroll = () =>
 		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -35,39 +88,6 @@ const App = () => {
 		setQueryText(query);
 		query ? setSearching(true) : setSearching(false);
 	};
-
-	useEffect(() => {
-		AOS.init(); // Initialise animate on scroll library.
-
-		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
-		const timeoutID = setTimeout(function () {
-			preload.classList.add("finish");
-			clearTimeout(timeoutID);
-		}, 7000);
-
-		window.addEventListener("load", () => {
-			// Get rid of preloader once everything's loaded
-			preload.classList.add("finish");
-		});
-
-		return () => {
-			window.removeEventListener("load", () => {
-				// Get rid of preloader once everything's loaded
-				preload.classList.add("finish");
-			});
-		};
-	}, []);
-
-	useEffect(() => {
-		const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
-		nav.classList.remove("collapse");
-		nav.classList.remove("collapse-sm");
-	}, [location.pathname]);
-
-	useEffect(() => {
-		const fromOpenSearch = location.state?.fromOpenSearch;
-		fromOpenSearch && executeScroll();
-	}, [location.state]);
 
 	const filteredBlogs = blogs.filter((eachItem) => {
 		// Only get future blogs for sidebar.
@@ -99,7 +119,6 @@ const App = () => {
 	return (
 		<>
 			<ScrollToTop /> {/* Scroll to top on page load. */}
-			<Preload /> {/* Preloader for showing before page loads. */}
 			<Navbar
 				about={about}
 				featured={featured}
@@ -107,68 +126,103 @@ const App = () => {
 				footer={footer}
 			/>
 			{/* Navbar - gets ref to this for scrolling to anchors. */}
-			<Switch>
-				<Route
-					exact
-					path="/"
-					render={(props) => (
-						<div>
-							<Helmet>
-								<title>Blog.TinoMuzambi</title>
-								<meta name="description" content="Blog.TinoMuzambi" />
+			<>
+				<Switch>
+					<Route
+						exact
+						path="/"
+						render={(props) => (
+							<>
+								<Helmet>
+									<title>Blog.TinoMuzambi</title>
+									<meta name="description" content="Blog.TinoMuzambi" />
 
-								{/* <!-- Google / Search Engine Tags --> */}
-								<meta itemprop="name" content="Blog.TinoMuzambi" />
-								<meta itemprop="description" content="Blog.TinoMuzambi" />
-								<meta itemprop="image" content="/logo512.png" />
+									{/* <!-- Google / Search Engine Tags --> */}
+									<meta itemprop="name" content="Blog.TinoMuzambi" />
+									<meta itemprop="description" content="Blog.TinoMuzambi" />
+									<meta itemprop="image" content="/logo512.png" />
 
-								{/* <!-- Facebook Meta Tags --> */}
-								<meta
-									property="og:url"
-									content="https://blog.tinomuzambi.com"
-								/>
-								<meta property="og:type" content="website" />
-								<meta property="og:title" content="Blog.TinoMuzambi" />
-								<meta property="og:description" content="Blog.TinoMuzambi" />
-								<meta property="og:image" content="/logo512.png" />
+									{/* <!-- Facebook Meta Tags --> */}
+									<meta
+										property="og:url"
+										content="https://blog.tinomuzambi.com"
+									/>
+									<meta property="og:type" content="website" />
+									<meta property="og:title" content="Blog.TinoMuzambi" />
+									<meta property="og:description" content="Blog.TinoMuzambi" />
+									<meta property="og:image" content="/logo512.png" />
 
-								{/* <!-- Twitter Meta Tags --> */}
-								<meta name="twitter:card" content="summary_large_image" />
-								<meta name="twitter:title" content="Blog.TinoMuzambi" />
-								<meta name="twitter:description" content="Blog.TinoMuzambi" />
-								<meta name="twitter:image" content="/logo512.png" />
-							</Helmet>
-							<section className="about" ref={about}>
-								<About /> {/* About section */}
-							</section>
-							<section className="featured" ref={featured}>
-								<Featured /> {/* Featured section */}
-							</section>
-							<div className="search-wrapper">
-								<Search query={queryText} searchBlogs={searchBlogs} />{" "}
-								{/* Search box */}
-							</div>
-							<section className="container" id="blogs">
-								<div className="site-content">
-									<section className="blogs" ref={blogsRef}>
-										<Blogs
-											blogs={homeBlogs}
-											category={false}
-											blogsRef={blogsRef}
-											search={searching}
-										/>
-										{/* Blogs section - pass list of blogs, false for category
-												and ref to this for scrolling to anchors */}
-									</section>
-									<Sidebar blogs={filteredBlogs} future={true} />
-									{/* Sidebar section - pass list of blogs, true for future to signal
-											showing future blogs.*/}
+									{/* <!-- Twitter Meta Tags --> */}
+									<meta name="twitter:card" content="summary_large_image" />
+									<meta name="twitter:title" content="Blog.TinoMuzambi" />
+									<meta name="twitter:description" content="Blog.TinoMuzambi" />
+									<meta name="twitter:image" content="/logo512.png" />
+								</Helmet>
+								<section className="about" ref={about}>
+									<About /> {/* About section */}
+								</section>
+								<section className="featured" ref={featured}>
+									<Featured item={featuredItem} /> {/* Featured section */}
+								</section>
+								<div className="search-wrapper">
+									<Search query={queryText} searchBlogs={searchBlogs} />{" "}
+									{/* Search box */}
 								</div>
-							</section>
-						</div>
-					)}
-				/>
-				{/* Lazy loading components that don't need to be rendered immediately. */}
+								<section className="container" id="blogs">
+									<div className="site-content">
+										<section className="blogs" ref={blogsRef}>
+											{blogs && (
+												<Blogs
+													blogs={homeBlogs}
+													category={false}
+													blogsRef={blogsRef}
+													search={searching}
+												/>
+											)}
+											{/* Blogs section - pass list of blogs, false for category
+												and ref to this for scrolling to anchors */}
+										</section>
+										<Sidebar
+											categories={categories}
+											blogs={filteredBlogs}
+											future={true}
+										/>
+										{/* Sidebar section - pass list of blogs, true for future to signal
+											showing future blogs.*/}
+									</div>
+								</section>
+							</>
+						)}
+					/>
+					{/* Lazy loading components that don't need to be rendered immediately. */}
+					<Suspense
+						fallback={
+							<div className="icon-wrapper">
+								<AiOutlineReload className="icon" />
+							</div>
+						}
+					>
+						<Route
+							path="/blogs/:name"
+							render={() => <Blog blogs={blogs} categories={categories} />}
+						/>
+						{/* Blog route for displaying blog content. */}
+						<Route
+							path="/categories/:name"
+							render={() => <Category categories={categories} blogs={blogs} />}
+						/>
+						{/* Category route for displaying per category blogs. */}
+						<Route
+							exact
+							path="/search/:query"
+							render={() => (
+								<OpenSearch blogsRef={blogsRef} setQueryText={setQueryText} />
+							)}
+						/>
+						{/* OpenSearch route for searching site.*/}
+					</Suspense>
+					<Route component={NotFoundPage} />
+				</Switch>
 				<Suspense
 					fallback={
 						<div className="icon-wrapper">
@@ -176,32 +230,11 @@ const App = () => {
 						</div>
 					}
 				>
-					<Route path="/blogs/:name" component={Blog} />
-					{/* Blog route for displaying blog content. */}
-					<Route path="/categories/:name" component={Category} />
-					{/* Category route for displaying per category blogs. */}
-					<Route
-						exact
-						path="/search/:query"
-						render={() => (
-							<OpenSearch blogsRef={blogsRef} setQueryText={setQueryText} />
-						)}
-					/>
-					{/* OpenSearch route for searching site.*/}
+					<section className="footer" ref={footer}>
+						<Footer /> {/* Footer section */}
+					</section>
 				</Suspense>
-				<Route component={NotFoundPage} />
-			</Switch>
-			<Suspense
-				fallback={
-					<div className="icon-wrapper">
-						<AiOutlineReload className="icon" />
-					</div>
-				}
-			>
-				<section className="footer" ref={footer}>
-					<Footer /> {/* Footer section */}
-				</section>
-			</Suspense>
+			</>
 		</>
 	);
 };

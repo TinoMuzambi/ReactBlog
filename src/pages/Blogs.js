@@ -23,6 +23,10 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 		}
 	}, [location.pathname, blogs, search]);
 
+	useEffect(() => {
+		setDisplayBlogs(blogs);
+	}, [blogs]);
+
 	const handlePageChange = (displayBlogs) => {
 		// Handing pagination page changes.
 		setDisplayBlogs(displayBlogs);

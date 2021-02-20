@@ -2,11 +2,11 @@ import React from "react";
 import Categories from "../components/Categories";
 import SideBlog from "./SideBlog";
 
-const Sidebar = ({ blogs, future }) => (
+const Sidebar = ({ blogs, future, categories }) => (
 	<>
 		<aside className="sidebar">
 			<div className="category">
-				<Categories /> {/* Categories section. */}
+				<Categories categories={categories} /> {/* Categories section. */}
 			</div>
 			<div className="other-posts">
 				<SideBlog blogs={blogs} future={future} /> {/* Sidebar section. */}

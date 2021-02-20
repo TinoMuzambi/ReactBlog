@@ -1,18 +1,41 @@
 import React, { useState, useEffect } from "react";
-import blogs from "../data/blogs";
 import Sidebar from "../components/Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
 import Disqus from "../components/Disqus";
 import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
+import { getBlogs } from "../utils/fetch";
+import { AiOutlineReload } from "react-icons/ai";
 
-const Blog = ({ match }) => {
-	const [name, setName] = useState(match.params.name);
+const Blog = ({ categories }) => {
+	const location = useLocation();
+	const pathname = location.pathname.substring(7);
+
+	const [name, setName] = useState(pathname);
+	const [fetching, setFetching] = useState(true);
+	const [blogs, setBlogs] = useState([]);
 
 	useEffect(() => {
-		setName(match.params.name);
-	}, [match.url, match.params.name]);
+		setName(pathname);
+	}, [pathname]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const dataBlogs = await getBlogs();
+			setBlogs(dataBlogs);
+			setFetching(false);
+		};
+		getData();
+	}, []);
+
+	if (fetching)
+		return (
+			<div className="icon-wrapper large">
+				<AiOutlineReload className="icon" />
+			</div>
+		); /* Preloader for showing before page loads. */
 
 	const title = name; // Finding relevant blog.
 	const blog = blogs.find((blog) => blog.url === title);
@@ -98,7 +121,11 @@ const Blog = ({ match }) => {
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 					</div>
-					<Sidebar blogs={filteredBlogs} future={blog.future} />
+					<Sidebar
+						categories={categories}
+						blogs={filteredBlogs}
+						future={blog.future}
+					/>
 					{/* Sidebar section populated with links to other blogs. */}
 				</div>
 			</div>

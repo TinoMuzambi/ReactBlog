@@ -20,10 +20,14 @@ const Disqus = ({ url, id, src }) => {
 
 			d.body.appendChild(s);
 		} else {
-			window.DISQUS.reset({
-				reload: true,
-				config: disqus_config,
-			});
+			try {
+				window.DISQUS.reset({
+					reload: true,
+					config: disqus_config,
+				});
+			} catch (error) {
+				console.error(error);
+			}
 		}
 	}, [id, src, url]);
 	return <div id="disqus_thread"></div>;
