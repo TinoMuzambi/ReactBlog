@@ -279,7 +279,7 @@ const App = () => {
 					>
 						<Route
 							path="/blogs/:name"
-							render={() => <Blog categories={categories} />}
+							render={() => <Blog blogs={blogs} categories={categories} />}
 						/>
 						{/* Blog route for displaying blog content. */}
 						<Route

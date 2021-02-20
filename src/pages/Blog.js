@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import blogs from "../data/blogs";
 import Sidebar from "../components/Sidebar";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
@@ -8,7 +7,7 @@ import ReactHtmlParser from "react-html-parser";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
-const Blog = ({ categories }) => {
+const Blog = ({ categories, blogs }) => {
 	const location = useLocation();
 	const pathname = location.pathname.substring(7);
 
