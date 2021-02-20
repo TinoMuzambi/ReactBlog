@@ -207,7 +207,7 @@ const App = () => {
 						exact
 						path="/"
 						render={(props) => (
-							<div>
+							<>
 								<Helmet>
 									<title>Blog.TinoMuzambi</title>
 									<meta name="description" content="Blog.TinoMuzambi" />
@@ -266,7 +266,7 @@ const App = () => {
 											showing future blogs.*/}
 									</div>
 								</section>
-							</div>
+							</>
 						)}
 					/>
 					{/* Lazy loading components that don't need to be rendered immediately. */}
