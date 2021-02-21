@@ -10,6 +10,7 @@ ul {
 
 		li {
 			cursor: pointer;
+			color: #3f4954;
 		}
 
 		li:not(:first-child):not(:last-child) {
@@ -18,10 +19,11 @@ ul {
 			border-radius: 50%;
 			height: 1rem;
 			width: 1rem;
-			background: rgba($color: #333, $alpha: 0.1);
+			color: $white;
+			background: #3f4954;
 
 			&:hover {
-				opacity: 0.6;
+				opacity: 0.7;
 			}
 		}
 	}
