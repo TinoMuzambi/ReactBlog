@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
+import { executeScroll } from "../utils/helpers";
+
+const Pagination = ({
+	pageSize,
+	items,
+	onChangePage,
+	customLabels,
+	blogsRef,
+}) => {
 	const [currItems, setCurrItems] = useState(items);
 	const [currPage, setCurrPage] = useState(0);
 	const noPages = Math.ceil(items.length / pageSize);
@@ -24,11 +32,16 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
-		if (currPage >= noPages - 1) setCurrPage(noPages - 1);
+		if (currPage >= noPages - 1) {
+			setCurrPage(noPages - 1);
+		}
 	};
+
 	const prevPage = () => {
 		setCurrPage(currPage - 1);
-		if (currPage <= 0) setCurrPage(0);
+		if (currPage <= 0) {
+			setCurrPage(0);
+		}
 	};
 
 	const getNoItemsOnPage = (length, perPage, page) => {
@@ -59,12 +72,16 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 		onChangePage(currItems);
 	};
 
+	const setDirectPage = (page) => {
+		setCurrPage(page);
+	};
+
 	return (
-		<div className="pagination">
+		<div className="pagination" onClick={() => executeScroll(blogsRef)}>
 			<ul onClick={() => getCurrItems()}>
 				<li onClick={prevPage}>{customLabels.previous}</li>
 				{Array.from(Array(noPages).keys()).map((i) => (
-					<li key={i} onClick={() => setCurrPage(i)}>
+					<li key={i} onClick={() => setDirectPage(i)}>
 						{i + 1}
 					</li>
 				))}
