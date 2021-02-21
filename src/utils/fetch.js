@@ -23,7 +23,6 @@ export const getBlogs = async () => {
 	await getSpaceVersion();
 	let prettyBlogs = [];
 
-	console.log(version);
 	await Storyblok.get("cdn/stories?starts_with=blogs/", {
 		sort_by: "content.date:desc",
 		cv: version,
