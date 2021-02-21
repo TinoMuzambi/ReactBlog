@@ -24,7 +24,7 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 	useEffect(() => {
 		getCurrItems();
 		isFirstRender.current = false; // toggle flag after first render/mounting
-	}, []);
+	}, [currPage]);
 
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
