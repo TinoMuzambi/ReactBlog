@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 	const [currItems, setCurrItems] = useState(items);
 	const [currPage, setCurrPage] = useState(0);
 	const noPages = Math.ceil(items.length / pageSize);
+	const isFirstRender = useRef(true);
 
 	console.log("pagesize", pageSize);
-	console.log("items", items);
+	// console.log("items", items);
 	console.log("currpage", currPage);
 
 	useEffect(() => {
 		onChangePage(currItems);
 	}, [currItems, onChangePage]);
+
+	useEffect(() => {
+		if (!isFirstRender) {
+			console.log("curritems", currItems);
+		}
+	}, [currItems]);
+
+	useEffect(() => {
+		getCurrItems();
+		isFirstRender.current = false; // toggle flag after first render/mounting
+	}, []);
 
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
@@ -49,7 +61,6 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 			items.slice(currPage * pageSize, currPage * pageSize + noItems)
 		);
 		onChangePage(currItems);
-		console.log("curritems", currItems);
 	};
 
 	return (
