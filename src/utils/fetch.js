@@ -10,11 +10,23 @@ const Storyblok = new StoryblokClient({
 		type: "memory",
 	},
 });
+let version;
+const getSpaceVersion = async () => {
+	await Storyblok.get("cdn/spaces/me")
+		.then((response) => {
+			version = response.data.space.version;
+		})
+		.catch((error) => console.error(error));
+};
+
 export const getBlogs = async () => {
+	await getSpaceVersion();
 	let prettyBlogs = [];
 
+	console.log(version);
 	await Storyblok.get("cdn/stories?starts_with=blogs/", {
 		sort_by: "content.date:desc",
+		cv: version,
 	})
 		.then((response) => {
 			const strictlyBlogs = response.data.stories;
@@ -41,8 +53,9 @@ export const getBlogs = async () => {
 	return prettyBlogs;
 };
 export const getCategories = async () => {
+	await getSpaceVersion();
 	let prettyCats = [];
-	await Storyblok.get("cdn/stories?starts_with=categories/", {})
+	await Storyblok.get("cdn/stories?starts_with=categories/", { cv: version })
 		.then((response) => {
 			const strictlyCats = response.data.stories;
 			prettyCats = strictlyCats.map((cat) => ({
@@ -61,8 +74,9 @@ export const getCategories = async () => {
 	return prettyCats;
 };
 export const getFeatured = async () => {
+	await getSpaceVersion();
 	let prettyFeat = {};
-	await Storyblok.get("cdn/stories/featured-item/", {})
+	await Storyblok.get("cdn/stories/featured-item/", { cv: version })
 		.then((response) => {
 			const strictlyFeat = response.data.story.content;
 			prettyFeat = {
