@@ -2,13 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import { executeScroll } from "../utils/helpers";
 
-const Pagination = ({
-	pageSize,
-	items,
-	onChangePage,
-	customLabels,
-	blogsRef,
-}) => {
+const Pagination = ({ pageSize, items, onChangePage, customLabels, ref }) => {
 	const [currItems, setCurrItems] = useState(items);
 	const [currPage, setCurrPage] = useState(0);
 	const noPages = Math.ceil(items.length / pageSize);
@@ -77,7 +71,7 @@ const Pagination = ({
 	};
 
 	return (
-		<div className="pagination" onClick={() => executeScroll(blogsRef)}>
+		<div className="pagination" onClick={() => executeScroll(ref)}>
 			<ul onClick={() => getCurrItems()}>
 				<li onClick={prevPage}>{customLabels.previous}</li>
 				{Array.from(Array(noPages).keys()).map((i) => (
