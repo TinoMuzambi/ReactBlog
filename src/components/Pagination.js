@@ -5,6 +5,14 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 	const [currPage, setCurrPage] = useState(0);
 	const noPages = Math.ceil(items.length / pageSize);
 
+	console.log("pagesize", pageSize);
+	console.log("items", items);
+	console.log("currpage", currPage);
+
+	useEffect(() => {
+		onChangePage(currItems);
+	}, [currItems, onChangePage]);
+
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
 		if (currPage >= noPages - 1) setCurrPage(noPages - 1);
@@ -34,19 +42,19 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 		return 0;
 	};
 
-	useEffect(() => {
-		const getCurrItems = (page) => {
-			const noItems = getNoItemsOnPage(items.length, pageSize, page);
-			setCurrItems(items.slice(page * pageSize, page * pageSize + noItems));
-		};
-		getCurrItems(currPage);
-	}, [currPage, items, pageSize]);
-
-	console.log(currItems);
+	const getCurrItems = () => {
+		const noItems = getNoItemsOnPage(items.length, pageSize, currPage);
+		console.log("noitems", noItems);
+		setCurrItems(
+			items.slice(currPage * pageSize, currPage * pageSize + noItems)
+		);
+		onChangePage(currItems);
+		console.log("curritems", currItems);
+	};
 
 	return (
 		<div className="pagination">
-			<ul>
+			<ul onClick={() => getCurrItems()}>
 				<li onClick={prevPage}>{customLabels.previous}</li>
 				{Array.from(Array(noPages).keys()).map((i) => (
 					<li key={i} onClick={() => setCurrPage(i)}>
