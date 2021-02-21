@@ -98,9 +98,9 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 						))}
 						<div
 							className="page-holder text-center"
-							// onClick={() =>
-							// 	blogsRef?.current.scrollIntoView({ behavior: "smooth" })
-							// }
+							onClick={() =>
+								blogsRef?.current.scrollIntoView({ behavior: "smooth" })
+							}
 						>
 							{/* Pagination element */}
 							{blogItems.length && (

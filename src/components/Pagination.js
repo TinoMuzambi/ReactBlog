@@ -6,10 +6,6 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 	const noPages = Math.ceil(items.length / pageSize);
 	const isFirstRender = useRef(true);
 
-	console.log("pagesize", pageSize);
-	// console.log("items", items);
-	console.log("currpage", currPage);
-
 	useEffect(() => {
 		onChangePage(currItems);
 	}, [currItems, onChangePage]);
@@ -18,12 +14,12 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 		if (!isFirstRender) {
 			console.log("curritems", currItems);
 		}
-		alert(currItems.length);
 	}, [currItems]);
 
 	useEffect(() => {
 		getCurrItems();
-		isFirstRender.current = false; // toggle flag after first render/mounting
+		isFirstRender.current = false;
+		// eslint-disable-next-line
 	}, [currPage]);
 
 	const nextPage = () => {
@@ -57,7 +53,6 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 
 	const getCurrItems = () => {
 		const noItems = getNoItemsOnPage(items.length, pageSize, currPage);
-		console.log("noitems", noItems);
 		setCurrItems(
 			items.slice(currPage * pageSize, currPage * pageSize + noItems)
 		);
