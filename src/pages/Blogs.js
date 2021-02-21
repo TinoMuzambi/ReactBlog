@@ -9,7 +9,8 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
-import JwPagination from "jw-react-pagination";
+
+import Pagination from "../components/Pagination";
 
 const Blogs = ({ blogs, category, search, blogsRef }) => {
 	const [blogItems] = useState(blogs); // Set state to list of blogs.
@@ -95,20 +96,15 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 								{/* Conditionally render element */}
 							</div>
 						))}
-						<div
-							className="page-holder text-center"
-							onClick={() =>
-								blogsRef?.current.scrollIntoView({ behavior: "smooth" })
-							}
-						>
+						<div className="page-holder text-center">
 							{/* Pagination element */}
 							{blogItems.length && (
-								<JwPagination
+								<Pagination
 									items={blogItems}
 									onChangePage={handlePageChange}
 									pageSize={4}
-									// styles={customStyles}
-									labels={customLabels}
+									customLabels={customLabels}
+									customRef={blogsRef}
 								/>
 							)}
 						</div>

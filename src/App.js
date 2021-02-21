@@ -16,6 +16,7 @@ import Preload from "./pages/Preload";
 import Blogs from "./pages/Blogs";
 import OpenSearch from "./pages/OpenSearch";
 import { getBlogs, getCategories, getFeatured } from "./utils/fetch";
+import { executeScroll } from "./utils/helpers";
 import "./css/App.min.css";
 
 const App = () => {
@@ -46,7 +47,7 @@ const App = () => {
 
 	useEffect(() => {
 		const fromOpenSearch = location.state?.fromOpenSearch;
-		fromOpenSearch && executeScroll();
+		fromOpenSearch && executeScroll(blogsRef);
 	}, [location.state]);
 
 	useEffect(() => {
@@ -66,9 +67,6 @@ const App = () => {
 		/* Preloader for showing before page loads. */
 		return <Preload />;
 	}
-
-	const executeScroll = () =>
-		blogsRef?.current?.scrollIntoView({ behavior: "smooth" });
 
 	const searchBlogs = (query) => {
 		// Search by updating queryText state.
