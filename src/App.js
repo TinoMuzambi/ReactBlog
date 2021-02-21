@@ -47,7 +47,7 @@ const App = () => {
 
 	useEffect(() => {
 		const fromOpenSearch = location.state?.fromOpenSearch;
-		fromOpenSearch && executeScroll();
+		fromOpenSearch && executeScroll(blogsRef);
 	}, [location.state]);
 
 	useEffect(() => {

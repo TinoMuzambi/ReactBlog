@@ -104,7 +104,7 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 									onChangePage={handlePageChange}
 									pageSize={4}
 									customLabels={customLabels}
-									blogsRef={blogsRef}
+									customRef={blogsRef}
 								/>
 							)}
 						</div>
