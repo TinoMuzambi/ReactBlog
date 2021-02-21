@@ -18,6 +18,10 @@ const Pagination = ({
 	}, [currItems, onChangePage]);
 
 	useEffect(() => {
+		setCurrItems(items);
+	}, [items]);
+
+	useEffect(() => {
 		getCurrItems();
 		// eslint-disable-next-line
 	}, [currPage]);

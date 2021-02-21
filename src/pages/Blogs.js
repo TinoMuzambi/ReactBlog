@@ -13,7 +13,7 @@ import ReactHtmlParser from "react-html-parser";
 import Pagination from "../components/Pagination";
 
 const Blogs = ({ blogs, category, search, blogsRef }) => {
-	const [blogItems] = useState(blogs); // Set state to list of blogs.
+	const [blogItems, setBlogItems] = useState(blogs); // Set state to list of blogs.
 	const [displayBlogs, setDisplayBlogs] = useState(blogs); // Blogs currently being displayed.
 	const location = useLocation();
 
@@ -24,6 +24,7 @@ const Blogs = ({ blogs, category, search, blogsRef }) => {
 	}, [location.pathname, blogs, search]);
 
 	useEffect(() => {
+		setBlogItems(blogs);
 		setDisplayBlogs(blogs);
 	}, [blogs]);
 
