@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { executeScroll } from "../utils/helpers";
 
@@ -12,24 +12,18 @@ const Pagination = ({
 	const [currItems, setCurrItems] = useState(items);
 	const [currPage, setCurrPage] = useState(0);
 	const noPages = Math.ceil(items.length / pageSize);
-	const isFirstRender = useRef(true);
 
 	useEffect(() => {
 		onChangePage(currItems);
 	}, [currItems, onChangePage]);
 
 	useEffect(() => {
-		if (!isFirstRender) {
-			console.log("curritems", currItems);
-		}
-	}, [currItems]);
-
-	useEffect(() => {
 		getCurrItems();
-		isFirstRender.current = false;
 		// eslint-disable-next-line
 	}, [currPage]);
 
+	// Switch to next page of items.
+	// Check against going past last page.
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
 		if (currPage >= noPages - 1) {
@@ -37,6 +31,8 @@ const Pagination = ({
 		}
 	};
 
+	// Switch to previous page of items.
+	// Check against going before first page.
 	const prevPage = () => {
 		setCurrPage(currPage - 1);
 		if (currPage <= 0) {
@@ -44,6 +40,13 @@ const Pagination = ({
 		}
 	};
 
+	// Directly switch to clicked on page.
+	const setDirectPage = (page) => {
+		setCurrPage(page);
+	};
+
+	// Given the length of the items, the number of items per page and the current page,
+	// Return the number of items that should be on that page.
 	const getNoItemsOnPage = (length, perPage, page) => {
 		let globalCount = 1;
 		for (let i = 0; i < length; i++) {
@@ -64,16 +67,15 @@ const Pagination = ({
 		return 0;
 	};
 
+	// Get the items to currently display.
 	const getCurrItems = () => {
 		const noItems = getNoItemsOnPage(items.length, pageSize, currPage);
 		setCurrItems(
 			items.slice(currPage * pageSize, currPage * pageSize + noItems)
 		);
-		onChangePage(currItems);
-	};
 
-	const setDirectPage = (page) => {
-		setCurrPage(page);
+		// Pass the set items to the callback function.
+		onChangePage(currItems);
 	};
 
 	return (
