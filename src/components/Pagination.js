@@ -18,6 +18,7 @@ const Pagination = ({ pageSize, items, onChangePage, customLabels }) => {
 		if (!isFirstRender) {
 			console.log("curritems", currItems);
 		}
+		alert(currItems.length);
 	}, [currItems]);
 
 	useEffect(() => {
