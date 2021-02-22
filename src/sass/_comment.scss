@@ -1,46 +1,71 @@
 .comment {
-	@include flexRowCenter;
-	gap: 1rem;
-	margin: 1rem 0;
 	position: relative;
 
-	.avatar {
-		height: 5rem;
-		width: 5rem;
-		border-radius: 50%;
-		object-fit: cover;
+	.container {
+		@include flexRowCenter;
+		margin: 2rem 0 0 0;
+		gap: 1rem;
+
+		&:hover ~ .actions {
+			height: 3rem;
+			opacity: 1;
+			margin: -1.5rem 0 -1rem 6rem;
+		}
+
+		.avatar {
+			height: 5rem;
+			width: 5rem;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.group {
+			margin: 0;
+
+			.details {
+				@extend %flex;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.author {
+				font-family: $Anton;
+				font-weight: normal;
+				margin: 0 0 1rem 0;
+			}
+
+			.date {
+				margin: 0 0 1rem 0;
+				font-family: $Livvic;
+				font-size: 0.7rem;
+			}
+
+			.text {
+				margin: 0 0 1rem 0;
+			}
+		}
 	}
+	.actions {
+		@include flexAllRow;
+		justify-content: flex-start;
+		gap: 0.5rem;
+		margin: -0.5rem 0 0 6rem;
+		height: 0;
+		opacity: 0;
+		transition: all 0.5s ease;
 
-	.group {
-		margin: 0;
-
-		.details {
-			@extend %flex;
-			align-items: center;
-			gap: 1rem;
-		}
-
-		.author {
-			font-family: $Anton;
-			font-weight: normal;
-			margin: 0 0 1rem 0;
-		}
-
-		.date {
-			margin: 0 0 1rem 0;
-			font-family: $Livvic;
-			font-size: 0.7rem;
-		}
-
-		.text {
-			margin: 0 0 1rem 0;
+		&:hover {
+			height: 3rem;
+			opacity: 1;
+			margin: -1.5rem 0 -1rem 6rem;
 		}
 	}
 
 	.underline {
 		border-bottom: 1px solid rgba($color: $text-gray, $alpha: 0.2);
-		width: 100%;
+		width: calc(100% - 6rem);
+		margin-left: 6rem;
 		position: absolute;
-		bottom: -0.5rem;
+		bottom: -1rem;
 	}
 }

@@ -22,7 +22,7 @@ const Comments = () => {
 				</form>
 			</div>
 			{comments.map((comment) => (
-				<Comment key={comment.id} comment={comment} />
+				<Comment key={comment.id} comment={comment} length={comments.length} />
 			))}
 		</div>
 	);
