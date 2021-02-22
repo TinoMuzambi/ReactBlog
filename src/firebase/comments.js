@@ -8,6 +8,7 @@ const comments = [
 		comment:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Id explicabo similique dolore nobis nesciunt vero atque, accusamus temporibus dolorum tempore modi sint facere nihil quos suscipit, optio cumque, fugit sunt?",
 		date: new Date(),
+		upvotes: 1,
 	},
 	{
 		id: 1,
@@ -18,6 +19,7 @@ const comments = [
 		comment:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Id explicabo similique dolore nobis nesciunt vero atque, accusamus temporibus dolorum tempore modi sint facere nihil quos suscipit, optio cumque, fugit sunt?",
 		date: new Date(),
+		upvotes: 40,
 	},
 	{
 		id: 2,
@@ -28,6 +30,7 @@ const comments = [
 		comment:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Id explicabo rum tempore modi sint facere nihil quos suscipit, optio cumque, fugit sunt?",
 		date: new Date(),
+		upvotes: 4,
 	},
 ];
 
