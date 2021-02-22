@@ -4,7 +4,7 @@ import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comment }) => {
+const CommentContent = ({ comment, indent }) => {
 	const [liked, setLiked] = useState(false);
 	const [replying, setReplying] = useState(false);
 
@@ -22,7 +22,7 @@ const CommentContent = ({ comment }) => {
 	};
 
 	return (
-		<div className="comment-content">
+		<div className={`comment-content ${indent && "indent"}`}>
 			<motion.div className="comment-container" layout>
 				<img src={comment.image} alt="Avatar" className="avatar" />
 				<div className="group">
