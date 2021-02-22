@@ -14,7 +14,7 @@ const Comments = () => {
 					src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
 					alt="Avatar"
 				/>
-				<CommentForm />
+				<CommentForm sm={false} />
 			</div>
 			{comments.map((comment) => (
 				<motion.div className="wrapper" key={comment.id} layout>
