@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import CommentForm from "./CommentForm";
 
 const Comment = ({ comment, length }) => {
 	const [liked, setLiked] = useState(false);
+	const [replying, setReplying] = useState(false);
 
 	const like = () => {
 		setLiked(!liked);
@@ -11,6 +13,10 @@ const Comment = ({ comment, length }) => {
 		} else {
 			comment.upvotes--;
 		}
+	};
+
+	const reply = () => {
+		setReplying(!replying);
 	};
 
 	return (
@@ -30,7 +36,10 @@ const Comment = ({ comment, length }) => {
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
 				<p className="upvotes">{comment.upvotes}</p>
-				<p className="reply">Reply</p>
+				<p className="reply" onClick={reply}>
+					Reply
+				</p>
+				{replying && <CommentForm />}
 			</div>
 			{comment.id !== length - 1 && <div className="underline"></div>}
 		</div>
