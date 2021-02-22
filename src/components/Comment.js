@@ -24,10 +24,10 @@ const Comment = ({ comment, length }) => {
 	return (
 		<motion.div className="comment" layout>
 			<CommentContent comment={comment} indent={comment.level} />
-			{comment.id !== length - 1 && <div className="underline"></div>}
 			{comment?.replies?.map((reply) => (
 				<CommentContent key={reply.id} comment={reply} indent={reply.level} />
 			))}
+			{comment.id !== length - 1 && <div className="underline"></div>}
 		</motion.div>
 	);
 };

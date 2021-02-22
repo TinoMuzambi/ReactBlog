@@ -38,9 +38,11 @@ const CommentContent = ({ comment, indent }) => {
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
 				<p className="upvotes">{comment.upvotes}</p>
-				<p className="reply" onClick={reply}>
-					Reply
-				</p>
+				{indent !== "one" && (
+					<p className="reply" onClick={reply}>
+						Reply
+					</p>
+				)}
 			</motion.div>
 			{replying && (
 				<motion.div className="form-group" layout>
