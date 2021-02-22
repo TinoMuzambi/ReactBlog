@@ -1,3 +1,17 @@
 .comments {
-	@include flexAllCol;
+	@include flexColCenter;
+	align-items: flex-start;
+
+	.form-group {
+		@extend %flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		img {
+			height: 5rem;
+			width: 5rem;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
 }
