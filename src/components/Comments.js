@@ -1,4 +1,6 @@
 import React from "react";
+import comments from "../firebase/comments";
+import Comment from "./Comment";
 
 const Comments = () => {
 	return (
@@ -19,6 +21,10 @@ const Comments = () => {
 					/>
 				</form>
 			</div>
+			<hr />
+			{comments.map((comment) => (
+				<Comment comment={comment} />
+			))}
 		</div>
 	);
 };
