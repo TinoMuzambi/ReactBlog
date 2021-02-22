@@ -15,19 +15,5 @@
 			object-fit: cover;
 			border-radius: 50%;
 		}
-
-		.form {
-			width: 100%;
-
-			.text {
-				padding: 1rem;
-				outline: none;
-				resize: none;
-				width: 90%;
-				border: solid 2px $text-gray;
-				border-radius: 5px;
-				font-family: $Lexend;
-			}
-		}
 	}
 }

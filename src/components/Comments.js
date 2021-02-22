@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import comments from "../firebase/comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
@@ -15,7 +17,9 @@ const Comments = () => {
 				<CommentForm />
 			</div>
 			{comments.map((comment) => (
-				<Comment key={comment.id} comment={comment} length={comments.length} />
+				<motion.div className="wrapper" key={comment.id} layout>
+					<Comment comment={comment} length={comments.length} />
+				</motion.div>
 			))}
 		</div>
 	);

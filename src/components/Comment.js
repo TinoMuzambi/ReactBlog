@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { motion } from "framer-motion";
+
 import CommentForm from "./CommentForm";
 
 const Comment = ({ comment, length }) => {
@@ -20,8 +22,8 @@ const Comment = ({ comment, length }) => {
 	};
 
 	return (
-		<div className="comment">
-			<div className="container">
+		<motion.div className="comment" layout>
+			<motion.div className="container" layout>
 				<img src={comment.image} alt="Avatar" className="avatar" />
 				<div className="group">
 					<div className="details">
@@ -30,8 +32,8 @@ const Comment = ({ comment, length }) => {
 					</div>
 					<p className="text">{comment.comment}</p>
 				</div>
-			</div>
-			<div className="actions">
+			</motion.div>
+			<motion.div className="actions" layout>
 				<div className="like" onClick={like}>
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
@@ -39,10 +41,14 @@ const Comment = ({ comment, length }) => {
 				<p className="reply" onClick={reply}>
 					Reply
 				</p>
-				{replying && <CommentForm />}
-			</div>
+			</motion.div>
+			{replying && (
+				<motion.div className="form-group" layout>
+					<CommentForm />
+				</motion.div>
+			)}
 			{comment.id !== length - 1 && <div className="underline"></div>}
-		</div>
+		</motion.div>
 	);
 };
 

@@ -12,6 +12,10 @@
 			margin: -1.5rem 0 -1rem 6rem;
 		}
 
+		&:hover ~ .underline {
+			bottom: 0;
+		}
+
 		.avatar {
 			height: 5rem;
 			width: 5rem;
@@ -61,6 +65,10 @@
 			margin: -1.5rem 0 -1rem 6rem;
 		}
 
+		&:hover ~ .underline {
+			bottom: 0;
+		}
+
 		.like,
 		.reply {
 			cursor: pointer;
@@ -73,11 +81,16 @@
 		}
 	}
 
+	.form-group {
+		margin: 1rem 0 0.5rem 6rem;
+	}
+
 	.underline {
 		border-bottom: 1px solid rgba($color: $text-gray, $alpha: 0.2);
 		width: calc(100% - 6rem);
 		margin-left: 6rem;
 		position: absolute;
 		bottom: -1rem;
+		transition: all 0.2s ease;
 	}
 }
