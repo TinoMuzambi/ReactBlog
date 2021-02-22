@@ -1,17 +1,33 @@
 .comments {
 	@include flexColCenter;
 	align-items: flex-start;
+	margin: 2rem 0;
 
 	.form-group {
-		@extend %flex;
+		@include flexAllRow;
 		justify-content: flex-start;
-		align-items: flex-start;
+		gap: 2rem;
+		width: 100%;
 
 		img {
 			height: 5rem;
 			width: 5rem;
 			object-fit: cover;
 			border-radius: 50%;
+		}
+
+		.form {
+			width: 100%;
+
+			.text {
+				padding: 1rem;
+				outline: none;
+				resize: none;
+				width: 90%;
+				border: solid 2px $text-gray;
+				border-radius: 5px;
+				font-family: $Lexend;
+			}
 		}
 	}
 }

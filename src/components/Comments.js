@@ -10,7 +10,13 @@ const Comments = () => {
 					alt="Avatar"
 				/>
 				<form className="form">
-					<input type="text" name="text" className="text" />
+					<textarea
+						type="text"
+						name="text"
+						className="text"
+						placeholder="Leave a comment"
+						rows={5}
+					/>
 				</form>
 			</div>
 		</div>
