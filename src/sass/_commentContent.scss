@@ -6,6 +6,9 @@
 	&.one {
 		margin-left: 6rem !important;
 	}
+	&.two {
+		margin-left: 12rem !important;
+	}
 
 	.comment-container {
 		@include flexRowCenter;

@@ -25,7 +25,16 @@ const Comment = ({ comment, length }) => {
 		<motion.div className="comment" layout>
 			<CommentContent comment={comment} indent={comment.level} />
 			{comment?.replies?.map((reply) => (
-				<CommentContent key={reply.id} comment={reply} indent={reply.level} />
+				<>
+					<CommentContent key={reply.id} comment={reply} indent={reply.level} />
+					{reply?.replies?.map((replyTwo) => (
+						<CommentContent
+							key={replyTwo.id}
+							comment={replyTwo}
+							indent={replyTwo.level}
+						/>
+					))}
+				</>
 			))}
 			{comment.id !== length - 1 && <div className="underline"></div>}
 		</motion.div>

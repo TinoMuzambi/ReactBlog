@@ -38,7 +38,7 @@ const CommentContent = ({ comment, indent }) => {
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
 				<p className="upvotes">{comment.upvotes}</p>
-				{indent !== "one" && (
+				{indent !== "two" && (
 					<p className="reply" onClick={reply}>
 						Reply
 					</p>

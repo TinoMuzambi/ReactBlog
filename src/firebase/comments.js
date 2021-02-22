@@ -32,6 +32,19 @@ const comments = [
 				date: new Date(),
 				upvotes: 100,
 				level: "one",
+				replies: [
+					{
+						id: 5,
+						user: "Tino?",
+						image:
+							"https://a.storyblok.com/f/105639/1338x1534/77f714ef7c/new_me.jpg",
+
+						comment: "Losfugit sunt?",
+						date: new Date(),
+						upvotes: 100,
+						level: "two",
+					},
+				],
 			},
 		],
 	},
