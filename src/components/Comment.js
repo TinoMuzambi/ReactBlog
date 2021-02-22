@@ -6,6 +6,11 @@ const Comment = ({ comment, length }) => {
 
 	const like = () => {
 		setLiked(!liked);
+		if (!liked) {
+			comment.upvotes++;
+		} else {
+			comment.upvotes--;
+		}
 	};
 
 	return (
