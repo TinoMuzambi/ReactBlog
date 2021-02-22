@@ -21,9 +21,8 @@ const Comments = () => {
 					/>
 				</form>
 			</div>
-			<hr />
 			{comments.map((comment) => (
-				<Comment comment={comment} />
+				<Comment key={comment.id} comment={comment} />
 			))}
 		</div>
 	);
