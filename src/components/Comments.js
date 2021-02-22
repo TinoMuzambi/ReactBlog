@@ -1,6 +1,7 @@
 import React from "react";
 import comments from "../firebase/comments";
 import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 const Comments = () => {
 	return (
@@ -11,15 +12,7 @@ const Comments = () => {
 					src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
 					alt="Avatar"
 				/>
-				<form className="form">
-					<textarea
-						type="text"
-						name="text"
-						className="text"
-						placeholder="Leave a comment"
-						rows={5}
-					/>
-				</form>
+				<CommentForm />
 			</div>
 			{comments.map((comment) => (
 				<Comment key={comment.id} comment={comment} length={comments.length} />

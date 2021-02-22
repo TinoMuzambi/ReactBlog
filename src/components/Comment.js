@@ -30,6 +30,7 @@ const Comment = ({ comment, length }) => {
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
 				<p className="upvotes">{comment.upvotes}</p>
+				<p className="reply">Reply</p>
 			</div>
 			{comment.id !== length - 1 && <div className="underline"></div>}
 		</div>
