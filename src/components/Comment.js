@@ -44,7 +44,7 @@ const Comment = ({ comment, length }) => {
 			</motion.div>
 			{replying && (
 				<motion.div className="form-group" layout>
-					<CommentForm />
+					<CommentForm sm={true} />
 				</motion.div>
 			)}
 			{comment.id !== length - 1 && <div className="underline"></div>}

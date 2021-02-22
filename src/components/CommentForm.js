@@ -1,8 +1,8 @@
 import React from "react";
 
-const CommentForm = () => {
+const CommentForm = ({ sm }) => {
 	return (
-		<form className="form">
+		<form className={`form ${sm && "sm"}`}>
 			<textarea
 				type="text"
 				name="text"

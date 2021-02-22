@@ -1,6 +1,10 @@
 .form {
 	width: 100%;
 
+	&.sm {
+		width: 90%;
+	}
+
 	.text {
 		box-sizing: content-box;
 		padding: 20px;
