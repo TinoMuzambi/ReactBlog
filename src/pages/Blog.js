@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 import Sidebar from "../components/Sidebar";
 import Disqus from "../components/Disqus";
 import { getBlogs } from "../utils/fetch";
+import Comments from "../components/Comments";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();
@@ -122,6 +123,7 @@ const Blog = ({ categories }) => {
 						/>
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
+						<Comments />
 					</div>
 					<Sidebar
 						categories={categories}
