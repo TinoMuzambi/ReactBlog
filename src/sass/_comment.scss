@@ -53,11 +53,16 @@
 		height: 0;
 		opacity: 0;
 		transition: all 0.5s ease;
+		line-height: 0;
 
 		&:hover {
 			height: 3rem;
 			opacity: 1;
 			margin: -1.5rem 0 -1rem 6rem;
+		}
+
+		.like {
+			cursor: pointer;
 		}
 	}
 
