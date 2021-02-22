@@ -8,8 +8,8 @@ const CommentForm = () => {
 				name="text"
 				className="text"
 				placeholder="Leave a comment"
-				rows={5}
 			/>
+			<input type="submit" value="Comment!" className="submit" />
 		</form>
 	);
 };
