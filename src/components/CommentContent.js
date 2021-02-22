@@ -22,7 +22,7 @@ const CommentContent = ({ comment, indent }) => {
 	};
 
 	return (
-		<div className={`comment-content ${indent && "indent"}`}>
+		<div className={`comment-content ${indent}`}>
 			<motion.div className="comment-container" layout>
 				<img src={comment.image} alt="Avatar" className="avatar" />
 				<div className="group">

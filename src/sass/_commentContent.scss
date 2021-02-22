@@ -1,6 +1,9 @@
 .comment-content {
-	&.indent {
-		margin-left: 6rem;
+	&.zero {
+		margin-left: 0 !important;
+	}
+	&.one {
+		margin-left: 6rem !important;
 	}
 
 	.comment-container {
