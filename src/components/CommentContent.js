@@ -5,18 +5,17 @@ import Moment from "react-moment";
 import CommentForm from "./CommentForm";
 
 const CommentContent = ({ comments }) => {
-	const [liked, setLiked] = useState(false);
 	const [replying, setReplying] = useState(false);
 	const [replying2, setReplying2] = useState(false);
 	const [replying3, setReplying3] = useState(false);
 
-	const like = () => {
-		setLiked(!liked);
-		// if (!liked) {
-		// 	comment.upvotes++;
-		// } else {
-		// 	comment.upvotes--;
-		// }
+	const like = (commentParam) => {
+		commentParam.liked = !commentParam.liked;
+		if (!commentParam.liked) {
+			commentParam.upvotes++;
+		} else {
+			commentParam.upvotes--;
+		}
 	};
 
 	const replyHandler = (level) => {
@@ -54,8 +53,8 @@ const CommentContent = ({ comments }) => {
 					</div>
 				</div>
 				<div className="actions">
-					<div className="like" onClick={like}>
-						{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
+					<div className="like" onClick={() => like(comment)}>
+						{comment.liked ? <FcLike /> : <FcLikePlaceholder />}
 					</div>
 					<p className="upvotes">{comment.upvotes}</p>
 					{comment.level !== "two" && (
@@ -95,8 +94,8 @@ const CommentContent = ({ comments }) => {
 							</div>
 						</div>
 						<div className="actions">
-							<div className="like" onClick={like}>
-								{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
+							<div className="like" onClick={() => like(reply)}>
+								{reply.liked ? <FcLike /> : <FcLikePlaceholder />}
 							</div>
 							<p className="upvotes">{reply.upvotes}</p>
 							{reply.level !== "two" && (
@@ -135,8 +134,8 @@ const CommentContent = ({ comments }) => {
 								</div>
 							</div>
 							<div className="actions">
-								<div className="like" onClick={like}>
-									{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
+								<div className="like" onClick={() => like(replyTwo)}>
+									{replyTwo.liked ? <FcLike /> : <FcLikePlaceholder />}
 								</div>
 								<p className="upvotes">{replyTwo.upvotes}</p>
 								{replyTwo.level !== "two" && (
