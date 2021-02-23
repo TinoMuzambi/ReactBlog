@@ -17,12 +17,14 @@ const CommentContent = ({ comments, indent }) => {
 		// }
 	};
 
-	const reply = () => {
+	const replyHandler = () => {
 		setReplying(!replying);
 	};
 
-	return indent === "zero" ? (
-		comments.comments.map((comment) => (
+	console.log(comments);
+
+	return comments.comments.map((comment) => (
+		<>
 			<div className={`comment-content ${indent}`}>
 				<div className="comment-container">
 					<img
@@ -49,7 +51,7 @@ const CommentContent = ({ comments, indent }) => {
 					</div>
 					<p className="upvotes">{comment.upvotes}</p>
 					{indent !== "two" && (
-						<p className="reply" onClick={reply}>
+						<p className="reply" onClick={replyHandler}>
 							Reply
 						</p>
 					)}
@@ -60,39 +62,88 @@ const CommentContent = ({ comments, indent }) => {
 					</div>
 				)}
 			</div>
-		))
-	) : (
-		<div className={`comment-content ${indent}`}>
-			<div className="comment-container">
-				<img src={comments.image} alt="Avatar" className="avatar"></img>
-				<div className="group">
-					<div className="details">
-						<h4 className="author">{comments.user}</h4>
-						<h5 className="date">
-							<Moment format="MMM DD, YYYY">{comments.date}</Moment>
-						</h5>
+			{comment?.replies?.map((reply) => (
+				<>
+					<div className={`comment-content ${reply.level}`}>
+						<div className="comment-container">
+							<img
+								src={
+									reply.image ||
+									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+								}
+								alt="Avatar"
+								className="avatar"
+							></img>
+							<div className="group">
+								<div className="details">
+									<h4 className="author">{reply.user}</h4>
+									<h5 className="date">
+										<Moment format="MMM DD, YYYY">{reply.date}</Moment>
+									</h5>
+								</div>
+								<p className="text">{reply.comment}</p>
+							</div>
+						</div>
+						<div className="actions">
+							<div className="like" onClick={like}>
+								{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
+							</div>
+							<p className="upvotes">{reply.upvotes}</p>
+							{indent !== "two" && (
+								<p className="reply" onClick={replyHandler}>
+									Reply
+								</p>
+							)}
+						</div>
+						{replying && (
+							<div className={`form-group ${indent !== "zero" && "no-left"}`}>
+								<CommentForm sm={indent === "zero"} />
+							</div>
+						)}
 					</div>
-					<p className="text">{comments.comment}</p>
-				</div>
-			</div>
-			<div className="actions">
-				<div className="like" onClick={like}>
-					{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
-				</div>
-				<p className="upvotes">{comments.upvotes}</p>
-				{indent !== "two" && (
-					<p className="reply" onClick={reply}>
-						Reply
-					</p>
-				)}
-			</div>
-			{replying && (
-				<div className={`form-group ${indent !== "zero" && "no-left"}`}>
-					<CommentForm sm={indent === "zero"} />
-				</div>
-			)}
-		</div>
-	);
+					{reply?.replies?.map((replyTwo) => (
+						<div className={`comment-content ${replyTwo.level}`}>
+							<div className="comment-container">
+								<img
+									src={
+										replyTwo.image ||
+										"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+									}
+									alt="Avatar"
+									className="avatar"
+								></img>
+								<div className="group">
+									<div className="details">
+										<h4 className="author">{replyTwo.user}</h4>
+										<h5 className="date">
+											<Moment format="MMM DD, YYYY">{replyTwo.date}</Moment>
+										</h5>
+									</div>
+									<p className="text">{replyTwo.comment}</p>
+								</div>
+							</div>
+							<div className="actions">
+								<div className="like" onClick={like}>
+									{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
+								</div>
+								<p className="upvotes">{replyTwo.upvotes}</p>
+								{indent !== "two" && (
+									<p className="reply" onClick={replyHandler}>
+										Reply
+									</p>
+								)}
+							</div>
+							{replying && (
+								<div className={`form-group ${indent !== "zero" && "no-left"}`}>
+									<CommentForm sm={indent === "zero"} />
+								</div>
+							)}
+						</div>
+					))}
+				</>
+			))}
+		</>
+	));
 };
 
 export default CommentContent;
