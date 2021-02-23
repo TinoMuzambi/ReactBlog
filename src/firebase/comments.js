@@ -206,6 +206,113 @@ const comments = [
 			},
 		],
 	},
+	{
+		blog_url: "a_little_about_me",
+		comments: [
+			{
+				id: 14,
+				user: "sagel julia",
+				comment: `Haha, got my swim suit ready to dive then I read the "I'm not about to expose myself like that" ***inserts tear emoji***`,
+				date: new Date("Thursday, June 25, 2020 3:51 PM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 15,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `😂This isn't a safe space.🌚`,
+						date: new Date("Thursday, June 25, 2020 3:51 PM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+			{
+				id: 16,
+				user: "Anza Cavin",
+				image:
+					"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
+
+				comment: `I call Martin , Martintin 😂`,
+				date: new Date("Wednesday, June 10, 2020, 9:47 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+			},
+			{
+				id: 17,
+				user: "Nsovo Lovejoy Mnisi",
+				image:
+					"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+				comment: `Because I know you I knew most of these things about you but boy did I not hang to each and every word! I was gripped, like the flow with the words, and everything yhoo like words are failing me now. I guess what I'm trying to say is that reading this was "really an indescribable thing but I think spiritual is a good adjective."
+				And your music taste, hay I don't relate shame.😂😂They are absolute trash, the message is good sure, but they don't do it for me, not at all.😂😂`,
+				date: new Date("Wednesday, June 10, 2020 3:21 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 18,
+						user: "Anza Cavin",
+						image:
+							"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
+
+						comment: `😂 you always been the realist Nsovo. Telling it like it is`,
+						date: new Date("Wednesday, June 10, 2020, 9:36 AM"),
+						upvotes: 1,
+						liked: true,
+						level: "one",
+						replies: [
+							{
+								id: 17,
+								user: "Nsovo Lovejoy Mnisi",
+								image:
+									"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+								comment: `😂 😂 I'm just a glass of water.`,
+								date: new Date("Wednesday, June 10, 2020 10:07 AM"),
+								upvotes: 1,
+								liked: true,
+								level: "two",
+							},
+							{
+								id: 18,
+								user: "Tino",
+								image:
+									"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+								comment: `You should've started with the music thing then everything else cause now you've just left a bad taste in the mouth.😂But it's cool, I'm glad you found it spiritual.🙏🏾`,
+								date: new Date("Wednesday, June 10, 2020 12:28 PM"),
+								upvotes: 0,
+								liked: false,
+								level: "one",
+								replies: [
+									{
+										id: 19,
+										user: "Nsovo Lovejoy Mnisi",
+										image:
+											"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+										comment: `😂😂I believe in good news first.`,
+										date: new Date("Wednesday, June 10, 2020 6:42 PM"),
+										upvotes: 1,
+										liked: true,
+										level: "two",
+									},
+								],
+							},
+						],
+					},
+				],
+			},
+		],
+	},
 ];
 
 export default comments;
