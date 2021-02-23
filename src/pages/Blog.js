@@ -41,7 +41,7 @@ const Blog = ({ categories }) => {
 		);
 
 	const title = name; // Finding relevant blog.
-	const blog = blogs.find((blog) => blog.url === title);
+	const blog = blogs.find((blogParam) => blogParam.url === title);
 	const filteredBlogs = blogs // Getting list that doesn't include current blog nor future blogs for other blogs section.
 		.filter((eachItem) => {
 			return (
