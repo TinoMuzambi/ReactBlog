@@ -5,7 +5,7 @@ const Comment = ({ comment }) => {
 	console.log(comment);
 	return (
 		<div className="comment">
-			<CommentContent comments={comment} indent={comment.comments[0].level} />
+			<CommentContent comments={comment} indent={comment.comments[0]?.level} />
 			{comment?.comments.map((item) =>
 				item?.replies?.map((reply) => (
 					<>

@@ -146,6 +146,10 @@ const comments = [
 			},
 		],
 	},
+	{
+		blog_url: "upgrade_your_walls",
+		comments: [],
+	},
 ];
 
 export default comments;

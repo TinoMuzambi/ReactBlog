@@ -65,7 +65,7 @@ const Comments = ({ url }) => {
 							</div>
 							<CommentForm sm={false} />
 						</div>
-						{filteredComments.length ? (
+						{filteredComments.comments ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
 									<Comment comment={comment} />
