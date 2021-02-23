@@ -21,7 +21,13 @@
 			}
 
 			.user {
+				text-align: center;
 				font-size: 0.7rem;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}

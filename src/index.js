@@ -1,12 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import {
+	FirebaseAuthProvider,
+	FirebaseAuthConsumer,
+	IfFirebaseAuthed,
+	IfFirebaseAuthedAnd,
+} from "@react-firebase/auth";
+import firebase from "firebase";
+
+import { firebaseConfig } from "./firebase/config";
 
 import App from "./App";
 
 ReactDOM.render(
-	<Router>
-		<App />
-	</Router>,
+	<FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
+		<Router>
+			<App />
+		</Router>
+	</FirebaseAuthProvider>,
 	document.getElementById("root")
 );

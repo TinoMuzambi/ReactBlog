@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const firebaseConfig = {
+export const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_KEY,
 	authDomain: "blogtinomuzambi-6b696.firebaseapp.com",
 	projectId: "blogtinomuzambi-6b696",
