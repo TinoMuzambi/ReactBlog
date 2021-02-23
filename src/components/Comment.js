@@ -6,22 +6,24 @@ const Comment = ({ comment }) => {
 	return (
 		<div className="comment">
 			<CommentContent comments={comment} indent={comment.comments[0].level} />
-			{comment?.comments[0]?.replies?.map((reply) => (
-				<>
-					<CommentContent
-						key={reply.id}
-						comments={reply}
-						indent={reply.level}
-					/>
-					{reply?.replies?.map((replyTwo) => (
+			{comment?.comments.map((item) =>
+				item?.replies?.map((reply) => (
+					<>
 						<CommentContent
-							key={replyTwo.id}
-							comments={replyTwo}
-							indent={replyTwo.level}
+							key={reply.id}
+							comments={reply}
+							indent={reply.level}
 						/>
-					))}
-				</>
-			))}
+						{reply?.replies?.map((replyTwo) => (
+							<CommentContent
+								key={replyTwo.id}
+								comments={replyTwo}
+								indent={replyTwo.level}
+							/>
+						))}
+					</>
+				))
+			)}
 		</div>
 	);
 };
