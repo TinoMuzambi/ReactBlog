@@ -4,9 +4,11 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comments, indent }) => {
+const CommentContent = ({ comments }) => {
 	const [liked, setLiked] = useState(false);
 	const [replying, setReplying] = useState(false);
+	const [replying2, setReplying2] = useState(false);
+	const [replying3, setReplying3] = useState(false);
 
 	const like = () => {
 		setLiked(!liked);
@@ -17,15 +19,21 @@ const CommentContent = ({ comments, indent }) => {
 		// }
 	};
 
-	const replyHandler = () => {
-		setReplying(!replying);
+	const replyHandler = (level) => {
+		if (level === 0) {
+			setReplying(!replying);
+		} else if (level === 1) {
+			setReplying2(!replying2);
+		} else {
+			setReplying3(!replying3);
+		}
 	};
 
 	console.log(comments);
 
 	return comments.comments.map((comment) => (
 		<>
-			<div className={`comment-content ${indent}`}>
+			<div className={`comment-content ${comment.level}`}>
 				<div className="comment-container">
 					<img
 						src={
@@ -50,15 +58,17 @@ const CommentContent = ({ comments, indent }) => {
 						{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
 					</div>
 					<p className="upvotes">{comment.upvotes}</p>
-					{indent !== "two" && (
-						<p className="reply" onClick={replyHandler}>
+					{comment.level !== "two" && (
+						<p className="reply" onClick={() => replyHandler(0)}>
 							Reply
 						</p>
 					)}
 				</div>
 				{replying && (
-					<div className={`form-group ${indent !== "zero" && "no-left"}`}>
-						<CommentForm sm={indent === "zero"} />
+					<div
+						className={`form-group ${comment.level !== "zero" && "no-left"}`}
+					>
+						<CommentForm sm={comment.level === "zero"} />
 					</div>
 				)}
 			</div>
@@ -89,15 +99,17 @@ const CommentContent = ({ comments, indent }) => {
 								{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
 							</div>
 							<p className="upvotes">{reply.upvotes}</p>
-							{indent !== "two" && (
-								<p className="reply" onClick={replyHandler}>
+							{reply.level !== "two" && (
+								<p className="reply" onClick={() => replyHandler(1)}>
 									Reply
 								</p>
 							)}
 						</div>
-						{replying && (
-							<div className={`form-group ${indent !== "zero" && "no-left"}`}>
-								<CommentForm sm={indent === "zero"} />
+						{replying2 && (
+							<div
+								className={`form-group ${reply.level !== "zero" && "no-left"}`}
+							>
+								<CommentForm sm={reply.level === "zero"} />
 							</div>
 						)}
 					</div>
@@ -127,15 +139,19 @@ const CommentContent = ({ comments, indent }) => {
 									{comments.liked ? <FcLike /> : <FcLikePlaceholder />}
 								</div>
 								<p className="upvotes">{replyTwo.upvotes}</p>
-								{indent !== "two" && (
-									<p className="reply" onClick={replyHandler}>
+								{replyTwo.level !== "two" && (
+									<p className="reply" onClick={() => replyHandler(2)}>
 										Reply
 									</p>
 								)}
 							</div>
-							{replying && (
-								<div className={`form-group ${indent !== "zero" && "no-left"}`}>
-									<CommentForm sm={indent === "zero"} />
+							{replying3 && (
+								<div
+									className={`form-group ${
+										replyTwo.level !== "zero" && "no-left"
+									}`}
+								>
+									<CommentForm sm={replyTwo.level === "zero"} />
 								</div>
 							)}
 						</div>
