@@ -123,7 +123,7 @@ const Blog = ({ categories }) => {
 						/>
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
-						<Comments />
+						<Comments url={pathname} />
 					</div>
 					<Sidebar
 						categories={categories}

@@ -6,7 +6,8 @@ import comments from "../firebase/comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-const Comments = () => {
+const Comments = ({ url }) => {
+	console.log(url);
 	return (
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user, providerId }) => {
@@ -63,11 +64,13 @@ const Comments = () => {
 							</div>
 							<CommentForm sm={false} />
 						</div>
-						{comments.map((comment) => (
-							<div className="wrapper" key={comment.id}>
-								<Comment comment={comment} />
-							</div>
-						))}
+						{comments
+							.filter((comment) => comment.blog_url === url)
+							.map((comment) => (
+								<div className="wrapper" key={comment.id}>
+									<Comment comment={comment} />
+								</div>
+							))}
 					</div>
 				);
 			}}
