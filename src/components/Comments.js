@@ -65,7 +65,7 @@ const Comments = () => {
 						</div>
 						{comments.map((comment) => (
 							<div className="wrapper" key={comment.id}>
-								<Comment comment={comment} length={comments.length} />
+								<Comment comment={comment} />
 							</div>
 						))}
 					</div>

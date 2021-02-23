@@ -1,17 +1,22 @@
 import React from "react";
 import CommentContent from "./CommentContent";
 
-const Comment = ({ comment, length }) => {
+const Comment = ({ comment }) => {
+	console.log(comment);
 	return (
 		<div className="comment">
-			<CommentContent comment={comment} indent={comment.level} />
-			{comment?.replies?.map((reply) => (
+			<CommentContent comments={comment} indent={comment.comments[0].level} />
+			{comment?.comments[0]?.replies?.map((reply) => (
 				<>
-					<CommentContent key={reply.id} comment={reply} indent={reply.level} />
+					<CommentContent
+						key={reply.id}
+						comments={reply}
+						indent={reply.level}
+					/>
 					{reply?.replies?.map((replyTwo) => (
 						<CommentContent
 							key={replyTwo.id}
-							comment={replyTwo}
+							comments={replyTwo}
 							indent={replyTwo.level}
 						/>
 					))}
