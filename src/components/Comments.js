@@ -8,10 +8,13 @@ const Comments = () => {
 		<div className="comments">
 			<h1>Comments</h1>
 			<div className="form-group">
-				<img
-					src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-					alt="Avatar"
-				/>
+				<div className="person">
+					<img
+						src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+						alt="Avatar"
+					/>
+					<p className="user">Tino</p>
+				</div>
 				<CommentForm sm={false} />
 			</div>
 			{comments.map((comment) => (

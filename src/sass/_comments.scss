@@ -10,11 +10,15 @@
 		gap: 1rem;
 		width: 100%;
 
-		img {
-			height: 5rem;
-			width: 5rem;
-			object-fit: cover;
-			border-radius: 50%;
+		.person {
+			@include flexAllCol;
+
+			img {
+				height: 5rem;
+				width: 5rem;
+				object-fit: cover;
+				border-radius: 50%;
+			}
 		}
 	}
 }
