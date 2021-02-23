@@ -70,7 +70,7 @@ const Comments = ({ url }) => {
 						{filteredComments[0].comments ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
-									<Comment comment={comment} />
+									<Comment commentProp={comment} />
 								</div>
 							))
 						) : (

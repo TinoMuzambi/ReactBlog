@@ -1,13 +1,20 @@
 import React from "react";
-import CommentHolder from "./CommentHolder";
+import CommentContent from "./CommentContent";
 
-const Comment = ({ comment }) => {
-	// console.log(comment);
-	return (
-		<div className="comment">
-			<CommentHolder comments={comment} />
-		</div>
-	);
+const Comment = ({ commentProp }) => {
+	return commentProp.comments.map((comment) => (
+		<>
+			<CommentContent comment={comment} />
+			{comment?.replies?.map((reply) => (
+				<>
+					<CommentContent comment={reply} />
+					{reply?.replies?.map((replyTwo) => (
+						<CommentContent comment={replyTwo} />
+					))}
+				</>
+			))}
+		</>
+	));
 };
 
 export default Comment;
