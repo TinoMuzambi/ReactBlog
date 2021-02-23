@@ -2,7 +2,7 @@ import React from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 
-import comments from "../firebase/comments";
+import comments from "../../firebase/comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 

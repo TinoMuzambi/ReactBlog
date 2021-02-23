@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 import Sidebar from "../components/Sidebar";
 import Disqus from "../components/Disqus";
 import { getBlogs } from "../utils/fetch";
-import Comments from "../components/Comments";
+import Comments from "../components/Comments/Comments";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();
