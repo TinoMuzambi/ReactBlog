@@ -25,6 +25,10 @@
 				font-size: 0.7rem;
 				cursor: pointer;
 
+				&:not(:first-of-type) {
+					margin: -0.5rem;
+				}
+
 				&:hover {
 					text-decoration: underline;
 				}
