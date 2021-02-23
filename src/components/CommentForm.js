@@ -1,7 +1,11 @@
 import React from "react";
 const CommentForm = ({ sm }) => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	return (
-		<form className={`form ${sm && "sm"}`}>
+		<form className={`form ${sm && "sm"}`} onSubmit={handleSubmit}>
 			<textarea
 				type="text"
 				name="text"
