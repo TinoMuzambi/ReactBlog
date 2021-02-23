@@ -4,34 +4,24 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comments }) => {
+const CommentContent = ({ comment }) => {
 	const [replying, setReplying] = useState(false);
-	const [replying2, setReplying2] = useState(false);
-	const [replying3, setReplying3] = useState(false);
 
 	const like = (commentParam) => {
 		commentParam.liked = !commentParam.liked;
-		if (!commentParam.liked) {
+		if (commentParam.liked) {
 			commentParam.upvotes++;
 		} else {
 			commentParam.upvotes--;
 		}
 	};
 
-	const replyHandler = (level) => {
-		if (level === 0) {
-			setReplying(!replying);
-		} else if (level === 1) {
-			setReplying2(!replying2);
-		} else {
-			setReplying3(!replying3);
-		}
+	const replyHandler = () => {
+		setReplying(!replying);
 	};
 
-	console.log(comments);
-
-	return comments.comments.map((comment) => (
-		<>
+	return (
+		<div>
 			<div className={`comment-content ${comment.level}`}>
 				<div className="comment-container">
 					<img
@@ -58,7 +48,7 @@ const CommentContent = ({ comments }) => {
 					</div>
 					<p className="upvotes">{comment.upvotes}</p>
 					{comment.level !== "two" && (
-						<p className="reply" onClick={() => replyHandler(0)}>
+						<p className="reply" onClick={() => replyHandler()}>
 							Reply
 						</p>
 					)}
@@ -71,94 +61,8 @@ const CommentContent = ({ comments }) => {
 					</div>
 				)}
 			</div>
-			{comment?.replies?.map((reply) => (
-				<>
-					<div className={`comment-content ${reply.level}`}>
-						<div className="comment-container">
-							<img
-								src={
-									reply.image ||
-									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-								}
-								alt="Avatar"
-								className="avatar"
-							></img>
-							<div className="group">
-								<div className="details">
-									<h4 className="author">{reply.user}</h4>
-									<h5 className="date">
-										<Moment format="MMM DD, YYYY">{reply.date}</Moment>
-									</h5>
-								</div>
-								<p className="text">{reply.comment}</p>
-							</div>
-						</div>
-						<div className="actions">
-							<div className="like" onClick={() => like(reply)}>
-								{reply.liked ? <FcLike /> : <FcLikePlaceholder />}
-							</div>
-							<p className="upvotes">{reply.upvotes}</p>
-							{reply.level !== "two" && (
-								<p className="reply" onClick={() => replyHandler(1)}>
-									Reply
-								</p>
-							)}
-						</div>
-						{replying2 && (
-							<div
-								className={`form-group ${reply.level !== "zero" && "no-left"}`}
-							>
-								<CommentForm sm={reply.level === "zero"} />
-							</div>
-						)}
-					</div>
-					{reply?.replies?.map((replyTwo) => (
-						<div className={`comment-content ${replyTwo.level}`}>
-							<div className="comment-container">
-								<img
-									src={
-										replyTwo.image ||
-										"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-									}
-									alt="Avatar"
-									className="avatar"
-								></img>
-								<div className="group">
-									<div className="details">
-										<h4 className="author">{replyTwo.user}</h4>
-										<h5 className="date">
-											<Moment format="MMM DD, YYYY">{replyTwo.date}</Moment>
-										</h5>
-									</div>
-									<p className="text">{replyTwo.comment}</p>
-								</div>
-							</div>
-							<div className="actions">
-								<div className="like" onClick={() => like(replyTwo)}>
-									{replyTwo.liked ? <FcLike /> : <FcLikePlaceholder />}
-								</div>
-								<p className="upvotes">{replyTwo.upvotes}</p>
-								{replyTwo.level !== "two" && (
-									<p className="reply" onClick={() => replyHandler(2)}>
-										Reply
-									</p>
-								)}
-							</div>
-							{replying3 && (
-								<div
-									className={`form-group ${
-										replyTwo.level !== "zero" && "no-left"
-									}`}
-								>
-									<CommentForm sm={replyTwo.level === "zero"} />
-								</div>
-							)}
-						</div>
-					))}
-				</>
-			))}
-		</>
-	));
+		</div>
+	);
 };
 
 export default CommentContent;

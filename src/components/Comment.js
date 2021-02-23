@@ -1,11 +1,11 @@
 import React from "react";
-import CommentContent from "./CommentContent";
+import CommentHolder from "./CommentHolder";
 
 const Comment = ({ comment }) => {
 	// console.log(comment);
 	return (
 		<div className="comment">
-			<CommentContent comments={comment} />
+			<CommentHolder comments={comment} />
 		</div>
 	);
 };
