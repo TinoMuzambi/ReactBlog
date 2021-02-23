@@ -11,6 +11,8 @@ const Comments = ({ url }) => {
 		(comment) => comment.blog_url === url
 	);
 
+	console.log(filteredComments);
+
 	return (
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user }) => {
@@ -65,7 +67,7 @@ const Comments = ({ url }) => {
 							</div>
 							<CommentForm sm={false} />
 						</div>
-						{filteredComments.comments ? (
+						{filteredComments[0].comments ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
 									<Comment comment={comment} />

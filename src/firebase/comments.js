@@ -150,6 +150,62 @@ const comments = [
 		blog_url: "upgrade_your_walls",
 		comments: [],
 	},
+	{
+		blog_url: "photo_and_video_editing",
+		comments: [
+			{
+				id: 10,
+				user: "Anza Cavin",
+				image:
+					"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
+
+				comment: `Filmora9 Kinda look like HitFilm`,
+				date: new Date("Friday, June 26, 2020, 10:30 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 11,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `I know Filmora Go. Is Filmora 9 any good?`,
+						date: new Date("Friday, June 26, 2020 10:42 AM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+			{
+				id: 12,
+				user: "sagel julia",
+				comment: `Thank you for all these! I will make absolutely sure to add these to my list. I had heard of some of the apps but absolutely amazed at the new ones I got from here :) I read every word of it, beautiful writing and content :D`,
+				date: new Date("Wednesday, June 24, 2020 3:36 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 13,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `Thanks Sagel. I'm glad you took something from it.🙏🏾
+
+						`,
+						date: new Date("Wednesday, June 24, 2020 3:39 AM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+		],
+	},
 ];
 
 export default comments;

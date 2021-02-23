@@ -5,6 +5,7 @@ const Comment = ({ comment }) => {
 	console.log(comment);
 	return (
 		<div className="comment">
+			{/* TODO: Fix nesting */}
 			<CommentContent comments={comment} indent={comment.comments[0]?.level} />
 			{comment?.comments.map((item) =>
 				item?.replies?.map((reply) => (

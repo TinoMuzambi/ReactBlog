@@ -25,7 +25,14 @@ const CommentContent = ({ comments, indent }) => {
 		comments.comments.map((comment) => (
 			<div className={`comment-content ${indent}`}>
 				<div className="comment-container">
-					<img src={comment.image} alt="Avatar" className="avatar"></img>
+					<img
+						src={
+							comment.image ||
+							"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+						}
+						alt="Avatar"
+						className="avatar"
+					></img>
 					<div className="group">
 						<div className="details">
 							<h4 className="author">{comment.user}</h4>
