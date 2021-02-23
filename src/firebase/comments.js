@@ -100,6 +100,52 @@ const comments = [
 			},
 		],
 	},
+	{
+		blog_url: "shower_thoughts",
+		comments: [
+			{
+				id: 7,
+				user: "Anza Cavin",
+				image:
+					"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
+
+				comment: `Its been almost half a year since my last visit. There is some cool changes, I like the upgrade. However, I dont know about the shower and the temperatures.`,
+				date: new Date("Friday, December 25, 2020, 1:26 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+			},
+			{
+				id: 8,
+				user: "Nsovo Lovejoy Mnisi",
+				image:
+					"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+				comment: `
+				Nsovo Lovejoy Mnisi • 7 months ago
+				I was thinking about this and I'm gonna use a beach example, so we were at Camps bay and that water is cold as hell, when I first got in the water it was like freezing cold but over time my body adjusted and even though the temperature of the water there didn't change my body adjusted such that I didn't feel like the water was that cold anymore, so applying that into this I think somehow someway the body will adjust in such a way that you don't really feel it because this will be very very slow right? And instead of being in the shower for ages you can try it with your hand in the basin for like an hour and see if you feel the difference.🤷‍♀️`,
+				date: new Date("Tuesday, August 4, 2020 11:08 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 9,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `Cool theory although slightly different to the temperature actually changing. Would the body be constantly readjusting to each change in temperature? I wonder.
+						And my hand will become wrinkly if I do that.😂`,
+						date: new Date("Tuesday, August 4, 2020 11:08 AM"),
+						upvotes: 2,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+		],
+	},
 ];
 
 export default comments;

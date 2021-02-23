@@ -7,12 +7,13 @@ import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
 const Comments = ({ url }) => {
-	console.log(url);
+	const filteredComments = comments.filter(
+		(comment) => comment.blog_url === url
+	);
+
 	return (
 		<FirebaseAuthConsumer>
-			{({ isSignedIn, user, providerId }) => {
-				console.log(user, providerId);
-
+			{({ isSignedIn, user }) => {
 				const signInWithGoogle = () => {
 					if (!isSignedIn) {
 						const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -64,13 +65,15 @@ const Comments = ({ url }) => {
 							</div>
 							<CommentForm sm={false} />
 						</div>
-						{comments
-							.filter((comment) => comment.blog_url === url)
-							.map((comment) => (
+						{filteredComments.length ? (
+							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
 									<Comment comment={comment} />
 								</div>
-							))}
+							))
+						) : (
+							<h2>A barren land. Be the first to comment!</h2>
+						)}
 					</div>
 				);
 			}}
