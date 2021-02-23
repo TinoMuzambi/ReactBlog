@@ -313,6 +313,175 @@ const comments = [
 			},
 		],
 	},
+	{
+		blog_url: "why_i_hate_voicenotes",
+		comments: [
+			{
+				id: 20,
+				user: "Delight Kwaramba",
+				image:
+					"https://c.disquscdn.com/uploads/users/35037/2189/avatar92.jpg?1590953593",
+				comment: `Wow 😹😹😹 I agree on the part were you will rather ignore someone who has sent you a voice note and only open it later.
+				And the fact that when you move your phone it stops playing .
+				Things I like about voice notes : I can express what I want to say properly and that does not allow the next person to create their own emotions towards a certain text message. I typed it with love you read it with anger so voice notes help , they allow me to scream with excitement or shout at a person cause they are ignoring my voice note 😹😹. Last reason why is because my English is not as great as other people not that I'm comparing 💆🏽‍♀️. I prefer speaking and also that my pronunciation is bad 🙆🏽‍♀️ but it's better than texting , then you get typing error 😭😭
+				Anyways well done I love it 🔥🔥🔥💯💯💯. It's funny and honest.`,
+				date: new Date("Sunday, May 31, 2020 9:33 PM"),
+				upvotes: 2,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 21,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `😂😂I relate with typos. You gave some great examples of when voicenotes work.
+						And thank you so much.💕`,
+						date: new Date("Sunday, May 31, 2020 9:40 PM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+			{
+				id: 22,
+				user: "Tinovimba Mudala",
+				comment: `#Disclaimer: not about voice notes. What you said about multitasking is very true. I was reading this whilst trying to pay attention to my Physics notes (bad life choice number 2867😞). You were talking about voicenotes and evidently I didn't get that. So now I have to reread about elastic and inelastic collisions as well as reread this post so I can comment meaningfully. Note to self: make better life choices.`,
+				date: new Date("Monday, June 1, 2020 2:22 PM"),
+				upvotes: 2,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 23,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `I agree. You need to do better.`,
+						date: new Date("Monday, June 1, 2020 2:25 PM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+			{
+				id: 24,
+				user: "Diana Matimura",
+				comment: `I completely agree with you . I am not saying that i don't send voicenotes myself , i do and like mentioned above because i will be feeling lazy to type. i agree with you Tino 90% but if you do think about it voicenotes may be beneficial to those who are driving or doing something and my not have time to actually type something out . please i am not encouraging driving and texting (DON'T GET ME WRONG THERE ). Stop and think about this . when you recieve a text that is deep and has alot of emojis to give it that extra punch and trying to make the reader understand how you are feeling right . sending a voicenote really does all the work for you. the tone of your voice really does put across a message faster and easier .
+
+				 BUT OTHERWISE I AGREE , I LOVE MUSIC AND IT IS A IRRATAING TO HAVE TO CONSTANTLY PAUSE TO LISTEN TO VOICENOTE!!`,
+				date: new Date("Tuesday, June 2, 2020 11:31 PM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 25,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `😂Yeah big disclaimer there, shouldn't be tryna message anyone whilst you're driving. But that applies to other situations too I guess, like if you're cooking for example. Those circumstances, I completely understand.`,
+						date: new Date("Tuesday, June 2, 2020 11:36 PM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+			{
+				id: 26,
+				user: "Nsovo Lovejoy Mnisi",
+				image:
+					"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+				comment: `😂 I felt very attacked reading this because I love sending long voice notes. I even listen to them after and laugh ukuthi shame, this person has to listen to all this drama and nonsense I said there. And it's true, used correctly they're great because see I'm dramatic and it's kinda hard to be dramatic on text you know it doesn't have that thing.
+		What I HAAAATE about them though is when I'm busy recording(on my PC) at that time I'm on five minutes and find that I was laughing even, and then it decides to cancel it. 😭😭 Yhoo, I get so mad because now I have to relaugh so nje it's a lot. And at that time I've even forgotten what I wanted to say. So I think it's safe to say I've got a hate love relationship with them. Wow I just typed an essay okay lemme stop. 😂`,
+				date: new Date("Monday, June 1, 2020 10:30 PM"),
+				upvotes: 1,
+				liked: true,
+				level: "one",
+				replies: [
+					{
+						id: 27,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `At least you think about the person on the receiving end.😂
+				I hate having to relaugh.😩They should just implement a simple, "are you sure you want to delete your voicenote" confirmation.🥺`,
+						date: new Date("Monday, June 1, 2020 10:41 PM"),
+						upvotes: 1,
+						liked: false,
+						level: "one",
+						replies: [
+							{
+								id: 28,
+								user: "Nsovo Lovejoy Mnisi",
+								image:
+									"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+
+								comment: `I think about them but that's where it stops. 😂 😂
+					They really should, because this thing of it just canceling is not on forreal, when I relaugh now it's forced even so ayy nje. But I mention it ukuthi I'm relaughing so they know that no it's not me.
+					
+					Oh and I forgot to mention, it was an interesting read I loved it.`,
+								date: new Date("Monday, June 1, 2020 10:46 PM"),
+								upvotes: 1,
+								liked: true,
+								level: "two",
+							},
+							{
+								id: 29,
+								user: "Tino",
+								image:
+									"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+								comment: `Thank you, I'm glad.🙏🏾`,
+								date: new Date("Monday, June 1, 2020 11:24 PM"),
+								upvotes: 0,
+								liked: false,
+								level: "two",
+							},
+						],
+					},
+				],
+			},
+			{
+				id: 30,
+				user: "Anza Cavin",
+				image:
+					"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
+
+				comment: `I feel you man, 😂. I hate that it stops Spotify' but I hate typing in my home language because hey this "autocorrect" always thinks I am wrong. So I use voice notes mostly to people who speak Tshivenda but I know some people dislike them so I wait for them to use them First.
+
+				Another thing, video statuses. I love that WhatsApp mute the status volume and if I am listening to Smooth Criminal
+				you better have subtitles because I won't MJ for nothing. 😂`,
+				date: new Date("Sunday, May 31, 2020, 7:14 AM"),
+				upvotes: 1,
+				liked: true,
+				level: "zero",
+				replies: [
+					{
+						id: 31,
+						user: "Tino",
+						image:
+							"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+						comment: `😂I knew I wasn't the only one. That's dope that you wait for them to use it first.
+						And I wouldn't know about the statuses cause we don't do that here.😂`,
+						date: new Date("Sunday, May 31, 2020 9:20 AM"),
+						upvotes: 0,
+						liked: false,
+						level: "one",
+					},
+				],
+			},
+		],
+	},
 ];
 
 export default comments;
