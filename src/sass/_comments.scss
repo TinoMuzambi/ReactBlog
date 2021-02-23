@@ -4,8 +4,9 @@
 	margin: 2rem 0;
 
 	.form-group {
-		@include flexAllRow;
+		@extend %flex;
 		justify-content: flex-start;
+		align-items: flex-start;
 		gap: 1rem;
 		width: 100%;
 
