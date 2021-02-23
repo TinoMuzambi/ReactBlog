@@ -14,15 +14,12 @@
 		@include flexRowCenter;
 		margin: 2rem 0 0 0;
 		gap: 1rem;
+		width: fit-content;
 
 		&:hover ~ .actions {
 			height: 3rem;
 			opacity: 1;
 			margin: -1.5rem 0 -1rem 6rem;
-		}
-
-		&:hover ~ .underline {
-			bottom: 0;
 		}
 
 		.avatar {
@@ -74,10 +71,6 @@
 			margin: -1.5rem 0 -1rem 6rem;
 		}
 
-		&:hover ~ .underline {
-			bottom: 0;
-		}
-
 		.like,
 		.reply {
 			cursor: pointer;
@@ -92,5 +85,9 @@
 
 	.form-group {
 		margin: 1rem 0 0.5rem 6rem;
+
+		&.no-left {
+			margin: 1rem 0 -1rem 0;
+		}
 	}
 }

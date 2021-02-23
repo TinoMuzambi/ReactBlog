@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
 import CommentForm from "./CommentForm";
@@ -23,8 +22,8 @@ const CommentContent = ({ comment, indent }) => {
 
 	return (
 		<div className={`comment-content ${indent}`}>
-			<motion.div className="comment-container" layout>
-				<img src={comment.image} alt="Avatar" className="avatar" />
+			<div className="comment-container">
+				<img src={comment.image} alt="Avatar" className="avatar"></img>
 				<div className="group">
 					<div className="details">
 						<h4 className="author">{comment.user}</h4>
@@ -32,8 +31,8 @@ const CommentContent = ({ comment, indent }) => {
 					</div>
 					<p className="text">{comment.comment}</p>
 				</div>
-			</motion.div>
-			<motion.div className="actions" layout>
+			</div>
+			<div className="actions">
 				<div className="like" onClick={like}>
 					{liked ? <FcLike /> : <FcLikePlaceholder />}
 				</div>
@@ -43,11 +42,11 @@ const CommentContent = ({ comment, indent }) => {
 						Reply
 					</p>
 				)}
-			</motion.div>
+			</div>
 			{replying && (
-				<motion.div className="form-group" layout>
-					<CommentForm sm={true} />
-				</motion.div>
+				<div className={`form-group ${indent !== "zero" && "no-left"}`}>
+					<CommentForm sm={indent === "zero"} />
+				</div>
 			)}
 		</div>
 	);

@@ -1,5 +1,4 @@
 import React from "react";
-
 const CommentForm = ({ sm }) => {
 	return (
 		<form className={`form ${sm && "sm"}`}>
