@@ -86,6 +86,18 @@
 	.form-group {
 		margin: 1rem 0 0.5rem 4rem;
 
+		@include mq(750px) {
+			width: 70%;
+		}
+
+		@include mq(500px) {
+			width: 60%;
+		}
+
+		@include mq(320px) {
+			width: 50%;
+		}
+
 		&.no-left {
 			margin: 1rem 0 -1rem 4rem;
 		}
