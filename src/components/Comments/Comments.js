@@ -11,8 +11,6 @@ const Comments = ({ url }) => {
 		(comment) => comment.blog_url === url
 	);
 
-	// console.log(filteredComments);
-
 	return (
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user }) => {
