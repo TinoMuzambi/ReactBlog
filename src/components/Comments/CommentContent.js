@@ -4,7 +4,7 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comment }) => {
+const CommentContent = ({ comment, deleteHandler }) => {
 	const [replying, setReplying] = useState(false);
 
 	const like = (commentParam) => {
@@ -52,7 +52,10 @@ const CommentContent = ({ comment }) => {
 							Reply
 						</p>
 					)}
-					<FcEmptyTrash className="delete" />
+					<FcEmptyTrash
+						className="delete"
+						onClick={() => deleteHandler(comment.id)}
+					/>
 				</div>
 				{replying && (
 					<div
