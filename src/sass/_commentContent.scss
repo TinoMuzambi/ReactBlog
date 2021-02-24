@@ -86,6 +86,10 @@
 			height: 3rem;
 			opacity: 1;
 			margin: -1.5rem 0 -1rem 3.5rem;
+
+			@include mq(500px) {
+				margin: -1.5rem 0 -1rem 2.5rem;
+			}
 		}
 
 		.like,
