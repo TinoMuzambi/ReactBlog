@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { FcEmptyTrash, FcLike, FcLikePlaceholder } from "react-icons/fc";
 import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
@@ -52,6 +52,7 @@ const CommentContent = ({ comment }) => {
 							Reply
 						</p>
 					)}
+					<FcEmptyTrash className="delete" />
 				</div>
 				{replying && (
 					<div
