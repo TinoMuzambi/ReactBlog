@@ -1,7 +1,11 @@
 .comments {
 	@include flexColCenter;
 	align-items: flex-start;
-	margin: 2rem 0;
+	margin: 0;
+
+	.title {
+		color: $text-gray;
+	}
 
 	.form-group {
 		@extend %flex;
@@ -16,6 +20,21 @@
 
 		@include mq(500px) {
 			width: 80%;
+		}
+
+		.text {
+			&:hover,
+			&:focus {
+				box-shadow: 0 0 5px 5px rgba($color: $midnight, $alpha: 0.7);
+			}
+			&:hover ~ .submit,
+			&:focus ~ .submit {
+				box-shadow: 0 0 5px 5px rgba($color: $midnight, $alpha: 0.7);
+			}
+		}
+
+		.submit {
+			border-top: none;
 		}
 
 		.person {

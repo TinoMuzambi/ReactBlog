@@ -28,7 +28,7 @@ const Comments = ({ url }) => {
 				};
 				return (
 					<div className="comments">
-						<h1>Comments</h1>
+						<h1 className="title">Comments</h1>
 						<div className="form-group">
 							<div className="person">
 								<img
