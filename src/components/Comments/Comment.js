@@ -7,9 +7,36 @@ const Comment = ({ commentProp }) => {
 	const deleteHandler = (id) => {
 		console.log(id);
 		console.log("before", currComments);
-		setCurrComments(
-			currComments.comments.filter((comment) => comment.id !== id)
+		const topIDs = currComments.comments.map((comment) => comment.id);
+		const secondIDs = currComments.comments.map((comment) =>
+			comment.replies.map((reply) => reply.id)
 		);
+		// const thirdIDs = currComments.comments.map(
+		// 	(comment) =>
+		// 		comment.replies.map((reply) =>
+		// 			reply.replies.map((replyTwo) => replyTwo.id)
+		// 		)[0]
+		// );
+		if (topIDs.includes(id)) {
+			// const newComments =
+			setCurrComments(
+				currComments.comments.filter((comment) => comment.id !== id)
+			);
+		} else if (secondIDs.includes(id)) {
+			setCurrComments(
+				currComments.comments.filter((comment) =>
+					comment.replies.filter((reply) => reply.id !== id)
+				)
+			);
+		} else {
+			setCurrComments(
+				currComments.comments.filter((comment) =>
+					comment.replies.filter((reply) =>
+						reply.replies.filter((replyTwo) => replyTwo.id)
+					)
+				)
+			);
+		}
 		console.log("after", currComments);
 	};
 
