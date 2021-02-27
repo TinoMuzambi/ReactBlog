@@ -11,7 +11,6 @@ const Comment = ({ commentProp }) => {
 		const secondIDs = currComments.comments.map((comment) =>
 			comment.replies.map((reply) => reply.id)
 		)[0];
-		console.log(secondIDs);
 		// const thirdIDs = currComments.comments.map(
 		// 	(comment) =>
 		// 		comment.replies.map((reply) =>
@@ -37,29 +36,29 @@ const Comment = ({ commentProp }) => {
 			};
 			setCurrComments(newItem);
 		} else if (secondIDs.includes(id)) {
-			console.log("here");
 			let newComments = currComments?.comments;
 			for (let i = 0; i < currComments?.comments[i]?.replies?.length; i++) {
 				newComments[i].replies = currComments?.comments[i]?.replies[i]?.replies;
 				for (let j = 0; j < newComments[i]?.replies?.length; j++) {
 					newComments[i].replies[j].level = "one";
 				}
-				console.log("new", newComments);
 			}
 			const newItem = {
 				blog_url: currComments.blog_url,
 				comments: newComments,
 			};
-			console.log("after", newItem);
 			setCurrComments(newItem);
 		} else {
-			setCurrComments(
-				currComments.comments.filter((comment) =>
-					comment.replies.filter((reply) =>
-						reply.replies.filter((replyTwo) => replyTwo.id)
-					)
-				)
-			);
+			// const newComments = currComments.comments.map((comment) =>
+			// 	comment.replies.map((reply) =>
+			// 		reply.replies.filter((replyTwo) => replyTwo.id !== id)
+			// 	)
+			// );
+			// const newItem = {
+			// 	blog_url: currComments.blog_url,
+			// 	comments: newComments,
+			// };
+			// setCurrComments(newItem);
 		}
 	};
 
