@@ -5,11 +5,12 @@ const Comment = ({ commentProp }) => {
 	const [currComments, setCurrComments] = useState(commentProp);
 
 	const deleteHandler = (id) => {
-		console.log("Delete");
-		console.log(currComments);
+		console.log(id);
+		console.log("before", currComments);
 		setCurrComments(
 			currComments.comments.filter((comment) => comment.id !== id)
 		);
+		console.log("after", currComments);
 	};
 
 	return currComments.comments.map((comment) => (

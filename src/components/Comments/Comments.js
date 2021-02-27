@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 
@@ -10,6 +10,11 @@ const Comments = ({ url }) => {
 	const filteredComments = comments.filter(
 		(comment) => comment.blog_url === url
 	);
+	const commRef = useRef(null);
+
+	useEffect(() => {
+		commRef.current.scrollIntoView({ behavior: "smooth" });
+	}, []);
 
 	return (
 		<FirebaseAuthConsumer>
@@ -27,7 +32,7 @@ const Comments = ({ url }) => {
 				return (
 					<div className="comments">
 						<h1 className="title">Comments</h1>
-						<div className="form-group">
+						<div className="form-group" ref={commRef}>
 							<div className="person">
 								<img
 									src={
