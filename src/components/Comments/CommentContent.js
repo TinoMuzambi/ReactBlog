@@ -35,7 +35,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 					<div className="group">
 						<div className="details">
 							<h4 className="author">{comment.user}</h4>
-							<h5 className="date">
+							<h5 className="date" title={comment.date}>
 								<Moment format="MMM DD, YYYY">{comment.date}</Moment>
 							</h5>
 						</div>
