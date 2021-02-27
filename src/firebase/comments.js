@@ -9,14 +9,15 @@ const comments = [
 					"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
 
 				comment: `Typing yes
-				Bigger screen yes
-				Being able to open many tabs at once helps. Yes
-				Windows open side by side. Yes
-				Twitter on pc. Yes
-				Facebook on pc. Yes
-				Studying on PC.
-				The list goes on
-				I am more comfortable with PC , I hardly use my phone camera anyways.`,
+Bigger screen yes
+Being able to open many tabs at once helps. Yes
+Windows open side by side. Yes
+Twitter on pc. Yes
+Facebook on pc. Yes
+Studying on PC.
+The list goes on
+I am more comfortable with PC , I hardly use my phone camera anyways.
+				`,
 				date: new Date("Saturday, September 12, 2020, 11:47 PM"),
 				upvotes: 2,
 				liked: true,

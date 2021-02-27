@@ -18,10 +18,23 @@ const Comment = ({ commentProp }) => {
 		// 		)[0]
 		// );
 		if (topIDs.includes(id)) {
-			// const newComments =
-			setCurrComments(
-				currComments.comments.filter((comment) => comment.id !== id)
-			);
+			let newComments = [];
+			for (let i = 0; i < currComments?.comments?.length; i++) {
+				if (currComments?.comments[i]?.id === id) {
+					newComments = currComments?.comments[i]?.replies;
+					for (let j = 0; j < newComments?.length; j++) {
+						newComments[j].level = "zero";
+						for (let k = 0; k < newComments[j]?.replies?.length; k++) {
+							newComments[j].replies[k].level = "one";
+						}
+					}
+				}
+			}
+			const newItem = {
+				blog_url: currComments.blog_url,
+				comments: newComments,
+			};
+			setCurrComments(newItem);
 		} else if (secondIDs.includes(id)) {
 			setCurrComments(
 				currComments.comments.filter((comment) =>
