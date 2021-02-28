@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	FcEmptyTrash,
 	FcLike,
@@ -9,7 +9,9 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comment, deleteHandler, replying, setReplying }) => {
+const CommentContent = ({ comment, deleteHandler }) => {
+	const [replying, setReplying] = useState(false);
+
 	const like = (commentParam) => {
 		commentParam.liked = !commentParam.liked;
 		if (commentParam.liked) {

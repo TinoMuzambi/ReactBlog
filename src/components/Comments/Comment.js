@@ -91,27 +91,12 @@ const Comment = ({ commentProp }) => {
 
 	return currComments.comments.map((comment) => (
 		<>
-			<CommentContent
-				comment={comment}
-				deleteHandler={deleteHandler}
-				replying={replying}
-				setReplying={setReplying}
-			/>
+			<CommentContent comment={comment} deleteHandler={deleteHandler} />
 			{comment?.replies?.map((reply) => (
 				<>
-					<CommentContent
-						comment={reply}
-						deleteHandler={deleteHandler}
-						replying={replying}
-						setReplying={setReplying}
-					/>
+					<CommentContent comment={reply} deleteHandler={deleteHandler} />
 					{reply?.replies?.map((replyTwo) => (
-						<CommentContent
-							comment={replyTwo}
-							deleteHandler={deleteHandler}
-							replying={replying}
-							setReplying={setReplying}
-						/>
+						<CommentContent comment={replyTwo} deleteHandler={deleteHandler} />
 					))}
 				</>
 			))}
