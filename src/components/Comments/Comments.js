@@ -9,9 +9,8 @@ import CommentForm from "./CommentForm";
 const Comments = ({ url }) => {
 	const [fetching, setFetching] = useState(true);
 	const [comments, setComments] = useState([]);
-	const filteredComments = comments.filter(
-		(comment) => comment.blog_url === url
-	);
+	const [filteredComments, setFilteredComments] = useState([]);
+
 	const commRef = useRef(null);
 	const db = firebase.firestore();
 
@@ -28,10 +27,14 @@ const Comments = ({ url }) => {
 			});
 
 		setComments(comms);
+		setFilteredComments(comms.filter((comment) => comment.blog_url === url));
 		setFetching(false);
 	};
 
-	getComments();
+	useEffect(() => {
+		getComments();
+		//eslint-disable-next-line
+	}, []);
 
 	useEffect(() => {
 		if (!fetching) {
@@ -42,6 +45,8 @@ const Comments = ({ url }) => {
 	if (fetching) {
 		return "Fetching";
 	}
+
+	console.log("filtered", filteredComments);
 
 	return (
 		<FirebaseAuthConsumer>
