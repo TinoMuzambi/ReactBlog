@@ -7,7 +7,9 @@ const CommentForm = ({ sm, editText }) => {
 	};
 
 	useEffect(() => {
-		textAreaRef.current.value = editText;
+		if (editText) {
+			textAreaRef.current.value = editText;
+		}
 	}, [editText]);
 
 	return (

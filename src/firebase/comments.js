@@ -16,8 +16,7 @@ Twitter on pc. Yes
 Facebook on pc. Yes
 Studying on PC.
 The list goes on
-I am more comfortable with PC , I hardly use my phone camera anyways.
-				`,
+I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				date: new Date("Saturday, September 12, 2020, 11:47 PM"),
 				upvotes: 2,
 				liked: true,
