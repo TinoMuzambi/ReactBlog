@@ -3,7 +3,6 @@ import CommentContent from "./CommentContent";
 
 const Comment = ({ commentProp }) => {
 	const [currComments, setCurrComments] = useState(commentProp);
-	const [replying, setReplying] = useState(false);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure you finna delete?")) {

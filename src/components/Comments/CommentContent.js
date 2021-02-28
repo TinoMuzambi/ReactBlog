@@ -11,6 +11,12 @@ import CommentForm from "./CommentForm";
 
 const CommentContent = ({ comment, deleteHandler }) => {
 	const [replying, setReplying] = useState(false);
+	const [editText, setEditText] = useState("");
+
+	const editHandler = () => {
+		setEditText(comment.comment);
+		setReplying(true);
+	};
 
 	const like = (commentParam) => {
 		commentParam.liked = !commentParam.liked;
@@ -63,7 +69,11 @@ const CommentContent = ({ comment, deleteHandler }) => {
 									Reply
 								</p>
 							)}
-							<FcEditImage className="edit" title="Edit" />
+							<FcEditImage
+								className="edit"
+								title="Edit"
+								onClick={editHandler}
+							/>
 							<FcEmptyTrash
 								className="delete"
 								onClick={() => deleteHandler(comment.id)}
@@ -76,7 +86,10 @@ const CommentContent = ({ comment, deleteHandler }) => {
 									comment.level !== "zero" && "no-left"
 								}`}
 							>
-								<CommentForm sm={comment.level === "zero"} />
+								<CommentForm
+									editText={editText}
+									sm={comment.level === "zero"}
+								/>
 							</div>
 						)}
 					</>

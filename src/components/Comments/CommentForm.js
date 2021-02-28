@@ -1,8 +1,14 @@
-import React from "react";
-const CommentForm = ({ sm }) => {
+import React, { useRef, useEffect } from "react";
+const CommentForm = ({ sm, editText }) => {
+	const textAreaRef = useRef(null);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
+
+	useEffect(() => {
+		textAreaRef.current.value = editText;
+	}, [editText]);
 
 	return (
 		<form className={`form ${sm && "sm"}`} onSubmit={handleSubmit}>
@@ -11,6 +17,7 @@ const CommentForm = ({ sm }) => {
 				name="text"
 				className="text"
 				placeholder="Leave a comment"
+				ref={textAreaRef}
 			/>
 			<input type="submit" value="Comment!" className="submit" />
 		</form>
