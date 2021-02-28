@@ -45,7 +45,11 @@ const CommentContent = ({ comment, deleteHandler }) => {
 							</div>
 						</div>
 						<div className="actions">
-							<div className="like" onClick={() => like(comment)}>
+							<div
+								className="like"
+								onClick={() => like(comment)}
+								title={comment.liked ? "Unlike" : "Like"}
+							>
 								{comment.liked ? <FcLike /> : <FcLikePlaceholder />}
 							</div>
 							<p className="upvotes">{comment.upvotes}</p>
@@ -57,6 +61,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 							<FcEmptyTrash
 								className="delete"
 								onClick={() => deleteHandler(comment.id)}
+								title="Delete"
 							/>
 						</div>
 						{replying && (
