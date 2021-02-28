@@ -23,45 +23,65 @@ const CommentContent = ({ comment, deleteHandler }) => {
 	return (
 		<div>
 			<div className={`comment-content ${comment.level}`}>
-				<div className="comment-container">
-					<img
-						src={
-							comment.image ||
-							"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-						}
-						alt="Avatar"
-						className="avatar"
-					></img>
-					<div className="group">
-						<div className="details">
-							<h4 className="author">{comment.user}</h4>
-							<h5 className="date" title={comment.date}>
-								<Moment format="MMM DD, YYYY">{comment.date}</Moment>
-							</h5>
+				{comment.comment !== "deleted" ? (
+					<>
+						<div className="comment-container">
+							<img
+								src={
+									comment.image ||
+									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+								}
+								alt="Avatar"
+								className="avatar"
+							></img>
+							<div className="group">
+								<div className="details">
+									<h4 className="author">{comment.user}</h4>
+									<h5 className="date" title={comment.date}>
+										<Moment format="MMM DD, YYYY">{comment.date}</Moment>
+									</h5>
+								</div>
+								<p className="text">{comment.comment}</p>
+							</div>
 						</div>
-						<p className="text">{comment.comment}</p>
-					</div>
-				</div>
-				<div className="actions">
-					<div className="like" onClick={() => like(comment)}>
-						{comment.liked ? <FcLike /> : <FcLikePlaceholder />}
-					</div>
-					<p className="upvotes">{comment.upvotes}</p>
-					{comment.level !== "two" && (
-						<p className="reply" onClick={() => replyHandler()}>
-							Reply
-						</p>
-					)}
-					<FcEmptyTrash
-						className="delete"
-						onClick={() => deleteHandler(comment.id)}
-					/>
-				</div>
-				{replying && (
-					<div
-						className={`form-group ${comment.level !== "zero" && "no-left"}`}
-					>
-						<CommentForm sm={comment.level === "zero"} />
+						<div className="actions">
+							<div className="like" onClick={() => like(comment)}>
+								{comment.liked ? <FcLike /> : <FcLikePlaceholder />}
+							</div>
+							<p className="upvotes">{comment.upvotes}</p>
+							{comment.level !== "two" && (
+								<p className="reply" onClick={() => replyHandler()}>
+									Reply
+								</p>
+							)}
+							<FcEmptyTrash
+								className="delete"
+								onClick={() => deleteHandler(comment.id)}
+							/>
+						</div>
+						{replying && (
+							<div
+								className={`form-group ${
+									comment.level !== "zero" && "no-left"
+								}`}
+							>
+								<CommentForm sm={comment.level === "zero"} />
+							</div>
+						)}
+					</>
+				) : (
+					<div className="comment-container">
+						<img
+							src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
+							alt="Avatar"
+							className="avatar"
+						></img>
+						<div className="group">
+							<div className="details">
+								<h4 className="author">Deleted</h4>
+							</div>
+							<p className="text">This comment was deleted.</p>
+						</div>
 					</div>
 				)}
 			</div>
