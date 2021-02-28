@@ -68,12 +68,12 @@ const Comments = ({ url }) => {
 									</p>
 								)}
 							</div>
-							<CommentForm sm={false} />
+							<CommentForm sm={false} user={user} />
 						</div>
 						{filteredComments[0].comments ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
-									<Comment commentProp={comment} />
+									<Comment commentProp={comment} user={user} />
 								</div>
 							))
 						) : (

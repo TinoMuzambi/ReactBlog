@@ -9,7 +9,7 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comment, deleteHandler }) => {
+const CommentContent = ({ comment, deleteHandler, user }) => {
 	const [replying, setReplying] = useState(false);
 	const [editText, setEditText] = useState("");
 
@@ -89,6 +89,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 								<CommentForm
 									editText={editText}
 									sm={comment.level === "zero"}
+									user={user}
 								/>
 							</div>
 						)}

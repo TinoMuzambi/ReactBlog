@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
-const CommentForm = ({ sm, editText }) => {
+
+const CommentForm = ({ sm, editText, user }) => {
 	const textAreaRef = useRef(null);
 
 	const handleSubmit = (e) => {
