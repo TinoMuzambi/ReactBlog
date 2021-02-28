@@ -6,8 +6,6 @@ const Comment = ({ commentProp }) => {
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure you finna delete?")) {
-			console.log(id);
-			console.log("before", currComments);
 			const topIDs = currComments.comments.map((comment) => comment.id);
 			const secondIDs = currComments.comments.map((comment) =>
 				comment.replies.map((reply) => reply.id)
@@ -87,8 +85,6 @@ const Comment = ({ commentProp }) => {
 				};
 				setCurrComments(newItem);
 			}
-		} else {
-			console.log("Aight");
 		}
 	};
 
