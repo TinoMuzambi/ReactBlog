@@ -48,8 +48,10 @@ const CommentContent = ({ comment, deleteHandler, user }) => {
 							<div className="group">
 								<div className="details">
 									<h4 className="author">{comment.user}</h4>
-									<h5 className="date" title={comment.date}>
-										<Moment format="MMM DD, YYYY">{comment.date}</Moment>
+									<h5 className="date" title={comment.date.toDate()}>
+										<Moment format="MMM DD, YYYY">
+											{comment.date.toDate()}
+										</Moment>
 									</h5>
 								</div>
 								<p className="text">{comment.comment}</p>
