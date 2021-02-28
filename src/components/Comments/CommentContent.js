@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FcEmptyTrash, FcLike, FcLikePlaceholder } from "react-icons/fc";
+import {
+	FcEmptyTrash,
+	FcLike,
+	FcLikePlaceholder,
+	FcEditImage,
+} from "react-icons/fc";
 import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
@@ -58,6 +63,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 									Reply
 								</p>
 							)}
+							<FcEditImage title="Edit" />
 							<FcEmptyTrash
 								className="delete"
 								onClick={() => deleteHandler(comment.id)}
