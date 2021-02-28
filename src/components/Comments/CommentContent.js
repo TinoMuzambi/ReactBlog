@@ -63,7 +63,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 									Reply
 								</p>
 							)}
-							<FcEditImage title="Edit" />
+							<FcEditImage className="edit" title="Edit" />
 							<FcEmptyTrash
 								className="delete"
 								onClick={() => deleteHandler(comment.id)}
