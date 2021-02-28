@@ -15,7 +15,7 @@ const CommentContent = ({ comment, deleteHandler }) => {
 
 	const editHandler = () => {
 		setEditText(comment.comment);
-		setReplying(true);
+		setReplying(!replying);
 	};
 
 	const like = (commentParam) => {
