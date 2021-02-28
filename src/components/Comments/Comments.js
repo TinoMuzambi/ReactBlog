@@ -103,14 +103,16 @@ const Comments = ({ url }) => {
 							</div>
 							<CommentForm sm={false} user={user} />
 						</div>
-						{filteredComments[0].comments ? (
+						{filteredComments[0]?.comments ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
 									<Comment commentProp={comment} user={user} />
 								</div>
 							))
 						) : (
-							<h2>A barren land. Be the first to comment!</h2>
+							<h2 className="no-blogs">
+								A barren land. Be the first to comment!
+							</h2>
 						)}
 					</div>
 				);
