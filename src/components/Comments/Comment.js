@@ -3,6 +3,7 @@ import CommentContent from "./CommentContent";
 
 const Comment = ({ commentProp }) => {
 	const [currComments, setCurrComments] = useState(commentProp);
+	const [replying, setReplying] = useState(false);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure you finna delete?")) {
@@ -90,12 +91,27 @@ const Comment = ({ commentProp }) => {
 
 	return currComments.comments.map((comment) => (
 		<>
-			<CommentContent comment={comment} deleteHandler={deleteHandler} />
+			<CommentContent
+				comment={comment}
+				deleteHandler={deleteHandler}
+				replying={replying}
+				setReplying={setReplying}
+			/>
 			{comment?.replies?.map((reply) => (
 				<>
-					<CommentContent comment={reply} deleteHandler={deleteHandler} />
+					<CommentContent
+						comment={reply}
+						deleteHandler={deleteHandler}
+						replying={replying}
+						setReplying={setReplying}
+					/>
 					{reply?.replies?.map((replyTwo) => (
-						<CommentContent comment={replyTwo} deleteHandler={deleteHandler} />
+						<CommentContent
+							comment={replyTwo}
+							deleteHandler={deleteHandler}
+							replying={replying}
+							setReplying={setReplying}
+						/>
 					))}
 				</>
 			))}
