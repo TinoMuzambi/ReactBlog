@@ -6,10 +6,13 @@ const Comment = ({ commentProp }) => {
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure you finna delete?")) {
-			const topIDs = currComments.comments.map((comment) => comment.id);
-			const secondIDs = currComments.comments.map((comment) =>
-				comment.replies.map((reply) => reply.id)
-			)[0];
+			const topIDs = currComments.comments?.map((comment) => comment.id);
+			let secondIDs = [];
+			for (let i = 0; i < currComments.comments.length; i++) {
+				for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
+					secondIDs.push(currComments.comments[i]?.replies[j]?.id);
+				}
+			}
 
 			if (topIDs.includes(id)) {
 				let newComments = [];
@@ -31,7 +34,7 @@ const Comment = ({ commentProp }) => {
 				};
 				console.log(newItem);
 				setCurrComments(newItem);
-			} else if (secondIDs.includes(id)) {
+			} else if (secondIDs?.includes(id)) {
 				let newComments = currComments?.comments;
 
 				for (let i = 0; i < currComments?.comments?.length; i++) {

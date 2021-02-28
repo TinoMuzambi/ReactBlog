@@ -121,9 +121,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				image:
 					"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
 
-				comment: `
-				Nsovo Lovejoy Mnisi • 7 months ago
-				I was thinking about this and I'm gonna use a beach example, so we were at Camps bay and that water is cold as hell, when I first got in the water it was like freezing cold but over time my body adjusted and even though the temperature of the water there didn't change my body adjusted such that I didn't feel like the water was that cold anymore, so applying that into this I think somehow someway the body will adjust in such a way that you don't really feel it because this will be very very slow right? And instead of being in the shower for ages you can try it with your hand in the basin for like an hour and see if you feel the difference.🤷‍♀️`,
+				comment: `I was thinking about this and I'm gonna use a beach example, so we were at Camps bay and that water is cold as hell, when I first got in the water it was like freezing cold but over time my body adjusted and even though the temperature of the water there didn't change my body adjusted such that I didn't feel like the water was that cold anymore, so applying that into this I think somehow someway the body will adjust in such a way that you don't really feel it because this will be very very slow right? And instead of being in the shower for ages you can try it with your hand in the basin for like an hour and see if you feel the difference.🤷‍♀️`,
 				date: new Date("Tuesday, August 4, 2020 11:08 AM"),
 				upvotes: 1,
 				liked: true,
