@@ -32,6 +32,10 @@ const Comment = ({ commentProp }) => {
 						// 		newComments[j].replies[k].level = "one";
 						// 	}
 						// }
+					} else {
+						newComments.push({
+							...currComments?.comments[i],
+						});
 					}
 				}
 				// console.log(newComments);
@@ -43,12 +47,29 @@ const Comment = ({ commentProp }) => {
 				setCurrComments(newItem);
 			} else if (secondIDs.includes(id)) {
 				let newComments = currComments?.comments;
-				for (let i = 0; i < currComments?.comments[i]?.replies?.length; i++) {
-					newComments[i].replies =
-						currComments?.comments[i]?.replies[i]?.replies;
-					for (let j = 0; j < newComments[i]?.replies?.length; j++) {
-						newComments[i].replies[j].level = "one";
+				// for (let i = 0; i < currComments?.comments?.length; i++) {
+				// 	newComments[i].replies = [];
+				// }
+
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					console.log(currComments?.comments[i]?.replies);
+					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
+						if (currComments?.comments[i]?.replies[j]?.id === id) {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+								comment: "deleted",
+							};
+							// console.log(newComments);
+						} else {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+							};
+							// console.log("2", newComments);
+						}
 					}
+					// for (let j = 0; j < newComments[i]?.replies?.length; j++) {
+					// 	newComments[i].replies[j].level = "one";
+					// }
 				}
 				const newItem = {
 					blog_url: currComments.blog_url,
