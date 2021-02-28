@@ -32,7 +32,6 @@ const Comment = ({ commentProp }) => {
 					blog_url: currComments.blog_url,
 					comments: newComments,
 				};
-				console.log(newItem);
 				setCurrComments(newItem);
 			} else if (secondIDs?.includes(id)) {
 				let newComments = currComments?.comments;
