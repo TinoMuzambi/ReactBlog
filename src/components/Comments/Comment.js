@@ -12,12 +12,7 @@ const Comment = ({ commentProp }) => {
 			const secondIDs = currComments.comments.map((comment) =>
 				comment.replies.map((reply) => reply.id)
 			)[0];
-			// const thirdIDs = currComments.comments.map(
-			// 	(comment) =>
-			// 		comment.replies.map((reply) =>
-			// 			reply.replies.map((replyTwo) => replyTwo.id)
-			// 		)[0]
-			// );
+
 			if (topIDs.includes(id)) {
 				let newComments = [];
 				for (let i = 0; i < currComments?.comments?.length; i++) {
@@ -26,19 +21,12 @@ const Comment = ({ commentProp }) => {
 							...currComments?.comments[i],
 							comment: "deleted",
 						});
-						// for (let j = 0; j < newComments?.length; j++) {
-						// 	newComments[j].level = "zero";
-						// 	for (let k = 0; k < newComments[j]?.replies?.length; k++) {
-						// 		newComments[j].replies[k].level = "one";
-						// 	}
-						// }
 					} else {
 						newComments.push({
 							...currComments?.comments[i],
 						});
 					}
 				}
-				// console.log(newComments);
 				const newItem = {
 					blog_url: currComments.blog_url,
 					comments: newComments,
@@ -47,29 +35,20 @@ const Comment = ({ commentProp }) => {
 				setCurrComments(newItem);
 			} else if (secondIDs.includes(id)) {
 				let newComments = currComments?.comments;
-				// for (let i = 0; i < currComments?.comments?.length; i++) {
-				// 	newComments[i].replies = [];
-				// }
 
 				for (let i = 0; i < currComments?.comments?.length; i++) {
-					console.log(currComments?.comments[i]?.replies);
 					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
 						if (currComments?.comments[i]?.replies[j]?.id === id) {
 							newComments[i].replies[j] = {
 								...currComments?.comments[i]?.replies[j],
 								comment: "deleted",
 							};
-							// console.log(newComments);
 						} else {
 							newComments[i].replies[j] = {
 								...currComments?.comments[i]?.replies[j],
 							};
-							// console.log("2", newComments);
 						}
 					}
-					// for (let j = 0; j < newComments[i]?.replies?.length; j++) {
-					// 	newComments[i].replies[j].level = "one";
-					// }
 				}
 				const newItem = {
 					blog_url: currComments.blog_url,
@@ -77,16 +56,36 @@ const Comment = ({ commentProp }) => {
 				};
 				setCurrComments(newItem);
 			} else {
-				// const newComments = currComments.comments.map((comment) =>
-				// 	comment.replies.map((reply) =>
-				// 		reply.replies.filter((replyTwo) => replyTwo.id !== id)
-				// 	)
-				// );
-				// const newItem = {
-				// 	blog_url: currComments.blog_url,
-				// 	comments: newComments,
-				// };
-				// setCurrComments(newItem);
+				let newComments = currComments.comments;
+
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
+						for (
+							let k = 0;
+							k < currComments?.comments[i]?.replies[j]?.replies?.length;
+							k++
+						) {
+							if (
+								currComments?.comments[i]?.replies[j]?.replies[k]?.id === id
+							) {
+								newComments[i].replies[j].replies[k] = {
+									...currComments?.comments[i]?.replies[j]?.replies[k],
+									comment: "deleted",
+								};
+							} else {
+								newComments[i].replies[j].replies[k] = {
+									...currComments?.comments[i]?.replies[j]?.replies[k],
+								};
+							}
+						}
+					}
+				}
+
+				const newItem = {
+					blog_url: currComments.blog_url,
+					comments: newComments,
+				};
+				setCurrComments(newItem);
 			}
 		} else {
 			console.log("Aight");
