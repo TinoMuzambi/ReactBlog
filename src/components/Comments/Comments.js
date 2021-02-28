@@ -1,20 +1,47 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
+import "firebase/firestore";
 
-import comments from "../../firebase/comments";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
 const Comments = ({ url }) => {
+	const [fetching, setFetching] = useState(true);
+	const [comments, setComments] = useState([]);
 	const filteredComments = comments.filter(
 		(comment) => comment.blog_url === url
 	);
 	const commRef = useRef(null);
+	const db = firebase.firestore();
+
+	const getComments = async () => {
+		let comms = [];
+		await db
+			.collection("comments")
+			.get()
+			.then((querySnapshot) => {
+				querySnapshot.forEach((doc) => {
+					comms = doc.data().comments;
+					console.log(comms);
+				});
+			});
+
+		setComments(comms);
+		setFetching(false);
+	};
+
+	getComments();
 
 	useEffect(() => {
-		commRef.current.scrollIntoView({ behavior: "smooth" });
-	}, []);
+		if (!fetching) {
+			commRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [fetching]);
+
+	if (fetching) {
+		return "Fetching";
+	}
 
 	return (
 		<FirebaseAuthConsumer>
