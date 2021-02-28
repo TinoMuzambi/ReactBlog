@@ -111,8 +111,13 @@
 			cursor: pointer;
 			border-bottom: 2px solid transparent;
 			padding-bottom: 0.2rem;
+
 			&:hover {
 				border-bottom: 2px solid $midnight;
+			}
+
+			&:last-child {
+				border-right: solid 1px rgb(190, 190, 190);
 			}
 		}
 
@@ -121,6 +126,10 @@
 				border-bottom: 2px solid transparent;
 				opacity: 0.8;
 			}
+		}
+
+		.upvotes {
+			padding-bottom: 0.2rem;
 		}
 	}
 
