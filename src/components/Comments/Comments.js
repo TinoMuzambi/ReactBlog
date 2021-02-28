@@ -27,7 +27,6 @@ const Comments = ({ url }) => {
 			});
 
 		setComments(comms);
-		setFilteredComments(comms.filter((comment) => comment.blog_url === url));
 		setFetching(false);
 	};
 
@@ -35,6 +34,10 @@ const Comments = ({ url }) => {
 		getComments();
 		//eslint-disable-next-line
 	}, []);
+
+	useEffect(() => {
+		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
+	}, [comments, url]);
 
 	useEffect(() => {
 		if (!fetching) {
@@ -45,8 +48,6 @@ const Comments = ({ url }) => {
 	if (fetching) {
 		return "Fetching";
 	}
-
-	console.log("filtered", filteredComments);
 
 	return (
 		<FirebaseAuthConsumer>
