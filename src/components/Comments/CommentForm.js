@@ -5,6 +5,11 @@ const CommentForm = ({ sm, editText, user }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (user) {
+			console.log("Submitted");
+		} else {
+			alert("Please sign in before posting a comment.");
+		}
 	};
 
 	useEffect(() => {
