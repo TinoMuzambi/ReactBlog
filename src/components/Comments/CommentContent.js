@@ -22,6 +22,7 @@ const CommentContent = ({
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
+	const [replyID, setReplyID] = useState(-1);
 
 	const editHandler = () => {
 		setEditText(comment.comment);
@@ -37,8 +38,9 @@ const CommentContent = ({
 		}
 	};
 
-	const replyHandler = () => {
+	const replyHandler = (id) => {
 		setReplying(!replying);
+		setReplyID(id);
 	};
 
 	const getNextLevel = (level) => {
@@ -49,8 +51,14 @@ const CommentContent = ({
 		} else return "two";
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e, id) => {
 		e.preventDefault();
+		let secondIDs = [];
+		for (let i = 0; i < comments.comments.length; i++) {
+			for (let j = 0; j < comments.comments[i]?.replies?.length; j++) {
+				secondIDs.push(comments.comments[i]?.replies[j]?.id);
+			}
+		}
 		if (user) {
 			console.log(user);
 			if (commentText.trim()) {
@@ -73,7 +81,12 @@ const CommentContent = ({
 				let newComments = comments;
 				for (let i = 0; i < newComments.length; i++) {
 					if (newComments[i]?.blog_url === url) {
-						newComments[i].comments.unshift(newComment);
+						for (let j = 0; j < newComments?.comments.length; j++) {
+							if (secondIDs?.includes(id)) {
+								newComments[i].comments[j].unshift(newComment);
+							} else {
+							}
+						}
 					}
 				}
 				setComments(newComments);
@@ -130,7 +143,7 @@ const CommentContent = ({
 							</div>
 							<p className="upvotes">{comment.upvotes}</p>
 							{comment.level !== "two" && (
-								<p className="reply" onClick={() => replyHandler()}>
+								<p className="reply" onClick={() => replyHandler(comment.id)}>
 									Reply
 								</p>
 							)}
