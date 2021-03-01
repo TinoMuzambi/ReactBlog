@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import CommentContent from "./CommentContent";
 
-const Comment = ({ commentProp }) => {
+const Comment = ({
+	commentProp,
+	user,
+	comments,
+	getComments,
+	setComments,
+	url,
+	db,
+}) => {
 	const [currComments, setCurrComments] = useState(commentProp);
 
 	const deleteHandler = (id) => {
@@ -92,12 +100,39 @@ const Comment = ({ commentProp }) => {
 
 	return currComments.comments.map((comment) => (
 		<>
-			<CommentContent comment={comment} deleteHandler={deleteHandler} />
+			<CommentContent
+				comment={comment}
+				deleteHandler={deleteHandler}
+				user={user}
+				comments={comments}
+				getComments={getComments}
+				setComments={setComments}
+				url={url}
+				db={db}
+			/>
 			{comment?.replies?.map((reply) => (
 				<>
-					<CommentContent comment={reply} deleteHandler={deleteHandler} />
+					<CommentContent
+						comment={reply}
+						deleteHandler={deleteHandler}
+						user={user}
+						comments={comments}
+						getComments={getComments}
+						setComments={setComments}
+						url={url}
+						db={db}
+					/>
 					{reply?.replies?.map((replyTwo) => (
-						<CommentContent comment={replyTwo} deleteHandler={deleteHandler} />
+						<CommentContent
+							comment={replyTwo}
+							deleteHandler={deleteHandler}
+							user={user}
+							comments={comments}
+							getComments={getComments}
+							setComments={setComments}
+							url={url}
+							db={db}
+						/>
 					))}
 				</>
 			))}

@@ -9,7 +9,16 @@ import Moment from "react-moment";
 
 import CommentForm from "./CommentForm";
 
-const CommentContent = ({ comment, deleteHandler, user }) => {
+const CommentContent = ({
+	comment,
+	deleteHandler,
+	user,
+	comments,
+	getComments,
+	setComments,
+	url,
+	db,
+}) => {
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
@@ -32,10 +41,46 @@ const CommentContent = ({ comment, deleteHandler, user }) => {
 		setReplying(!replying);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (user) {
-			console.log("Submitted");
+			console.log(user);
+			if (commentText.trim()) {
+				const newComment = {
+					id: comments[comments.length - 1],
+					user: user.displayName || "Anonymous",
+					image:
+						user.photoURL ||
+						"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
+					comment: commentText,
+					date: new Date(),
+					upvotes: 0,
+					liked: false,
+					level: "zero",
+				};
+				comments[comments.length - 1]++;
+				console.log(comments);
+				console.log(newComment);
+
+				let newComments = comments;
+				for (let i = 0; i < newComments.length; i++) {
+					if (newComments[i]?.blog_url === url) {
+						newComments[i].comments.unshift(newComment);
+					}
+				}
+				setComments(newComments);
+
+				const commentsDBRef = db.collection("comments").doc("comments");
+
+				await commentsDBRef.set({
+					comments: comments,
+				});
+
+				getComments();
+				setCommentText("");
+			} else {
+				alert("Make an actual comment.");
+			}
 		} else {
 			alert("Please sign in before posting a comment.");
 		}

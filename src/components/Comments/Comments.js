@@ -159,7 +159,15 @@ const Comments = ({ url }) => {
 						{filteredComments[0]?.comments?.length ? (
 							filteredComments.map((comment) => (
 								<div className="wrapper" key={comment.id}>
-									<Comment commentProp={comment} user={user} />
+									<Comment
+										commentProp={comment}
+										uuser={user}
+										comments={comments}
+										getComments={getComments}
+										setComments={setComments}
+										url={url}
+										db={db}
+									/>
 								</div>
 							))
 						) : (
