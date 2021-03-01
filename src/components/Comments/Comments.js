@@ -68,19 +68,23 @@ const Comments = ({ url }) => {
 					e.preventDefault();
 					if (user) {
 						console.log(user);
-						const newComment = {
-							id: comments.length,
-							user: user.displayName || "Anonymous",
-							image:
-								user.photoURL ||
-								"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
-							comment: commentText,
-							date: new Date().getTime() / 1000,
-							upvotes: 0,
-							liked: false,
-							level: "zero",
-						};
-						console.log(newComment);
+						if (commentText) {
+							const newComment = {
+								id: comments.length,
+								user: user.displayName || "Anonymous",
+								image:
+									user.photoURL ||
+									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
+								comment: commentText,
+								date: new Date().getTime() / 1000,
+								upvotes: 0,
+								liked: false,
+								level: "zero",
+							};
+							console.log(newComment);
+						} else {
+							alert("Make an actual comment.");
+						}
 					} else {
 						alert("Please sign in before posting a comment.");
 					}
