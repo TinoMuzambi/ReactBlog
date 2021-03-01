@@ -1,16 +1,13 @@
 import React, { useRef, useEffect } from "react";
 
-const CommentForm = ({ sm, editText, user }) => {
+const CommentForm = ({
+	sm,
+	editText,
+	handleSubmit,
+	commentText,
+	setCommentText,
+}) => {
 	const textAreaRef = useRef(null);
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (user) {
-			console.log("Submitted");
-		} else {
-			alert("Please sign in before posting a comment.");
-		}
-	};
 
 	useEffect(() => {
 		if (editText) {
@@ -26,6 +23,8 @@ const CommentForm = ({ sm, editText, user }) => {
 				className="text"
 				placeholder="Leave a comment"
 				ref={textAreaRef}
+				value={commentText}
+				onChange={(e) => setCommentText(e.target.value)}
 			/>
 			<input type="submit" value="Comment!" className="submit" />
 		</form>

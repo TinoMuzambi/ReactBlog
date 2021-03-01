@@ -11,6 +11,7 @@ import CommentForm from "./CommentForm";
 
 const CommentContent = ({ comment, deleteHandler, user }) => {
 	const [replying, setReplying] = useState(false);
+	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
 
 	const editHandler = () => {
@@ -29,6 +30,15 @@ const CommentContent = ({ comment, deleteHandler, user }) => {
 
 	const replyHandler = () => {
 		setReplying(!replying);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (user) {
+			console.log("Submitted");
+		} else {
+			alert("Please sign in before posting a comment.");
+		}
 	};
 
 	return (
@@ -92,6 +102,9 @@ const CommentContent = ({ comment, deleteHandler, user }) => {
 									editText={editText}
 									sm={comment.level === "zero"}
 									user={user}
+									handleSubmit={handleSubmit}
+									commentText={commentText}
+									setCommentText={setCommentText}
 								/>
 							</div>
 						)}

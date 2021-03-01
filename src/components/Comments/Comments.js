@@ -9,6 +9,7 @@ import CommentForm from "./CommentForm";
 const Comments = ({ url }) => {
 	const [fetching, setFetching] = useState(true);
 	const [comments, setComments] = useState([]);
+	const [commentText, setCommentText] = useState("");
 	const [filteredComments, setFilteredComments] = useState([]);
 
 	const commRef = useRef(null);
@@ -22,7 +23,7 @@ const Comments = ({ url }) => {
 			.then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
 					comms = doc.data().comments;
-					console.log(comms);
+					// console.log(comms);
 				});
 			});
 
@@ -61,6 +62,28 @@ const Comments = ({ url }) => {
 
 				const signInAnon = (e) => {
 					!isSignedIn && firebase.auth().signInAnonymously();
+				};
+
+				const handleSubmit = (e) => {
+					e.preventDefault();
+					if (user) {
+						console.log(user);
+						const newComment = {
+							id: comments.length,
+							user: user.displayName || "Anonymous",
+							image:
+								user.photoURL ||
+								"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
+							comment: commentText,
+							date: new Date().getTime() / 1000,
+							upvotes: 0,
+							liked: false,
+							level: "zero",
+						};
+						console.log(newComment);
+					} else {
+						alert("Please sign in before posting a comment.");
+					}
 				};
 				return (
 					<div className="comments">
@@ -101,7 +124,13 @@ const Comments = ({ url }) => {
 									</p>
 								)}
 							</div>
-							<CommentForm sm={false} user={user} />
+							<CommentForm
+								sm={false}
+								user={user}
+								handleSubmit={handleSubmit}
+								commentText={commentText}
+								setCommentText={setCommentText}
+							/>
 						</div>
 						{filteredComments[0]?.comments?.length ? (
 							filteredComments.map((comment) => (
