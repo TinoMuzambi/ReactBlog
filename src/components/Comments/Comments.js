@@ -101,6 +101,7 @@ const Comments = ({ url }) => {
 							});
 
 							getComments();
+							setCommentText("");
 						} else {
 							alert("Make an actual comment.");
 						}
