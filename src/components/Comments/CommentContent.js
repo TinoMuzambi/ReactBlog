@@ -41,6 +41,14 @@ const CommentContent = ({
 		setReplying(!replying);
 	};
 
+	const getNextLevel = (level) => {
+		if (level === "zero") {
+			return "one";
+		} else if (level === "one") {
+			return "two";
+		} else return "two";
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (user) {
@@ -56,7 +64,7 @@ const CommentContent = ({
 					date: new Date(),
 					upvotes: 0,
 					liked: false,
-					level: "zero",
+					level: getNextLevel(comment.level),
 				};
 				comments[comments.length - 1]++;
 				console.log(comments);
