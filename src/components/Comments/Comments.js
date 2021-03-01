@@ -68,9 +68,9 @@ const Comments = ({ url }) => {
 					e.preventDefault();
 					if (user) {
 						console.log(user);
-						if (commentText) {
+						if (commentText.trim()) {
 							const newComment = {
-								id: comments.length,
+								id: comments[comments.length - 1],
 								user: user.displayName || "Anonymous",
 								image:
 									user.photoURL ||
@@ -81,6 +81,8 @@ const Comments = ({ url }) => {
 								liked: false,
 								level: "zero",
 							};
+							comments[comments.length - 1]++;
+							console.log(comments);
 							console.log(newComment);
 						} else {
 							alert("Make an actual comment.");
