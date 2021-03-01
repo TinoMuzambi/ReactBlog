@@ -5,14 +5,14 @@
 		margin-left: 0 !important;
 	}
 	&.one {
-		margin-left: 3.5rem !important;
+		margin-left: 4rem !important;
 
 		@include mq(500px) {
 			margin-left: 2.5rem !important;
 		}
 	}
 	&.two {
-		margin-left: 7rem !important;
+		margin-left: 8rem !important;
 
 		@include mq(500px) {
 			margin-left: 5rem !important;
