@@ -71,7 +71,12 @@
 
 			.text {
 				margin: 0 0 1rem 0;
-				white-space: pre-wrap;
+				white-space: unset;
+				font-size: inherit;
+				color: $text-gray;
+				border: initial;
+				padding: initial;
+				font-family: $Lexend;
 			}
 		}
 	}

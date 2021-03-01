@@ -54,7 +54,7 @@ const CommentContent = ({ comment, deleteHandler, user }) => {
 										</Moment>
 									</h5>
 								</div>
-								<p className="text">{comment.comment}</p>
+								<pre className="text">{comment.comment}</pre>
 							</div>
 						</div>
 						<div className="actions">
