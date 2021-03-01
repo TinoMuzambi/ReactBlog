@@ -16,6 +16,7 @@ const Comments = ({ url }) => {
 	const db = firebase.firestore();
 
 	const getComments = async () => {
+		setFetching(true);
 		let comms = [];
 		await db
 			.collection("comments")
@@ -98,6 +99,8 @@ const Comments = ({ url }) => {
 							await commentsDBRef.set({
 								comments: comments,
 							});
+
+							getComments();
 						} else {
 							alert("Make an actual comment.");
 						}
