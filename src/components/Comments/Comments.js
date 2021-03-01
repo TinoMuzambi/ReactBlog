@@ -64,7 +64,7 @@ const Comments = ({ url }) => {
 					!isSignedIn && firebase.auth().signInAnonymously();
 				};
 
-				const handleSubmit = (e) => {
+				const handleSubmit = async (e) => {
 					e.preventDefault();
 					if (user) {
 						console.log(user);
@@ -76,7 +76,7 @@ const Comments = ({ url }) => {
 									user.photoURL ||
 									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
 								comment: commentText,
-								date: new Date().getTime() / 1000,
+								date: new Date().getTime(),
 								upvotes: 0,
 								liked: false,
 								level: "zero",
@@ -84,6 +84,20 @@ const Comments = ({ url }) => {
 							comments[comments.length - 1]++;
 							console.log(comments);
 							console.log(newComment);
+
+							let newComments = comments;
+							for (let i = 0; i < newComments.length; i++) {
+								if (newComments[i]?.blog_url === url) {
+									newComments[i].comments.unshift(newComment);
+								}
+							}
+							setComments(newComments);
+
+							const commentsDBRef = db.collection("comments").doc("comments");
+
+							await commentsDBRef.set({
+								comments: comments,
+							});
 						} else {
 							alert("Make an actual comment.");
 						}
