@@ -76,7 +76,7 @@ const Comments = ({ url }) => {
 									user.photoURL ||
 									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
 								comment: commentText,
-								date: new Date().getTime(),
+								date: new Date(),
 								upvotes: 0,
 								liked: false,
 								level: "zero",
