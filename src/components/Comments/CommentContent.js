@@ -84,7 +84,6 @@ const CommentContent = ({
 						for (let j = 0; j < newComments?.comments.length; j++) {
 							if (secondIDs?.includes(id)) {
 								newComments[i].comments[j].unshift(newComment);
-							} else {
 							}
 						}
 					}
