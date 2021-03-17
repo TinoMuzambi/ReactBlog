@@ -67,7 +67,7 @@ export const getCategories = async () => {
 			}));
 		})
 		.catch((error) => {
-			console.err0r(error);
+			console.error(error);
 		});
 
 	return prettyCats;
