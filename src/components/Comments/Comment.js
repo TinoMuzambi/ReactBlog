@@ -132,6 +132,7 @@ const Comment = ({
 							setComments={setComments}
 							url={url}
 							db={db}
+							key={replyTwo.id}
 						/>
 					))}
 				</>
