@@ -403,7 +403,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					date: new Date("Monday, June 1, 2020 10:30 PM"),
 					upvotes: 1,
 					liked: true,
-					level: "one",
+					level: "zero",
 					replies: [
 						{
 							id: 27,
