@@ -143,13 +143,14 @@ const CommentContent = ({
 					}
 				}
 
-				console.log(editComments);
-
 				const commentsDBRef = db.collection("comments").doc("comments");
 
 				await commentsDBRef.set({
 					comments: editComments,
 				});
+
+				getComments();
+				setCommentText("");
 			} else {
 				if (commentText.trim()) {
 					const newComment = {
