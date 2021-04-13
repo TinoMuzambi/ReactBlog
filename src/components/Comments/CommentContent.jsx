@@ -66,10 +66,9 @@ const CommentContent = ({
 					liked: false,
 					level: getNextLevel(comment.level),
 				};
-				comments[comments.length - 1]++;
 
+				comments[comments.length - 1]++;
 				let newComments = comments;
-				// console.log(comment);
 				loop1: for (let i = 0; i < newComments.length; i++) {
 					if (newComments[i]?.blog_url === url) {
 						if (newComment.level === "one") {
@@ -84,7 +83,6 @@ const CommentContent = ({
 								}
 							}
 						} else {
-							console.log(comments);
 							for (let j = 0; j < newComments[i]?.comments.length; j++) {
 								if (newComments[i].comments[j].replies) {
 									for (
@@ -95,8 +93,6 @@ const CommentContent = ({
 										if (
 											newComments[i].comments[j].replies[k].id === comment.id
 										) {
-											console.log(newComments[i].comments[j].replies[k].id);
-											console.log(comment.id);
 											if (newComments[i].comments[j].replies[k].replies) {
 												newComments[i].comments[j].replies[k].replies.push(
 													newComment
@@ -109,15 +105,12 @@ const CommentContent = ({
 											break loop1;
 										}
 									}
-								} else {
-									console.log("error");
 								}
 							}
 						}
 					}
 				}
-				// setComments(newComments);
-				console.log(newComments);
+				setComments(newComments);
 
 				const commentsDBRef = db.collection("comments").doc("comments");
 
