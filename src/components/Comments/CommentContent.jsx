@@ -25,9 +25,13 @@ const CommentContent = ({
 	const [editID, setEditID] = useState(-1);
 
 	const editHandler = async (id) => {
-		setEditText(comment.comment);
-		setReplying(!replying);
-		setEditID(id);
+		if (user) {
+			setEditText(comment.comment);
+			setReplying(!replying);
+			setEditID(id);
+		} else {
+			alert("Please log in to edit.");
+		}
 	};
 
 	const like = (commentParam) => {
@@ -40,8 +44,12 @@ const CommentContent = ({
 	};
 
 	const replyHandler = () => {
-		setEditText("");
-		setReplying(!replying);
+		if (user) {
+			setEditText("");
+			setReplying(!replying);
+		} else {
+			alert("Please log in to reply.");
+		}
 	};
 
 	const getNextLevel = (level) => {
