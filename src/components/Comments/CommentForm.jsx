@@ -16,7 +16,7 @@ const CommentForm = ({
 	}, [editText]);
 
 	return (
-		<form className={`form ${sm && "sm"}`} onSubmit={handleSubmit}>
+		<form className={`form ${sm && "sm"}`} onSubmit={(e) => handleSubmit(e)}>
 			<textarea
 				type="text"
 				name="text"

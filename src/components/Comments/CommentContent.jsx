@@ -37,7 +37,7 @@ const CommentContent = ({
 		}
 	};
 
-	const replyHandler = (id) => {
+	const replyHandler = () => {
 		setReplying(!replying);
 	};
 
@@ -53,7 +53,7 @@ const CommentContent = ({
 		e.preventDefault();
 		let secondIDs = [];
 
-		// console.log(replyID)
+		console.log("replyID");
 		// console.log("id", id)
 		for (let i = 0; i < comments.length; i++) {
 			for (let j = 0; j < comments[i]?.comments?.replies?.length; j++) {
