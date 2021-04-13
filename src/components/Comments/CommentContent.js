@@ -41,7 +41,6 @@ const CommentContent = ({
 	const replyHandler = (id) => {
 		setReplying(!replying);
 		setReplyID(id);
-		console.log(replyID);
 	};
 
 	const getNextLevel = (level) => {
@@ -52,15 +51,18 @@ const CommentContent = ({
 		} else return "two";
 	};
 
-	const handleSubmit = async (e, id) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		let secondIDs = [];
 
+		// console.log(replyID)
+		// console.log("id", id)
 		for (let i = 0; i < comments.length; i++) {
-			for (let j = 0; j < comments[i]?.replies?.length; j++) {
+			for (let j = 0; j < comments[i]?.comments?.replies?.length; j++) {
 				secondIDs.push(comments[i]?.replies[j]?.id);
 			}
 		}
+		console.log(secondIDs);
 		if (user) {
 			if (commentText.trim()) {
 				const newComment = {
@@ -76,20 +78,20 @@ const CommentContent = ({
 					level: getNextLevel(comment.level),
 				};
 				comments[comments.length - 1]++;
-				console.log(comments);
-				// console.log(newComment);
 
 				let newComments = comments;
+				console.log(newComments);
 				for (let i = 0; i < newComments.length; i++) {
 					if (newComments[i]?.blog_url === url) {
-						for (let j = 0; j < newComments?.comments[i].length; j++) {
-							if (secondIDs?.includes(id)) {
-								newComments[i].comments[j].unshift(newComment);
+						for (let j = 0; j < newComments[i]?.comments.length; j++) {
+							if (newComments[i].comments[j].id === replyID) {
+								newComments[i].comments.unshift(newComment);
 							}
 						}
 					}
 				}
 				setComments(newComments);
+				console.log(newComments);
 
 				const commentsDBRef = db.collection("comments").doc("comments");
 
