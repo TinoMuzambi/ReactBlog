@@ -97,19 +97,19 @@ const Comment = ({
 			}
 		}
 
-		let newComments = [];
+		let deleteComments = [];
 		for (let i = 0; i < comments.length; i++) {
 			if (comments[i].blog_url === url) {
-				newComments[i] = currComments;
+				deleteComments[i] = currComments;
 			} else {
-				newComments[i] = comments[i];
+				deleteComments[i] = comments[i];
 			}
 		}
 
 		const commentsDBRef = db.collection("comments").doc("comments");
 
 		await commentsDBRef.set({
-			comments: newComments,
+			comments: deleteComments,
 		});
 	};
 
