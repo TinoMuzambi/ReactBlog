@@ -111,7 +111,7 @@ const Comment = ({
 				db={db}
 			/>
 			{comment?.replies?.map((reply) => (
-				<>
+				<div key={reply.id}>
 					<CommentContent
 						comment={reply}
 						deleteHandler={deleteHandler}
@@ -135,7 +135,7 @@ const Comment = ({
 							key={replyTwo.id}
 						/>
 					))}
-				</>
+				</div>
 			))}
 		</div>
 	));
