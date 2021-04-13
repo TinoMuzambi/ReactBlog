@@ -83,10 +83,47 @@ const CommentContent = ({
 									break loop1;
 								}
 							}
+						} else {
+							console.log(comments);
+							for (let j = 0; j < newComments[i]?.comments.length; j++) {
+								if (newComments[i].comments[j].replies) {
+									for (
+										let k = 0;
+										k < newComments[i].comments[j].replies.length;
+										k++
+									) {
+										if (
+											newComments[i].comments[j].replies[k].id === comment.id
+										) {
+											console.log(newComments[i].comments[j].replies[k].id);
+											console.log(comment.id);
+											newComments[i].comments[j].replies[k].replies.unshift(
+												newComment
+											);
+											break loop1;
+										}
+									}
+								} else {
+									for (
+										let k = 0;
+										k < newComments[i].comments[j].replies.length;
+										k++
+									) {
+										if (
+											newComments[i].comments[j].replies[k].id === comment.id
+										) {
+											newComments[i].comments[j].replies[k].replies = [
+												newComment,
+											];
+											break loop1;
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				setComments(newComments);
+				// setComments(newComments);
 				console.log(newComments);
 
 				const commentsDBRef = db.collection("comments").doc("comments");
