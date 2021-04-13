@@ -269,7 +269,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							level: "one",
 							replies: [
 								{
-									id: 17,
+									id: 19,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
 										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
@@ -281,7 +281,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									level: "two",
 								},
 								{
-									id: 18,
+									id: 20,
 									user: "Tino",
 									image:
 										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -293,7 +293,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									level: "one",
 									replies: [
 										{
-											id: 19,
+											id: 21,
 											user: "Nsovo Lovejoy Mnisi",
 											image:
 												"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
@@ -316,7 +316,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 			blog_url: "why_i_hate_voicenotes",
 			comments: [
 				{
-					id: 20,
+					id: 22,
 					user: "Delight Kwaramba",
 					image:
 						"https://c.disquscdn.com/uploads/users/35037/2189/avatar92.jpg?1590953593",
@@ -330,7 +330,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					level: "zero",
 					replies: [
 						{
-							id: 21,
+							id: 23,
 							user: "Tino",
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -345,7 +345,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					],
 				},
 				{
-					id: 22,
+					id: 24,
 					user: "Tinovimba Mudala",
 					comment: `#Disclaimer: not about voice notes. What you said about multitasking is very true. I was reading this whilst trying to pay attention to my Physics notes (bad life choice number 2867😞). You were talking about voicenotes and evidently I didn't get that. So now I have to reread about elastic and inelastic collisions as well as reread this post so I can comment meaningfully. Note to self: make better life choices.`,
 					date: new Date("Monday, June 1, 2020 2:22 PM"),
@@ -354,7 +354,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					level: "zero",
 					replies: [
 						{
-							id: 23,
+							id: 25,
 							user: "Tino",
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -368,7 +368,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					],
 				},
 				{
-					id: 24,
+					id: 26,
 					user: "Diana Matimura",
 					comment: `I completely agree with you . I am not saying that i don't send voicenotes myself , i do and like mentioned above because i will be feeling lazy to type. i agree with you Tino 90% but if you do think about it voicenotes may be beneficial to those who are driving or doing something and my not have time to actually type something out . please i am not encouraging driving and texting (DON'T GET ME WRONG THERE ). Stop and think about this . when you recieve a text that is deep and has alot of emojis to give it that extra punch and trying to make the reader understand how you are feeling right . sending a voicenote really does all the work for you. the tone of your voice really does put across a message faster and easier .
 
@@ -379,7 +379,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					level: "zero",
 					replies: [
 						{
-							id: 25,
+							id: 27,
 							user: "Tino",
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -393,7 +393,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					],
 				},
 				{
-					id: 26,
+					id: 28,
 					user: "Nsovo Lovejoy Mnisi",
 					image:
 						"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
@@ -406,7 +406,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					level: "zero",
 					replies: [
 						{
-							id: 27,
+							id: 29,
 							user: "Tino",
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -419,7 +419,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							level: "one",
 							replies: [
 								{
-									id: 28,
+									id: 30,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
 										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
@@ -434,7 +434,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									level: "two",
 								},
 								{
-									id: 29,
+									id: 31,
 									user: "Tino",
 									image:
 										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
@@ -450,7 +450,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					],
 				},
 				{
-					id: 30,
+					id: 32,
 					user: "Anza Cavin",
 					image:
 						"https://c.disquscdn.com/uploads/users/35033/3952/avatar92.jpg?1590900678",
@@ -465,7 +465,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					level: "zero",
 					replies: [
 						{
-							id: 31,
+							id: 33,
 							user: "Tino",
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
