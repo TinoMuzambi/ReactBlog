@@ -68,7 +68,6 @@ const Comments = ({ url }) => {
 				const handleSubmit = async (e) => {
 					e.preventDefault();
 					if (user) {
-						console.log(user);
 						if (commentText.trim()) {
 							const newComment = {
 								id: comments[comments.length - 1],
