@@ -99,7 +99,7 @@ const Comment = ({
 	};
 
 	return currComments.comments.map((comment) => (
-		<>
+		<div key={comment.id}>
 			<CommentContent
 				comment={comment}
 				deleteHandler={deleteHandler}
@@ -137,7 +137,7 @@ const Comment = ({
 					))}
 				</>
 			))}
-		</>
+		</div>
 	));
 };
 
