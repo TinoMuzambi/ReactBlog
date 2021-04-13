@@ -79,7 +79,7 @@ const CommentContent = ({
 
 				let newComments = comments;
 				// console.log(comment);
-				for (let i = 0; i < newComments.length; i++) {
+				loop1: for (let i = 0; i < newComments.length; i++) {
 					if (newComments[i]?.blog_url === url) {
 						for (let j = 0; j < newComments[i]?.comments.length; j++) {
 							if (newComments[i].comments[j].id === comment.id) {
@@ -88,6 +88,7 @@ const CommentContent = ({
 								} else {
 									newComments[i].comments[j].replies = [newComment];
 								}
+								break loop1;
 							}
 						}
 					}
