@@ -23,9 +23,107 @@ const CommentContent = ({
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
 
-	const editHandler = () => {
+	const editHandler = async (id) => {
 		setEditText(comment.comment);
 		setReplying(!replying);
+
+		const currComments = comments.find((c) => c.blog_url === url);
+
+		if (window.confirm("Are you sure you finna delete?")) {
+			const topIDs = currComments.comments?.map((comment) => comment.id);
+			let secondIDs = [];
+			for (let i = 0; i < currComments.comments.length; i++) {
+				for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
+					secondIDs.push(currComments.comments[i]?.replies[j]?.id);
+				}
+			}
+
+			if (topIDs.includes(id)) {
+				let newComments = [];
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					if (currComments?.comments[i]?.id === id) {
+						newComments.push({
+							...currComments?.comments[i],
+							comment: "deleted",
+						});
+					} else {
+						newComments.push({
+							...currComments?.comments[i],
+						});
+					}
+				}
+				const newItem = {
+					blog_url: currComments.blog_url,
+					comments: newComments,
+				};
+			} else if (secondIDs?.includes(id)) {
+				let newComments = currComments?.comments;
+
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
+						if (currComments?.comments[i]?.replies[j]?.id === id) {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+								comment: "deleted",
+							};
+						} else {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+							};
+						}
+					}
+				}
+				const newItem = {
+					blog_url: currComments.blog_url,
+					comments: newComments,
+				};
+			} else {
+				let newComments = currComments.comments;
+
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
+						for (
+							let k = 0;
+							k < currComments?.comments[i]?.replies[j]?.replies?.length;
+							k++
+						) {
+							if (
+								currComments?.comments[i]?.replies[j]?.replies[k]?.id === id
+							) {
+								newComments[i].replies[j].replies[k] = {
+									...currComments?.comments[i]?.replies[j]?.replies[k],
+									comment: "deleted",
+								};
+							} else {
+								newComments[i].replies[j].replies[k] = {
+									...currComments?.comments[i]?.replies[j]?.replies[k],
+								};
+							}
+						}
+					}
+				}
+
+				const newItem = {
+					blog_url: currComments.blog_url,
+					comments: newComments,
+				};
+			}
+		}
+
+		let deleteComments = [];
+		for (let i = 0; i < comments.length; i++) {
+			if (comments[i].blog_url === url) {
+				deleteComments[i] = currComments;
+			} else {
+				deleteComments[i] = comments[i];
+			}
+		}
+
+		const commentsDBRef = db.collection("comments").doc("comments");
+
+		await commentsDBRef.set({
+			comments: deleteComments,
+		});
 	};
 
 	const like = (commentParam) => {
@@ -171,7 +269,7 @@ const CommentContent = ({
 							<FcEditImage
 								className="edit"
 								title="Edit"
-								onClick={editHandler}
+								onClick={() => editHandler(comment.id)}
 							/>
 							<FcEmptyTrash
 								className="delete"
