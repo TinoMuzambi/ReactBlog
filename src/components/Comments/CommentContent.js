@@ -55,14 +55,13 @@ const CommentContent = ({
 	const handleSubmit = async (e, id) => {
 		e.preventDefault();
 		let secondIDs = [];
-		console.log(user);
+
 		for (let i = 0; i < comments.length; i++) {
 			for (let j = 0; j < comments[i]?.replies?.length; j++) {
 				secondIDs.push(comments[i]?.replies[j]?.id);
 			}
 		}
 		if (user) {
-			console.log(user);
 			if (commentText.trim()) {
 				const newComment = {
 					id: comments[comments.length - 1],
@@ -78,12 +77,12 @@ const CommentContent = ({
 				};
 				comments[comments.length - 1]++;
 				console.log(comments);
-				console.log(newComment);
+				// console.log(newComment);
 
 				let newComments = comments;
 				for (let i = 0; i < newComments.length; i++) {
 					if (newComments[i]?.blog_url === url) {
-						for (let j = 0; j < newComments?.comments.length; j++) {
+						for (let j = 0; j < newComments?.comments[i].length; j++) {
 							if (secondIDs?.includes(id)) {
 								newComments[i].comments[j].unshift(newComment);
 							}
