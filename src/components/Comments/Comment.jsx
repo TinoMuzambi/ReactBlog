@@ -13,6 +13,7 @@ const Comment = ({
 	const [currComments, setCurrComments] = useState(commentProp);
 
 	const deleteHandler = async (id) => {
+		let owner = false;
 		if (user) {
 			if (window.confirm("Are you sure you finna delete?")) {
 				const topIDs = currComments.comments?.map((comment) => comment.id);
@@ -27,10 +28,18 @@ const Comment = ({
 					let newComments = [];
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						if (currComments?.comments[i]?.id === id) {
-							newComments.push({
-								...currComments?.comments[i],
-								comment: "deleted",
-							});
+							if (user.displayName === currComments?.comments[i]?.user) {
+								owner = true;
+								newComments.push({
+									...currComments?.comments[i],
+									comment: "deleted",
+								});
+							} else {
+								owner = false;
+								newComments.push({
+									...currComments?.comments[i],
+								});
+							}
 						} else {
 							newComments.push({
 								...currComments?.comments[i],
@@ -52,10 +61,21 @@ const Comment = ({
 							j++
 						) {
 							if (currComments?.comments[i]?.replies[j]?.id === id) {
-								newComments[i].replies[j] = {
-									...currComments?.comments[i]?.replies[j],
-									comment: "deleted",
-								};
+								if (
+									user.displayName ===
+									currComments?.comments[i]?.replies[j]?.user
+								) {
+									owner = true;
+									newComments[i].replies[j] = {
+										...currComments?.comments[i]?.replies[j],
+										comment: "deleted",
+									};
+								} else {
+									owner = false;
+									newComments[i].replies[j] = {
+										...currComments?.comments[i]?.replies[j],
+									};
+								}
 							} else {
 								newComments[i].replies[j] = {
 									...currComments?.comments[i]?.replies[j],
@@ -85,10 +105,21 @@ const Comment = ({
 								if (
 									currComments?.comments[i]?.replies[j]?.replies[k]?.id === id
 								) {
-									newComments[i].replies[j].replies[k] = {
-										...currComments?.comments[i]?.replies[j]?.replies[k],
-										comment: "deleted",
-									};
+									if (
+										user.displayName ===
+										currComments?.comments[i]?.replies[j]?.replies[k]?.user
+									) {
+										owner = true;
+										newComments[i].replies[j].replies[k] = {
+											...currComments?.comments[i]?.replies[j]?.replies[k],
+											comment: "deleted",
+										};
+									} else {
+										owner = false;
+										newComments[i].replies[j].replies[k] = {
+											...currComments?.comments[i]?.replies[j]?.replies[k],
+										};
+									}
 								} else {
 									newComments[i].replies[j].replies[k] = {
 										...currComments?.comments[i]?.replies[j]?.replies[k],
@@ -98,28 +129,34 @@ const Comment = ({
 						}
 					}
 
-					const newItem = {
-						blog_url: currComments.blog_url,
-						comments: newComments,
-					};
-					setCurrComments(newItem);
+					if (owner) {
+						const newItem = {
+							blog_url: currComments.blog_url,
+							comments: newComments,
+						};
+						setCurrComments(newItem);
+					}
 				}
 			}
 
-			let deleteComments = [];
-			for (let i = 0; i < comments.length; i++) {
-				if (comments[i].blog_url === url) {
-					deleteComments[i] = currComments;
-				} else {
-					deleteComments[i] = comments[i];
+			if (owner) {
+				let deleteComments = [];
+				for (let i = 0; i < comments.length; i++) {
+					if (comments[i].blog_url === url) {
+						deleteComments[i] = currComments;
+					} else {
+						deleteComments[i] = comments[i];
+					}
 				}
+
+				const commentsDBRef = db.collection("comments").doc("comments");
+
+				await commentsDBRef.set({
+					comments: deleteComments,
+				});
+			} else {
+				alert("You can only delete comments that you made.");
 			}
-
-			const commentsDBRef = db.collection("comments").doc("comments");
-
-			await commentsDBRef.set({
-				comments: deleteComments,
-			});
 		} else {
 			alert("Please log in to delete.");
 		}
