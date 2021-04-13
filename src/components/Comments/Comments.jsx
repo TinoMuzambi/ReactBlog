@@ -48,7 +48,7 @@ const Comments = ({ url }) => {
 	}, [fetching]);
 
 	if (fetching) {
-		return "Fetching";
+		return <h3>Fetching...</h3>;
 	}
 
 	return (
