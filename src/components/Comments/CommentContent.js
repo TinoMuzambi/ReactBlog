@@ -22,7 +22,7 @@ const CommentContent = ({
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
-	const [replyID, setReplyID] = useState(-1);
+	const [setReplyID] = useState(-1);
 
 	const editHandler = () => {
 		setEditText(comment.comment);
