@@ -91,23 +91,16 @@ const CommentContent = ({
 				}
 
 				if (topIDs.includes(editID)) {
-					console.log("first");
-					let newComments = [];
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						if (currComments?.comments[i]?.id === editID) {
-							newComments.push({
+							currComments.comments[i] = {
 								...currComments?.comments[i],
 								comment: commentText,
-							});
-						} else {
-							newComments.push({
-								...currComments?.comments[i],
-							});
+							};
 						}
 					}
 				} else if (secondIDs?.includes(editID)) {
 					let newComments = currComments?.comments;
-					console.log("second");
 
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						for (
@@ -129,7 +122,6 @@ const CommentContent = ({
 					}
 				} else {
 					let newComments = currComments.comments;
-					console.log("third");
 
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						for (
