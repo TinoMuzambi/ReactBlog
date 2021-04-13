@@ -38,6 +38,7 @@ const Comments = ({ url }) => {
 	}, []);
 
 	useEffect(() => {
+		console.log(comments);
 		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
 	}, [comments, url]);
 

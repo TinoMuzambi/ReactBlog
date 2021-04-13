@@ -12,7 +12,7 @@ const Comment = ({
 }) => {
 	const [currComments, setCurrComments] = useState(commentProp);
 
-	const deleteHandler = (id) => {
+	const deleteHandler = async (id) => {
 		if (window.confirm("Are you sure you finna delete?")) {
 			const topIDs = currComments.comments?.map((comment) => comment.id);
 			let secondIDs = [];
@@ -96,6 +96,12 @@ const Comment = ({
 				setCurrComments(newItem);
 			}
 		}
+
+		const commentsDBRef = db.collection("comments").doc("comments");
+
+		await commentsDBRef.set({
+			comments: currComments,
+		});
 	};
 
 	return currComments.comments.map((comment) => (
