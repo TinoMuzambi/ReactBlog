@@ -76,7 +76,7 @@ const CommentContent = ({
 							for (let j = 0; j < newComments[i]?.comments.length; j++) {
 								if (newComments[i].comments[j].id === comment.id) {
 									if (newComments[i].comments[j].replies) {
-										newComments[i].comments[j].replies.unshift(newComment);
+										newComments[i].comments[j].replies.push(newComment);
 									} else {
 										newComments[i].comments[j].replies = [newComment];
 									}
@@ -98,7 +98,7 @@ const CommentContent = ({
 											console.log(newComments[i].comments[j].replies[k].id);
 											console.log(comment.id);
 											if (newComments[i].comments[j].replies[k].replies) {
-												newComments[i].comments[j].replies[k].replies.unshift(
+												newComments[i].comments[j].replies[k].replies.push(
 													newComment
 												);
 											} else {
