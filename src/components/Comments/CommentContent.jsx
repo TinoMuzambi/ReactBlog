@@ -26,9 +26,14 @@ const CommentContent = ({
 
 	const editHandler = async (id) => {
 		if (user) {
-			setEditText(comment.comment);
-			setReplying(!replying);
-			setEditID(id);
+			if (user.displayName === comment.user) {
+				console.log(user);
+				setEditText(comment.comment);
+				setReplying(!replying);
+				setEditID(id);
+			} else {
+				alert("You can only edit comments that you made.");
+			}
 		} else {
 			alert("Please log in to edit.");
 		}
