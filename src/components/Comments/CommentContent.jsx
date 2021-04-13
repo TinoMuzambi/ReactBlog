@@ -141,7 +141,7 @@ const CommentContent = ({
 							</div>
 							<p className="upvotes">{comment.upvotes}</p>
 							{comment.level !== "two" && (
-								<p className="reply" onClick={() => replyHandler(comment.id)}>
+								<p className="reply" onClick={() => replyHandler()}>
 									Reply
 								</p>
 							)}
