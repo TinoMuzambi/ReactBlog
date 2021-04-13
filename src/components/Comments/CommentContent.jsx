@@ -52,6 +52,17 @@ const CommentContent = ({
 		} else return "two";
 	};
 
+	const postToDB = async (updatedComments) => {
+		const commentsDBRef = db.collection("comments").doc("comments");
+
+		await commentsDBRef.set({
+			comments: updatedComments,
+		});
+
+		getComments();
+		setCommentText("");
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -143,14 +154,7 @@ const CommentContent = ({
 					}
 				}
 
-				const commentsDBRef = db.collection("comments").doc("comments");
-
-				await commentsDBRef.set({
-					comments: editComments,
-				});
-
-				getComments();
-				setCommentText("");
+				postToDB(editComments);
 			} else {
 				if (commentText.trim()) {
 					const newComment = {
@@ -211,14 +215,7 @@ const CommentContent = ({
 					}
 					setComments(newComments);
 
-					const commentsDBRef = db.collection("comments").doc("comments");
-
-					await commentsDBRef.set({
-						comments: comments,
-					});
-
-					getComments();
-					setCommentText("");
+					postToDB(comments);
 				} else {
 					alert("Make an actual comment.");
 				}
