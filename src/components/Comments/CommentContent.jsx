@@ -49,6 +49,7 @@ const CommentContent = ({
 
 	const replyHandler = () => {
 		if (user) {
+			console.log(user);
 			setEditText("");
 			setReplying(!replying);
 		} else {

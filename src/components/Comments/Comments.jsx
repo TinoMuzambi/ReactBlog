@@ -9,6 +9,7 @@ import CommentForm from "./CommentForm";
 const Comments = ({ url }) => {
 	const [fetching, setFetching] = useState(true);
 	const [comments, setComments] = useState([]);
+	const [users, setUsers] = useState([]);
 	const [commentText, setCommentText] = useState("");
 	const [filteredComments, setFilteredComments] = useState([]);
 
@@ -18,17 +19,27 @@ const Comments = ({ url }) => {
 	const getComments = async () => {
 		setFetching(true);
 		let comms = [];
+		let dbUsers = [];
 		await db
 			.collection("comments")
 			.get()
 			.then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
 					comms = doc.data().comments;
-					// console.log(comms);
+				});
+			});
+		await db
+			.collection("users")
+			.get()
+			.then((querySnapshot) => {
+				querySnapshot.forEach((doc) => {
+					dbUsers = doc.data().users;
 				});
 			});
 
 		setComments(comms);
+		setUsers(dbUsers);
+
 		setFetching(false);
 	};
 
