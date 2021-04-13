@@ -27,7 +27,6 @@ const CommentContent = ({
 	const editHandler = async (id) => {
 		if (user) {
 			if (user.displayName === comment.user) {
-				console.log(user);
 				setEditText(comment.comment);
 				setReplying(!replying);
 				setEditID(id);
@@ -92,6 +91,7 @@ const CommentContent = ({
 				}
 
 				if (topIDs.includes(editID)) {
+					console.log("first");
 					let newComments = [];
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						if (currComments?.comments[i]?.id === editID) {
@@ -107,6 +107,7 @@ const CommentContent = ({
 					}
 				} else if (secondIDs?.includes(editID)) {
 					let newComments = currComments?.comments;
+					console.log("second");
 
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						for (
@@ -128,6 +129,7 @@ const CommentContent = ({
 					}
 				} else {
 					let newComments = currComments.comments;
+					console.log("third");
 
 					for (let i = 0; i < currComments?.comments?.length; i++) {
 						for (
