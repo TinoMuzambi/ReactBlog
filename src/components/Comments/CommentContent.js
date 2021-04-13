@@ -55,10 +55,10 @@ const CommentContent = ({
 	const handleSubmit = async (e, id) => {
 		e.preventDefault();
 		let secondIDs = [];
-		console.log(comments);
-		for (let i = 0; i < comments.comments.length; i++) {
-			for (let j = 0; j < comments.comments[i]?.replies?.length; j++) {
-				secondIDs.push(comments.comments[i]?.replies[j]?.id);
+		console.log(user);
+		for (let i = 0; i < comments.length; i++) {
+			for (let j = 0; j < comments[i]?.replies?.length; j++) {
+				secondIDs.push(comments[i]?.replies[j]?.id);
 			}
 		}
 		if (user) {

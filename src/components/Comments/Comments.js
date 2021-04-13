@@ -161,7 +161,7 @@ const Comments = ({ url }) => {
 								<div className="wrapper" key={comment.id}>
 									<Comment
 										commentProp={comment}
-										uuser={user}
+										user={user}
 										comments={comments}
 										getComments={getComments}
 										setComments={setComments}
