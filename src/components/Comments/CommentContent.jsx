@@ -97,27 +97,20 @@ const CommentContent = ({
 										) {
 											console.log(newComments[i].comments[j].replies[k].id);
 											console.log(comment.id);
-											newComments[i].comments[j].replies[k].replies.unshift(
-												newComment
-											);
+											if (newComments[i].comments[j].replies[k].replies) {
+												newComments[i].comments[j].replies[k].replies.unshift(
+													newComment
+												);
+											} else {
+												newComments[i].comments[j].replies[k].replies = [
+													newComment,
+												];
+											}
 											break loop1;
 										}
 									}
 								} else {
-									for (
-										let k = 0;
-										k < newComments[i].comments[j].replies.length;
-										k++
-									) {
-										if (
-											newComments[i].comments[j].replies[k].id === comment.id
-										) {
-											newComments[i].comments[j].replies[k].replies = [
-												newComment,
-											];
-											break loop1;
-										}
-									}
+									console.log("error");
 								}
 							}
 						}
