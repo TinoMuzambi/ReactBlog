@@ -51,6 +51,7 @@ export const getBlogs = async () => {
 		});
 	return prettyBlogs;
 };
+
 export const getCategories = async () => {
 	await getSpaceVersion();
 	let prettyCats = [];
