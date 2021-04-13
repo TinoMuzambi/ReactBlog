@@ -22,7 +22,6 @@ const CommentContent = ({
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
-	const [replyID, setReplyID] = useState(-1);
 
 	const editHandler = () => {
 		setEditText(comment.comment);
@@ -40,7 +39,6 @@ const CommentContent = ({
 
 	const replyHandler = (id) => {
 		setReplying(!replying);
-		setReplyID(id);
 	};
 
 	const getNextLevel = (level) => {
@@ -80,16 +78,16 @@ const CommentContent = ({
 				comments[comments.length - 1]++;
 
 				let newComments = comments;
-				console.log(newComments);
-				for (let i = 0; i < newComments.length; i++) {
-					if (newComments[i]?.blog_url === url) {
-						for (let j = 0; j < newComments[i]?.comments.length; j++) {
-							if (newComments[i].comments[j].id === replyID) {
-								newComments[i].comments.unshift(newComment);
-							}
-						}
-					}
-				}
+				// console.log(newComments);
+				// for (let i = 0; i < newComments.length; i++) {
+				// 	if (newComments[i]?.blog_url === url) {
+				// 		for (let j = 0; j < newComments[i]?.comments.length; j++) {
+				// 			if (newComments[i].comments[j].id === replyID) {
+				// 				newComments[i].comments.unshift(newComment);
+				// 			}
+				// 		}
+				// 	}
+				// }
 				setComments(newComments);
 				console.log(newComments);
 
