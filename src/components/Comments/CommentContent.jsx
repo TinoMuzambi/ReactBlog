@@ -78,16 +78,20 @@ const CommentContent = ({
 				comments[comments.length - 1]++;
 
 				let newComments = comments;
-				// console.log(newComments);
-				// for (let i = 0; i < newComments.length; i++) {
-				// 	if (newComments[i]?.blog_url === url) {
-				// 		for (let j = 0; j < newComments[i]?.comments.length; j++) {
-				// 			if (newComments[i].comments[j].id === replyID) {
-				// 				newComments[i].comments.unshift(newComment);
-				// 			}
-				// 		}
-				// 	}
-				// }
+				// console.log(comment);
+				for (let i = 0; i < newComments.length; i++) {
+					if (newComments[i]?.blog_url === url) {
+						for (let j = 0; j < newComments[i]?.comments.length; j++) {
+							if (newComments[i].comments[j].id === comment.id) {
+								if (newComments[i].comments[j].replies) {
+									newComments[i].comments[j].replies.unshift(newComment);
+								} else {
+									newComments[i].comments[j].replies = [newComment];
+								}
+							}
+						}
+					}
+				}
 				setComments(newComments);
 				console.log(newComments);
 
