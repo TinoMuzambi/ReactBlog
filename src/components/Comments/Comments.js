@@ -157,8 +157,8 @@ const Comments = ({ url }) => {
 							/>
 						</div>
 						{filteredComments[0]?.comments?.length ? (
-							filteredComments.map((comment) => (
-								<div className="wrapper" key={comment.id}>
+							filteredComments.map((comment, index) => (
+								<div className="wrapper" key={index}>
 									<Comment
 										commentProp={comment}
 										user={user}
