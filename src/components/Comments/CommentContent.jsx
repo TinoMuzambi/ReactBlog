@@ -145,11 +145,11 @@ const CommentContent = ({
 
 				console.log(editComments);
 
-				// const commentsDBRef = db.collection("comments").doc("comments");
+				const commentsDBRef = db.collection("comments").doc("comments");
 
-				// await commentsDBRef.set({
-				// 	comments: editComments,
-				// });
+				await commentsDBRef.set({
+					comments: editComments,
+				});
 			} else {
 				if (commentText.trim()) {
 					const newComment = {
