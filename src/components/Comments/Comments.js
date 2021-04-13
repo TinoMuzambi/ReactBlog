@@ -83,8 +83,8 @@ const Comments = ({ url }) => {
 								level: "zero",
 							};
 							comments[comments.length - 1]++;
-							console.log(comments);
-							console.log(newComment);
+							// console.log(comments);
+							// console.log(newComment);
 
 							let newComments = comments;
 							for (let i = 0; i < newComments.length; i++) {
