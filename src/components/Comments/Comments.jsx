@@ -72,17 +72,18 @@ const Comments = ({ url }) => {
 					if (!user.isAnonymous) {
 						if (!users.find((u) => u.username === user.displayName)) {
 							const newUser = {
-								id: users.length - 1,
+								id: users[users.length - 1],
 								image: user.photoURL,
 								role: "user",
 								liked_ids: [],
 								username: user.displayName,
 							};
+							users[users.length - 1]++;
 
 							const usersDBRef = db.collection("users").doc("users");
 
 							usersDBRef.set({
-								users: [...users, newUser],
+								users: [newUser, ...users],
 							});
 						}
 					}
