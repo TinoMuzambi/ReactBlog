@@ -47,7 +47,7 @@ const CommentContent = ({
 	}, [user, users]);
 
 	const like = (commentParam) => {
-		console.log(commentParam);
+		console.log(currUserData);
 		if (user) {
 			if (commentParam.user === currUserData.username) {
 				return alert("No liking your own comments!");
@@ -55,6 +55,8 @@ const CommentContent = ({
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				return alert("You already liked this comment!");
 			}
+
+			currUserData.liked_ids.push(commentParam.id);
 		} else {
 			return alert("Log in to like!");
 		}
