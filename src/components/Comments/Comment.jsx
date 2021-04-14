@@ -26,32 +26,25 @@ const Comment = ({
 				}
 
 				if (topIDs.includes(id)) {
-					let newComments = [];
-					for (let i = 0; i < currComments?.comments?.length; i++) {
-						if (currComments?.comments[i]?.id === id) {
-							if (user.displayName === currComments?.comments[i]?.user) {
+					let newComments = currComments;
+					for (let i = 0; i < newComments?.comments?.length; i++) {
+						if (newComments?.comments[i]?.id === id) {
+							if (user.displayName === newComments?.comments[i]?.user) {
 								owner = true;
-								newComments.push({
-									...currComments?.comments[i],
+								newComments.comments[i] = {
+									...newComments?.comments[i],
 									comment: "deleted",
-								});
+								};
 							} else {
 								owner = false;
-								newComments.push({
-									...currComments?.comments[i],
-								});
 							}
-						} else {
-							newComments.push({
-								...currComments?.comments[i],
-							});
 						}
 					}
-					const newItem = {
-						blog_url: currComments.blog_url,
-						comments: newComments,
-					};
-					setCurrComments(newItem);
+					// const newItem = {
+					// 	blog_url: newComments.blog_url,
+					// 	comments: newComments,
+					// };
+					setCurrComments(newComments);
 				} else if (secondIDs?.includes(id)) {
 					let newComments = currComments?.comments;
 
@@ -155,6 +148,8 @@ const Comment = ({
 				await commentsDBRef.set({
 					comments: deleteComments,
 				});
+
+				getComments();
 			} else {
 				alert("You can only delete comments that you made.");
 			}
