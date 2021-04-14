@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	FcEmptyTrash,
 	FcLike,
@@ -24,6 +24,7 @@ const CommentContent = ({
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
 	const [editID, setEditID] = useState(-1);
+	const [currUserData, setCurrUserData] = useState({});
 
 	const editHandler = async (id) => {
 		if (user) {
@@ -39,6 +40,12 @@ const CommentContent = ({
 		}
 	};
 
+	useEffect(() => {
+		if (user) {
+			setCurrUserData(users.find((u) => u.username === user.displayName));
+		}
+	}, [user, users]);
+
 	const like = (commentParam) => {
 		commentParam.liked = !commentParam.liked;
 		if (commentParam.liked) {
@@ -50,7 +57,6 @@ const CommentContent = ({
 
 	const replyHandler = () => {
 		if (user) {
-			console.log(user);
 			setEditText("");
 			setReplying(!replying);
 		} else {
@@ -264,9 +270,17 @@ const CommentContent = ({
 							<div
 								className="like"
 								onClick={() => like(comment)}
-								title={comment.liked ? "Unlike" : "Like"}
+								title={
+									currUserData?.liked_ids?.includes(comment.id)
+										? "Unlike"
+										: "Like"
+								}
 							>
-								{comment.liked ? <FcLike /> : <FcLikePlaceholder />}
+								{currUserData?.liked_ids?.includes(comment.id) ? (
+									<FcLike />
+								) : (
+									<FcLikePlaceholder />
+								)}
 							</div>
 							<p className="upvotes">{comment.upvotes}</p>
 							{comment.level !== "two" && (
