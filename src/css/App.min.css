@@ -1220,7 +1220,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   gap: 1rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1361,6 +1361,10 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .comment-content .form-group {
   margin: 1rem 0 0.5rem 4rem;
+}
+
+.comment-content .form-group .form {
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 750px) {

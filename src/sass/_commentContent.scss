@@ -21,7 +21,7 @@
 
 	.comment-container {
 		@include flexRowCenter;
-		margin: 2rem 0 0 0;
+		margin: 1rem 0 0 0;
 		gap: 1rem;
 		width: fit-content;
 
@@ -138,6 +138,10 @@
 
 	.form-group {
 		margin: 1rem 0 0.5rem 4rem;
+
+		.form {
+			margin-bottom: 1rem;
+		}
 
 		@include mq(750px) {
 			width: 70%;
