@@ -1061,6 +1061,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .comments .title {
   color: #3f4954;
+  margin-top: 0;
 }
 
 .comments .form-group {
