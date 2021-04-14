@@ -105,6 +105,7 @@ const Comments = ({ url }) => {
 								comment: commentText,
 								date: new Date(),
 								upvotes: 0,
+								likers: [],
 								level: "zero",
 							};
 							comments[comments.length - 1]++;
