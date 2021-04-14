@@ -107,7 +107,6 @@ const CommentContent = ({
 				}
 			}
 
-			console.log(likedComments);
 			postToDB(likedComments);
 
 			let updatedLikes = currUserData;
@@ -129,7 +128,6 @@ const CommentContent = ({
 					newUsers[i] = users[i];
 				}
 			}
-			// console.log(newUsers);
 
 			usersDBRef.set({
 				users: newUsers,
