@@ -58,6 +58,57 @@ const CommentContent = ({
 			}
 			upvotes++;
 
+			const currComments = comments.find((c) => c.blog_url === url);
+
+			const topIDs = currComments.comments?.map((c) => c.id);
+
+			let secondIDs = [];
+			for (let i = 0; i < currComments.comments.length; i++) {
+				for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
+					secondIDs.push(currComments.comments[i]?.replies[j]?.id);
+				}
+			}
+
+			if (topIDs.includes(commentParam.id)) {
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					if (currComments?.comments[i]?.id === commentParam.id) {
+						currComments.comments[i] = {
+							...currComments?.comments[i],
+							upvotes: upvotes,
+						};
+					}
+				}
+			} else if (secondIDs?.includes(commentParam.id)) {
+				let newComments = currComments?.comments;
+
+				for (let i = 0; i < currComments?.comments?.length; i++) {
+					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
+						if (currComments?.comments[i]?.replies[j]?.id === commentParam.id) {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+								upvotes: upvotes,
+							};
+						} else {
+							newComments[i].replies[j] = {
+								...currComments?.comments[i]?.replies[j],
+							};
+						}
+					}
+				}
+			}
+
+			let likedComments = [];
+			for (let i = 0; i < comments.length; i++) {
+				if (comments[i].blog_url === url) {
+					likedComments[i] = currComments;
+				} else {
+					likedComments[i] = comments[i];
+				}
+			}
+
+			console.log(likedComments);
+			// postToDB(likedComments);
+
 			let updatedLikes = currUserData;
 			updatedLikes.liked_ids.push(commentParam.id);
 			setCurrUserData(updatedLikes);
