@@ -48,13 +48,15 @@ const CommentContent = ({
 
 	const like = (commentParam) => {
 		console.log(currUserData);
+		let upvotes = commentParam.upvotes;
 		if (user) {
 			if (commentParam.user === currUserData.username) {
 				return alert("No liking your own comments!");
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
-				return alert("You already liked this comment!");
+				upvotes--;
 			}
+			upvotes++;
 
 			let updatedLikes = currUserData;
 			updatedLikes.liked_ids.push(commentParam.id);
