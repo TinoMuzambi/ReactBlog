@@ -52,6 +52,7 @@ const CommentContent = ({
 
 	const like = (commentParam) => {
 		let upvotes = commentParam.upvotes;
+		let likers = commentParam.likers;
 		if (user) {
 			if (user.isAnonymous) {
 				return alert("Anonymous users can't like comments.");
@@ -61,8 +62,10 @@ const CommentContent = ({
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				upvotes--;
+				likers = likers.filter((l) => l !== user.displayName);
 			} else {
 				upvotes++;
+				likers.push(user.displayName);
 			}
 
 			const currComments = comments.find((c) => c.blog_url === url);
@@ -82,6 +85,7 @@ const CommentContent = ({
 						currComments.comments[i] = {
 							...currComments?.comments[i],
 							upvotes: upvotes,
+							likers: likers,
 						};
 					}
 				}
