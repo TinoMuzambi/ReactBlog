@@ -65,12 +65,29 @@ const Comments = ({ url }) => {
 	return (
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user }) => {
-				const signInWithGoogle = () => {
+				const signInWithGoogle = async () => {
 					if (!isSignedIn) {
 						const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-						firebase.auth().signInWithPopup(googleAuthProvider);
+						await firebase.auth().signInWithPopup(googleAuthProvider);
 					}
 				};
+				if (user) {
+					if (!users.find((u) => u.username === user.displayName)) {
+						const newUser = {
+							id: users.length - 1,
+							image: user.photoURL,
+							role: "user",
+							liked_ids: [],
+							username: user.displayName,
+						};
+						console.log([...users, newUser]);
+						const usersDBRef = db.collection("users").doc("users");
+
+						usersDBRef.set({
+							users: [...users, newUser],
+						});
+					}
+				}
 
 				const signInAnon = (e) => {
 					!isSignedIn && firebase.auth().signInAnonymously();
