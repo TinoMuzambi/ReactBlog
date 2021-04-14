@@ -69,20 +69,22 @@ const Comments = ({ url }) => {
 					}
 				};
 				if (user) {
-					if (!users.find((u) => u.username === user.displayName)) {
-						const newUser = {
-							id: users.length - 1,
-							image: user.photoURL,
-							role: "user",
-							liked_ids: [],
-							username: user.displayName,
-						};
+					if (!user.isAnonymous) {
+						if (!users.find((u) => u.username === user.displayName)) {
+							const newUser = {
+								id: users.length - 1,
+								image: user.photoURL,
+								role: "user",
+								liked_ids: [],
+								username: user.displayName,
+							};
 
-						const usersDBRef = db.collection("users").doc("users");
+							const usersDBRef = db.collection("users").doc("users");
 
-						usersDBRef.set({
-							users: [...users, newUser],
-						});
+							usersDBRef.set({
+								users: [...users, newUser],
+							});
+						}
 					}
 				}
 
