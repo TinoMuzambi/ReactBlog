@@ -181,7 +181,6 @@ const CommentContent = ({
 						comment: commentText,
 						date: new Date(),
 						upvotes: 0,
-						liked: false,
 						level: getNextLevel(comment.level),
 					};
 
