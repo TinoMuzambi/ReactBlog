@@ -106,12 +106,16 @@ const CommentContent = ({
 				}
 			}
 
-			// console.log(likedComments);
+			console.log(likedComments);
 			postToDB(likedComments);
 
 			let updatedLikes = currUserData;
-			if (!updatedLikes.liked_ids.contains(commentParam.id)) {
+			if (!updatedLikes.liked_ids?.includes(commentParam.id)) {
 				updatedLikes.liked_ids.push(commentParam.id);
+			} else {
+				updatedLikes.liked_ids = updatedLikes.liked_ids.filter(
+					(i) => i !== commentParam.id
+				);
 			}
 			setCurrUserData(updatedLikes);
 
@@ -124,7 +128,7 @@ const CommentContent = ({
 					newUsers[i] = users[i];
 				}
 			}
-			console.log(newUsers);
+			// console.log(newUsers);
 
 			usersDBRef.set({
 				users: newUsers,
