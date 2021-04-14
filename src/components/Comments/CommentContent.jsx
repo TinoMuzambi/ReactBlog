@@ -28,10 +28,13 @@ const CommentContent = ({
 
 	const editHandler = async (id) => {
 		if (user) {
+			console.log(user);
 			if (user.displayName === comment.user) {
 				setEditText(comment.comment);
 				setReplying(!replying);
 				setEditID(id);
+			} else if (user.isAnonymous) {
+				alert("Anonymous users don't get the privilege of editing.😬");
 			} else {
 				alert("You can only edit comments that you made.");
 			}
@@ -47,7 +50,6 @@ const CommentContent = ({
 	}, [user, users]);
 
 	const like = (commentParam) => {
-		console.log(currUserData);
 		let upvotes = commentParam.upvotes;
 		if (user) {
 			if (commentParam.user === currUserData.username) {

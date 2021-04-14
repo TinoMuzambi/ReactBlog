@@ -150,6 +150,8 @@ const Comment = ({
 				});
 
 				getComments();
+			} else if (user.isAnonymous) {
+				alert("Anonymous users don't get the privilege of deleting.😬");
 			} else {
 				alert("You can only delete comments that you made.");
 			}
