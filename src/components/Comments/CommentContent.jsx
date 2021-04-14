@@ -53,6 +53,9 @@ const CommentContent = ({
 	const like = (commentParam) => {
 		let upvotes = commentParam.upvotes;
 		if (user) {
+			if (user.isAnonymous) {
+				return alert("Anonymous users can't like comments!");
+			}
 			if (commentParam.user === currUserData.username) {
 				return alert("No liking your own comments!");
 			}
