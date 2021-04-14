@@ -47,12 +47,7 @@ const CommentContent = ({
 	}, [user, users]);
 
 	const like = (commentParam) => {
-		commentParam.liked = !commentParam.liked;
-		if (commentParam.liked) {
-			commentParam.upvotes++;
-		} else {
-			commentParam.upvotes--;
-		}
+		console.log("Like");
 	};
 
 	const replyHandler = () => {
