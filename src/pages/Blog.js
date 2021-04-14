@@ -7,7 +7,7 @@ import { AiOutlineReload } from "react-icons/ai";
 import { Helmet } from "react-helmet";
 
 import Sidebar from "../components/Sidebar";
-import Disqus from "../components/Disqus";
+// import Disqus from "../components/Disqus";
 import { getBlogs } from "../utils/fetch";
 import Comments from "../components/Comments/Comments";
 
@@ -115,12 +115,12 @@ const Blog = ({ categories }) => {
 
 						{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
 
-						<Disqus
+						{/* <Disqus
 							title={blog.title}
 							url={blog.disqusURL}
 							identifier={blog.disqusIdentifier}
 							src={blog.disqusSrc}
-						/>
+						/> */}
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 						<Comments url={pathname} />
