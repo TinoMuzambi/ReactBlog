@@ -37,9 +37,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							replies: [
 								{
 									id: 2,
-									user: "Tino",
+									user: "Tino Muzambi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+										"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 									comment: `You can have smallish laptops too.😂`,
 									date: new Date("Sunday, September 13, 2020 12:52 AM"),
@@ -61,9 +61,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 								},
 								{
 									id: 4,
-									user: "Tino",
+									user: "Tino Muzambi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+										"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 									comment: `Your laptop is not small.🌚`,
 									date: new Date("Sunday, September 13, 2020 6:06 PM"),
@@ -130,9 +130,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 9,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `Cool theory although slightly different to the temperature actually changing. Would the body be constantly readjusting to each change in temperature? I wonder.
 						And my hand will become wrinkly if I do that.😂`,
@@ -166,9 +166,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 11,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `I know Filmora Go. Is Filmora 9 any good?`,
 							date: new Date("Friday, June 26, 2020 10:42 AM"),
@@ -189,9 +189,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 13,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `Thanks Sagel. I'm glad you took something from it.🙏🏾`,
 							date: new Date("Wednesday, June 24, 2020 3:39 AM"),
@@ -217,9 +217,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 15,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `😂This isn't a safe space.🌚`,
 							date: new Date("Thursday, June 25, 2020 3:51 PM"),
@@ -282,9 +282,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 						},
 						{
 							id: 20,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `You should've started with the music thing then everything else cause now you've just left a bad taste in the mouth.😂But it's cool, I'm glad you found it spiritual.🙏🏾`,
 							date: new Date("Wednesday, June 10, 2020 12:28 PM"),
@@ -329,9 +329,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 23,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `😂😂I relate with typos. You gave some great examples of when voicenotes work.
 						And thank you so much.💕`,
@@ -353,9 +353,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 25,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `I agree. You need to do better.`,
 							date: new Date("Monday, June 1, 2020 2:25 PM"),
@@ -378,9 +378,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 27,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `😂Yeah big disclaimer there, shouldn't be tryna message anyone whilst you're driving. But that applies to other situations too I guess, like if you're cooking for example. Those circumstances, I completely understand.`,
 							date: new Date("Tuesday, June 2, 2020 11:36 PM"),
@@ -405,9 +405,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 29,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `At least you think about the person on the receiving end.😂
 				I hate having to relaugh.😩They should just implement a simple, "are you sure you want to delete your voicenote" confirmation.🥺`,
@@ -433,9 +433,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 								},
 								{
 									id: 31,
-									user: "Tino",
+									user: "Tino Muzambi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+										"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 									comment: `Thank you, I'm glad.🙏🏾`,
 									date: new Date("Monday, June 1, 2020 11:24 PM"),
@@ -464,9 +464,9 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					replies: [
 						{
 							id: 33,
-							user: "Tino",
+							user: "Tino Muzambi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+								"https://lh3.googleusercontent.com/a-/AOh14GisuQl-EOj7_pw1PePk3MYuUGJp3-Gifpw9symBaQ=s96-c",
 
 							comment: `😂I knew I wasn't the only one. That's dope that you wait for them to use it first.
 						And I wouldn't know about the statuses cause we don't do that here.😂`,
