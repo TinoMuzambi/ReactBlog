@@ -55,8 +55,9 @@ const CommentContent = ({
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				upvotes--;
+			} else {
+				upvotes++;
 			}
-			upvotes++;
 
 			const currComments = comments.find((c) => c.blog_url === url);
 
