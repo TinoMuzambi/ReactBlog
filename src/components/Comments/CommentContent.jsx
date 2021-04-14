@@ -28,7 +28,6 @@ const CommentContent = ({
 
 	const editHandler = async (id) => {
 		if (user) {
-			console.log(user);
 			if (user.displayName === comment.user) {
 				setEditText(comment.comment);
 				setReplying(!replying);
