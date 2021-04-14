@@ -50,14 +50,17 @@ const CommentContent = ({
 
 	const like = (commentParam) => {
 		let upvotes = commentParam.upvotes;
+		console.log(upvotes);
 		if (user) {
 			if (commentParam.user === currUserData.username) {
 				return alert("No liking your own comments!");
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				upvotes--;
+				console.log(upvotes);
 			} else {
 				upvotes++;
+				console.log(upvotes);
 			}
 
 			const currComments = comments.find((c) => c.blog_url === url);
@@ -108,7 +111,7 @@ const CommentContent = ({
 				}
 			}
 
-			postToDB(likedComments);
+			console.log(likedComments);
 
 			let updatedLikes = currUserData;
 			if (!updatedLikes.liked_ids?.includes(commentParam.id)) {
@@ -118,6 +121,7 @@ const CommentContent = ({
 					(i) => i !== commentParam.id
 				);
 			}
+			console.log(updatedLikes);
 			setCurrUserData(updatedLikes);
 
 			const usersDBRef = db.collection("users").doc("users");
@@ -134,7 +138,7 @@ const CommentContent = ({
 				users: newUsers,
 			});
 
-			getComments();
+			postToDB(likedComments);
 		} else {
 			return alert("Log in to like!");
 		}
