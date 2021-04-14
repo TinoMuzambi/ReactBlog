@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import "firebase/firestore";
+import { AiOutlineReload } from "react-icons/ai";
 
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
@@ -52,7 +53,11 @@ const Comments = ({ url }) => {
 	}, [comments, url]);
 
 	if (fetching) {
-		return <h3>Fetching...</h3>;
+		return (
+			<div className="icon-wrapper large">
+				<AiOutlineReload className="icon" />
+			</div>
+		);
 	}
 
 	return (
