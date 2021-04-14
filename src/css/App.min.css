@@ -1273,7 +1273,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .comment-content .comment-container .group .author {
   font-family: "Anton", sans-serif;
   font-weight: normal;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .comment-content .comment-container .group .date {
