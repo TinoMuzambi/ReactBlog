@@ -32,10 +32,12 @@ const CommentContent = ({
 				setEditText(comment.comment);
 				setReplying(!replying);
 				setEditID(id);
-			} else if (user.isAnonymous) {
-				alert("Anonymous users don't get the privilege of editing.😬");
-			} else {
-				alert("You can only edit comments that you made.");
+			} else if (user.displayName !== comment.user) {
+				if (user.isAnonymous) {
+					alert("Anonymous users don't get the privilege of editing.😬");
+				} else {
+					alert("You can only edit comments that you made.");
+				}
 			}
 		} else {
 			alert("Please log in to edit.");
