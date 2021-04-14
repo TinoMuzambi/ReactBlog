@@ -106,11 +106,13 @@ const CommentContent = ({
 				}
 			}
 
-			console.log(likedComments);
-			// postToDB(likedComments);
+			// console.log(likedComments);
+			postToDB(likedComments);
 
 			let updatedLikes = currUserData;
-			updatedLikes.liked_ids.push(commentParam.id);
+			if (!updatedLikes.liked_ids.contains(commentParam.id)) {
+				updatedLikes.liked_ids.push(commentParam.id);
+			}
 			setCurrUserData(updatedLikes);
 
 			const usersDBRef = db.collection("users").doc("users");
