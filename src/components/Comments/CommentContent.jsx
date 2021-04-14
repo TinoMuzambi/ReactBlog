@@ -370,7 +370,13 @@ const CommentContent = ({
 									<FcLikePlaceholder />
 								)}
 							</div>
-							<p className="upvotes">{comment.upvotes}</p>
+							{comment.likers ? (
+								<p className="upvotes" title={comment.likers}>
+									{comment.upvotes}
+								</p>
+							) : (
+								<p className="upvotes">{comment.upvotes}</p>
+							)}
 							{comment.level !== "two" && (
 								<p className="reply" onClick={() => replyHandler()}>
 									Reply
