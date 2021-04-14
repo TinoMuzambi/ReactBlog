@@ -16,7 +16,7 @@ const Comment = ({
 	const deleteHandler = async (id) => {
 		let owner = false;
 		if (user) {
-			if (window.confirm("Are you sure you finna delete?")) {
+			if (window.confirm("Are you sure you want to delete this comment?")) {
 				const topIDs = currComments.comments?.map((comment) => comment.id);
 				let secondIDs = [];
 				for (let i = 0; i < currComments.comments.length; i++) {
@@ -151,7 +151,7 @@ const Comment = ({
 
 				getComments();
 			} else if (user.isAnonymous) {
-				alert("Anonymous users don't get the privilege of deleting.😬");
+				alert("Anonymous users can't delete comments.");
 			} else {
 				alert("You can only delete comments that you made.");
 			}

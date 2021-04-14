@@ -126,7 +126,7 @@ const Comments = ({ url }) => {
 							getComments();
 							setCommentText("");
 						} else {
-							alert("Make an actual comment.");
+							alert("Please make an actual comment.");
 						}
 					} else {
 						alert("Please sign in before posting a comment.");

@@ -34,7 +34,7 @@ const CommentContent = ({
 				setEditID(id);
 			} else if (user.displayName !== comment.user) {
 				if (user.isAnonymous) {
-					alert("Anonymous users don't get the privilege of editing.😬");
+					alert("Anonymous users can't delete comments.");
 				} else {
 					alert("You can only edit comments that you made.");
 				}
@@ -54,10 +54,10 @@ const CommentContent = ({
 		let upvotes = commentParam.upvotes;
 		if (user) {
 			if (user.isAnonymous) {
-				return alert("Anonymous users can't like comments!");
+				return alert("Anonymous users can't like comments.");
 			}
 			if (commentParam.user === currUserData.username) {
-				return alert("No liking your own comments!");
+				return alert("You can't like your own comments.");
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				upvotes--;
@@ -139,7 +139,7 @@ const CommentContent = ({
 
 			postToDB(likedComments);
 		} else {
-			return alert("Log in to like!");
+			return alert("Please log in to like.");
 		}
 	};
 
@@ -319,7 +319,7 @@ const CommentContent = ({
 
 					postToDB(comments);
 				} else {
-					alert("Make an actual comment.");
+					alert("Please make an actual comment.");
 				}
 			}
 		} else {
