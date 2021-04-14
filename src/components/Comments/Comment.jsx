@@ -5,6 +5,7 @@ const Comment = ({
 	commentProp,
 	user,
 	comments,
+	users,
 	getComments,
 	setComments,
 	url,
@@ -173,6 +174,7 @@ const Comment = ({
 				setComments={setComments}
 				url={url}
 				db={db}
+				users={users}
 			/>
 			{comment?.replies?.map((reply) => (
 				<div key={reply.id}>
@@ -185,6 +187,7 @@ const Comment = ({
 						setComments={setComments}
 						url={url}
 						db={db}
+						users={users}
 					/>
 					{reply?.replies?.map((replyTwo) => (
 						<CommentContent
@@ -197,6 +200,7 @@ const Comment = ({
 							url={url}
 							db={db}
 							key={replyTwo.id}
+							users={users}
 						/>
 					))}
 				</div>

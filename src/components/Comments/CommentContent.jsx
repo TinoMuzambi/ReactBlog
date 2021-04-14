@@ -18,6 +18,7 @@ const CommentContent = ({
 	setComments,
 	url,
 	db,
+	users,
 }) => {
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
