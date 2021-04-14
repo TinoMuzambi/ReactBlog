@@ -20,7 +20,7 @@ The list goes on
 I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					date: new Date("Saturday, September 12, 2020, 11:47 PM"),
 					upvotes: 2,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -32,7 +32,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `I can just imagine people walking around holding their laptops because they want to walk and text ayy.😂😂😂 But same, I'd chose my laptop any day over my phone. I've survived many weeks this year only with just my laptop so it's doable, though I guess in this future we'd now be able to use WhatsApp without needing a phone so definitely the laptop.`,
 							date: new Date("Sunday, September 13, 2020 12:44 AM"),
 							upvotes: 1,
-							liked: true,
+
 							level: "one",
 							replies: [
 								{
@@ -44,7 +44,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `You can have smallish laptops too.😂`,
 									date: new Date("Sunday, September 13, 2020 12:52 AM"),
 									upvotes: 0,
-									liked: false,
+
 									level: "two",
 								},
 								{
@@ -56,7 +56,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `My laptop is small but still very big so no shame.😂`,
 									date: new Date("Sunday, September 13, 2020 3:26 PM"),
 									upvotes: 1,
-									liked: true,
+
 									level: "two",
 								},
 								{
@@ -68,7 +68,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `Your laptop is not small.🌚`,
 									date: new Date("Sunday, September 13, 2020 6:06 PM"),
 									upvotes: 0,
-									liked: false,
+
 									level: "two",
 								},
 								{
@@ -80,7 +80,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `I mean I don't remember the last time I had a phone call when I am walking. When I get a call in a public space , it would be too noisy to answer it, always " i will call you when I get home". That's me.`,
 									date: new Date("Sunday, September 13, 2020, 2:33 AM"),
 									upvotes: 1,
-									liked: true,
+
 									level: "two",
 								},
 								{
@@ -92,7 +92,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `But think of when you're meeting up with someone and you don't know the place so they have to text or call you to direct you, then a cellphone becomes handy.`,
 									date: new Date("Sunday, September 13, 2020 3:27 PM"),
 									upvotes: 1,
-									liked: true,
+
 									level: "two",
 								},
 							],
@@ -113,7 +113,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `Its been almost half a year since my last visit. There is some cool changes, I like the upgrade. However, I dont know about the shower and the temperatures.`,
 					date: new Date("Friday, December 25, 2020, 1:26 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 				},
 				{
@@ -125,7 +125,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `I was thinking about this and I'm gonna use a beach example, so we were at Camps bay and that water is cold as hell, when I first got in the water it was like freezing cold but over time my body adjusted and even though the temperature of the water there didn't change my body adjusted such that I didn't feel like the water was that cold anymore, so applying that into this I think somehow someway the body will adjust in such a way that you don't really feel it because this will be very very slow right? And instead of being in the shower for ages you can try it with your hand in the basin for like an hour and see if you feel the difference.🤷‍♀️`,
 					date: new Date("Tuesday, August 4, 2020 11:08 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -138,7 +138,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 						And my hand will become wrinkly if I do that.😂`,
 							date: new Date("Tuesday, August 4, 2020 11:08 AM"),
 							upvotes: 2,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -161,7 +161,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `Filmora9 Kinda look like HitFilm`,
 					date: new Date("Friday, June 26, 2020, 10:30 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -173,7 +173,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `I know Filmora Go. Is Filmora 9 any good?`,
 							date: new Date("Friday, June 26, 2020 10:42 AM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -184,7 +184,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `Thank you for all these! I will make absolutely sure to add these to my list. I had heard of some of the apps but absolutely amazed at the new ones I got from here :) I read every word of it, beautiful writing and content :D`,
 					date: new Date("Wednesday, June 24, 2020 3:36 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -198,7 +198,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 						`,
 							date: new Date("Wednesday, June 24, 2020 3:39 AM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -214,7 +214,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `Haha, got my swim suit ready to dive then I read the "I'm not about to expose myself like that" ***inserts tear emoji***`,
 					date: new Date("Thursday, June 25, 2020 3:51 PM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -226,7 +226,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `😂This isn't a safe space.🌚`,
 							date: new Date("Thursday, June 25, 2020 3:51 PM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -240,7 +240,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `I call Martin , Martintin 😂`,
 					date: new Date("Wednesday, June 10, 2020, 9:47 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 				},
 				{
@@ -253,7 +253,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				And your music taste, hay I don't relate shame.😂😂They are absolute trash, the message is good sure, but they don't do it for me, not at all.😂😂`,
 					date: new Date("Wednesday, June 10, 2020 3:21 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -265,7 +265,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `😂 you always been the realist Nsovo. Telling it like it is`,
 							date: new Date("Wednesday, June 10, 2020, 9:36 AM"),
 							upvotes: 1,
-							liked: true,
+
 							level: "one",
 							replies: [
 								{
@@ -277,7 +277,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `😂 😂 I'm just a glass of water.`,
 									date: new Date("Wednesday, June 10, 2020 10:07 AM"),
 									upvotes: 1,
-									liked: true,
+
 									level: "two",
 								},
 								{
@@ -289,7 +289,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `You should've started with the music thing then everything else cause now you've just left a bad taste in the mouth.😂But it's cool, I'm glad you found it spiritual.🙏🏾`,
 									date: new Date("Wednesday, June 10, 2020 12:28 PM"),
 									upvotes: 0,
-									liked: false,
+
 									level: "one",
 									replies: [
 										{
@@ -301,7 +301,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 											comment: `😂😂I believe in good news first.`,
 											date: new Date("Wednesday, June 10, 2020 6:42 PM"),
 											upvotes: 1,
-											liked: true,
+
 											level: "two",
 										},
 									],
@@ -326,7 +326,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				Anyways well done I love it 🔥🔥🔥💯💯💯. It's funny and honest.`,
 					date: new Date("Sunday, May 31, 2020 9:33 PM"),
 					upvotes: 2,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -339,7 +339,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 						And thank you so much.💕`,
 							date: new Date("Sunday, May 31, 2020 9:40 PM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -350,7 +350,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					comment: `#Disclaimer: not about voice notes. What you said about multitasking is very true. I was reading this whilst trying to pay attention to my Physics notes (bad life choice number 2867😞). You were talking about voicenotes and evidently I didn't get that. So now I have to reread about elastic and inelastic collisions as well as reread this post so I can comment meaningfully. Note to self: make better life choices.`,
 					date: new Date("Monday, June 1, 2020 2:22 PM"),
 					upvotes: 2,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -362,7 +362,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `I agree. You need to do better.`,
 							date: new Date("Monday, June 1, 2020 2:25 PM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -375,7 +375,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				 BUT OTHERWISE I AGREE , I LOVE MUSIC AND IT IS A IRRATAING TO HAVE TO CONSTANTLY PAUSE TO LISTEN TO VOICENOTE!!`,
 					date: new Date("Tuesday, June 2, 2020 11:31 PM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -387,7 +387,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							comment: `😂Yeah big disclaimer there, shouldn't be tryna message anyone whilst you're driving. But that applies to other situations too I guess, like if you're cooking for example. Those circumstances, I completely understand.`,
 							date: new Date("Tuesday, June 2, 2020 11:36 PM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
@@ -402,7 +402,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 		What I HAAAATE about them though is when I'm busy recording(on my PC) at that time I'm on five minutes and find that I was laughing even, and then it decides to cancel it. 😭😭 Yhoo, I get so mad because now I have to relaugh so nje it's a lot. And at that time I've even forgotten what I wanted to say. So I think it's safe to say I've got a hate love relationship with them. Wow I just typed an essay okay lemme stop. 😂`,
 					date: new Date("Monday, June 1, 2020 10:30 PM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -415,7 +415,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				I hate having to relaugh.😩They should just implement a simple, "are you sure you want to delete your voicenote" confirmation.🥺`,
 							date: new Date("Monday, June 1, 2020 10:41 PM"),
 							upvotes: 1,
-							liked: false,
+
 							level: "one",
 							replies: [
 								{
@@ -430,7 +430,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					Oh and I forgot to mention, it was an interesting read I loved it.`,
 									date: new Date("Monday, June 1, 2020 10:46 PM"),
 									upvotes: 1,
-									liked: true,
+
 									level: "two",
 								},
 								{
@@ -442,7 +442,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									comment: `Thank you, I'm glad.🙏🏾`,
 									date: new Date("Monday, June 1, 2020 11:24 PM"),
 									upvotes: 0,
-									liked: false,
+
 									level: "two",
 								},
 							],
@@ -461,7 +461,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 				you better have subtitles because I won't MJ for nothing. 😂`,
 					date: new Date("Sunday, May 31, 2020, 7:14 AM"),
 					upvotes: 1,
-					liked: true,
+
 					level: "zero",
 					replies: [
 						{
@@ -474,7 +474,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 						And I wouldn't know about the statuses cause we don't do that here.😂`,
 							date: new Date("Sunday, May 31, 2020 9:20 AM"),
 							upvotes: 0,
-							liked: false,
+
 							level: "one",
 						},
 					],
