@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import "firebase/firestore";
@@ -13,7 +13,6 @@ const Comments = ({ url }) => {
 	const [commentText, setCommentText] = useState("");
 	const [filteredComments, setFilteredComments] = useState([]);
 
-	const commRef = useRef(null);
 	const db = firebase.firestore();
 
 	const getComments = async () => {
@@ -51,12 +50,6 @@ const Comments = ({ url }) => {
 	useEffect(() => {
 		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
 	}, [comments, url]);
-
-	useEffect(() => {
-		if (!fetching) {
-			commRef.current.scrollIntoView({ behavior: "smooth" });
-		}
-	}, [fetching]);
 
 	if (fetching) {
 		return <h3>Fetching...</h3>;
@@ -136,7 +129,7 @@ const Comments = ({ url }) => {
 				return (
 					<div className="comments">
 						<h1 className="title">Comments</h1>
-						<div className="form-group" ref={commRef}>
+						<div className="form-group">
 							<div className="person">
 								<img
 									src={
