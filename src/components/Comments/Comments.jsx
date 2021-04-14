@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
-import "firebase/firestore";
 import { AiOutlineReload } from "react-icons/ai";
 
 import Comment from "./Comment";
