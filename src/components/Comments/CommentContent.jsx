@@ -269,6 +269,7 @@ const CommentContent = ({
 						comment: commentText,
 						date: new Date(),
 						upvotes: 0,
+						likers: [],
 						level: getNextLevel(comment.level),
 					};
 
