@@ -56,7 +56,26 @@ const CommentContent = ({
 				return alert("You already liked this comment!");
 			}
 
-			currUserData.liked_ids.push(commentParam.id);
+			let updatedLikes = currUserData;
+			updatedLikes.liked_ids.push(commentParam.id);
+			setCurrUserData(updatedLikes);
+
+			const usersDBRef = db.collection("users").doc("users");
+			let newUsers = [];
+			for (let i = 0; i < users.length; i++) {
+				if (users[i].id === updatedLikes.id) {
+					newUsers[i] = updatedLikes;
+				} else {
+					newUsers[i] = users[i];
+				}
+			}
+			console.log(newUsers);
+
+			usersDBRef.set({
+				users: newUsers,
+			});
+
+			getComments();
 		} else {
 			return alert("Log in to like!");
 		}

@@ -80,7 +80,7 @@ const Comments = ({ url }) => {
 							liked_ids: [],
 							username: user.displayName,
 						};
-						console.log([...users, newUser]);
+
 						const usersDBRef = db.collection("users").doc("users");
 
 						usersDBRef.set({
