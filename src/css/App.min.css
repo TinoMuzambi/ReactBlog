@@ -1141,7 +1141,11 @@ ul ul li:not(:first-child):not(:last-child):hover {
   color: #3f4954;
 }
 
-.comment {
+.wrapper {
+  margin-top: 1rem;
+}
+
+.wrapper .comment {
   position: relative;
 }
 
