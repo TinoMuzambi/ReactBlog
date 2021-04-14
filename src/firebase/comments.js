@@ -278,31 +278,31 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 
 									level: "two",
 								},
+							],
+						},
+						{
+							id: 20,
+							user: "Tino",
+							image:
+								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+
+							comment: `You should've started with the music thing then everything else cause now you've just left a bad taste in the mouth.😂But it's cool, I'm glad you found it spiritual.🙏🏾`,
+							date: new Date("Wednesday, June 10, 2020 12:28 PM"),
+							upvotes: 0,
+
+							level: "one",
+							replies: [
 								{
-									id: 20,
-									user: "Tino",
+									id: 21,
+									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
+										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
 
-									comment: `You should've started with the music thing then everything else cause now you've just left a bad taste in the mouth.😂But it's cool, I'm glad you found it spiritual.🙏🏾`,
-									date: new Date("Wednesday, June 10, 2020 12:28 PM"),
-									upvotes: 0,
+									comment: `😂😂I believe in good news first.`,
+									date: new Date("Wednesday, June 10, 2020 6:42 PM"),
+									upvotes: 1,
 
-									level: "one",
-									replies: [
-										{
-											id: 21,
-											user: "Nsovo Lovejoy Mnisi",
-											image:
-												"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
-
-											comment: `😂😂I believe in good news first.`,
-											date: new Date("Wednesday, June 10, 2020 6:42 PM"),
-											upvotes: 1,
-
-											level: "two",
-										},
-									],
+									level: "two",
 								},
 							],
 						},
