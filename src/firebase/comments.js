@@ -193,9 +193,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							image:
 								"https://c.disquscdn.com/uploads/users/35030/454/avatar92.jpg?1606806670",
 
-							comment: `Thanks Sagel. I'm glad you took something from it.🙏🏾
-
-						`,
+							comment: `Thanks Sagel. I'm glad you took something from it.🙏🏾`,
 							date: new Date("Wednesday, June 24, 2020 3:39 AM"),
 							upvotes: 0,
 
