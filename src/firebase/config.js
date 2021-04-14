@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import "firebase/firestore";
 import "firebase/auth";
 // import { seedDatabase } from "./seed";
 
@@ -14,3 +15,4 @@ export const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // seedDatabase(firebaseIn);
+export { firebase };
