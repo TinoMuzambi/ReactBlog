@@ -131,29 +131,28 @@ const Comment = ({
 						setCurrComments(newItem);
 					}
 				}
-			}
-
-			if (owner) {
-				let deleteComments = [];
-				for (let i = 0; i < comments.length; i++) {
-					if (comments[i].blog_url === url) {
-						deleteComments[i] = currComments;
-					} else {
-						deleteComments[i] = comments[i];
+				if (owner) {
+					let deleteComments = [];
+					for (let i = 0; i < comments.length; i++) {
+						if (comments[i].blog_url === url) {
+							deleteComments[i] = currComments;
+						} else {
+							deleteComments[i] = comments[i];
+						}
 					}
+
+					const commentsDBRef = db.collection("comments").doc("comments");
+
+					await commentsDBRef.set({
+						comments: deleteComments,
+					});
+
+					getComments();
+				} else if (user.isAnonymous) {
+					alert("Anonymous users can't delete comments.");
+				} else {
+					alert("You can only delete comments that you made.");
 				}
-
-				const commentsDBRef = db.collection("comments").doc("comments");
-
-				await commentsDBRef.set({
-					comments: deleteComments,
-				});
-
-				getComments();
-			} else if (user.isAnonymous) {
-				alert("Anonymous users can't delete comments.");
-			} else {
-				alert("You can only delete comments that you made.");
 			}
 		} else {
 			alert("Please log in to delete.");
