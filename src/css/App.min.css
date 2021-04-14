@@ -1280,7 +1280,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .comment-content .comment-container .group .text {
   margin: 0 0 1rem 0;
-  white-space: unset;
+  white-space: pre-line;
   font-size: inherit;
   color: #3f4954;
   border: initial;
