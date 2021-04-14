@@ -47,7 +47,10 @@ const CommentContent = ({
 	}, [user, users]);
 
 	const like = (commentParam) => {
-		console.log("Like");
+		console.log(commentParam);
+		if (commentParam.user === currUserData.username) {
+			return alert("No liking your own comments!");
+		}
 	};
 
 	const replyHandler = () => {
