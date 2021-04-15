@@ -173,7 +173,6 @@ const Comment = ({
 			} else if (user.isAnonymous) {
 				return confirmAnonDelete();
 			} else {
-				console.log("trying");
 				return confirmDeleteOwnComments();
 			}
 		} else {
