@@ -209,3 +209,21 @@ export const confirmAnonEdit = () => {
 		},
 	});
 };
+
+export const confirmLikeOwnComments = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Liking own comments</h1>
+					<p className="text">You can't like your own comments.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};

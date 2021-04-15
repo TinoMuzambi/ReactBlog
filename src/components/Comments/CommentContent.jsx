@@ -16,6 +16,7 @@ import {
 	confirmSignInComment,
 	confirmAnonEdit,
 	confirmAnonLike,
+	confirmLikeOwnComments,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -68,7 +69,7 @@ const CommentContent = ({
 				return confirmAnonLike();
 			}
 			if (commentParam.user === currUserData.username) {
-				return alert("You can't like your own comments.");
+				return confirmLikeOwnComments();
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
 				upvotes--;
