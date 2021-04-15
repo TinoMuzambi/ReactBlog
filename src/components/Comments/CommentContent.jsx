@@ -18,6 +18,8 @@ import {
 	confirmAnonLike,
 	confirmLikeOwnComments,
 	postToDB,
+	getTopIDs,
+	getSecondIDs,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -82,14 +84,9 @@ const CommentContent = ({
 
 			const currComments = comments.find((c) => c.blog_url === url);
 
-			const topIDs = currComments.comments?.map((c) => c.id);
+			const topIDs = getTopIDs(currComments);
 
-			let secondIDs = [];
-			for (let i = 0; i < currComments.comments.length; i++) {
-				for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
-					secondIDs.push(currComments.comments[i]?.replies[j]?.id);
-				}
-			}
+			const secondIDs = getSecondIDs(currComments);
 
 			if (topIDs.includes(commentParam.id)) {
 				for (let i = 0; i < currComments?.comments?.length; i++) {

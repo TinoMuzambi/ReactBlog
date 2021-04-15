@@ -279,3 +279,17 @@ export const postToDB = async (
 	getData();
 	setCommentText("");
 };
+
+export const getTopIDs = (comments) => {
+	return comments.comments?.map((c) => c.id);
+};
+
+export const getSecondIDs = (comments) => {
+	let secondIDs = [];
+	for (let i = 0; i < comments.comments.length; i++) {
+		for (let j = 0; j < comments.comments[i]?.replies?.length; j++) {
+			secondIDs.push(comments.comments[i]?.replies[j]?.id);
+		}
+	}
+	return secondIDs;
+};

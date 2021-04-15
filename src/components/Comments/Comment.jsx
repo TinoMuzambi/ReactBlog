@@ -7,6 +7,8 @@ import {
 	confirmDeleteOwnComments,
 	confirmSignInDelete,
 	confirmAnonDelete,
+	getTopIDs,
+	getSecondIDs,
 } from "../../utils/helpers";
 
 const Comment = ({
@@ -58,13 +60,8 @@ const Comment = ({
 	const deleteHandler = async (id) => {
 		let owner = false;
 		if (user) {
-			const topIDs = currComments.comments?.map((comment) => comment.id);
-			let secondIDs = [];
-			for (let i = 0; i < currComments.comments.length; i++) {
-				for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
-					secondIDs.push(currComments.comments[i]?.replies[j]?.id);
-				}
-			}
+			const topIDs = getTopIDs(currComments);
+			const secondIDs = getSecondIDs(currComments);
 
 			if (topIDs.includes(id)) {
 				let newComments = currComments;
