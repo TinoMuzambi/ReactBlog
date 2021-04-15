@@ -10,6 +10,7 @@ import Moment from "react-moment";
 import {
 	confirmCommentContent,
 	confirmEditOwnComments,
+	confirmSignInEdit,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -44,7 +45,7 @@ const CommentContent = ({
 				}
 			}
 		} else {
-			alert("Please sign in to edit.");
+			return confirmSignInEdit();
 		}
 	};
 

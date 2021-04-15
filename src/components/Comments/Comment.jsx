@@ -3,7 +3,10 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 import CommentContent from "./CommentContent";
-import { confirmDeleteOwnComments } from "../../utils/helpers";
+import {
+	confirmDeleteOwnComments,
+	confirmSignInDelete,
+} from "../../utils/helpers";
 
 const Comment = ({
 	commentProp,
@@ -178,7 +181,7 @@ const Comment = ({
 				return confirmDeleteOwnComments();
 			}
 		} else {
-			alert("Please sign in to delete.");
+			return confirmSignInDelete();
 		}
 	};
 

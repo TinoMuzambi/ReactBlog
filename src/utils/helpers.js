@@ -66,3 +66,39 @@ export const confirmDeleteOwnComments = () => {
 		},
 	});
 };
+
+export const confirmSignInDelete = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Sign in</h1>
+					<p className="text">Please sign in to delete.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};
+
+export const confirmSignInEdit = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Sign in</h1>
+					<p className="text">Please sign in to edit.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};
