@@ -22,11 +22,13 @@ const Comment = ({
 	const [currComments, setCurrComments] = useState(commentProp);
 
 	const confirmDelete = (id) => {
+		// Custom alert for deleting a comment.
 		confirmAlert({
 			customUI: ({ onClose }) => {
 				setTimeout(() => {
 					onClose();
 				}, 5000);
+
 				return (
 					<div className="confirm">
 						<h1 className="title">Delete comment</h1>

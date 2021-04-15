@@ -394,9 +394,7 @@ const Comments = ({ url }) => {
 								</div>
 							))
 						) : (
-							<h2 className="no-blogs">
-								A barren land. Be the first to comment!
-							</h2>
+							<h2 className="no-blogs">Be the first to comment!</h2>
 						)}
 					</div>
 				);
