@@ -264,7 +264,7 @@ export const confirmLikeOwnComments = () => {
 	});
 };
 
-export const postToDB = async (
+export const postToCommentsDB = async (
 	updatedComments,
 	getData,
 	setCommentText,
@@ -278,6 +278,17 @@ export const postToDB = async (
 
 	getData();
 	setCommentText && setCommentText("");
+};
+
+export const postToUsersDB = async (
+	updatedUsers,
+
+	db
+) => {
+	const usersDBRef = db.collection("users").doc("users");
+	usersDBRef.set({
+		users: updatedUsers,
+	});
 };
 
 export const getTopIDs = (comments) => {
