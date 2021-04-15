@@ -266,7 +266,7 @@ export const confirmLikeOwnComments = () => {
 
 export const postToDB = async (
 	updatedComments,
-	getComments,
+	getData,
 	setCommentText,
 	db
 ) => {
@@ -276,6 +276,6 @@ export const postToDB = async (
 		comments: updatedComments,
 	});
 
-	getComments();
+	getData();
 	setCommentText("");
 };

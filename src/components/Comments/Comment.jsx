@@ -14,7 +14,7 @@ const Comment = ({
 	user,
 	comments,
 	users,
-	getComments,
+	getData,
 	setComments,
 	url,
 	db,
@@ -177,7 +177,7 @@ const Comment = ({
 					comments: deleteComments,
 				});
 
-				getComments();
+				getData();
 			} else if (user.isAnonymous) {
 				return confirmAnonDelete();
 			} else {
@@ -196,7 +196,7 @@ const Comment = ({
 				deleteHandler={confirmDelete}
 				user={user}
 				comments={comments}
-				getComments={getComments}
+				getData={getData}
 				setComments={setComments}
 				url={url}
 				db={db}
@@ -209,7 +209,7 @@ const Comment = ({
 						deleteHandler={confirmDelete}
 						user={user}
 						comments={comments}
-						getComments={getComments}
+						getData={getData}
 						setComments={setComments}
 						url={url}
 						db={db}
@@ -221,7 +221,7 @@ const Comment = ({
 							deleteHandler={confirmDelete}
 							user={user}
 							comments={comments}
-							getComments={getComments}
+							getData={getData}
 							setComments={setComments}
 							url={url}
 							db={db}

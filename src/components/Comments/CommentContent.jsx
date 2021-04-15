@@ -26,7 +26,7 @@ const CommentContent = ({
 	deleteHandler,
 	user,
 	comments,
-	getComments,
+	getData,
 	setComments,
 	url,
 	db,
@@ -153,7 +153,7 @@ const CommentContent = ({
 				users: newUsers,
 			});
 
-			postToDB(likedComments, getComments, setCommentText, db);
+			postToDB(likedComments, getData, setCommentText, db);
 		} else {
 			return confirmSignInLike();
 		}
@@ -267,7 +267,7 @@ const CommentContent = ({
 						}
 					}
 
-					postToDB(editComments, getComments, setCommentText, db);
+					postToDB(editComments, getData, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}
@@ -331,7 +331,7 @@ const CommentContent = ({
 					}
 					setComments(newComments);
 
-					postToDB(comments, getComments, setCommentText, db);
+					postToDB(comments, getData, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}

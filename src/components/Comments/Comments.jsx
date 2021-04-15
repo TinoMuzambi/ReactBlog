@@ -21,10 +21,11 @@ const Comments = ({ url }) => {
 
 	const db = firebase.firestore();
 
-	const getComments = async () => {
+	const getData = async () => {
 		setFetching(true);
 		let comms = [];
 		let dbUsers = [];
+
 		await db
 			.collection("comments")
 			.get()
@@ -33,6 +34,7 @@ const Comments = ({ url }) => {
 					comms = doc.data().comments;
 				});
 			});
+
 		await db
 			.collection("users")
 			.get()
@@ -49,7 +51,7 @@ const Comments = ({ url }) => {
 	};
 
 	useEffect(() => {
-		getComments();
+		getData();
 		//eslint-disable-next-line
 	}, []);
 
@@ -136,7 +138,7 @@ const Comments = ({ url }) => {
 
 							setComments(newComments);
 
-							postToDB(comments, getComments, setCommentText, db);
+							postToDB(comments, getData, setCommentText, db);
 						} else {
 							return confirmCommentContent();
 						}
@@ -378,7 +380,7 @@ const Comments = ({ url }) => {
 										user={user}
 										comments={comments}
 										users={users}
-										getComments={getComments}
+										getData={getData}
 										setComments={setComments}
 										url={url}
 										db={db}
