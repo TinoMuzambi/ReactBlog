@@ -244,24 +244,71 @@ export const confirmAnonEdit = () => {
 };
 
 export const confirmLikeOwnComments = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Liking own comments</h1>
-					<p className="text">You can't like your own comments.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Liking own comments",
+		"You can't like your own comments."
+	);
+};
+
+export const confirmDialog = (
+	button1Text,
+	button2Text,
+	button2Handler,
+	title,
+	text
+) => {
+	if (button2Text) {
+		confirmAlert({
+			customUI: ({ onClose }) => {
+				setTimeout(() => {
+					onClose();
+				}, 5000);
+
+				return (
+					<div className="confirm">
+						<h1 className="title">{title}</h1>
+						<p className="text">{text}</p>
+						<div className="buttons">
+							<button
+								onClick={() => {
+									onClose();
+									button2Handler();
+								}}
+								className="yes"
+							>
+								{button1Text}
+							</button>
+							<button onClick={onClose} className="no">
+								{button2Text}
+							</button>
+						</div>
 					</div>
-				</div>
-			);
-		},
-	});
+				);
+			},
+		});
+	} else {
+		confirmAlert({
+			customUI: ({ onClose }) => {
+				setTimeout(() => {
+					onClose();
+				}, 5000);
+				return (
+					<div className="confirm">
+						<h1 className="title">{title}</h1>
+						<p className="text">{text}</p>
+						<div className="buttons">
+							<button onClick={onClose} className="no">
+								{button1Text}
+							</button>
+						</div>
+					</div>
+				);
+			},
+		});
+	}
 };
 
 export const postToCommentsDB = async (
