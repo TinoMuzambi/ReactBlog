@@ -13,247 +13,8 @@ export const titleCase = (str) => {
 export const executeScroll = (customRef) =>
 	customRef?.current.scrollIntoView({ behavior: "smooth" });
 
-export const confirmCommentContent = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Blank comment</h1>
-					<p className="text">Please make an actual comment.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmEditOwnComments = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Only edit own comments</h1>
-					<p className="text">You can only edit comments that you made.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmDeleteOwnComments = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Only delete own comments</h1>
-					<p className="text">You can only delete comments that you made.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmSignInDelete = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Please sign in to delete.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmSignInEdit = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Please sign in to edit.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmSignInReply = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Please sign in to reply.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmSignInLike = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Please sign in to like.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmSignInComment = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Please sign in before posting a comment.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-export const confirmAnonLike = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Anonymous users can't like comments.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmAnonDelete = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Anonymous users can't delete comments.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmAnonEdit = () => {
-	confirmAlert({
-		customUI: ({ onClose }) => {
-			setTimeout(() => {
-				onClose();
-			}, 5000);
-			return (
-				<div className="confirm">
-					<h1 className="title">Sign in</h1>
-					<p className="text">Anonymous users can't edit comments.</p>
-					<div className="buttons">
-						<button onClick={onClose} className="no">
-							Ok
-						</button>
-					</div>
-				</div>
-			);
-		},
-	});
-};
-
-export const confirmLikeOwnComments = () => {
-	confirmDialog(
-		"Ok",
-		null,
-		null,
-		"Liking own comments",
-		"You can't like your own comments."
-	);
-};
-
 export const confirmDialog = (
+	// Shows confirm dialog.
 	button1Text,
 	button2Text,
 	button2Handler,
@@ -309,6 +70,125 @@ export const confirmDialog = (
 			},
 		});
 	}
+};
+
+export const confirmCommentContent = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Blank comment",
+		"Please make an actual comment."
+	);
+};
+
+export const confirmEditOwnComments = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Only edit own comments",
+		"You can only edit comments that you made."
+	);
+};
+
+export const confirmDeleteOwnComments = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Only delete own comments",
+		"You can only delete comments that you made."
+	);
+};
+
+export const confirmSignInDelete = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Please sign in to delete comments."
+	);
+};
+
+export const confirmSignInEdit = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Please sign in to edit comments."
+	);
+};
+
+export const confirmSignInReply = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Please sign in to reply to comments."
+	);
+};
+
+export const confirmSignInLike = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Please sign in to like comments."
+	);
+};
+
+export const confirmSignInComment = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Please sign in to post a comment."
+	);
+};
+export const confirmAnonLike = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Anonymous users can't like comments."
+	);
+};
+
+export const confirmAnonDelete = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Anonymous users can't delete comments."
+	);
+};
+
+export const confirmAnonEdit = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Sign in",
+		"Anonymous users can't edit comments."
+	);
+};
+
+export const confirmLikeOwnComments = () => {
+	confirmDialog(
+		"Ok",
+		null,
+		null,
+		"Liking own comments",
+		"You can't like your own comments."
+	);
 };
 
 export const postToCommentsDB = async (
