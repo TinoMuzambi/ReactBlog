@@ -1195,6 +1195,12 @@ ul ul li:not(:first-child):not(:last-child):hover {
   color: #ffffff;
 }
 
+@media only screen and (max-width: 768px) {
+  .react-confirm-alert-overlay .confirm {
+    opacity: 1;
+  }
+}
+
 .react-confirm-alert-overlay .confirm .title {
   margin: 0;
   font-size: 1.5rem;

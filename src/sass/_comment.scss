@@ -19,6 +19,10 @@
 		opacity: 0.8;
 		color: $white;
 
+		@include mq(768px) {
+			opacity: 1;
+		}
+
 		.title {
 			margin: 0;
 			font-size: 1.5rem;
