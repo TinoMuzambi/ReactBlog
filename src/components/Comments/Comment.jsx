@@ -9,6 +9,7 @@ import {
 	confirmAnonDelete,
 	getTopIDs,
 	getSecondIDs,
+	postToDB,
 } from "../../utils/helpers";
 
 const Comment = ({
@@ -78,10 +79,7 @@ const Comment = ({
 						}
 					}
 				}
-				// const newItem = {
-				// 	blog_url: newComments.blog_url,
-				// 	comments: newComments,
-				// };
+
 				setCurrComments(newComments);
 			} else if (secondIDs?.includes(id)) {
 				let newComments = currComments?.comments;
@@ -110,6 +108,7 @@ const Comment = ({
 						}
 					}
 				}
+
 				const newItem = {
 					blog_url: currComments.blog_url,
 					comments: newComments,
@@ -170,13 +169,7 @@ const Comment = ({
 					}
 				}
 
-				const commentsDBRef = db.collection("comments").doc("comments");
-
-				await commentsDBRef.set({
-					comments: deleteComments,
-				});
-
-				getData();
+				postToDB(deleteComments, getData, null, db);
 			} else if (user.isAnonymous) {
 				return confirmAnonDelete();
 			} else {

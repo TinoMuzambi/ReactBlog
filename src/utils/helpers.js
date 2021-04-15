@@ -277,7 +277,7 @@ export const postToDB = async (
 	});
 
 	getData();
-	setCommentText("");
+	setCommentText && setCommentText("");
 };
 
 export const getTopIDs = (comments) => {

@@ -85,7 +85,6 @@ const CommentContent = ({
 			const currComments = comments.find((c) => c.blog_url === url);
 
 			const topIDs = getTopIDs(currComments);
-
 			const secondIDs = getSecondIDs(currComments);
 
 			if (topIDs.includes(commentParam.id)) {
