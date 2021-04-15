@@ -3,6 +3,7 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 export const titleCase = (str) => {
+	// Convert string to title case.
 	str = str.toLowerCase().split(" ");
 	for (var i = 0; i < str.length; i++) {
 		str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
@@ -11,6 +12,7 @@ export const titleCase = (str) => {
 };
 
 export const executeScroll = (customRef) =>
+	// Scroll to ref.
 	customRef?.current.scrollIntoView({ behavior: "smooth" });
 
 export const confirmDialog = (
