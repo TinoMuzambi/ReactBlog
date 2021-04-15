@@ -27,7 +27,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 							id: 1,
 							user: "Nsovo Lovejoy Mnisi",
 							image:
-								"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+								"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 							comment: `I can just imagine people walking around holding their laptops because they want to walk and text ayy.😂😂😂 But same, I'd chose my laptop any day over my phone. I've survived many weeks this year only with just my laptop so it's doable, though I guess in this future we'd now be able to use WhatsApp without needing a phone so definitely the laptop.`,
 							date: new Date("Sunday, September 13, 2020 12:44 AM"),
@@ -51,7 +51,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									id: 3,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+										"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 									comment: `My laptop is small but still very big so no shame.😂`,
 									date: new Date("Sunday, September 13, 2020 3:26 PM"),
@@ -87,7 +87,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									id: 6,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+										"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 									comment: `But think of when you're meeting up with someone and you don't know the place so they have to text or call you to direct you, then a cellphone becomes handy.`,
 									date: new Date("Sunday, September 13, 2020 3:27 PM"),
@@ -120,7 +120,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					id: 8,
 					user: "Nsovo Lovejoy Mnisi",
 					image:
-						"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+						"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 					comment: `I was thinking about this and I'm gonna use a beach example, so we were at Camps bay and that water is cold as hell, when I first got in the water it was like freezing cold but over time my body adjusted and even though the temperature of the water there didn't change my body adjusted such that I didn't feel like the water was that cold anymore, so applying that into this I think somehow someway the body will adjust in such a way that you don't really feel it because this will be very very slow right? And instead of being in the shower for ages you can try it with your hand in the basin for like an hour and see if you feel the difference.🤷‍♀️`,
 					date: new Date("Tuesday, August 4, 2020 11:08 AM"),
@@ -245,7 +245,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					id: 17,
 					user: "Nsovo Lovejoy Mnisi",
 					image:
-						"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+						"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 					comment: `Because I know you I knew most of these things about you but boy did I not hang to each and every word! I was gripped, like the flow with the words, and everything yhoo like words are failing me now. I guess what I'm trying to say is that reading this was "really an indescribable thing but I think spiritual is a good adjective."
 				And your music taste, hay I don't relate shame.😂😂They are absolute trash, the message is good sure, but they don't do it for me, not at all.😂😂`,
@@ -270,7 +270,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									id: 19,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+										"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 									comment: `😂 😂 I'm just a glass of water.`,
 									date: new Date("Wednesday, June 10, 2020 10:07 AM"),
@@ -296,7 +296,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									id: 21,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+										"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 									comment: `😂😂I believe in good news first.`,
 									date: new Date("Wednesday, June 10, 2020 6:42 PM"),
@@ -394,7 +394,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 					id: 28,
 					user: "Nsovo Lovejoy Mnisi",
 					image:
-						"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+						"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 					comment: `😂 I felt very attacked reading this because I love sending long voice notes. I even listen to them after and laugh ukuthi shame, this person has to listen to all this drama and nonsense I said there. And it's true, used correctly they're great because see I'm dramatic and it's kinda hard to be dramatic on text you know it doesn't have that thing.
 		What I HAAAATE about them though is when I'm busy recording(on my PC) at that time I'm on five minutes and find that I was laughing even, and then it decides to cancel it. 😭😭 Yhoo, I get so mad because now I have to relaugh so nje it's a lot. And at that time I've even forgotten what I wanted to say. So I think it's safe to say I've got a hate love relationship with them. Wow I just typed an essay okay lemme stop. 😂`,
@@ -420,7 +420,7 @@ I am more comfortable with PC , I hardly use my phone camera anyways.`,
 									id: 30,
 									user: "Nsovo Lovejoy Mnisi",
 									image:
-										"https://c.disquscdn.com/uploads/users/35044/6080/avatar92.jpg?1600003648",
+										"https://lh3.googleusercontent.com/a-/AOh14GjCL2HU3f1GP2WS0KJ05vA3sOIlkFjiuTXcstL_WQ=s96-c",
 
 									comment: `I think about them but that's where it stops. 😂 😂
 					They really should, because this thing of it just canceling is not on forreal, when I relaugh now it's forced even so ayy nje. But I mention it ukuthi I'm relaughing so they know that no it's not me.
