@@ -180,88 +180,96 @@ const CommentContent = ({
 
 		if (user) {
 			if (editText) {
-				const currComments = comments.find((c) => c.blog_url === url);
+				if (commentText) {
+					const currComments = comments.find((c) => c.blog_url === url);
 
-				const topIDs = currComments.comments?.map((c) => c.id);
-				let secondIDs = [];
-				for (let i = 0; i < currComments.comments.length; i++) {
-					for (let j = 0; j < currComments.comments[i]?.replies?.length; j++) {
-						secondIDs.push(currComments.comments[i]?.replies[j]?.id);
-					}
-				}
-
-				if (topIDs.includes(editID)) {
-					for (let i = 0; i < currComments?.comments?.length; i++) {
-						if (currComments?.comments[i]?.id === editID) {
-							currComments.comments[i] = {
-								...currComments?.comments[i],
-								comment: commentText,
-							};
-						}
-					}
-				} else if (secondIDs?.includes(editID)) {
-					let newComments = currComments?.comments;
-
-					for (let i = 0; i < currComments?.comments?.length; i++) {
+					const topIDs = currComments.comments?.map((c) => c.id);
+					let secondIDs = [];
+					for (let i = 0; i < currComments.comments.length; i++) {
 						for (
 							let j = 0;
-							j < currComments?.comments[i]?.replies?.length;
+							j < currComments.comments[i]?.replies?.length;
 							j++
 						) {
-							if (currComments?.comments[i]?.replies[j]?.id === editID) {
-								newComments[i].replies[j] = {
-									...currComments?.comments[i]?.replies[j],
+							secondIDs.push(currComments.comments[i]?.replies[j]?.id);
+						}
+					}
+
+					if (topIDs.includes(editID)) {
+						for (let i = 0; i < currComments?.comments?.length; i++) {
+							if (currComments?.comments[i]?.id === editID) {
+								currComments.comments[i] = {
+									...currComments?.comments[i],
 									comment: commentText,
-								};
-							} else {
-								newComments[i].replies[j] = {
-									...currComments?.comments[i]?.replies[j],
 								};
 							}
 						}
-					}
-				} else {
-					let newComments = currComments.comments;
+					} else if (secondIDs?.includes(editID)) {
+						let newComments = currComments?.comments;
 
-					for (let i = 0; i < currComments?.comments?.length; i++) {
-						for (
-							let j = 0;
-							j < currComments?.comments[i]?.replies?.length;
-							j++
-						) {
+						for (let i = 0; i < currComments?.comments?.length; i++) {
 							for (
-								let k = 0;
-								k < currComments?.comments[i]?.replies[j]?.replies?.length;
-								k++
+								let j = 0;
+								j < currComments?.comments[i]?.replies?.length;
+								j++
 							) {
-								if (
-									currComments?.comments[i]?.replies[j]?.replies[k]?.id ===
-									editID
-								) {
-									newComments[i].replies[j].replies[k] = {
-										...currComments?.comments[i]?.replies[j]?.replies[k],
+								if (currComments?.comments[i]?.replies[j]?.id === editID) {
+									newComments[i].replies[j] = {
+										...currComments?.comments[i]?.replies[j],
 										comment: commentText,
 									};
 								} else {
-									newComments[i].replies[j].replies[k] = {
-										...currComments?.comments[i]?.replies[j]?.replies[k],
+									newComments[i].replies[j] = {
+										...currComments?.comments[i]?.replies[j],
 									};
 								}
 							}
 						}
-					}
-				}
-
-				let editComments = [];
-				for (let i = 0; i < comments.length; i++) {
-					if (comments[i].blog_url === url) {
-						editComments[i] = currComments;
 					} else {
-						editComments[i] = comments[i];
-					}
-				}
+						let newComments = currComments.comments;
 
-				postToDB(editComments);
+						for (let i = 0; i < currComments?.comments?.length; i++) {
+							for (
+								let j = 0;
+								j < currComments?.comments[i]?.replies?.length;
+								j++
+							) {
+								for (
+									let k = 0;
+									k < currComments?.comments[i]?.replies[j]?.replies?.length;
+									k++
+								) {
+									if (
+										currComments?.comments[i]?.replies[j]?.replies[k]?.id ===
+										editID
+									) {
+										newComments[i].replies[j].replies[k] = {
+											...currComments?.comments[i]?.replies[j]?.replies[k],
+											comment: commentText,
+										};
+									} else {
+										newComments[i].replies[j].replies[k] = {
+											...currComments?.comments[i]?.replies[j]?.replies[k],
+										};
+									}
+								}
+							}
+						}
+					}
+
+					let editComments = [];
+					for (let i = 0; i < comments.length; i++) {
+						if (comments[i].blog_url === url) {
+							editComments[i] = currComments;
+						} else {
+							editComments[i] = comments[i];
+						}
+					}
+
+					postToDB(editComments);
+				} else {
+					return alert("Please make an actual comment.");
+				}
 			} else {
 				if (commentText.trim()) {
 					const newComment = {
