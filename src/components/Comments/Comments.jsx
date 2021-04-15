@@ -116,12 +116,22 @@ const Comments = ({ url }) => {
 							};
 							comments[comments.length - 1]++;
 
+							let found = false;
 							let newComments = comments;
+
 							for (let i = 0; i < newComments.length; i++) {
 								if (newComments[i]?.blog_url === url) {
+									found = true;
 									newComments[i].comments.unshift(newComment);
 								}
 							}
+							if (!found) {
+								newComments.unshift({
+									blog_url: url,
+									comments: [newComment],
+								});
+							}
+
 							setComments(newComments);
 
 							const commentsDBRef = db.collection("comments").doc("comments");
