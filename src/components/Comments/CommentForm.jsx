@@ -16,6 +16,7 @@ const CommentForm = ({
 	}, [editText]);
 
 	return (
+		// Sm for smaller form for styling
 		<form className={`form ${sm && "sm"}`} onSubmit={(e) => handleSubmit(e)}>
 			<textarea
 				type="text"

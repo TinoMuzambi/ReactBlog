@@ -21,7 +21,17 @@ const Comments = ({ url }) => {
 
 	const db = firebase.firestore();
 
+	useEffect(() => {
+		getData();
+		//eslint-disable-next-line
+	}, []);
+
+	useEffect(() => {
+		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
+	}, [comments, url]);
+
 	const getData = async () => {
+		// Get data from firestore and set state with fresh data.
 		setFetching(true);
 		let comms = [];
 		let dbUsers = [];
@@ -50,15 +60,6 @@ const Comments = ({ url }) => {
 		setFetching(false);
 	};
 
-	useEffect(() => {
-		getData();
-		//eslint-disable-next-line
-	}, []);
-
-	useEffect(() => {
-		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
-	}, [comments, url]);
-
 	if (fetching) {
 		return (
 			<div className="icon-wrapper large">
@@ -84,6 +85,7 @@ const Comments = ({ url }) => {
 				if (user) {
 					if (!user.isAnonymous) {
 						if (!users.find((u) => u.username === user.displayName)) {
+							// If non-anonymous user not found in database, store new user details.
 							const newUser = {
 								id: users[users.length - 1],
 								image: user.photoURL,
@@ -103,8 +105,11 @@ const Comments = ({ url }) => {
 				}
 
 				const handleSubmit = async (e) => {
+					// Handle submitting new top level comment.
 					e.preventDefault();
+					// First make sure user is logged in
 					if (user) {
+						// And that comment isn't blank.
 						if (commentText.trim()) {
 							const newComment = {
 								id: comments[comments.length - 1],
@@ -130,6 +135,7 @@ const Comments = ({ url }) => {
 								}
 							}
 							if (!found) {
+								// If blog not found, create new blog and push to start of list.
 								newComments.unshift({
 									blog_url: url,
 									comments: [newComment],
