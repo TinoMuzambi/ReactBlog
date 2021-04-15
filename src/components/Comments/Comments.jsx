@@ -149,6 +149,7 @@ const Comments = ({ url }) => {
 						return confirmSignInComment();
 					}
 				};
+
 				return (
 					<div className="comments">
 						<h1 className="title">Comments</h1>
