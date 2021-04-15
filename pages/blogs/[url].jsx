@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { FaUser, FaCalendar } from "react-icons/fa";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
 
 import Preload from "../../components/Preload";
-import Disqus from "../../components/Disqus";
+import Comments from "../../components/Comments/Comments";
 import Meta from "../../components/Meta";
 import Sidebar from "../../components/Sidebar";
 import { getBlog, getBlogs, getCategories } from "../../utils/fetch";
 
 const Blog = ({ blog, categories, blogs }) => {
 	const router = useRouter();
+	const pathname = router.asPath.substring(7);
+
+	const [name, setName] = useState(pathname);
+
+	useEffect(() => {
+		setName(pathname);
+	}, [pathname]);
 
 	useEffect(() => {
 		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
@@ -79,12 +86,7 @@ const Blog = ({ blog, categories, blogs }) => {
 
 						{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
 
-						<Disqus
-							title={blog.title}
-							url={blog.disqusURL}
-							identifier={blog.disqusIdentifier}
-							src={blog.disqusSrc}
-						/>
+						<Comments url={name} />
 
 						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 					</div>
