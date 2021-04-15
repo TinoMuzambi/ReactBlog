@@ -21,6 +21,7 @@ import {
 	getTopIDs,
 	getSecondIDs,
 	postToUsersDB,
+	getNextLevel,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -161,20 +162,13 @@ const CommentContent = ({
 	};
 
 	const replyHandler = () => {
+		// Handler for enabling replies.
 		if (user) {
 			setEditText("");
 			setReplying(!replying);
 		} else {
 			return confirmSignInReply();
 		}
-	};
-
-	const getNextLevel = (level) => {
-		if (level === "zero") {
-			return "one";
-		} else if (level === "one") {
-			return "two";
-		} else return "two";
 	};
 
 	const handleSubmit = async (e) => {

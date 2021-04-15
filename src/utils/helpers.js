@@ -300,3 +300,11 @@ export const getSecondIDs = (comments) => {
 	}
 	return secondIDs;
 };
+
+export const getNextLevel = (level) => {
+	if (level === "zero") {
+		return "one";
+	} else if (level === "one") {
+		return "two";
+	} else return "two";
+};
