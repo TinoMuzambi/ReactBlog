@@ -26,7 +26,7 @@ const CommentForm = ({
 				value={commentText}
 				onChange={(e) => setCommentText(e.target.value)}
 			/>
-			<input type="submit" value="Comment!" className="submit" />
+			<input type="submit" value="Comment" className="submit" />
 		</form>
 	);
 };
