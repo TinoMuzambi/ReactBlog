@@ -48,3 +48,21 @@ export const confirmEditOwnComments = () => {
 		},
 	});
 };
+
+export const confirmDeleteOwnComments = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Only delete own comments</h1>
+					<p className="text">You can only delete comments that you made.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};

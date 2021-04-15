@@ -3,6 +3,7 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 import CommentContent from "./CommentContent";
+import { confirmDeleteOwnComments } from "../../utils/helpers";
 
 const Comment = ({
 	commentProp,
@@ -28,8 +29,8 @@ const Comment = ({
 						<div className="buttons">
 							<button
 								onClick={() => {
-									deleteHandler(id);
 									onClose();
+									deleteHandler(id);
 								}}
 								className="yes"
 							>
@@ -173,7 +174,8 @@ const Comment = ({
 			} else if (user.isAnonymous) {
 				alert("Anonymous users can't delete comments.");
 			} else {
-				alert("You can only delete comments that you made.");
+				console.log("trying");
+				return confirmDeleteOwnComments();
 			}
 		} else {
 			alert("Please sign in to delete.");
