@@ -86,6 +86,7 @@ const Blog = ({ blog, categories, blogs }) => {
 
 						<Comments url={name} />
 					</div>
+
 					<Sidebar
 						categories={categories}
 						blogs={blogs
