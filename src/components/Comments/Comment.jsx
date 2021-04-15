@@ -59,6 +59,7 @@ const Comment = ({
 	};
 
 	const deleteHandler = async (id) => {
+		// Handler for deleting comment with given id.
 		let owner = false;
 		if (user) {
 			const topIDs = getTopIDs(currComments);

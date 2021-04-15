@@ -41,6 +41,7 @@ const CommentContent = ({
 	const [currUserData, setCurrUserData] = useState({});
 
 	useEffect(() => {
+		// Set current user data on user change.
 		if (user) {
 			setCurrUserData(users.find((u) => u.username === user.displayName));
 		}
