@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import Moment from "react-moment";
 import ReactHtmlParser from "react-html-parser";
-import Pagination from "../components/Pagination";
+import Pagination from "./Pagination";
 
 const Blogs = ({ blogs, category, blogsRef }) => {
 	const [blogItems, setBlogItems] = useState(blogs); // Set state to list of blogs.

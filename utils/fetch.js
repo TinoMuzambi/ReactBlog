@@ -31,31 +31,30 @@ export const getBlogs = async () => {
 			const strictlyBlogs = response.data.stories;
 			prettyBlogs = strictlyBlogs.map((blog) => ({
 				category: titleCase(blog.content.category.cached_url.substring(11)),
-				content: blog.content.content || null,
-				date: blog.content.date || null,
-				disqusIdentifier: blog.content.disqusIdentifier || null,
-				disqusShortname: blog.content.disqusShortname || null,
-				disqusSrc: blog.content.disqusSrc || null,
-				disqusURL: blog.content.disqusURL || null,
+				content: blog.content.content,
+				date: blog.content.date,
+				disqusIdentifier: blog.content.disqusIdentifier,
+				disqusShortname: blog.content.disqusShortname,
+				disqusSrc: blog.content.disqusSrc,
+				disqusURL: blog.content.disqusURL,
 				future: blog.content.future,
 				image: blog.content.media.filename,
 				alt: blog.content.media.alt,
-				readTime: blog.content.readTime || null,
+				readTime: blog.content.readTime,
 				title: blog.content.title,
-				url: blog.content.url || null,
+				url: blog.content.url,
 				id: blog.content._uid,
 			}));
 		})
 		.catch((error) => {
 			console.error(error);
 		});
-
 	return prettyBlogs;
 };
+
 export const getCategories = async () => {
 	await getSpaceVersion();
 	let prettyCats = [];
-
 	await Storyblok.get("cdn/stories?starts_with=categories/", { cv: version })
 		.then((response) => {
 			const strictlyCats = response.data.stories;
@@ -69,7 +68,7 @@ export const getCategories = async () => {
 			}));
 		})
 		.catch((error) => {
-			console.err0r(error);
+			console.error(error);
 		});
 
 	return prettyCats;
@@ -77,7 +76,6 @@ export const getCategories = async () => {
 export const getFeatured = async () => {
 	await getSpaceVersion();
 	let prettyFeat = {};
-
 	await Storyblok.get("cdn/stories/featured-item/", { cv: version })
 		.then((response) => {
 			const strictlyFeat = response.data.story.content;
@@ -93,59 +91,4 @@ export const getFeatured = async () => {
 		});
 
 	return prettyFeat;
-};
-
-export const getCategory = async (query) => {
-	let category = {};
-	await getSpaceVersion();
-
-	await Storyblok.get(`cdn/stories/categories/${query}`, { cv: version })
-		.then((response) => {
-			const strictlyCat = response.data.story.content;
-			const prettyCats = {
-				count: strictlyCat.count,
-				alt: strictlyCat.image.alt,
-				image: strictlyCat.image.filename,
-				name: strictlyCat.name,
-				url: strictlyCat.url,
-				id: strictlyCat._uid,
-			};
-			category = prettyCats;
-		})
-		.catch((error) => {
-			console.error(error);
-		});
-
-	return category;
-};
-
-export const getBlog = async (query) => {
-	let blog = {};
-
-	await Storyblok.get(`cdn/stories/blogs/${query}`, {})
-		.then((response) => {
-			const strictlyBlog = response.data.story.content;
-			const prettyBlogs = {
-				category: titleCase(strictlyBlog.category.cached_url.substring(11)),
-				content: strictlyBlog.content,
-				date: strictlyBlog.date,
-				disqusIdentifier: strictlyBlog.disqusIdentifier,
-				disqusShortname: strictlyBlog.disqusShortname,
-				disqusSrc: strictlyBlog.disqusSrc,
-				disqusURL: strictlyBlog.disqusURL,
-				future: strictlyBlog.future,
-				image: strictlyBlog.media.filename,
-				alt: strictlyBlog.media.alt,
-				readTime: strictlyBlog.readTime,
-				title: strictlyBlog.title,
-				url: strictlyBlog.url,
-				id: strictlyBlog._uid,
-			};
-			blog = prettyBlogs;
-		})
-		.catch((error) => {
-			console.error(error);
-		});
-
-	return blog;
 };
