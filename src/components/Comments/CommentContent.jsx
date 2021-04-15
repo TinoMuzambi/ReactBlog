@@ -40,6 +40,12 @@ const CommentContent = ({
 	const [editID, setEditID] = useState(-1);
 	const [currUserData, setCurrUserData] = useState({});
 
+	useEffect(() => {
+		if (user) {
+			setCurrUserData(users.find((u) => u.username === user.displayName));
+		}
+	}, [user, users]);
+
 	const editHandler = async (id) => {
 		if (user) {
 			if (user.displayName === comment.user) {
@@ -57,12 +63,6 @@ const CommentContent = ({
 			return confirmSignInEdit();
 		}
 	};
-
-	useEffect(() => {
-		if (user) {
-			setCurrUserData(users.find((u) => u.username === user.displayName));
-		}
-	}, [user, users]);
 
 	const like = (commentParam) => {
 		let upvotes = commentParam.upvotes;
