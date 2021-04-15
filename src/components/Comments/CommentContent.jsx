@@ -7,6 +7,7 @@ import {
 } from "react-icons/fc";
 import Moment from "react-moment";
 
+import { confirmCommentContent } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
 const CommentContent = ({
@@ -268,7 +269,7 @@ const CommentContent = ({
 
 					postToDB(editComments);
 				} else {
-					return alert("Please make an actual comment.");
+					return confirmCommentContent();
 				}
 			} else {
 				if (commentText.trim()) {
@@ -332,7 +333,7 @@ const CommentContent = ({
 
 					postToDB(comments);
 				} else {
-					alert("Please make an actual comment.");
+					return confirmCommentContent();
 				}
 			}
 		} else {
