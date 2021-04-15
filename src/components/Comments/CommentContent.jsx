@@ -17,9 +17,10 @@ import {
 	confirmAnonEdit,
 	confirmAnonLike,
 	confirmLikeOwnComments,
-	postToDB,
+	postToCommentsDB,
 	getTopIDs,
 	getSecondIDs,
+	postToUsersDB,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -48,6 +49,7 @@ const CommentContent = ({
 	}, [user, users]);
 
 	const editHandler = async (id) => {
+		// Handler for editing comment with given id.
 		if (user) {
 			if (user.displayName === comment.user) {
 				setEditText(comment.comment);
@@ -76,13 +78,16 @@ const CommentContent = ({
 				return confirmLikeOwnComments();
 			}
 			if (currUserData?.liked_ids.includes(commentParam.id)) {
+				// Unlike : Decrement upvotes and remove name from likers
 				upvotes--;
 				likers = likers.filter((l) => l !== user.displayName);
 			} else {
+				// Like : Increment upvotes and push name to likers
 				upvotes++;
 				likers.push(user.displayName);
 			}
 
+			// ---------- Handle comment like data ------------------
 			const currComments = comments.find((c) => c.blog_url === url);
 
 			const topIDs = getTopIDs(currComments);
@@ -126,6 +131,7 @@ const CommentContent = ({
 				}
 			}
 
+			// ---------- Handle user like data ------------------
 			let updatedLikes = currUserData;
 			if (!updatedLikes.liked_ids?.includes(commentParam.id)) {
 				updatedLikes.liked_ids.push(commentParam.id);
@@ -136,8 +142,9 @@ const CommentContent = ({
 			}
 			setCurrUserData(updatedLikes);
 
-			const usersDBRef = db.collection("users").doc("users");
+			// Save data to db.
 			let newUsers = [];
+
 			for (let i = 0; i < users.length; i++) {
 				if (users[i].id === updatedLikes.id) {
 					newUsers[i] = updatedLikes;
@@ -146,11 +153,8 @@ const CommentContent = ({
 				}
 			}
 
-			usersDBRef.set({
-				users: newUsers,
-			});
-
-			postToDB(likedComments, getData, setCommentText, db);
+			postToUsersDB(newUsers, db);
+			postToCommentsDB(likedComments, getData, setCommentText, db);
 		} else {
 			return confirmSignInLike();
 		}
@@ -264,7 +268,7 @@ const CommentContent = ({
 						}
 					}
 
-					postToDB(editComments, getData, setCommentText, db);
+					postToCommentsDB(editComments, getData, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}
@@ -328,7 +332,7 @@ const CommentContent = ({
 					}
 					setComments(newComments);
 
-					postToDB(comments, getData, setCommentText, db);
+					postToCommentsDB(comments, getData, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}

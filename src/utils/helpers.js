@@ -280,11 +280,7 @@ export const postToCommentsDB = async (
 	setCommentText && setCommentText("");
 };
 
-export const postToUsersDB = async (
-	updatedUsers,
-
-	db
-) => {
+export const postToUsersDB = async (updatedUsers, db) => {
 	const usersDBRef = db.collection("users").doc("users");
 	usersDBRef.set({
 		users: updatedUsers,

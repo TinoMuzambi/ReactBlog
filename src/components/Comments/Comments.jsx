@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import {
 	confirmCommentContent,
 	confirmSignInComment,
-	postToDB,
+	postToCommentsDB,
 } from "../../utils/helpers";
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
@@ -144,7 +144,7 @@ const Comments = ({ url }) => {
 
 							setComments(newComments);
 
-							postToDB(comments, getData, setCommentText, db);
+							postToCommentsDB(comments, getData, setCommentText, db);
 						} else {
 							return confirmCommentContent();
 						}

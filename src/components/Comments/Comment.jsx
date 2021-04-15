@@ -9,7 +9,7 @@ import {
 	confirmAnonDelete,
 	getTopIDs,
 	getSecondIDs,
-	postToDB,
+	postToCommentsDB,
 } from "../../utils/helpers";
 
 const Comment = ({
@@ -170,7 +170,7 @@ const Comment = ({
 					}
 				}
 
-				postToDB(deleteComments, getData, null, db);
+				postToCommentsDB(deleteComments, getData, null, db);
 			} else if (user.isAnonymous) {
 				return confirmAnonDelete();
 			} else {
