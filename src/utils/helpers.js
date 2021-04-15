@@ -26,7 +26,7 @@ export const confirmDialog = (
 	if (button2Text) {
 		confirmAlert({
 			customUI: ({ onClose }) => {
-				setTimeout(() => {
+				const timer = setTimeout(() => {
 					onClose();
 				}, 5000);
 
@@ -38,13 +38,20 @@ export const confirmDialog = (
 							<button
 								onClick={() => {
 									onClose();
+									clearTimeout(timer);
 									button2Handler();
 								}}
 								className="yes"
 							>
 								{button1Text}
 							</button>
-							<button onClick={onClose} className="no">
+							<button
+								onClick={() => {
+									onClose();
+									clearTimeout(timer);
+								}}
+								className="no"
+							>
 								{button2Text}
 							</button>
 						</div>
@@ -55,7 +62,7 @@ export const confirmDialog = (
 	} else {
 		confirmAlert({
 			customUI: ({ onClose }) => {
-				setTimeout(() => {
+				const timer = setTimeout(() => {
 					onClose();
 				}, 5000);
 				return (
@@ -63,7 +70,13 @@ export const confirmDialog = (
 						<h1 className="title">{title}</h1>
 						<p className="text">{text}</p>
 						<div className="buttons">
-							<button onClick={onClose} className="no">
+							<button
+								onClick={() => {
+									onClose();
+									clearTimeout(timer);
+								}}
+								className="no"
+							>
 								{button1Text}
 							</button>
 						</div>

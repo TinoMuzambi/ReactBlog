@@ -28,7 +28,7 @@ const Comment = ({
 		// Custom alert for deleting a comment.
 		confirmAlert({
 			customUI: ({ onClose }) => {
-				setTimeout(() => {
+				const timer = setTimeout(() => {
 					onClose();
 				}, 5000);
 
@@ -42,13 +42,20 @@ const Comment = ({
 							<button
 								onClick={() => {
 									onClose();
+									clearTimeout(timer);
 									deleteHandler(id);
 								}}
 								className="yes"
 							>
 								Yes
 							</button>
-							<button onClick={onClose} className="no">
+							<button
+								onClick={() => {
+									onClose();
+									clearTimeout(timer);
+								}}
+								className="no"
+							>
 								Cancel
 							</button>
 						</div>
