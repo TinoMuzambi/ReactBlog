@@ -1,4 +1,3 @@
-import React from "react";
 import { FaArrowCircleUp, FaCopyright } from "react-icons/fa";
 
 import SocialIcons from "./SocialIcons";

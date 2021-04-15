@@ -92,3 +92,58 @@ export const getFeatured = async () => {
 
 	return prettyFeat;
 };
+
+export const getCategory = async (query) => {
+	let category = {};
+	await getSpaceVersion();
+
+	await Storyblok.get(`cdn/stories/categories/${query}`, { cv: version })
+		.then((response) => {
+			const strictlyCat = response.data.story.content;
+			const prettyCats = {
+				count: strictlyCat.count,
+				alt: strictlyCat.image.alt,
+				image: strictlyCat.image.filename,
+				name: strictlyCat.name,
+				url: strictlyCat.url,
+				id: strictlyCat._uid,
+			};
+			category = prettyCats;
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+
+	return category;
+};
+
+export const getBlog = async (query) => {
+	let blog = {};
+
+	await Storyblok.get(`cdn/stories/blogs/${query}`, {})
+		.then((response) => {
+			const strictlyBlog = response.data.story.content;
+			const prettyBlogs = {
+				category: titleCase(strictlyBlog.category.cached_url.substring(11)),
+				content: strictlyBlog.content,
+				date: strictlyBlog.date,
+				disqusIdentifier: strictlyBlog.disqusIdentifier,
+				disqusShortname: strictlyBlog.disqusShortname,
+				disqusSrc: strictlyBlog.disqusSrc,
+				disqusURL: strictlyBlog.disqusURL,
+				future: strictlyBlog.future,
+				image: strictlyBlog.media.filename,
+				alt: strictlyBlog.media.alt,
+				readTime: strictlyBlog.readTime,
+				title: strictlyBlog.title,
+				url: strictlyBlog.url,
+				id: strictlyBlog._uid,
+			};
+			blog = prettyBlogs;
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+
+	return blog;
+};
