@@ -1175,6 +1175,29 @@ ul ul li:not(:first-child):not(:last-child):hover {
   position: relative;
 }
 
+.react-confirm-alert-overlay {
+  background: none !important;
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+.react-confirm-alert-overlay .confirm {
+  border-radius: 1rem;
+  border: solid 1px #a1c4cf;
+  padding: 2rem;
+  background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
+  opacity: 0.8;
+  color: #ffffff;
+}
+
+.react-confirm-alert-overlay .confirm .title {
+  margin: 0;
+}
+
 .form {
   width: 100%;
 }
