@@ -155,7 +155,7 @@ const Comment = ({
 				}
 			}
 		} else {
-			alert("Please log in to delete.");
+			alert("Please sign in to delete.");
 		}
 	};
 

@@ -40,7 +40,7 @@ const CommentContent = ({
 				}
 			}
 		} else {
-			alert("Please log in to edit.");
+			alert("Please sign in to edit.");
 		}
 	};
 
@@ -143,7 +143,7 @@ const CommentContent = ({
 
 			postToDB(likedComments);
 		} else {
-			return alert("Please log in to like.");
+			return alert("Please sign in to like.");
 		}
 	};
 
@@ -152,7 +152,7 @@ const CommentContent = ({
 			setEditText("");
 			setReplying(!replying);
 		} else {
-			alert("Please log in to reply.");
+			alert("Please sign in to reply.");
 		}
 	};
 
