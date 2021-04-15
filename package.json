@@ -27,7 +27,5 @@
 		"slugify": "^1.4.6",
 		"storyblok-js-client": "^3.3.1"
 	},
-	"devDependencies": {
-		"sharp": "^0.28.1"
-	}
+	"devDependencies": {}
 }
