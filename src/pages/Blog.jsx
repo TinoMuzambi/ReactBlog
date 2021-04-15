@@ -7,8 +7,8 @@ import { AiOutlineReload } from "react-icons/ai";
 import { Helmet } from "react-helmet";
 
 import Sidebar from "../components/Sidebar";
-import Disqus from "../components/Disqus";
 import { getBlogs } from "../utils/fetch";
+import Comments from "../components/Comments/Comments";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();
@@ -40,7 +40,7 @@ const Blog = ({ categories }) => {
 		);
 
 	const title = name; // Finding relevant blog.
-	const blog = blogs.find((blog) => blog.url === title);
+	const blog = blogs.find((blogParam) => blogParam.url === title);
 	const filteredBlogs = blogs // Getting list that doesn't include current blog nor future blogs for other blogs section.
 		.filter((eachItem) => {
 			return (
@@ -112,16 +112,7 @@ const Blog = ({ categories }) => {
 							{/* Parsing HTML blog content */}
 						</div>
 
-						{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
-
-						<Disqus
-							title={blog.title}
-							url={blog.disqusURL}
-							identifier={blog.disqusIdentifier}
-							src={blog.disqusSrc}
-						/>
-
-						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
+						<Comments url={pathname} />
 					</div>
 					<Sidebar
 						categories={categories}

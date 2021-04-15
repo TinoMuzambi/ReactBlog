@@ -1,0 +1,92 @@
+.comments {
+	@include flexColCenter;
+	align-items: flex-start;
+	margin: 0;
+
+	.title {
+		color: $text-gray;
+		margin-top: 0;
+	}
+
+	.form-group {
+		@extend %flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1rem;
+		width: 100%;
+
+		@include mq(750px) {
+			width: 90%;
+		}
+
+		@include mq(500px) {
+			width: 80%;
+		}
+
+		.text {
+			&:hover,
+			&:focus {
+				box-shadow: 0 0 5px 5px rgba($color: $midnight, $alpha: 0.7);
+			}
+			&:hover ~ .submit,
+			&:focus ~ .submit {
+				box-shadow: 0 0 5px 5px rgba($color: $midnight, $alpha: 0.7);
+			}
+		}
+
+		.submit {
+			border-top: none;
+		}
+
+		.person {
+			@include flexAllCol;
+
+			img {
+				height: 5rem;
+				width: 5rem;
+				object-fit: cover;
+				border-radius: 50%;
+				pointer-events: none;
+			}
+
+			.user {
+				text-align: center;
+				font-size: 0.7rem;
+				cursor: pointer;
+
+				span {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					font-size: 1rem;
+					font-family: inherit;
+				}
+
+				.google-span {
+					gap: 0.5rem;
+				}
+
+				.anon-span {
+					gap: 0;
+
+					svg {
+						height: 1.5rem;
+						margin: 0 -0.5rem 0 -1.1rem;
+					}
+				}
+
+				&:not(:first-of-type) {
+					margin: -0.5rem;
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.no-blogs {
+		color: $text-gray;
+	}
+}
