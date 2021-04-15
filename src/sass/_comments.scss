@@ -54,6 +54,13 @@
 				font-size: 0.7rem;
 				cursor: pointer;
 
+				span {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					font-size: 1rem;
+				}
+
 				&:not(:first-of-type) {
 					margin: -0.5rem;
 				}

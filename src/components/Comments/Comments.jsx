@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import { AiOutlineReload } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
 
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
@@ -147,11 +148,17 @@ const Comments = ({ url }) => {
 									alt="Avatar"
 								/>
 								<p className="user" onClick={signInWithGoogle}>
-									{isSignedIn
-										? user?.isAnonymous
-											? "Anonymous"
-											: user?.displayName
-										: "Sign in"}
+									{isSignedIn ? (
+										user?.isAnonymous ? (
+											"Anonymous"
+										) : (
+											user?.displayName
+										)
+									) : (
+										<span>
+											<FcGoogle className="google-icon" /> Sign in
+										</span>
+									)}
 								</p>
 								{!isSignedIn && (
 									<p className="user" onClick={signInAnon}>
