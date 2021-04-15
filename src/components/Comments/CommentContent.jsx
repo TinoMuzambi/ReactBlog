@@ -14,6 +14,8 @@ import {
 	confirmSignInLike,
 	confirmSignInReply,
 	confirmSignInComment,
+	confirmAnonEdit,
+	confirmAnonLike,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -42,7 +44,7 @@ const CommentContent = ({
 				setEditID(id);
 			} else if (user.displayName !== comment.user) {
 				if (user.isAnonymous) {
-					alert("Anonymous users can't edit comments.");
+					return confirmAnonEdit();
 				} else {
 					return confirmEditOwnComments();
 				}
@@ -63,7 +65,7 @@ const CommentContent = ({
 		let likers = commentParam.likers;
 		if (user) {
 			if (user.isAnonymous) {
-				return alert("Anonymous users can't like comments.");
+				return confirmAnonLike();
 			}
 			if (commentParam.user === currUserData.username) {
 				return alert("You can't like your own comments.");

@@ -6,6 +6,7 @@ import CommentContent from "./CommentContent";
 import {
 	confirmDeleteOwnComments,
 	confirmSignInDelete,
+	confirmAnonDelete,
 } from "../../utils/helpers";
 
 const Comment = ({
@@ -175,7 +176,7 @@ const Comment = ({
 
 				getComments();
 			} else if (user.isAnonymous) {
-				alert("Anonymous users can't delete comments.");
+				return confirmAnonDelete();
 			} else {
 				console.log("trying");
 				return confirmDeleteOwnComments();
