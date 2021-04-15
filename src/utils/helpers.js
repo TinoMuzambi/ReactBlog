@@ -1,5 +1,6 @@
 import React from "react";
 import { confirmAlert } from "react-confirm-alert";
+
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 export const titleCase = (str) => {
