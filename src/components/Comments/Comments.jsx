@@ -151,7 +151,7 @@ const Comments = ({ url }) => {
 										? user?.isAnonymous
 											? "Anonymous"
 											: user?.displayName
-										: "Sign In"}
+										: "Sign in"}
 								</p>
 								{!isSignedIn && (
 									<p className="user" onClick={signInAnon}>
@@ -159,7 +159,7 @@ const Comments = ({ url }) => {
 											? user?.isAnonymous
 												? "Anonymous"
 												: user?.displayName
-											: "Sign In Anon"}
+											: "Sign in Anon"}
 									</p>
 								)}
 								{isSignedIn && (
@@ -169,7 +169,7 @@ const Comments = ({ url }) => {
 											firebase.auth().signOut();
 										}}
 									>
-										Sign Out
+										Sign out
 									</p>
 								)}
 							</div>
