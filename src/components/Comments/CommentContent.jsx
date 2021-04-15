@@ -34,7 +34,7 @@ const CommentContent = ({
 				setEditID(id);
 			} else if (user.displayName !== comment.user) {
 				if (user.isAnonymous) {
-					alert("Anonymous users can't delete comments.");
+					alert("Anonymous users can't edit comments.");
 				} else {
 					alert("You can only edit comments that you made.");
 				}
