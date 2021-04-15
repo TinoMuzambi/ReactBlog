@@ -12,7 +12,11 @@ export const firebaseConfig = {
 	appId: "1:327039704768:web:a310158b4ab1c534411725",
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+	firebase.initializeApp(firebaseConfig);
+} else {
+	firebase.app(); // if already initialized, use that one
+}
 
 // seedDatabase(firebaseIn);
 export { firebase };
