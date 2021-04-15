@@ -30,3 +30,21 @@ export const confirmCommentContent = () => {
 		},
 	});
 };
+
+export const confirmEditOwnComments = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Only edit own comments</h1>
+					<p className="text">You can only edit comments that you made.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};

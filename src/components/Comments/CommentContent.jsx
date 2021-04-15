@@ -7,7 +7,10 @@ import {
 } from "react-icons/fc";
 import Moment from "react-moment";
 
-import { confirmCommentContent } from "../../utils/helpers";
+import {
+	confirmCommentContent,
+	confirmEditOwnComments,
+} from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
 const CommentContent = ({
@@ -37,7 +40,7 @@ const CommentContent = ({
 				if (user.isAnonymous) {
 					alert("Anonymous users can't edit comments.");
 				} else {
-					alert("You can only edit comments that you made.");
+					return confirmEditOwnComments();
 				}
 			}
 		} else {
