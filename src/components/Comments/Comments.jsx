@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import {
 	confirmCommentContent,
 	confirmSignInComment,
+	postToDB,
 } from "../../utils/helpers";
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
@@ -73,6 +74,11 @@ const Comments = ({ url }) => {
 						await firebase.auth().signInWithPopup(googleAuthProvider);
 					}
 				};
+
+				const signInAnon = (e) => {
+					!isSignedIn && firebase.auth().signInAnonymously();
+				};
+
 				if (user) {
 					if (!user.isAnonymous) {
 						if (!users.find((u) => u.username === user.displayName)) {
@@ -93,10 +99,6 @@ const Comments = ({ url }) => {
 						}
 					}
 				}
-
-				const signInAnon = (e) => {
-					!isSignedIn && firebase.auth().signInAnonymously();
-				};
 
 				const handleSubmit = async (e) => {
 					e.preventDefault();
@@ -134,14 +136,7 @@ const Comments = ({ url }) => {
 
 							setComments(newComments);
 
-							const commentsDBRef = db.collection("comments").doc("comments");
-
-							await commentsDBRef.set({
-								comments: comments,
-							});
-
-							getComments();
-							setCommentText("");
+							postToDB(comments, getComments, setCommentText, db);
 						} else {
 							return confirmCommentContent();
 						}

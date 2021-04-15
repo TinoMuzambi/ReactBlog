@@ -17,6 +17,7 @@ import {
 	confirmAnonEdit,
 	confirmAnonLike,
 	confirmLikeOwnComments,
+	postToDB,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -152,7 +153,7 @@ const CommentContent = ({
 				users: newUsers,
 			});
 
-			postToDB(likedComments);
+			postToDB(likedComments, getComments, setCommentText, db);
 		} else {
 			return confirmSignInLike();
 		}
@@ -175,23 +176,12 @@ const CommentContent = ({
 		} else return "two";
 	};
 
-	const postToDB = async (updatedComments) => {
-		const commentsDBRef = db.collection("comments").doc("comments");
-
-		await commentsDBRef.set({
-			comments: updatedComments,
-		});
-
-		getComments();
-		setCommentText("");
-	};
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (user) {
 			if (editText) {
-				if (commentText) {
+				if (commentText.trim()) {
 					const currComments = comments.find((c) => c.blog_url === url);
 
 					const topIDs = currComments.comments?.map((c) => c.id);
@@ -277,7 +267,7 @@ const CommentContent = ({
 						}
 					}
 
-					postToDB(editComments);
+					postToDB(editComments, getComments, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}
@@ -341,7 +331,7 @@ const CommentContent = ({
 					}
 					setComments(newComments);
 
-					postToDB(comments);
+					postToDB(comments, getComments, setCommentText, db);
 				} else {
 					return confirmCommentContent();
 				}

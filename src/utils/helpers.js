@@ -263,3 +263,19 @@ export const confirmLikeOwnComments = () => {
 		},
 	});
 };
+
+export const postToDB = async (
+	updatedComments,
+	getComments,
+	setCommentText,
+	db
+) => {
+	const commentsDBRef = db.collection("comments").doc("comments");
+
+	await commentsDBRef.set({
+		comments: updatedComments,
+	});
+
+	getComments();
+	setCommentText("");
+};
