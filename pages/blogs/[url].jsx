@@ -18,7 +18,7 @@ const Blog = ({ blog, categories, blogs }) => {
 
 	useEffect(() => {
 		setName(pathname);
-	}, [pathname]);
+	}, [router.asPath, pathname]);
 
 	useEffect(() => {
 		const preload = document.querySelector(".preload"); // Set timeout for showing preloader.
@@ -84,11 +84,7 @@ const Blog = ({ blog, categories, blogs }) => {
 							{/* Parsing HTML blog content */}
 						</div>
 
-						{/* <!---------------------------------  Disqus Comments Plugin  -------------------------------------- --> */}
-
 						<Comments url={name} />
-
-						{/* <!--------------X------------------  Disqus Comments Plugin  ------------------------X------------- --> */}
 					</div>
 					<Sidebar
 						categories={categories}
