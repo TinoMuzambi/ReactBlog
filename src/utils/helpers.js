@@ -102,3 +102,37 @@ export const confirmSignInEdit = () => {
 		},
 	});
 };
+export const confirmSignInReply = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Sign in</h1>
+					<p className="text">Please sign in to reply.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};
+export const confirmSignInLike = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Sign in</h1>
+					<p className="text">Please sign in to like.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};

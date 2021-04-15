@@ -11,6 +11,8 @@ import {
 	confirmCommentContent,
 	confirmEditOwnComments,
 	confirmSignInEdit,
+	confirmSignInLike,
+	confirmSignInReply,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -148,7 +150,7 @@ const CommentContent = ({
 
 			postToDB(likedComments);
 		} else {
-			return alert("Please sign in to like.");
+			return confirmSignInLike();
 		}
 	};
 
@@ -157,7 +159,7 @@ const CommentContent = ({
 			setEditText("");
 			setReplying(!replying);
 		} else {
-			alert("Please sign in to reply.");
+			return confirmSignInReply();
 		}
 	};
 
