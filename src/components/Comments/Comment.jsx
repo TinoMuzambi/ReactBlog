@@ -25,18 +25,20 @@ const Comment = ({
 						<p className="text">
 							Are you sure you want to delete this comment?
 						</p>
-						<button
-							onClick={() => {
-								deleteHandler(id);
-								onClose();
-							}}
-							className="yes"
-						>
-							Yes
-						</button>
-						<button onClick={onClose} className="no">
-							Cancel
-						</button>
+						<div className="buttons">
+							<button
+								onClick={() => {
+									deleteHandler(id);
+									onClose();
+								}}
+								className="yes"
+							>
+								Yes
+							</button>
+							<button onClick={onClose} className="no">
+								Cancel
+							</button>
+						</div>
 					</div>
 				);
 			},

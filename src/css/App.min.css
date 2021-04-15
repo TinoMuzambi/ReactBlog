@@ -1186,6 +1186,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 }
 
 .react-confirm-alert-overlay .confirm {
+  margin: 2rem 2rem 0;
   border-radius: 1rem;
   border: solid 1px #a1c4cf;
   padding: 2rem;
@@ -1196,6 +1197,29 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .react-confirm-alert-overlay .confirm .title {
   margin: 0;
+}
+
+.react-confirm-alert-overlay .confirm .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.react-confirm-alert-overlay .confirm .buttons button {
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 10000px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.react-confirm-alert-overlay .confirm .buttons button:hover, .react-confirm-alert-overlay .confirm .buttons button:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .form {
