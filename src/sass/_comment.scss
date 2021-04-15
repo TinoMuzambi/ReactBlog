@@ -14,13 +14,14 @@
 		margin: 2rem 2rem 0;
 		border-radius: 1rem;
 		border: solid 1px $midnight;
-		padding: 2rem;
+		padding: 1.5rem;
 		background: $sky;
 		opacity: 0.8;
 		color: $white;
 
 		.title {
 			margin: 0;
+			font-size: 1.5rem;
 		}
 
 		.buttons {

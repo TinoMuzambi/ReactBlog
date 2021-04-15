@@ -3,6 +3,7 @@ import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import { AiOutlineReload } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
+import { confirmCommentContent } from "../../utils/helpers";
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
@@ -129,7 +130,7 @@ const Comments = ({ url }) => {
 							getComments();
 							setCommentText("");
 						} else {
-							alert("Please make an actual comment.");
+							return confirmCommentContent();
 						}
 					} else {
 						alert("Please sign in before posting a comment.");

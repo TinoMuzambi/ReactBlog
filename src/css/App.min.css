@@ -1189,7 +1189,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   margin: 2rem 2rem 0;
   border-radius: 1rem;
   border: solid 1px #a1c4cf;
-  padding: 2rem;
+  padding: 1.5rem;
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   opacity: 0.8;
   color: #ffffff;
@@ -1197,6 +1197,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .react-confirm-alert-overlay .confirm .title {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .react-confirm-alert-overlay .confirm .buttons {
