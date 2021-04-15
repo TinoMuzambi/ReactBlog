@@ -1139,6 +1139,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
           align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  font-family: inherit;
 }
 
 .comments .form-group .person .user:not(:first-of-type) {
