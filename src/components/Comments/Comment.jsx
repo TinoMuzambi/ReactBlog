@@ -24,6 +24,9 @@ const Comment = ({
 	const confirmDelete = (id) => {
 		confirmAlert({
 			customUI: ({ onClose }) => {
+				setTimeout(() => {
+					onClose();
+				}, 5000);
 				return (
 					<div className="confirm">
 						<h1 className="title">Delete comment</h1>

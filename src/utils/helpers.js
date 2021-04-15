@@ -16,6 +16,9 @@ export const executeScroll = (customRef) =>
 export const confirmCommentContent = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Blank comment</h1>
@@ -34,6 +37,9 @@ export const confirmCommentContent = () => {
 export const confirmEditOwnComments = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Only edit own comments</h1>
@@ -52,6 +58,9 @@ export const confirmEditOwnComments = () => {
 export const confirmDeleteOwnComments = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Only delete own comments</h1>
@@ -70,6 +79,9 @@ export const confirmDeleteOwnComments = () => {
 export const confirmSignInDelete = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -88,6 +100,9 @@ export const confirmSignInDelete = () => {
 export const confirmSignInEdit = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -106,6 +121,9 @@ export const confirmSignInEdit = () => {
 export const confirmSignInReply = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -124,6 +142,9 @@ export const confirmSignInReply = () => {
 export const confirmSignInLike = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -142,6 +163,9 @@ export const confirmSignInLike = () => {
 export const confirmSignInComment = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -159,6 +183,9 @@ export const confirmSignInComment = () => {
 export const confirmAnonLike = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -177,6 +204,9 @@ export const confirmAnonLike = () => {
 export const confirmAnonDelete = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -195,6 +225,9 @@ export const confirmAnonDelete = () => {
 export const confirmAnonEdit = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
@@ -213,6 +246,9 @@ export const confirmAnonEdit = () => {
 export const confirmLikeOwnComments = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
+			setTimeout(() => {
+				onClose();
+			}, 5000);
 			return (
 				<div className="confirm">
 					<h1 className="title">Liking own comments</h1>
