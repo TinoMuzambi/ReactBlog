@@ -14,7 +14,7 @@
 	}
 
 	@include mq(750px) {
-		min-height: 9vh;
+		min-height: 7.5vh;
 	}
 
 	@include mq(520px) {
@@ -36,7 +36,7 @@
 
 		@include mq(750px) {
 			flex-direction: column;
-			align-items: initial;
+			align-items: flex-start;
 			margin-top: 0.6rem;
 		}
 
@@ -97,6 +97,7 @@
 
 			@include mq(750px) {
 				flex-direction: column;
+				align-items: flex-start;
 			}
 
 			.nav-link {
@@ -104,6 +105,10 @@
 				font-size: 1.1rem;
 				position: relative;
 				font-family: $Abel;
+
+				@include mq(750px) {
+					padding: 1.3rem 0;
+				}
 
 				&:hover {
 					color: $midnight;
