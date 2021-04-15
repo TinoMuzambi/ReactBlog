@@ -169,7 +169,7 @@ const Comments = ({ url }) => {
 												user?.displayName
 											)
 										) : (
-											<span className="svg" title="Sign in anonymously">
+											<span className="anon-span" title="Sign in anonymously">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 100 100"

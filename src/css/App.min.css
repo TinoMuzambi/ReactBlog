@@ -1130,7 +1130,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   cursor: pointer;
 }
 
-.comments .form-group .person .user .google-span {
+.comments .form-group .person .user span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1142,19 +1142,15 @@ ul ul li:not(:first-child):not(:last-child):hover {
   font-family: inherit;
 }
 
-.comments .form-group .person .user .svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 0;
-  font-size: 1rem;
-  font-family: inherit;
+.comments .form-group .person .user .google-span {
+  gap: 0.5rem;
 }
 
-.comments .form-group .person .user .svg svg {
+.comments .form-group .person .user .anon-span {
+  gap: 0;
+}
+
+.comments .form-group .person .user .anon-span svg {
   height: 1.5rem;
   margin: 0 -0.5rem 0 -1.1rem;
 }
