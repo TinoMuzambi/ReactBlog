@@ -13,6 +13,7 @@ import {
 	confirmSignInEdit,
 	confirmSignInLike,
 	confirmSignInReply,
+	confirmSignInComment,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -343,7 +344,7 @@ const CommentContent = ({
 				}
 			}
 		} else {
-			alert("Please sign in before posting a comment.");
+			return confirmSignInComment();
 		}
 	};
 

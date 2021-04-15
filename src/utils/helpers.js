@@ -102,6 +102,7 @@ export const confirmSignInEdit = () => {
 		},
 	});
 };
+
 export const confirmSignInReply = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
@@ -119,6 +120,7 @@ export const confirmSignInReply = () => {
 		},
 	});
 };
+
 export const confirmSignInLike = () => {
 	confirmAlert({
 		customUI: ({ onClose }) => {
@@ -126,6 +128,24 @@ export const confirmSignInLike = () => {
 				<div className="confirm">
 					<h1 className="title">Sign in</h1>
 					<p className="text">Please sign in to like.</p>
+					<div className="buttons">
+						<button onClick={onClose} className="no">
+							Ok
+						</button>
+					</div>
+				</div>
+			);
+		},
+	});
+};
+
+export const confirmSignInComment = () => {
+	confirmAlert({
+		customUI: ({ onClose }) => {
+			return (
+				<div className="confirm">
+					<h1 className="title">Sign in</h1>
+					<p className="text">Please sign in before posting a comment.</p>
 					<div className="buttons">
 						<button onClick={onClose} className="no">
 							Ok
