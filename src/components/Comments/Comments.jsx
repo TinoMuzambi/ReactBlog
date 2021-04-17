@@ -8,6 +8,7 @@ import {
 	confirmSignInComment,
 	postToCommentsDB,
 	ANON_IMAGE,
+	sendEmail,
 } from "../../utils/helpers";
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
@@ -143,6 +144,12 @@ const Comments = ({ url }) => {
 
 							setComments(newComments);
 
+							sendEmail(
+								"tinomuzambi@gmail.com",
+								user.displayName || "An anonymous reader",
+								url,
+								newComment.comment
+							);
 							postToCommentsDB(comments, getData, setCommentText, db);
 						} else {
 							return confirmCommentContent();

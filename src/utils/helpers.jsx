@@ -1,4 +1,5 @@
 import React from "react";
+import emailjs, { init } from "emailjs-com";
 import { confirmAlert } from "react-confirm-alert";
 
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -253,4 +254,17 @@ export const getNextLevel = (level) => {
 	} else if (level === "one") {
 		return "two";
 	} else return "two";
+};
+
+export const sendEmail = (target, user_name, blog_url, comment_body) => {
+	init(process.env.REACT_APP_MAIL_PASS);
+
+	const templateParams = {
+		to_mail: target,
+		user: user_name,
+		blog_url: "https://blog.tinomuzambi.com/blogs/" + blog_url,
+		comment: comment_body,
+	};
+
+	emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then();
 };

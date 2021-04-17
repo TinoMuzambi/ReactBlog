@@ -6,7 +6,6 @@ import {
 	FcEditImage,
 } from "react-icons/fc";
 import Moment from "react-moment";
-import emailjs, { init } from "emailjs-com";
 
 import {
 	confirmCommentContent,
@@ -24,6 +23,7 @@ import {
 	postToUsersDB,
 	getNextLevel,
 	ANON_IMAGE,
+	sendEmail,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -315,10 +315,11 @@ const CommentContent = ({
 			}
 
 			setComments(newComments);
+
 			if (target)
-				sendEmails(
+				sendEmail(
 					target,
-					user.displayName || "Anonymous",
+					user.displayName || "An anonymous reader",
 					url,
 					newComment.comment
 				);
@@ -343,19 +344,6 @@ const CommentContent = ({
 		} else {
 			return confirmSignInComment();
 		}
-	};
-
-	const sendEmails = (target, user_name, blog_url, comment_body) => {
-		init(process.env.REACT_APP_MAIL_PASS);
-
-		const templateParams = {
-			to_mail: target,
-			user: user_name,
-			blog_url: "https://blog.tinomuzambi.com/blogs/" + blog_url,
-			comment: comment_body,
-		};
-
-		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then();
 	};
 
 	return (
