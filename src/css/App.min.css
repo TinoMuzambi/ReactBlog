@@ -267,6 +267,7 @@ img {
 }
 
 .site-content .picsart-list {
+  display: block;
   font-family: "Lexend Deca", sans-serif;
   list-style: initial;
   color: gray;
