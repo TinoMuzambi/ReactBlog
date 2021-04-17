@@ -350,7 +350,8 @@ const CommentContent = ({
 			}
 			console.log(newComments);
 			setComments(newComments);
-			if (subscribers) sendEmails(subscribers);
+			if (subscribers)
+				sendEmails(subscribers, user.displayName, url, newComment.comment);
 			// postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
