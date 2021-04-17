@@ -14,11 +14,11 @@
 	}
 
 	@include mq(750px) {
-		min-height: 7.5vh;
+		min-height: 7.3vh;
 	}
 
 	@include mq(520px) {
-		min-height: 6vh;
+		min-height: 5.8vh;
 	}
 
 	&.collapse {

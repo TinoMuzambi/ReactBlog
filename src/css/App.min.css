@@ -505,13 +505,13 @@ footer .move-up span:hover {
 
 @media only screen and (max-width: 750px) {
   .nav {
-    min-height: 7.5vh;
+    min-height: 7.3vh;
   }
 }
 
 @media only screen and (max-width: 520px) {
   .nav {
-    min-height: 6vh;
+    min-height: 5.8vh;
   }
 }
 
