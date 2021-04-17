@@ -374,24 +374,26 @@ const CommentContent = ({
 		}
 	};
 
-	const sendEmails = (subscribers) => {
+	const sendEmails = (subscribers, user_mail, blog_url, comment_body) => {
 		console.log("Sending emails to ", subscribers);
 		init(process.env.REACT_APP_MAIL_PASS);
-		const templateParams = {
-			to_mail: "t56muzambi@gmail.com",
-			user: "James",
-			blog_url: "https://blog.tinomuzambi/blogs/phone_or_laptop",
-			comment: "Check this out!",
-		};
+		subscribers.forEach((sub) => {
+			const templateParams = {
+				to_mail: sub,
+				user: user_mail,
+				blog_url: "https://blog.tinomuzambi/blogs/" + blog_url,
+				comment: comment_body,
+			};
 
-		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
-			function (response) {
-				console.log("SUCCESS!", response.status, response.text);
-			},
-			function (error) {
-				console.log("FAILED...", error);
-			}
-		);
+			emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
+				function (response) {
+					console.log("SUCCESS!", response.status, response.text);
+				},
+				function (error) {
+					console.log("FAILED...", error);
+				}
+			);
+		});
 	};
 
 	return (
