@@ -269,10 +269,27 @@ const CommentContent = ({
 					if (newComment.level === "one") {
 						for (let j = 0; j < newComments[i]?.comments.length; j++) {
 							if (newComments[i].comments[j].id === comment.id) {
+								console.log(user.email);
 								if (newComments[i].comments[j].replies) {
 									newComments[i].comments[j].replies.push(newComment);
+									if (newComments[i].comments[j].subscribers) {
+										if (
+											newComments[i]?.comments[j]?.subscribers?.includes(
+												user?.email
+											)
+										) {
+											newComments[i].comments[j].subscribers = newComments[
+												i
+											].comments[j].subscribers.filter((s) => s !== user.email);
+										} else {
+											newComments[i].comments[j].subscribers.push(user?.email);
+										}
+									} else {
+										newComments[i].comments[j].subscribers = [user?.email];
+									}
 								} else {
 									newComments[i].comments[j].replies = [newComment];
+									newComments[i].comments[j].subscribers = [user?.email];
 								}
 								break loop1;
 							}
@@ -303,9 +320,10 @@ const CommentContent = ({
 					}
 				}
 			}
+			console.log(newComments);
 			setComments(newComments);
 
-			postToCommentsDB(comments, getData, setCommentText, db);
+			// postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
 		}
