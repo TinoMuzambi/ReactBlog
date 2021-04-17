@@ -94,6 +94,7 @@ const Comments = ({ url }) => {
 								role: "user",
 								liked_ids: [],
 								username: user.displayName,
+								email: user.email,
 							};
 							users[users.length - 1]++;
 
