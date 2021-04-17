@@ -22,6 +22,7 @@ import {
 	getSecondIDs,
 	postToUsersDB,
 	getNextLevel,
+	ANON_IMAGE,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -253,9 +254,7 @@ const CommentContent = ({
 			const newComment = {
 				id: comments[comments.length - 1],
 				user: user.displayName || "Anonymous",
-				image:
-					user.photoURL ||
-					"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif",
+				image: user.photoURL || { ANON_IMAGE },
 				comment: commentText,
 				date: new Date(),
 				upvotes: 0,
@@ -336,10 +335,7 @@ const CommentContent = ({
 					<>
 						<div className="comment-container">
 							<img
-								src={
-									comment.image ||
-									"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-								}
+								src={comment.image || { ANON_IMAGE }}
 								alt="Avatar"
 								className="avatar"
 							></img>
@@ -413,11 +409,7 @@ const CommentContent = ({
 					</>
 				) : (
 					<div className="comment-container">
-						<img
-							src="https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif"
-							alt="Avatar"
-							className="avatar"
-						></img>
+						<img src={ANON_IMAGE} alt="Avatar" className="avatar"></img>
 						<div className="group">
 							<div className="details">
 								<h4 className="author">Deleted</h4>
