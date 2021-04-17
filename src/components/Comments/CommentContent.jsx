@@ -313,7 +313,7 @@ const CommentContent = ({
 					}
 				}
 			}
-			console.log(newComments);
+
 			setComments(newComments);
 			if (target)
 				sendEmails(
@@ -322,7 +322,7 @@ const CommentContent = ({
 					url,
 					newComment.comment
 				);
-			// postToCommentsDB(comments, getData, setCommentText, db);
+			postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
 		}
@@ -345,25 +345,17 @@ const CommentContent = ({
 		}
 	};
 
-	const sendEmails = (target, user_mail, blog_url, comment_body) => {
-		console.log("Sending emails to ", target);
+	const sendEmails = (target, user_name, blog_url, comment_body) => {
 		init(process.env.REACT_APP_MAIL_PASS);
 
 		const templateParams = {
 			to_mail: target,
-			user: user_mail,
+			user: user_name,
 			blog_url: "https://blog.tinomuzambi.com/blogs/" + blog_url,
 			comment: comment_body,
 		};
 
-		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
-			function (response) {
-				console.log("SUCCESS!", response.status, response.text);
-			},
-			function (error) {
-				console.log("FAILED...", error);
-			}
-		);
+		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then();
 	};
 
 	return (
