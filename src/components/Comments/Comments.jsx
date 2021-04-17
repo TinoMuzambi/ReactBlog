@@ -148,7 +148,8 @@ const Comments = ({ url }) => {
 								"tinomuzambi@gmail.com",
 								user.displayName || "An anonymous reader",
 								url,
-								newComment.comment
+								newComment.comment,
+								newComment.level
 							);
 							postToCommentsDB(comments, getData, setCommentText, db);
 						} else {

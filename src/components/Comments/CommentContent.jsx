@@ -321,7 +321,8 @@ const CommentContent = ({
 					target,
 					user.displayName || "An anonymous reader",
 					url,
-					newComment.comment
+					newComment.comment,
+					newComment.level
 				);
 			postToCommentsDB(comments, getData, setCommentText, db);
 		} else {

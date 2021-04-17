@@ -256,7 +256,7 @@ export const getNextLevel = (level) => {
 	} else return "two";
 };
 
-export const sendEmail = (target, user_name, blog_url, comment_body) => {
+export const sendEmail = (target, user_name, blog_url, comment_body, level) => {
 	init(process.env.REACT_APP_MAIL_PASS);
 
 	const templateParams = {
@@ -266,5 +266,11 @@ export const sendEmail = (target, user_name, blog_url, comment_body) => {
 		comment: comment_body,
 	};
 
-	emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then();
+	emailjs
+		.send(
+			"service_w0jctc8",
+			level === "zero" ? "template_s173dla" : "template_27dkvq6",
+			templateParams
+		)
+		.then();
 };
