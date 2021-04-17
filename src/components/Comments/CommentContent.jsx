@@ -6,6 +6,7 @@ import {
 	FcEditImage,
 } from "react-icons/fc";
 import Moment from "react-moment";
+import emailjs, { init } from "emailjs-com";
 
 import {
 	confirmCommentContent,
@@ -375,6 +376,22 @@ const CommentContent = ({
 
 	const sendEmails = (subscribers) => {
 		console.log("Sending emails to ", subscribers);
+		init(process.env.REACT_APP_MAIL_PASS);
+		const templateParams = {
+			to_mail: "t56muzambi@gmail.com",
+			user: "James",
+			blog_url: "https://blog.tinomuzambi/blogs/phone_or_laptop",
+			comment: "Check this out!",
+		};
+
+		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
+			function (response) {
+				console.log("SUCCESS!", response.status, response.text);
+			},
+			function (error) {
+				console.log("FAILED...", error);
+			}
+		);
 	};
 
 	return (
