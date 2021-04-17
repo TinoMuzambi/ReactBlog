@@ -115,7 +115,7 @@ const Comments = ({ url }) => {
 							const newComment = {
 								id: comments[comments.length - 1],
 								user: user.displayName || "Anonymous",
-								image: user.photoURL || { ANON_IMAGE },
+								image: user.photoURL || ANON_IMAGE,
 								comment: commentText,
 								date: new Date(),
 								upvotes: 0,
@@ -157,7 +157,7 @@ const Comments = ({ url }) => {
 						<h1 className="title">Comments</h1>
 						<div className="form-group">
 							<div className="person">
-								<img src={user?.photoURL || { ANON_IMAGE }} alt="Avatar" />
+								<img src={user?.photoURL || ANON_IMAGE} alt="Avatar" />
 								<p className="user" onClick={signInWithGoogle}>
 									{isSignedIn ? (
 										user?.isAnonymous ? (

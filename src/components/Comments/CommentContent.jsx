@@ -254,7 +254,7 @@ const CommentContent = ({
 			const newComment = {
 				id: comments[comments.length - 1],
 				user: user.displayName || "Anonymous",
-				image: user.photoURL || { ANON_IMAGE },
+				image: user.photoURL || ANON_IMAGE,
 				comment: commentText,
 				date: new Date(),
 				upvotes: 0,
@@ -335,7 +335,7 @@ const CommentContent = ({
 					<>
 						<div className="comment-container">
 							<img
-								src={comment.image || { ANON_IMAGE }}
+								src={comment.image || ANON_IMAGE}
 								alt="Avatar"
 								className="avatar"
 							></img>
