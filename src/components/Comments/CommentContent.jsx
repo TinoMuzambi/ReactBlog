@@ -264,6 +264,7 @@ const CommentContent = ({
 
 			comments[comments.length - 1]++;
 			let newComments = comments;
+			let subscribers = [];
 			loop1: for (let i = 0; i < newComments.length; i++) {
 				if (newComments[i]?.blog_url === url) {
 					if (newComment.level === "one") {
@@ -272,17 +273,23 @@ const CommentContent = ({
 								if (newComments[i].comments[j].replies) {
 									newComments[i].comments[j].replies.push(newComment);
 									if (newComments[i].comments[j].subscribers) {
-										if (!user?.isAnonymous)
+										if (!user?.isAnonymous) {
 											newComments[i].comments[j].subscribers.push(user?.email);
+											subscribers = newComments[i].comments[j].subscribers;
+										}
 									} else {
-										if (!user?.isAnonymous)
+										if (!user?.isAnonymous) {
 											newComments[i].comments[j].subscribers = [user?.email];
+											subscribers = newComments[i].comments[j].subscribers;
+										}
 									}
 								} else {
 									newComments[i].comments[j].replies = [newComment];
 									if (newComments[i].comments[j].subscribers) {
-										if (!user?.isAnonymous)
+										if (!user?.isAnonymous) {
 											newComments[i].comments[j].subscribers = [user?.email];
+											subscribers = newComments[i].comments[j].subscribers;
+										}
 									}
 								}
 								break loop1;
@@ -302,15 +309,20 @@ const CommentContent = ({
 												newComment
 											);
 											if (newComments[i].comments[j].replies[k].subscribers) {
-												if (!user?.isAnonymous)
+												if (!user?.isAnonymous) {
 													newComments[i].comments[j].replies[
 														k
 													].subscribers.push(user?.email);
+													subscribers =
+														newComments[i].comments[j].replies[k].subscribers;
+												}
 											} else {
 												if (!user?.isAnonymous) {
 													newComments[i].comments[j].replies[k].subscribers = [
 														user?.email,
 													];
+													subscribers =
+														newComments[i].comments[j].replies[k].subscribers;
 												}
 											}
 										} else {
@@ -322,6 +334,8 @@ const CommentContent = ({
 													newComments[i].comments[j].replies[k].subscribers = [
 														user?.email,
 													];
+													subscribers =
+														newComments[i].comments[j].replies[k].subscribers;
 												}
 											}
 										}
@@ -335,7 +349,7 @@ const CommentContent = ({
 			}
 			console.log(newComments);
 			setComments(newComments);
-
+			if (subscribers) sendEmails(subscribers);
 			// postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
@@ -357,6 +371,10 @@ const CommentContent = ({
 		} else {
 			return confirmSignInComment();
 		}
+	};
+
+	const sendEmails = (subscribers) => {
+		console.log("Sending emails to ", subscribers);
 	};
 
 	return (
