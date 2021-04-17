@@ -301,10 +301,29 @@ const CommentContent = ({
 											newComments[i].comments[j].replies[k].replies.push(
 												newComment
 											);
+											if (newComments[i].comments[j].replies[k].subscribers) {
+												if (!user?.isAnonymous)
+													newComments[i].comments[j].replies[
+														k
+													].subscribers.push(user?.email);
+											} else {
+												if (!user?.isAnonymous) {
+													newComments[i].comments[j].replies[k].subscribers = [
+														user?.email,
+													];
+												}
+											}
 										} else {
 											newComments[i].comments[j].replies[k].replies = [
 												newComment,
 											];
+											if (newComments[i].comments[j].replies[k].subscribers) {
+												if (!user.isAnonymous) {
+													newComments[i].comments[j].replies[k].subscribers = [
+														user?.email,
+													];
+												}
+											}
 										}
 										break loop1;
 									}
