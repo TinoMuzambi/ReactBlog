@@ -265,33 +265,19 @@ const CommentContent = ({
 
 			comments[comments.length - 1]++;
 			let newComments = comments;
-			let subscribers = [];
+			let target;
 			loop1: for (let i = 0; i < newComments.length; i++) {
 				if (newComments[i]?.blog_url === url) {
 					if (newComment.level === "one") {
 						for (let j = 0; j < newComments[i]?.comments.length; j++) {
 							if (newComments[i].comments[j].id === comment.id) {
+								target = users.find(
+									(u) => u.username === newComments[i].comments[j].user
+								).email;
 								if (newComments[i].comments[j].replies) {
 									newComments[i].comments[j].replies.push(newComment);
-									if (newComments[i].comments[j].subscribers) {
-										if (!user?.isAnonymous) {
-											newComments[i].comments[j].subscribers.push(user?.email);
-											subscribers = newComments[i].comments[j].subscribers;
-										}
-									} else {
-										if (!user?.isAnonymous) {
-											newComments[i].comments[j].subscribers = [user?.email];
-											subscribers = newComments[i].comments[j].subscribers;
-										}
-									}
 								} else {
 									newComments[i].comments[j].replies = [newComment];
-									if (newComments[i].comments[j].subscribers) {
-										if (!user?.isAnonymous) {
-											newComments[i].comments[j].subscribers = [user?.email];
-											subscribers = newComments[i].comments[j].subscribers;
-										}
-									}
 								}
 								break loop1;
 							}
@@ -305,48 +291,19 @@ const CommentContent = ({
 									k++
 								) {
 									if (newComments[i].comments[j].replies[k].id === comment.id) {
+										target = users.find(
+											(u) =>
+												u.username ===
+												newComments[i].comments[j].replies[k].user
+										).email;
 										if (newComments[i].comments[j].replies[k].replies) {
 											newComments[i].comments[j].replies[k].replies.push(
 												newComment
 											);
-
-											console.log(
-												users.find(
-													(u) =>
-														u.username ===
-														newComments[i].comments[j].replies[k].user
-												).email
-											);
-											if (newComments[i].comments[j].replies[k].subscribers) {
-												if (!user?.isAnonymous) {
-													newComments[i].comments[j].replies[
-														k
-													].subscribers.push(user?.email);
-													subscribers =
-														newComments[i].comments[j].replies[k].subscribers;
-												}
-											} else {
-												if (!user?.isAnonymous) {
-													newComments[i].comments[j].replies[k].subscribers = [
-														user?.email,
-													];
-													subscribers =
-														newComments[i].comments[j].replies[k].subscribers;
-												}
-											}
 										} else {
 											newComments[i].comments[j].replies[k].replies = [
 												newComment,
 											];
-											if (newComments[i].comments[j].replies[k].subscribers) {
-												if (!user.isAnonymous) {
-													newComments[i].comments[j].replies[k].subscribers = [
-														user?.email,
-													];
-													subscribers =
-														newComments[i].comments[j].replies[k].subscribers;
-												}
-											}
 										}
 										break loop1;
 									}
@@ -358,13 +315,13 @@ const CommentContent = ({
 			}
 			console.log(newComments);
 			setComments(newComments);
-			// if (subscribers.length)
-			// sendEmails(
-			// 	subscribers,
-			// 	user.displayName || "Anonymous",
-			// 	url,
-			// 	newComment.comment
-			// );
+			if (target)
+				sendEmails(
+					target,
+					user.displayName || "Anonymous",
+					url,
+					newComment.comment
+				);
 			// postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
@@ -388,26 +345,25 @@ const CommentContent = ({
 		}
 	};
 
-	const sendEmails = (subscribers, user_mail, blog_url, comment_body) => {
-		console.log("Sending emails to ", subscribers);
+	const sendEmails = (target, user_mail, blog_url, comment_body) => {
+		console.log("Sending emails to ", target);
 		init(process.env.REACT_APP_MAIL_PASS);
-		subscribers.forEach((sub) => {
-			const templateParams = {
-				to_mail: sub,
-				user: user_mail,
-				blog_url: "https://blog.tinomuzambi/blogs/" + blog_url,
-				comment: comment_body,
-			};
 
-			emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
-				function (response) {
-					console.log("SUCCESS!", response.status, response.text);
-				},
-				function (error) {
-					console.log("FAILED...", error);
-				}
-			);
-		});
+		const templateParams = {
+			to_mail: target,
+			user: user_mail,
+			blog_url: "https://blog.tinomuzambi.com/blogs/" + blog_url,
+			comment: comment_body,
+		};
+
+		emailjs.send("service_w0jctc8", "template_27dkvq6", templateParams).then(
+			function (response) {
+				console.log("SUCCESS!", response.status, response.text);
+			},
+			function (error) {
+				console.log("FAILED...", error);
+			}
+		);
 	};
 
 	return (
