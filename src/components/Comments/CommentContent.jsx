@@ -23,6 +23,7 @@ import {
 	postToUsersDB,
 	getNextLevel,
 	ANON_IMAGE,
+	sendEmail,
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
@@ -264,11 +265,15 @@ const CommentContent = ({
 
 			comments[comments.length - 1]++;
 			let newComments = comments;
+			let target;
 			loop1: for (let i = 0; i < newComments.length; i++) {
 				if (newComments[i]?.blog_url === url) {
 					if (newComment.level === "one") {
 						for (let j = 0; j < newComments[i]?.comments.length; j++) {
 							if (newComments[i].comments[j].id === comment.id) {
+								target = users.find(
+									(u) => u.username === newComments[i].comments[j].user
+								).email;
 								if (newComments[i].comments[j].replies) {
 									newComments[i].comments[j].replies.push(newComment);
 								} else {
@@ -286,6 +291,11 @@ const CommentContent = ({
 									k++
 								) {
 									if (newComments[i].comments[j].replies[k].id === comment.id) {
+										target = users.find(
+											(u) =>
+												u.username ===
+												newComments[i].comments[j].replies[k].user
+										).email;
 										if (newComments[i].comments[j].replies[k].replies) {
 											newComments[i].comments[j].replies[k].replies.push(
 												newComment
@@ -303,8 +313,17 @@ const CommentContent = ({
 					}
 				}
 			}
+
 			setComments(newComments);
 
+			if (target)
+				sendEmail(
+					target,
+					user.displayName || "An anonymous reader",
+					url,
+					newComment.comment,
+					newComment.level
+				);
 			postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();

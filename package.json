@@ -6,6 +6,7 @@
 		"@react-firebase/auth": "^0.2.10",
 		"aos": "^2.3.4",
 		"axios": "^0.21.1",
+		"emailjs-com": "^2.6.4",
 		"firebase": "^8.2.9",
 		"framer-motion": "^3.6.7",
 		"moment": "^2.29.1",
