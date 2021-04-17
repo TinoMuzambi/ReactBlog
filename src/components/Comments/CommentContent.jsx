@@ -309,6 +309,14 @@ const CommentContent = ({
 											newComments[i].comments[j].replies[k].replies.push(
 												newComment
 											);
+
+											console.log(
+												users.find(
+													(u) =>
+														u.username ===
+														newComments[i].comments[j].replies[k].user
+												).email
+											);
 											if (newComments[i].comments[j].replies[k].subscribers) {
 												if (!user?.isAnonymous) {
 													newComments[i].comments[j].replies[
@@ -350,13 +358,13 @@ const CommentContent = ({
 			}
 			console.log(newComments);
 			setComments(newComments);
-			if (subscribers)
-				sendEmails(
-					subscribers,
-					user.displayName || "Anonymous",
-					url,
-					newComment.comment
-				);
+			// if (subscribers.length)
+			// sendEmails(
+			// 	subscribers,
+			// 	user.displayName || "Anonymous",
+			// 	url,
+			// 	newComment.comment
+			// );
 			// postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
