@@ -12,7 +12,7 @@ export const MY_EMAIL = "tinomuzambi@gmail.com";
 export const titleCase = (str) => {
 	// Convert string to title case.
 	str = str.toLowerCase().split(" ");
-	for (var i = 0; i < str.length; i++) {
+	for (let i = 0; i < str.length; i++) {
 		str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
 	}
 	return str.join(" ");
