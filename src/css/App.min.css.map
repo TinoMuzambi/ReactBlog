@@ -24,7 +24,8 @@
         "../sass/_comments.scss",
         "../sass/_comment.scss",
         "../sass/_commentForm.scss",
-        "../sass/_commentContent.scss"
+        "../sass/_commentContent.scss",
+        "../sass/_loader.scss"
     ],
     "names": [],
     "file": "App.min.css"
