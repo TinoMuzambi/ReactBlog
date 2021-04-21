@@ -1539,5 +1539,6 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .loader .box .bars .bar.sm {
   width: 60%;
+  background: rgba(143, 143, 143, 0.2);
 }
 /*# sourceMappingURL=App.min.css.map */

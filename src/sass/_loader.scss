@@ -28,6 +28,7 @@ $gray: rgb(143, 143, 143);
 
 		.bars {
 			width: 100%;
+
 			.bar {
 				width: 100%;
 				height: 0.5rem;
@@ -37,6 +38,7 @@ $gray: rgb(143, 143, 143);
 
 				&.sm {
 					width: 60%;
+					background: rgba($color: $gray, $alpha: 0.2);
 				}
 			}
 		}
