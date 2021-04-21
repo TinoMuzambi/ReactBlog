@@ -31,13 +31,6 @@ const Loader = () => {
 					<div className="bar sm"></div>
 				</div>
 			</div>
-			<div className="box">
-				<div className="profile"></div>
-				<div className="bars">
-					<div className="bar"></div>
-					<div className="bar sm"></div>
-				</div>
-			</div>
 		</div>
 	);
 };
