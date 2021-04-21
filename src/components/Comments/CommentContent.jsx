@@ -85,12 +85,10 @@ const CommentContent = ({
 				// Unlike : Decrement upvotes and remove name from likers
 				upvotes--;
 				likers = likers.filter((l) => l !== user.displayName);
-				console.log("Removing", likers, upvotes);
 			} else {
 				// Like : Increment upvotes and push name to likers
 				upvotes++;
 				likers.push(user.displayName);
-				console.log("Adding", likers, upvotes);
 			}
 
 			// ---------- Handle comment like data ------------------
@@ -98,10 +96,8 @@ const CommentContent = ({
 
 			const topIDs = getTopIDs(currComments);
 			const secondIDs = getSecondIDs(currComments);
-			console.log(topIDs, secondIDs);
 
 			if (topIDs.includes(commentParam.id)) {
-				console.log("first");
 				for (let i = 0; i < currComments?.comments?.length; i++) {
 					if (currComments?.comments[i]?.id === commentParam.id) {
 						currComments.comments[i] = {
@@ -113,7 +109,6 @@ const CommentContent = ({
 				}
 			} else if (secondIDs?.includes(commentParam.id)) {
 				let newComments = currComments?.comments;
-				console.log("second");
 				for (let i = 0; i < currComments?.comments?.length; i++) {
 					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
 						if (currComments?.comments[i]?.replies[j]?.id === commentParam.id) {
@@ -127,7 +122,6 @@ const CommentContent = ({
 				}
 			} else {
 				let newComments = currComments?.comments;
-				console.log("third");
 				for (let i = 0; i < currComments?.comments?.length; i++) {
 					for (let j = 0; j < currComments?.comments[i]?.replies?.length; j++) {
 						for (
@@ -342,14 +336,14 @@ const CommentContent = ({
 			setComments(newComments);
 
 			if (target)
-				// sendEmail(
-				// 	target,
-				// 	user.displayName || "An anonymous reader",
-				// 	url,
-				// 	newComment.comment,
-				// 	newComment.level
-				// );
-				postToCommentsDB(comments, getData, setCommentText, db);
+				sendEmail(
+					target,
+					user.displayName || "An anonymous reader",
+					url,
+					newComment.comment,
+					newComment.level
+				);
+			postToCommentsDB(comments, getData, setCommentText, db);
 		} else {
 			return confirmCommentContent();
 		}
@@ -371,13 +365,7 @@ const CommentContent = ({
 			return confirmSignInComment();
 		}
 	};
-	// if (currUserData) {
-	// 	console.log(currUserData.liked_ids);
-	// 	if (comment.level === "two") {
-	// 		console.log(comment.id);
-	// 		console.log(currUserData?.liked_ids?.includes(comment.id));
-	// 	}
-	// }
+
 	return (
 		<div>
 			<div className={`comment-content ${comment.level}`}>
