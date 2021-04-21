@@ -145,13 +145,13 @@ const Comments = ({ url }) => {
 
 							setComments(newComments);
 
-							// sendEmail(
-							// 	"tinomuzambi@gmail.com",
-							// 	user.displayName || "An anonymous reader",
-							// 	url,
-							// 	newComment.comment,
-							// 	newComment.level
-							// );
+							sendEmail(
+								"tinomuzambi@gmail.com",
+								user.displayName || "An anonymous reader",
+								url,
+								newComment.comment,
+								newComment.level
+							);
 							postToCommentsDB(comments, getData, setCommentText, db);
 						} else {
 							return confirmCommentContent();
