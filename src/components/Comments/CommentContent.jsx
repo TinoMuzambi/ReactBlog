@@ -73,7 +73,7 @@ const CommentContent = ({
 	const like = (commentParam) => {
 		let upvotes = commentParam.upvotes;
 		let likers = commentParam.likers;
-		console.log(likers, upvotes);
+
 		if (user) {
 			if (user.isAnonymous) {
 				return confirmAnonLike();
