@@ -1401,6 +1401,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
     height: 3rem;
     opacity: 1;
     margin: -1.5rem 0 -1rem 4rem;
+    font-size: 1.3rem;
   }
 }
 
