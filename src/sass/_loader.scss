@@ -1,0 +1,34 @@
+$gray: rgb(143, 143, 143);
+
+.loader {
+	width: 100%;
+
+	.box {
+		width: 100%;
+		height: 5rem;
+		display: flex;
+		gap: 1rem;
+
+		.profile {
+			width: 3rem;
+			height: 3rem;
+			background: rgba($color: $gray, $alpha: 0.6);
+			border-radius: 100%;
+		}
+
+		.bars {
+			width: 100%;
+			.bar {
+				width: 100%;
+				height: 0.5rem;
+				background: rgba($color: $gray, $alpha: 0.4);
+				margin-top: 0.5rem;
+				border-radius: 2px;
+
+				&.sm {
+					width: 60%;
+				}
+			}
+		}
+	}
+}
