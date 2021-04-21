@@ -1496,6 +1496,26 @@ ul ul li:not(:first-child):not(:last-child):hover {
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+  -webkit-animation: load 2s infinite alternate;
+          animation: load 2s infinite alternate;
+}
+
+@-webkit-keyframes load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .loader .box .profile {

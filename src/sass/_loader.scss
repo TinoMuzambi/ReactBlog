@@ -8,6 +8,16 @@ $gray: rgb(143, 143, 143);
 		height: 5rem;
 		display: flex;
 		gap: 1rem;
+		animation: load 2s infinite alternate;
+
+		@keyframes load {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
 
 		.profile {
 			width: 3rem;
