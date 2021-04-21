@@ -8,14 +8,14 @@ $gray: rgb(143, 143, 143);
 		height: 5rem;
 		display: flex;
 		gap: 1rem;
-		animation: load 2s infinite alternate;
+		animation: load 1s infinite alternate;
 
 		@keyframes load {
 			from {
-				opacity: 0;
+				opacity: 0.2;
 			}
 			to {
-				opacity: 1;
+				opacity: 0.7;
 			}
 		}
 
