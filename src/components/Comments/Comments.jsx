@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
-import { AiOutlineReload } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
 import {
