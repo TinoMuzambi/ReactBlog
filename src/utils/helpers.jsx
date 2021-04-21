@@ -7,6 +7,8 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 export const ANON_IMAGE =
 	"https://clinicforspecialchildren.org/wp-content/uploads/2016/08/avatar-placeholder.gif";
 
+export const MY_EMAIL = "tinomuzambi@gmail.com";
+
 export const titleCase = (str) => {
 	// Convert string to title case.
 	str = str.toLowerCase().split(" ");
