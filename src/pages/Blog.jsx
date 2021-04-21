@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 import Sidebar from "../components/Sidebar";
 import { getBlogs } from "../utils/fetch";
 import Comments from "../components/Comments/Comments";
+import Loader from "../components/Loader";
 
 const Blog = ({ categories }) => {
 	const location = useLocation();
@@ -113,6 +114,7 @@ const Blog = ({ categories }) => {
 						</div>
 
 						<Comments url={pathname} />
+						<Loader />
 					</div>
 					<Sidebar
 						categories={categories}
