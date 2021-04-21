@@ -14,6 +14,7 @@ import {
 import { firebase } from "../../firebase/config";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import Loader from "../Loader";
 
 const Comments = ({ url }) => {
 	const [fetching, setFetching] = useState(true);
@@ -64,11 +65,7 @@ const Comments = ({ url }) => {
 	};
 
 	if (fetching) {
-		return (
-			<div className="icon-wrapper large">
-				<AiOutlineReload className="icon" />
-			</div>
-		);
+		return <Loader />;
 	}
 
 	return (
