@@ -19,6 +19,42 @@ body.dark {
   color: #ffffff;
 }
 
+html.dark .text,
+body.dark .text {
+  color: #ffffff !important;
+}
+
+html.dark .search-input,
+body.dark .search-input {
+  color: #ffffff !important;
+  border-color: #ffffff;
+}
+
+html.dark .search-input::-webkit-input-placeholder,
+body.dark .search-input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+html.dark .search-input:-ms-input-placeholder,
+body.dark .search-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+html.dark .search-input::-ms-input-placeholder,
+body.dark .search-input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+html.dark .search-input::placeholder,
+body.dark .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+html.dark h3.side-future,
+body.dark h3.side-future {
+  color: #ffffff !important;
+}
+
 html.dark .nav,
 body.dark .nav {
   background: #3f4954;
@@ -26,17 +62,28 @@ body.dark .nav {
 
 html.dark a,
 body.dark a {
-  color: white;
+  color: #ffffff;
 }
 
 html.dark .text-gray,
 body.dark .text-gray {
-  color: white;
+  color: #ffffff;
 }
 
 html.dark p,
 body.dark p {
-  color: white;
+  color: #ffffff;
+}
+
+html.dark .pagination li,
+body.dark .pagination li {
+  color: #ffffff;
+}
+
+html.dark .pagination li:not(:first-child):not(:last-child),
+body.dark .pagination li:not(:first-child):not(:last-child) {
+  color: #3f4954 !important;
+  background: #ffffff !important;
 }
 
 .dark-toggle {
@@ -190,31 +237,27 @@ img {
   }
 }
 
-.site-content π .post-content {
+.site-content .post-content {
   width: 100%;
 }
 
-.site-content π .post-content .post-title {
+.site-content .post-content .post-title {
   padding: 1rem 2rem;
   position: relative;
 }
 
-.site-content π .post-content .post-title h3.side-future {
-  color: #ffffff;
-}
-
-.site-content π .post-content .post-title a {
+.site-content .post-content .post-title a {
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;
 }
 
-.site-content π .post-content .post-title .editing-title {
+.site-content .post-content .post-title .editing-title {
   font-family: "Lexend Deca", sans-serif;
   color: #3f4954;
   font-size: 1.1rem;
 }
 
-.site-content π .post-content .post-title .post-btn {
+.site-content .post-content .post-title .post-btn {
   border-radius: 0;
   padding: 0.7rem 1.5rem;
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
@@ -222,27 +265,27 @@ img {
   color: #ffffff;
 }
 
-.site-content π .post-content .post-image {
+.site-content .post-content .post-image {
   padding: 1rem 2rem;
   position: relative;
 }
 
-.site-content π .post-content .post-image div {
+.site-content .post-content .post-image div {
   overflow: hidden;
 }
 
-.site-content π .post-content .post-image div .img {
+.site-content .post-content .post-image div .img {
   width: 100%;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-.site-content π .post-content .post-image div .img:hover {
+.site-content .post-content .post-image div .img:hover {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
 }
 
-.site-content π .post-content .post-image .post-info {
+.site-content .post-content .post-image .post-info {
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   padding: 1rem;
   position: absolute;
@@ -252,7 +295,7 @@ img {
 }
 
 @media only screen and (max-width: 1130px) {
-  .site-content π .post-content .post-image .post-info {
+  .site-content .post-content .post-image .post-info {
     left: 2rem !important;
     bottom: 1.2rem !important;
     border-radius: 0 !important;
@@ -260,16 +303,16 @@ img {
 }
 
 @media only screen and (max-width: 520px) {
-  .site-content π .post-content .post-image .post-info {
+  .site-content .post-content .post-image .post-info {
     display: none;
   }
 }
 
-.site-content π .post-content .post-image .post-info span {
+.site-content .post-content .post-image .post-info span {
   margin: 0 0.5rem;
 }
 
-.site-content π .post-content blockquote {
+.site-content .post-content blockquote {
   text-indent: -0.45em;
   font-size: 80px;
   width: 95%;
@@ -278,24 +321,24 @@ img {
 }
 
 @media only screen and (max-width: 520px) {
-  .site-content π .post-content blockquote {
+  .site-content .post-content blockquote {
     font-size: 60px;
     margin-left: 1rem;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .site-content π .post-content blockquote {
+  .site-content .post-content blockquote {
     font-size: 40px;
   }
 }
 
-.site-content π .post-content blockquote::before {
+.site-content .post-content blockquote::before {
   content: open-quote;
 }
 
 @supports (hanging-punctuation: first) {
-  .site-content π .post-content .site-content .post-content blockquote {
+  .site-content .post-content .site-content .post-content blockquote {
     text-indent: 0;
     hanging-punctuation: first;
   }
@@ -944,6 +987,7 @@ footer .move-up span:hover {
   font-family: "Lexend Deca", sans-serif;
   outline: none;
   border: solid 2px black;
+  background: none;
 }
 
 @media only screen and (max-width: 520px) {

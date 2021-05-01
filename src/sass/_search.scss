@@ -17,6 +17,7 @@
 		font-family: $Lexend;
 		outline: none;
 		border: solid 2px black;
+		background: none;
 
 		@include mq(520px) {
 			margin-right: 3.2rem;

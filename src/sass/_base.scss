@@ -31,20 +31,48 @@ body {
 		color: $white;
 		$bg-color: #3f4954;
 
+		.text {
+			color: $white !important;
+		}
+
+		.search-input {
+			color: $white !important;
+			border-color: $white;
+
+			&::placeholder {
+				color: rgba($color: $white, $alpha: 0.3);
+			}
+		}
+
+		h3.side-future {
+			color: $white !important;
+		}
+
 		.nav {
 			background: $text-gray;
 		}
 
 		a {
-			color: white;
+			color: $white;
 		}
 
 		.text-gray {
-			color: white;
+			color: $white;
 		}
 
 		p {
-			color: white;
+			color: $white;
+		}
+
+		.pagination {
+			li {
+				color: $white;
+			}
+
+			li:not(:first-child):not(:last-child) {
+				color: $text-gray !important;
+				background: $white !important;
+			}
 		}
 	}
 }
