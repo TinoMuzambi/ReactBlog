@@ -10,6 +10,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: white;
+}
+
+html.dark,
+body.dark {
+  background: #3f4954;
 }
 
 .flex-row, .site-title, .site-content > .sidebar .category-list .list-items, .nav .nav-menu, .nav .nav-menu .nav-items, .not-found-page, .pagination,

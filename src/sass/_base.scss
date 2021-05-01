@@ -3,8 +3,8 @@
 /*      Theme colors        */
 $text-gray: #3f4954;
 $text-light: #686666da;
-$bg-color: #0f0f0f;
 $white: #ffffff;
+$bg-color: white;
 $midnight: #a1c4cf;
 
 /* gradient color   */
@@ -24,6 +24,11 @@ body {
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: $bg-color;
+
+	&.dark {
+		background: $text-gray;
+	}
 }
 
 %flex {
