@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import { AiOutlineReload } from "react-icons/ai";
+import { RiLightbulbFlashLine, RiLightbulbFill } from "react-icons/ri";
 import AOS from "aos";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
@@ -22,6 +23,7 @@ import "./css/App.min.css";
 const App = () => {
 	const [queryText, setQueryText] = useState("");
 	const [searching, setSearching] = useState(false);
+	const [dark, setDark] = useState(false);
 	const [fetching, setFetching] = useState(true);
 	const [blogs, setBlogs] = useState([]);
 	const [categories, setCategories] = useState([]);
@@ -110,6 +112,13 @@ const App = () => {
 				blogsRef={blogsRef}
 				footer={footer}
 			/>
+			<button className="dark-toggle" onClick={() => setDark(!dark)}>
+				{dark ? (
+					<RiLightbulbFill className="icon" />
+				) : (
+					<RiLightbulbFlashLine className="icon" />
+				)}
+			</button>
 			{/* Navbar - gets ref to this for scrolling to anchors. */}
 			<>
 				<Switch>

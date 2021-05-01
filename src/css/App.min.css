@@ -18,6 +18,29 @@ body.dark {
   background: #3f4954;
 }
 
+.dark-toggle {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  padding: 0.5rem;
+  background: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.dark-toggle:hover, .dark-toggle:focus {
+  opacity: 0.9;
+}
+
+.dark-toggle .icon {
+  font-size: 2rem;
+  color: #a1c4cf;
+}
+
 .flex-row, .site-title, .site-content > .sidebar .category-list .list-items, .nav .nav-menu, .nav .nav-menu .nav-items, .not-found-page, .pagination,
 ul, .pagination ul li:not(:first-child):not(:last-child),
 ul ul li:not(:first-child):not(:last-child), .comments, .comments .form-group, .comments .form-group .person, .comment-content .comment-container, .comment-content .comment-container .group .details, .comment-content .actions {

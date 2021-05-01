@@ -31,6 +31,30 @@ body {
 	}
 }
 
+.dark-toggle {
+	position: fixed;
+	top: 2rem;
+	left: 1rem;
+	padding: 0.5rem;
+	background: $white;
+	outline: none;
+	border: none;
+	border-radius: 50%;
+	opacity: 0.8;
+	z-index: 10;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		opacity: 0.9;
+	}
+
+	.icon {
+		font-size: 2rem;
+		color: $midnight;
+	}
+}
+
 %flex {
 	display: flex;
 }
