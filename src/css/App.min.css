@@ -92,6 +92,22 @@ body.dark .pagination li:not(:first-child):not(:last-child) {
   background: #ffffff !important;
 }
 
+html.dark .site-content .other-posts .post-info,
+body.dark .site-content .other-posts .post-info {
+  background: #3f4954 !important;
+  color: #ffffff;
+}
+
+html.dark .site-content .other-posts .post-info i,
+body.dark .site-content .other-posts .post-info i {
+  color: #ffffff !important;
+}
+
+html.dark .picsart-list,
+body.dark .picsart-list {
+  color: #ffffff;
+}
+
 .dark-toggle {
   position: fixed;
   top: 2rem;
@@ -268,7 +284,7 @@ img {
   padding: 0.7rem 1.5rem;
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   outline: none;
-  color: #ffffff;
+  color: #3f4954;
 }
 
 .site-content .post-content .post-image {
@@ -298,6 +314,7 @@ img {
   bottom: 0;
   left: 20vw;
   border-radius: 3rem;
+  color: #3f4954;
 }
 
 @media only screen and (max-width: 1130px) {
@@ -316,6 +333,10 @@ img {
 
 .site-content .post-content .post-image .post-info span {
   margin: 0 0.5rem;
+}
+
+.site-content .post-content .post-image .post-info span i {
+  color: #3f4954;
 }
 
 .site-content .post-content blockquote {
@@ -374,7 +395,7 @@ img {
   display: block;
   font-family: "Lexend Deca", sans-serif;
   list-style: initial;
-  color: gray;
+  color: #686666da;
 }
 
 .site-content .two-grid {

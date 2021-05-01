@@ -79,6 +79,19 @@ body {
 				background: $white !important;
 			}
 		}
+
+		.site-content .other-posts .post-info {
+			background: $text-gray !important;
+			color: $white;
+
+			i {
+				color: $white !important;
+			}
+		}
+
+		.picsart-list {
+			color: $white;
+		}
 	}
 }
 
