@@ -16,6 +16,22 @@ body {
 html.dark,
 body.dark {
   background: #3f4954;
+  color: #ffffff;
+}
+
+html.dark a,
+body.dark a {
+  color: white;
+}
+
+html.dark .text-gray,
+body.dark .text-gray {
+  color: white;
+}
+
+html.dark p,
+body.dark p {
+  color: white;
 }
 
 .dark-toggle {

@@ -28,6 +28,19 @@ body {
 
 	&.dark {
 		background: $text-gray;
+		color: $white;
+
+		a {
+			color: white;
+		}
+
+		.text-gray {
+			color: white;
+		}
+
+		p {
+			color: white;
+		}
 	}
 }
 
