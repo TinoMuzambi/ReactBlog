@@ -5,13 +5,16 @@
 	@include mq(750px) {
 		grid-template-columns: 100%;
 	}
-
-	.post-content {
+	π .post-content {
 		width: 100%;
 
 		.post-title {
 			padding: 1rem 2rem;
 			position: relative;
+
+			h3.side-future {
+				color: $white;
+			}
 
 			a {
 				font-family: $Anton;
@@ -29,6 +32,7 @@
 				padding: 0.7rem 1.5rem;
 				background: $sky;
 				outline: none;
+				color: $white;
 			}
 		}
 

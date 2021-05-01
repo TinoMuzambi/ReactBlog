@@ -12,9 +12,10 @@
 				width: 70%;
 				@extend %flex;
 				justify-content: space-between;
+				color: $text-gray !important;
 
 				a {
-					color: black;
+					color: $text-gray;
 				}
 			}
 		}
