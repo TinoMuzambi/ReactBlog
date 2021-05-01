@@ -24,6 +24,12 @@ body.dark .text {
   color: #ffffff !important;
 }
 
+html.dark textarea.text,
+body.dark textarea.text {
+  background: #3f4954;
+  color: #ffffff !important;
+}
+
 html.dark .search-input,
 body.dark .search-input {
   color: #ffffff !important;

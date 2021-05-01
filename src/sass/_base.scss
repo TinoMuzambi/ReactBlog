@@ -35,6 +35,11 @@ body {
 			color: $white !important;
 		}
 
+		textarea.text {
+			background: $text-gray;
+			color: $white !important;
+		}
+
 		.search-input {
 			color: $white !important;
 			border-color: $white;
