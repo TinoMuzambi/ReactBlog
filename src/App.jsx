@@ -112,11 +112,17 @@ const App = () => {
 				blogsRef={blogsRef}
 				footer={footer}
 			/>
-			<button className="dark-toggle" onClick={() => setDark(!dark)}>
+			<button
+				className="dark-toggle"
+				onClick={() => {
+					setDark(!dark);
+					document.body.classList.toggle("dark");
+				}}
+			>
 				{dark ? (
-					<RiLightbulbFill className="icon" />
-				) : (
 					<RiLightbulbFlashLine className="icon" />
+				) : (
+					<RiLightbulbFill className="icon" />
 				)}
 			</button>
 			{/* Navbar - gets ref to this for scrolling to anchors. */}
