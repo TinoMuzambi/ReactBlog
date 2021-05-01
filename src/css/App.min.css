@@ -108,6 +108,11 @@ body.dark .picsart-list {
   color: #ffffff;
 }
 
+* {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
 .dark-toggle {
   position: fixed;
   top: 2rem;

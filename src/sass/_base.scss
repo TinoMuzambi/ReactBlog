@@ -27,16 +27,16 @@ body {
 	background: $bg-color;
 
 	&.dark {
-		background: $text-gray;
+		$bg-color: $text-gray;
+		background: $bg-color;
 		color: $white;
-		$bg-color: #3f4954;
 
 		.text {
 			color: $white !important;
 		}
 
 		textarea.text {
-			background: $text-gray;
+			background: $bg-color;
 			color: $white !important;
 		}
 
@@ -54,7 +54,7 @@ body {
 		}
 
 		.nav {
-			background: $text-gray;
+			background: $bg-color;
 		}
 
 		a {
@@ -75,13 +75,13 @@ body {
 			}
 
 			li:not(:first-child):not(:last-child) {
-				color: $text-gray !important;
+				color: $bg-color !important;
 				background: $white !important;
 			}
 		}
 
 		.site-content .other-posts .post-info {
-			background: $text-gray !important;
+			background: $bg-color !important;
 			color: $white;
 
 			i {
@@ -93,6 +93,10 @@ body {
 			color: $white;
 		}
 	}
+}
+
+* {
+	transition: all 0.2s ease;
 }
 
 .dark-toggle {
