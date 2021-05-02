@@ -64,7 +64,6 @@ const Footer = () => {
 			</div>
 			<div className="rights flex-row text-center">
 				<h4 className="text-gray">
-					Made with HTML, CSS & JS.&nbsp;
 					<i className="fas fa-copyright">
 						<FaCopyright />
 					</i>
