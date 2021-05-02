@@ -64,10 +64,11 @@ const Footer = () => {
 			</div>
 			<div className="rights flex-row text-center">
 				<h4 className="text-gray">
+					Copyright&nbsp;
 					<i className="fas fa-copyright">
 						<FaCopyright />
 					</i>
-					&nbsp;Copyright Tino Muzambi 2020 - 2021
+					&nbsp;Tino Muzambi 2020 - 2021
 				</h4>
 			</div>
 			<div className="move-up">
