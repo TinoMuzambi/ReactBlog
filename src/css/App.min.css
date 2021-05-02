@@ -116,6 +116,16 @@ body.dark .icon-wrapper.large {
 html.dark .dark-toggle,
 body.dark .dark-toggle {
   background: #1d1d1d;
+  -webkit-box-shadow: 1px 1px 20px 0px rgba(203, 203, 203, 0.8);
+          box-shadow: 1px 1px 20px 0px rgba(203, 203, 203, 0.8);
+}
+
+html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
+body.dark .dark-toggle:hover,
+body.dark .dark-toggle:focus {
+  opacity: 0.9;
+  -webkit-box-shadow: 1px 1px 40px 0px rgba(203, 203, 203, 0.8);
+          box-shadow: 1px 1px 40px 0px rgba(203, 203, 203, 0.8);
 }
 
 .dark-toggle {
@@ -131,14 +141,14 @@ body.dark .dark-toggle {
   z-index: 10;
   cursor: pointer;
   color: #a1c4cf;
-  -webkit-box-shadow: 1px 1px 20px 0px rgba(255, 255, 255, 0.8);
-          box-shadow: 1px 1px 20px 0px rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
+          box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
   opacity: 0.9;
-  -webkit-box-shadow: 1px 1px 40px 0px rgba(255, 255, 255, 0.8);
-          box-shadow: 1px 1px 40px 0px rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
+          box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
 }
 
 .dark-toggle .icon {

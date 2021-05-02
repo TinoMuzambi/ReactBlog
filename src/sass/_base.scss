@@ -102,6 +102,13 @@ body {
 
 		.dark-toggle {
 			background: $bg-color;
+			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
+
+			&:hover,
+			&:focus {
+				opacity: 0.9;
+				box-shadow: 1px 1px 40px 0px rgba($color: $white, $alpha: 0.8);
+			}
 		}
 	}
 }
@@ -119,12 +126,12 @@ body {
 	z-index: 10;
 	cursor: pointer;
 	color: $midnight;
-	box-shadow: 1px 1px 20px 0px rgba($color: $bg-color, $alpha: 0.8);
+	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
 
 	&:hover,
 	&:focus {
 		opacity: 0.9;
-		box-shadow: 1px 1px 40px 0px rgba($color: $bg-color, $alpha: 0.8);
+		box-shadow: 1px 1px 40px 0px rgba($color: $text-gray, $alpha: 0.8);
 	}
 
 	.icon {
