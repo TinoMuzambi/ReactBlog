@@ -27,7 +27,8 @@ body {
 	background: $bg-color;
 
 	&.dark {
-		$bg-color: $text-gray;
+		$bg-color: rgb(43, 43, 43);
+		$white: rgb(203, 203, 203);
 		background: $bg-color;
 		color: $white;
 
@@ -91,6 +92,12 @@ body {
 
 		.picsart-list {
 			color: $white;
+		}
+
+		.icon-wrapper {
+			&.large {
+				background: $bg-color;
+			}
 		}
 	}
 }
