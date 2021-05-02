@@ -114,9 +114,9 @@ body.dark .icon-wrapper.large {
 }
 
 .dark-toggle {
-  position: fixed;
-  top: 2rem;
-  left: 1rem;
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
   padding: 0.5rem;
   background: #ffffff;
   outline: none;
