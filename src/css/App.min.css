@@ -56,7 +56,11 @@ body.dark .search-input::placeholder {
   color: rgba(203, 203, 203, 0.3);
 }
 
+html.dark h1,
+html.dark h2,
 html.dark h3.side-future,
+body.dark h1,
+body.dark h2,
 body.dark h3.side-future {
   color: #cbcbcb !important;
 }
