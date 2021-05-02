@@ -128,14 +128,14 @@ const App = () => {
 				className="dark-toggle"
 				onClick={() => {
 					setDark(!dark);
-					const lsDark = JSON.parse(localStorage.getItem("blogtino-dark"));
+
 					document.body.classList.remove("dark");
-					if (lsDark === true || lsDark === false) {
-						dark
-							? document.body.classList.add("dark")
-							: document.body.classList.remove("dark");
-					}
-					localStorage.setItem("blogtino-dark", JSON.stringify(dark));
+
+					!dark
+						? document.body.classList.add("dark")
+						: document.body.classList.remove("dark");
+
+					localStorage.setItem("blogtino-dark", JSON.stringify(!dark));
 				}}
 			>
 				{dark ? (
