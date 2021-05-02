@@ -40,6 +40,18 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
+		const lsDark = JSON.parse(localStorage.getItem("blogtino-dark"));
+		if (lsDark === true || lsDark === false) {
+			setDark(lsDark);
+			document.body.classList.remove("dark");
+
+			lsDark
+				? document.body.classList.add("dark")
+				: document.body.classList.remove("dark");
+		}
+	}, []);
+
+	useEffect(() => {
 		if (!fetching) {
 			const nav = document.querySelector(".nav"); // Remove collapse from nav to hide it.
 			nav.classList.remove("collapse");
@@ -116,7 +128,14 @@ const App = () => {
 				className="dark-toggle"
 				onClick={() => {
 					setDark(!dark);
-					document.body.classList.toggle("dark");
+					const lsDark = JSON.parse(localStorage.getItem("blogtino-dark"));
+					document.body.classList.remove("dark");
+					if (lsDark === true || lsDark === false) {
+						dark
+							? document.body.classList.add("dark")
+							: document.body.classList.remove("dark");
+					}
+					localStorage.setItem("blogtino-dark", JSON.stringify(dark));
 				}}
 			>
 				{dark ? (
