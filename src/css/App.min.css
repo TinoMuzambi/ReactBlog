@@ -19,15 +19,30 @@ body.dark {
   color: #cbcbcb;
 }
 
-html.dark .text,
-body.dark .text {
-  color: #cbcbcb !important;
-}
-
 html.dark textarea.text,
 body.dark textarea.text {
   background: #1d1d1d;
   color: #cbcbcb !important;
+}
+
+html.dark textarea.text::-webkit-input-placeholder,
+body.dark textarea.text::-webkit-input-placeholder {
+  color: rgba(203, 203, 203, 0.6);
+}
+
+html.dark textarea.text:-ms-input-placeholder,
+body.dark textarea.text:-ms-input-placeholder {
+  color: rgba(203, 203, 203, 0.6);
+}
+
+html.dark textarea.text::-ms-input-placeholder,
+body.dark textarea.text::-ms-input-placeholder {
+  color: rgba(203, 203, 203, 0.6);
+}
+
+html.dark textarea.text::placeholder,
+body.dark textarea.text::placeholder {
+  color: rgba(203, 203, 203, 0.6);
 }
 
 html.dark .search-input,
@@ -59,9 +74,11 @@ body.dark .search-input::placeholder {
 html.dark h1,
 html.dark h2,
 html.dark h3.side-future,
+html.dark .text,
 body.dark h1,
 body.dark h2,
-body.dark h3.side-future {
+body.dark h3.side-future,
+body.dark .text {
   color: #cbcbcb !important;
 }
 
@@ -71,17 +88,11 @@ body.dark .nav {
 }
 
 html.dark a,
-body.dark a {
-  color: #cbcbcb;
-}
-
-html.dark .text-gray,
-body.dark .text-gray {
-  color: #cbcbcb;
-}
-
 html.dark p,
-body.dark p {
+html.dark .text-gray,
+body.dark a,
+body.dark p,
+body.dark .text-gray {
   color: #cbcbcb;
 }
 
