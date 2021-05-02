@@ -113,6 +113,11 @@ body.dark .icon-wrapper.large {
   background: #1d1d1d;
 }
 
+html.dark .dark-toggle,
+body.dark .dark-toggle {
+  background: #1d1d1d;
+}
+
 .dark-toggle {
   position: absolute;
   top: 4rem;
@@ -125,15 +130,19 @@ body.dark .icon-wrapper.large {
   opacity: 0.8;
   z-index: 10;
   cursor: pointer;
+  color: #a1c4cf;
+  -webkit-box-shadow: 1px 1px 20px 0px rgba(255, 255, 255, 0.8);
+          box-shadow: 1px 1px 20px 0px rgba(255, 255, 255, 0.8);
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
   opacity: 0.9;
+  -webkit-box-shadow: 1px 1px 40px 0px rgba(255, 255, 255, 0.8);
+          box-shadow: 1px 1px 40px 0px rgba(255, 255, 255, 0.8);
 }
 
 .dark-toggle .icon {
   font-size: 2rem;
-  color: #a1c4cf;
 }
 
 .flex-row, .site-title, .site-content > .sidebar .category-list .list-items, .nav .nav-menu, .nav .nav-menu .nav-items, .not-found-page, .pagination,

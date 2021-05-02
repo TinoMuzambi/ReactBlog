@@ -99,6 +99,10 @@ body {
 				background: $bg-color;
 			}
 		}
+
+		.dark-toggle {
+			background: $bg-color;
+		}
 	}
 }
 
@@ -114,15 +118,17 @@ body {
 	opacity: 0.8;
 	z-index: 10;
 	cursor: pointer;
+	color: $midnight;
+	box-shadow: 1px 1px 20px 0px rgba($color: $bg-color, $alpha: 0.8);
 
 	&:hover,
 	&:focus {
 		opacity: 0.9;
+		box-shadow: 1px 1px 40px 0px rgba($color: $bg-color, $alpha: 0.8);
 	}
 
 	.icon {
 		font-size: 2rem;
-		color: $midnight;
 	}
 }
 
