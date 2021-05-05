@@ -17,6 +17,20 @@ $Josefin: "Josefin Sans", sans-serif;
 $Lexend: "Lexend Deca", sans-serif;
 $Livvic: "Livvic", sans-serif;
 
+@mixin titleBox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	width: max-content;
+	color: $midnight;
+	background-color: $white;
+	padding: 1.1rem;
+	font-family: $Lexend;
+	border-top-left-radius: 1000px;
+	border-bottom-left-radius: 1000px;
+}
+
 html,
 body {
 	margin: 0;
@@ -190,20 +204,6 @@ body {
 	@media only screen and (max-width: $size) {
 		@content;
 	}
-}
-
-@mixin titleBox {
-	position: absolute;
-	top: 0;
-	right: 0;
-	opacity: 0;
-	width: max-content;
-	color: $midnight;
-	background-color: $white;
-	padding: 1.1rem;
-	font-family: $Lexend;
-	border-top-left-radius: 1000px;
-	border-bottom-left-radius: 1000px;
 }
 
 /* ---------------- Global Classes ---------------*/

@@ -169,9 +169,10 @@ body.dark .dark-toggle:focus {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   content: attr(data-mode);
+  z-index: -10;
   position: absolute;
   top: 0;
-  right: 0vw;
+  right: 0;
   opacity: 0;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -182,7 +183,6 @@ body.dark .dark-toggle:focus {
   font-family: "Lexend Deca", sans-serif;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
-  z-index: -10;
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
