@@ -125,6 +125,20 @@ body {
 	color: $midnight;
 	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
 
+	&::before {
+		transition: 0.2s ease;
+		content: attr(data-mode);
+		position: absolute;
+		top: 0;
+		right: -10vw;
+		opacity: 0;
+		width: max-content;
+		color: $midnight;
+		background: $text-gray;
+		padding: 1rem;
+		font-family: $Lexend;
+	}
+
 	&:hover,
 	&:focus {
 		opacity: 0.9;
@@ -132,14 +146,9 @@ body {
 	}
 
 	&:hover {
-		&::after {
-			content: attr(data-mode);
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: fit-content;
-			color: yellow;
-			background: red;
+		&::before {
+			right: 5rem;
+			opacity: 1;
 		}
 	}
 

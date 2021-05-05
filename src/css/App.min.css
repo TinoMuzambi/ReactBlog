@@ -160,22 +160,32 @@ body.dark .dark-toggle:focus {
           box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
 }
 
+.dark-toggle::before {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  content: attr(data-mode);
+  position: absolute;
+  top: 0;
+  right: -10vw;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #a1c4cf;
+  background: #3f4954;
+  padding: 1rem;
+  font-family: "Lexend Deca", sans-serif;
+}
+
 .dark-toggle:hover, .dark-toggle:focus {
   opacity: 0.9;
   -webkit-box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
           box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
 }
 
-.dark-toggle:hover::after {
-  content: attr(data-mode);
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  color: yellow;
-  background: red;
+.dark-toggle:hover::before {
+  right: 5rem;
+  opacity: 1;
 }
 
 .dark-toggle .icon {
