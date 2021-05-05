@@ -102,7 +102,7 @@ body {
 			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
 
 			&::before {
-				background-color: $bg-color;
+				background: $bg-color;
 			}
 
 			&:hover,
@@ -128,7 +128,6 @@ body {
 	cursor: pointer;
 	color: $midnight;
 	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
-	z-index: 2;
 
 	&::before {
 		transition: 0.2s ease;

@@ -137,7 +137,7 @@ body.dark .dark-toggle {
 
 html.dark .dark-toggle::before,
 body.dark .dark-toggle::before {
-  background-color: #1d1d1d;
+  background: #1d1d1d;
 }
 
 html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
@@ -163,7 +163,6 @@ body.dark .dark-toggle:focus {
   color: #a1c4cf;
   -webkit-box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
           box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
-  z-index: 2;
 }
 
 .dark-toggle::before {
