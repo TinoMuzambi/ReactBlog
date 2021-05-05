@@ -166,6 +166,18 @@ body.dark .dark-toggle:focus {
           box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
 }
 
+.dark-toggle:hover::after {
+  content: "Dark mode";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: yellow;
+  background: red;
+}
+
 .dark-toggle .icon {
   font-size: 2rem;
 }

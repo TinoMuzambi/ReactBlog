@@ -131,6 +131,19 @@ body {
 		box-shadow: 1px 1px 40px 0px rgba($color: $text-gray, $alpha: 0.8);
 	}
 
+	&:hover {
+		&::after {
+			content: "Dark mode";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: fit-content;
+			// height: 1rem;
+			color: yellow;
+			background: red;
+		}
+	}
+
 	.icon {
 		font-size: 2rem;
 	}
