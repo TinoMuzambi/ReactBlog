@@ -126,7 +126,7 @@ const App = () => {
 			/>
 			<button
 				className="dark-toggle"
-				// title={dark ? "Switch to light mode" : "Switch to dark mode"}
+				data-mode={dark ? "Switch to light mode" : "Switch to dark mode"}
 				onClick={() => {
 					setDark(!dark);
 

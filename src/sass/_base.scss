@@ -133,12 +133,11 @@ body {
 
 	&:hover {
 		&::after {
-			content: "Dark mode";
+			content: attr(data-mode);
 			position: absolute;
 			top: 0;
 			right: 0;
 			width: fit-content;
-			// height: 1rem;
 			color: yellow;
 			background: red;
 		}
