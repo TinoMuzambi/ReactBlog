@@ -29,6 +29,7 @@ $Livvic: "Livvic", sans-serif;
 	font-family: $Lexend;
 	border-top-left-radius: 1000px;
 	border-bottom-left-radius: 1000px;
+	transition: 0.2s ease;
 }
 
 html,
@@ -144,7 +145,6 @@ body {
 	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
 
 	&::before {
-		transition: 0.2s ease;
 		content: attr(data-mode);
 		z-index: -10;
 		@include titleBox();

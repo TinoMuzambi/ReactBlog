@@ -166,8 +166,6 @@ body.dark .dark-toggle:focus {
 }
 
 .dark-toggle::before {
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
   content: attr(data-mode);
   z-index: -10;
   position: absolute;
@@ -183,6 +181,8 @@ body.dark .dark-toggle:focus {
   font-family: "Lexend Deca", sans-serif;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
@@ -1579,15 +1579,17 @@ ul ul li:not(:first-child):not(:last-child):hover {
   font-family: "Lexend Deca", sans-serif;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   content: attr(data-date);
   border-radius: 1000px;
   top: -1rem;
   padding: 0.3rem;
+  left: 4.5rem;
 }
 
 .comment-content .comment-container .group .date:hover::before {
   opacity: 1;
-  left: 4.5rem;
 }
 
 .comment-content .comment-container .group .text {
