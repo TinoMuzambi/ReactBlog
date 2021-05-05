@@ -380,7 +380,7 @@ const CommentContent = ({
 							<div className="group">
 								<div className="details">
 									<h4 className="author">{comment.user}</h4>
-									<h5 className="date" title={comment.date.toDate()}>
+									<h5 className="date" data-date={comment.date.toDate()}>
 										<Moment format="MMM DD, YYYY">
 											{comment.date.toDate()}
 										</Moment>

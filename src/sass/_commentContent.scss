@@ -67,6 +67,22 @@
 				margin: 0 0 1rem 0;
 				font-family: $Livvic;
 				font-size: 0.7rem;
+				position: relative;
+
+				&::before {
+					@include titleBox();
+					content: attr(data-date);
+					border-radius: 1000px;
+					top: -1rem;
+					padding: 0.3rem;
+				}
+
+				&:hover {
+					&::before {
+						opacity: 1;
+						left: 4.5rem;
+					}
+				}
 			}
 
 			.text {

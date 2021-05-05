@@ -1562,6 +1562,32 @@ ul ul li:not(:first-child):not(:last-child):hover {
   margin: 0 0 1rem 0;
   font-family: "Livvic", sans-serif;
   font-size: 0.7rem;
+  position: relative;
+}
+
+.comment-content .comment-container .group .date::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #a1c4cf;
+  background-color: #ffffff;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
+  content: attr(data-date);
+  border-radius: 1000px;
+  top: -1rem;
+  padding: 0.3rem;
+}
+
+.comment-content .comment-container .group .date:hover::before {
+  opacity: 1;
+  left: 4.5rem;
 }
 
 .comment-content .comment-container .group .text {
