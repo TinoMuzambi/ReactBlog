@@ -135,6 +135,11 @@ body.dark .dark-toggle {
           box-shadow: 1px 1px 20px 0px rgba(203, 203, 203, 0.8);
 }
 
+html.dark .dark-toggle::before,
+body.dark .dark-toggle::before {
+  background-color: #1d1d1d;
+}
+
 html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
 body.dark .dark-toggle:hover,
 body.dark .dark-toggle:focus {
@@ -158,6 +163,7 @@ body.dark .dark-toggle:focus {
   color: #a1c4cf;
   -webkit-box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
           box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
+  z-index: 2;
 }
 
 .dark-toggle::before {
@@ -166,15 +172,18 @@ body.dark .dark-toggle:focus {
   content: attr(data-mode);
   position: absolute;
   top: 0;
-  right: -10vw;
+  right: 0vw;
   opacity: 0;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background: #3f4954;
-  padding: 1rem;
+  background-color: #ffffff;
+  padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
+  border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
+  z-index: -10;
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
@@ -184,7 +193,7 @@ body.dark .dark-toggle:focus {
 }
 
 .dark-toggle:hover::before {
-  right: 5rem;
+  right: 1.3rem;
   opacity: 1;
 }
 

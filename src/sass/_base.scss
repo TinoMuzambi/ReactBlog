@@ -101,6 +101,10 @@ body {
 			background: $bg-color;
 			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
 
+			&::before {
+				background-color: $bg-color;
+			}
+
 			&:hover,
 			&:focus {
 				opacity: 0.9;
@@ -124,19 +128,23 @@ body {
 	cursor: pointer;
 	color: $midnight;
 	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
+	z-index: 2;
 
 	&::before {
 		transition: 0.2s ease;
 		content: attr(data-mode);
 		position: absolute;
 		top: 0;
-		right: -10vw;
+		right: 0vw;
 		opacity: 0;
 		width: max-content;
 		color: $midnight;
-		background: $text-gray;
-		padding: 1rem;
+		background-color: $white;
+		padding: 1.1rem;
 		font-family: $Lexend;
+		border-top-left-radius: 1000px;
+		border-bottom-left-radius: 1000px;
+		z-index: -10;
 	}
 
 	&:hover,
@@ -147,7 +155,7 @@ body {
 
 	&:hover {
 		&::before {
-			right: 5rem;
+			right: 1.3rem;
 			opacity: 1;
 		}
 	}
