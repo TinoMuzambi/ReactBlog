@@ -199,6 +199,7 @@ body.dark .dark-toggle:focus {
   background: #ffffff !important;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
+  pointer-events: none;
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
