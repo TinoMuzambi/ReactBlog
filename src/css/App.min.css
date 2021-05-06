@@ -1686,25 +1686,21 @@ ul ul li:not(:first-child):not(:last-child):hover {
   transition: 0.2s ease;
   font-size: 0.7rem;
   padding: 0.5rem;
-  top: 0rem;
-  left: -10vw;
+  top: 1.5rem;
+  left: 0;
   pointer-events: none;
+  z-index: 5;
 }
 
 .comment-content .actions .like:hover::before,
 .comment-content .actions .reply:hover::before,
 .comment-content .actions .edit:hover::before,
 .comment-content .actions .delete:hover::before {
-  left: -3.5rem;
   opacity: 1;
 }
 
 .comment-content .actions .like::before {
   content: attr(data-like);
-}
-
-.comment-content .actions .upvotes::before {
-  content: attr(data-likers);
 }
 
 .comment-content .actions .edit::before {
@@ -1726,6 +1722,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 }
 
 .comment-content .actions .upvotes::before {
+  content: attr(data-likers);
   position: absolute;
   top: 0;
   right: 0;
@@ -1742,13 +1739,13 @@ ul ul li:not(:first-child):not(:last-child):hover {
   transition: 0.2s ease;
   font-size: 0.7rem;
   padding: 0.5rem;
-  top: 0rem;
-  left: -10vw;
+  top: 1rem;
+  left: 0;
   pointer-events: none;
+  z-index: 5;
 }
 
 .comment-content .actions .upvotes:hover::before {
-  left: -3.5rem;
   opacity: 1;
 }
 
