@@ -189,6 +189,8 @@ body.dark .dark-toggle:focus {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 10rem;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
@@ -1378,6 +1380,8 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 10rem;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
@@ -1634,6 +1638,8 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 10rem;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
@@ -1738,6 +1744,8 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 10rem;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
@@ -1792,6 +1800,8 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 10rem;
+  word-wrap: break-word;
   color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
