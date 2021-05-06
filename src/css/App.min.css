@@ -179,10 +179,12 @@ body.dark .dark-toggle:focus {
   background-color: #ffffff;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
-  border-top-left-radius: 1000px;
-  border-bottom-left-radius: 1000px;
+  border-radius: 1000px;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
+  border-radius: 0;
+  border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
 }
 
 .dark-toggle:hover, .dark-toggle:focus {
@@ -1577,12 +1579,10 @@ ul ul li:not(:first-child):not(:last-child):hover {
   background-color: #ffffff;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
-  border-top-left-radius: 1000px;
-  border-bottom-left-radius: 1000px;
+  border-radius: 1000px;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   content: attr(data-date);
-  border-radius: 1000px;
   top: -1rem;
   padding: 0.3rem;
   left: 4.5rem;
@@ -1655,6 +1655,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   cursor: pointer;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.2rem;
+  position: relative;
 }
 
 .comment-content .actions .like:last-child,
@@ -1663,6 +1664,37 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .comment-content .actions .delete:last-child {
   padding-right: 0.2rem;
   border-right: solid 1px #bebebe;
+}
+
+.comment-content .actions .like::before,
+.comment-content .actions .reply::before,
+.comment-content .actions .edit::before,
+.comment-content .actions .delete::before {
+  content: attr(data-like);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #a1c4cf;
+  background-color: #ffffff;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  left: 0;
+}
+
+.comment-content .actions .like:hover::before,
+.comment-content .actions .reply:hover::before,
+.comment-content .actions .edit:hover::before,
+.comment-content .actions .delete:hover::before {
+  opacity: 1;
 }
 
 .comment-content .actions .reply:hover {

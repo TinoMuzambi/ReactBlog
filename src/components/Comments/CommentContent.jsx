@@ -393,7 +393,7 @@ const CommentContent = ({
 							<div
 								className="like"
 								onClick={() => like(comment)}
-								title={
+								data-like={
 									currUserData?.liked_ids?.includes(comment.id)
 										? "Unlike"
 										: "Like"

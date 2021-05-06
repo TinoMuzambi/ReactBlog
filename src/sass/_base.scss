@@ -27,8 +27,7 @@ $Livvic: "Livvic", sans-serif;
 	background-color: $white;
 	padding: 1.1rem;
 	font-family: $Lexend;
-	border-top-left-radius: 1000px;
-	border-bottom-left-radius: 1000px;
+	border-radius: 1000px;
 	transition: 0.2s ease;
 }
 
@@ -148,6 +147,9 @@ body {
 		content: attr(data-mode);
 		z-index: -10;
 		@include titleBox();
+		border-radius: 0;
+		border-top-left-radius: 1000px;
+		border-bottom-left-radius: 1000px;
 	}
 
 	&:hover,
