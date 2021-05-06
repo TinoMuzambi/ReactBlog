@@ -380,7 +380,7 @@ const CommentContent = ({
 							<div className="group">
 								<div className="details">
 									<h4 className="author">{comment.user}</h4>
-									<h5 className="date" title={comment.date.toDate()}>
+									<h5 className="date" data-date={comment.date.toDate()}>
 										<Moment format="MMM DD, YYYY">
 											{comment.date.toDate()}
 										</Moment>
@@ -393,7 +393,7 @@ const CommentContent = ({
 							<div
 								className="like"
 								onClick={() => like(comment)}
-								title={
+								data-like={
 									currUserData?.liked_ids?.includes(comment.id)
 										? "Unlike"
 										: "Like"
@@ -406,7 +406,10 @@ const CommentContent = ({
 								)}
 							</div>
 							{comment.likers ? (
-								<p className="upvotes" title={comment.likers.sort()}>
+								<p
+									className="upvotes"
+									data-likers={comment.likers.sort().join(", ")}
+								>
 									{comment.upvotes}
 								</p>
 							) : (
@@ -417,16 +420,12 @@ const CommentContent = ({
 									Reply
 								</p>
 							)}
-							<FcEditImage
-								className="edit"
-								title="Edit"
-								onClick={() => editHandler(comment.id)}
-							/>
-							<FcEmptyTrash
-								className="delete"
-								onClick={() => deleteHandler(comment.id)}
-								title="Delete"
-							/>
+							<span className="edit">
+								<FcEditImage onClick={() => editHandler(comment.id)} />
+							</span>
+							<span className="delete">
+								<FcEmptyTrash onClick={() => deleteHandler(comment.id)} />
+							</span>
 						</div>
 						{replying && (
 							<div

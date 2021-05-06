@@ -17,6 +17,26 @@ $Josefin: "Josefin Sans", sans-serif;
 $Lexend: "Lexend Deca", sans-serif;
 $Livvic: "Livvic", sans-serif;
 
+@mixin titleBox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	width: max-content;
+	color: $white;
+	background-color: rgb(29, 29, 29);
+	padding: 1.1rem;
+	font-family: $Lexend;
+	border-radius: 1000px;
+	transition: 0.2s ease;
+}
+
+@mixin mq($size) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}
+
 html,
 body {
 	margin: 0;
@@ -26,11 +46,22 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: $bg-color;
 
+	@include mq(768px) {
+		*::before {
+			content: none !important;
+		}
+	}
+
 	&.dark {
 		$bg-color: rgb(29, 29, 29);
 		$white: rgb(203, 203, 203);
 		background: $bg-color;
 		color: $white;
+
+		*::before {
+			background: white !important;
+			color: rgb(29, 29, 29) !important;
+		}
 
 		textarea.text {
 			background: $bg-color;
@@ -101,6 +132,11 @@ body {
 			background: $bg-color;
 			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
 
+			&::before {
+				background: rgb(29, 29, 29) !important;
+				color: $midnight !important;
+			}
+
 			&:hover,
 			&:focus {
 				opacity: 0.9;
@@ -120,15 +156,34 @@ body {
 	border: none;
 	border-radius: 50%;
 	opacity: 0.8;
-	z-index: 10;
+	z-index: 5;
 	cursor: pointer;
 	color: $midnight;
 	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
+
+	&::before {
+		content: attr(data-mode);
+		z-index: -5;
+		@include titleBox();
+		border-radius: 0;
+		background: $white !important;
+		color: $midnight !important;
+		border-top-left-radius: 1000px;
+		border-bottom-left-radius: 1000px;
+		pointer-events: none;
+	}
 
 	&:hover,
 	&:focus {
 		opacity: 0.9;
 		box-shadow: 1px 1px 40px 0px rgba($color: $text-gray, $alpha: 0.8);
+	}
+
+	&:hover {
+		&::before {
+			right: 1.3rem;
+			opacity: 1;
+		}
 	}
 
 	.icon {
@@ -166,12 +221,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-}
-
-@mixin mq($size) {
-	@media only screen and (max-width: $size) {
-		@content;
-	}
 }
 
 /* ---------------- Global Classes ---------------*/

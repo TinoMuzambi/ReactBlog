@@ -44,9 +44,7 @@ const SideBlog = ({ blogs, future }) => (
 				<div className="post-title">
 					{/* If future show title with future tag, else show link to that blog. */}
 					{future ? (
-						<h3 className="side-future" title="Coming at some point...">
-							{blog.title}
-						</h3>
+						<h3 className="side-future">{blog.title}</h3>
 					) : (
 						<Link to={`/blogs/${blog.url}`}>{blog.title}</Link>
 					)}

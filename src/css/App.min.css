@@ -13,10 +13,23 @@ body {
   background: white;
 }
 
+@media only screen and (max-width: 768px) {
+  html *::before,
+  body *::before {
+    content: none !important;
+  }
+}
+
 html.dark,
 body.dark {
   background: #1d1d1d;
   color: #cbcbcb;
+}
+
+html.dark *::before,
+body.dark *::before {
+  background: white !important;
+  color: #1d1d1d !important;
 }
 
 html.dark textarea.text,
@@ -135,6 +148,12 @@ body.dark .dark-toggle {
           box-shadow: 1px 1px 20px 0px rgba(203, 203, 203, 0.8);
 }
 
+html.dark .dark-toggle::before,
+body.dark .dark-toggle::before {
+  background: #1d1d1d !important;
+  color: #a1c4cf !important;
+}
+
 html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
 body.dark .dark-toggle:hover,
 body.dark .dark-toggle:focus {
@@ -153,17 +172,47 @@ body.dark .dark-toggle:focus {
   border: none;
   border-radius: 50%;
   opacity: 0.8;
-  z-index: 10;
+  z-index: 5;
   cursor: pointer;
   color: #a1c4cf;
   -webkit-box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
           box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
 }
 
+.dark-toggle::before {
+  content: attr(data-mode);
+  z-index: -5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  background-color: #1d1d1d;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border-radius: 0;
+  background: #ffffff !important;
+  color: #a1c4cf !important;
+  border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
+  pointer-events: none;
+}
+
 .dark-toggle:hover, .dark-toggle:focus {
   opacity: 0.9;
   -webkit-box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
           box-shadow: 1px 1px 40px 0px rgba(63, 73, 84, 0.8);
+}
+
+.dark-toggle:hover::before {
+  right: 1.3rem;
+  opacity: 1;
 }
 
 .dark-toggle .icon {
@@ -1314,6 +1363,43 @@ ul ul li:not(:first-child):not(:last-child):hover {
   font-family: inherit;
 }
 
+.comments .form-group .person .user .google-span,
+.comments .form-group .person .user .anon-span {
+  position: relative;
+}
+
+.comments .form-group .person .user .google-span::before,
+.comments .form-group .person .user .anon-span::before {
+  content: attr(data-sign-in);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  background-color: #1d1d1d;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.comments .form-group .person .user .google-span:hover::before,
+.comments .form-group .person .user .anon-span:hover::before {
+  left: 2rem;
+  top: 1rem;
+  opacity: 1;
+}
+
 .comments .form-group .person .user .google-span {
   gap: 0.5rem;
 }
@@ -1360,11 +1446,11 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .react-confirm-alert-overlay .confirm {
   margin: 2rem 2rem 0;
   border-radius: 1rem;
-  border: solid 1px #a1c4cf;
+  -webkit-box-shadow: 0 0 10px 0 rgba(161, 196, 207, 0.7);
+          box-shadow: 0 0 10px 0 rgba(161, 196, 207, 0.7);
   padding: 1.5rem;
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   opacity: 0.8;
-  color: #ffffff;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1376,6 +1462,11 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .react-confirm-alert-overlay .confirm .title {
   margin: 0;
   font-size: 1.5rem;
+  color: white !important;
+}
+
+.react-confirm-alert-overlay .confirm .text {
+  color: white !important;
 }
 
 .react-confirm-alert-overlay .confirm .buttons {
@@ -1532,6 +1623,34 @@ ul ul li:not(:first-child):not(:last-child):hover {
   margin: 0 0 1rem 0;
   font-family: "Livvic", sans-serif;
   font-size: 0.7rem;
+  position: relative;
+}
+
+.comment-content .comment-container .group .date::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  background-color: #1d1d1d;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  content: attr(data-date);
+  top: -2rem;
+  padding: 0.3rem;
+  left: 4.5rem;
+  pointer-events: none;
+}
+
+.comment-content .comment-container .group .date:hover::before {
+  top: -1rem;
+  opacity: 1;
 }
 
 .comment-content .comment-container .group .text {
@@ -1597,6 +1716,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   cursor: pointer;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.2rem;
+  position: relative;
 }
 
 .comment-content .actions .like:last-child,
@@ -1607,6 +1727,52 @@ ul ul li:not(:first-child):not(:last-child):hover {
   border-right: solid 1px #bebebe;
 }
 
+.comment-content .actions .like::before,
+.comment-content .actions .reply::before,
+.comment-content .actions .edit::before,
+.comment-content .actions .delete::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  background-color: #1d1d1d;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.comment-content .actions .like:hover::before,
+.comment-content .actions .reply:hover::before,
+.comment-content .actions .edit:hover::before,
+.comment-content .actions .delete:hover::before {
+  top: 1.5rem;
+  opacity: 1;
+}
+
+.comment-content .actions .like::before {
+  content: attr(data-like);
+}
+
+.comment-content .actions .edit::before {
+  content: "Edit";
+}
+
+.comment-content .actions .delete::before {
+  content: "Delete";
+}
+
 .comment-content .actions .reply:hover {
   border-bottom: 2px solid transparent;
   opacity: 0.8;
@@ -1614,6 +1780,36 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .comment-content .actions .upvotes {
   padding-bottom: 0.2rem;
+  position: relative;
+}
+
+.comment-content .actions .upvotes::before {
+  content: attr(data-likers);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  background-color: #1d1d1d;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.comment-content .actions .upvotes:hover::before {
+  top: 1rem;
+  opacity: 1;
 }
 
 .comment-content .form-group {

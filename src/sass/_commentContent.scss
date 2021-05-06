@@ -67,6 +67,23 @@
 				margin: 0 0 1rem 0;
 				font-family: $Livvic;
 				font-size: 0.7rem;
+				position: relative;
+
+				&::before {
+					@include titleBox();
+					content: attr(data-date);
+					top: -2rem;
+					padding: 0.3rem;
+					left: 4.5rem;
+					pointer-events: none;
+				}
+
+				&:hover {
+					&::before {
+						top: -1rem;
+						opacity: 1;
+					}
+				}
 			}
 
 			.text {
@@ -119,10 +136,46 @@
 			cursor: pointer;
 			border-bottom: 2px solid transparent;
 			padding-bottom: 0.2rem;
+			position: relative;
 
 			&:last-child {
 				padding-right: 0.2rem;
 				border-right: solid 1px rgb(190, 190, 190);
+			}
+
+			&::before {
+				@include titleBox();
+				font-size: 0.7rem;
+				padding: 0.5rem;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				z-index: 5;
+			}
+
+			&:hover {
+				&::before {
+					top: 1.5rem;
+					opacity: 1;
+				}
+			}
+		}
+
+		.like {
+			&::before {
+				content: attr(data-like);
+			}
+		}
+
+		.edit {
+			&::before {
+				content: "Edit";
+			}
+		}
+
+		.delete {
+			&::before {
+				content: "Delete";
 			}
 		}
 
@@ -135,6 +188,25 @@
 
 		.upvotes {
 			padding-bottom: 0.2rem;
+			position: relative;
+
+			&::before {
+				content: attr(data-likers);
+				@include titleBox();
+				font-size: 0.7rem;
+				padding: 0.5rem;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				z-index: 5;
+			}
+
+			&:hover {
+				&::before {
+					top: 1rem;
+					opacity: 1;
+				}
+			}
 		}
 	}
 
