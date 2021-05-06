@@ -19,6 +19,12 @@ body.dark {
   color: #cbcbcb;
 }
 
+html.dark *::before,
+body.dark *::before {
+  background: white !important;
+  color: #a1c4cf;
+}
+
 html.dark textarea.text,
 body.dark textarea.text {
   background: #1d1d1d;
@@ -176,7 +182,7 @@ body.dark .dark-toggle:focus {
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background-color: #ffffff;
+  background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 1000px;
@@ -1362,7 +1368,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background-color: #ffffff;
+  background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 1000px;
@@ -1613,7 +1619,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background-color: #ffffff;
+  background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 1000px;
@@ -1716,7 +1722,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background-color: #ffffff;
+  background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 1000px;
@@ -1770,7 +1776,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -moz-max-content;
   width: max-content;
   color: #a1c4cf;
-  background-color: #ffffff;
+  background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 1000px;

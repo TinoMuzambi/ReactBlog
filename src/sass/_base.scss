@@ -24,7 +24,7 @@ $Livvic: "Livvic", sans-serif;
 	opacity: 0;
 	width: max-content;
 	color: $midnight;
-	background-color: $white;
+	background-color: rgb(29, 29, 29);
 	padding: 1.1rem;
 	font-family: $Lexend;
 	border-radius: 1000px;
@@ -45,6 +45,11 @@ body {
 		$white: rgb(203, 203, 203);
 		background: $bg-color;
 		color: $white;
+
+		*::before {
+			background: white !important;
+			color: $midnight;
+		}
 
 		textarea.text {
 			background: $bg-color;
