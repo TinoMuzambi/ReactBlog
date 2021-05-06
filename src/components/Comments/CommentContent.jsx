@@ -405,7 +405,7 @@ const CommentContent = ({
 									<FcLikePlaceholder />
 								)}
 							</div>
-							{comment.likers ? (
+							{comment.likers.length > 0 ? (
 								<p
 									className="upvotes"
 									data-likers={comment.likers.sort().join(", ")}
@@ -413,7 +413,12 @@ const CommentContent = ({
 									{comment.upvotes}
 								</p>
 							) : (
-								<p className="upvotes">{comment.upvotes}</p>
+								<p
+									data-likers="Nobody has liked this comment."
+									className="upvotes"
+								>
+									{comment.upvotes}
+								</p>
 							)}
 							{comment.level !== "two" && (
 								<p className="reply" onClick={() => replyHandler()}>
