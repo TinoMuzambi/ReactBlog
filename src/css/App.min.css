@@ -143,7 +143,7 @@ body.dark .dark-toggle {
 
 html.dark .dark-toggle::before,
 body.dark .dark-toggle::before {
-  background: #1d1d1d;
+  background: #1d1d1d !important;
 }
 
 html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
@@ -189,6 +189,7 @@ body.dark .dark-toggle:focus {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   border-radius: 0;
+  background: #ffffff !important;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
 }

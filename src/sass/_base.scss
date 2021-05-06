@@ -121,7 +121,7 @@ body {
 			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
 
 			&::before {
-				background: $bg-color;
+				background: rgb(29, 29, 29) !important;
 			}
 
 			&:hover,
@@ -153,6 +153,7 @@ body {
 		z-index: -10;
 		@include titleBox();
 		border-radius: 0;
+		background: $white !important;
 		border-top-left-radius: 1000px;
 		border-bottom-left-radius: 1000px;
 	}
