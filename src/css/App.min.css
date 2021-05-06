@@ -1784,7 +1784,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
 }
 
 .comment-content .actions .upvotes::before {
-  content: attr(data-likers);
+  content: "Likers: " attr(data-likers);
   position: absolute;
   top: 0;
   right: 0;
