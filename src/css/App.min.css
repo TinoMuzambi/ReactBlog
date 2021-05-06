@@ -1346,6 +1346,43 @@ ul ul li:not(:first-child):not(:last-child):hover {
   font-family: inherit;
 }
 
+.comments .form-group .person .user .google-span,
+.comments .form-group .person .user .anon-span {
+  position: relative;
+}
+
+.comments .form-group .person .user .google-span::before,
+.comments .form-group .person .user .anon-span::before {
+  content: attr(data-sign-in);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #a1c4cf;
+  background-color: #ffffff;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.comments .form-group .person .user .google-span:hover::before,
+.comments .form-group .person .user .anon-span:hover::before {
+  left: 2rem;
+  top: 1rem;
+  opacity: 1;
+}
+
 .comments .form-group .person .user .google-span {
   gap: 0.5rem;
 }

@@ -172,7 +172,10 @@ const Comments = ({ url }) => {
 											user?.displayName
 										)
 									) : (
-										<span className="google-span" title="Sign in with Google">
+										<span
+											className="google-span"
+											data-sign-in="Sign in with Google"
+										>
 											<FcGoogle className="google-icon" /> Sign in
 										</span>
 									)}
@@ -186,7 +189,10 @@ const Comments = ({ url }) => {
 												user?.displayName
 											)
 										) : (
-											<span className="anon-span" title="Sign in anonymously">
+											<span
+												className="anon-span"
+												data-sign-in="Sign in anonymously"
+											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													viewBox="0 0 100 100"
