@@ -5,6 +5,7 @@
 		position: relative;
 	}
 }
+
 .react-confirm-alert-overlay {
 	background: none !important;
 	justify-content: flex-end !important;
@@ -17,7 +18,6 @@
 		padding: 1.5rem;
 		background: $sky;
 		opacity: 0.8;
-		color: $white;
 
 		@include mq(768px) {
 			opacity: 1;
@@ -26,6 +26,11 @@
 		.title {
 			margin: 0;
 			font-size: 1.5rem;
+			color: white !important;
+		}
+
+		.text {
+			color: white !important;
 		}
 
 		.buttons {
