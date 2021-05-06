@@ -164,7 +164,7 @@ body.dark .dark-toggle:focus {
   border: none;
   border-radius: 50%;
   opacity: 0.8;
-  z-index: 10;
+  z-index: 5;
   cursor: pointer;
   color: #a1c4cf;
   -webkit-box-shadow: 1px 1px 20px 0px rgba(63, 73, 84, 0.8);
@@ -173,7 +173,7 @@ body.dark .dark-toggle:focus {
 
 .dark-toggle::before {
   content: attr(data-mode);
-  z-index: -10;
+  z-index: -5;
   position: absolute;
   top: 0;
   right: 0;
