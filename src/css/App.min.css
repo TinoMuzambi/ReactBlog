@@ -1643,6 +1643,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   top: -2rem;
   padding: 0.3rem;
   left: 4.5rem;
+  pointer-events: none;
 }
 
 .comment-content .comment-container .group .date:hover::before {
