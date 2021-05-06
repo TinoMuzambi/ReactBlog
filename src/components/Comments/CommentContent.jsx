@@ -417,14 +417,12 @@ const CommentContent = ({
 									Reply
 								</p>
 							)}
-							<FcEditImage
-								className="edit"
-								onClick={() => editHandler(comment.id)}
-							/>
-							<FcEmptyTrash
-								className="delete"
-								onClick={() => deleteHandler(comment.id)}
-							/>
+							<span className="edit">
+								<FcEditImage onClick={() => editHandler(comment.id)} />
+							</span>
+							<span className="delete">
+								<FcEmptyTrash onClick={() => deleteHandler(comment.id)} />
+							</span>
 						</div>
 						{replying && (
 							<div

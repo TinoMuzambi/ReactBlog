@@ -1648,22 +1648,6 @@ ul ul li:not(:first-child):not(:last-child):hover {
   }
 }
 
-.comment-content .actions .like::before {
-  content: attr(data-like);
-}
-
-.comment-content .actions .upvotes::before {
-  content: attr(data-likers);
-}
-
-.comment-content .actions .edit::before {
-  content: attr("Edit");
-}
-
-.comment-content .actions .delete::before {
-  content: attr("Delete");
-}
-
 .comment-content .actions .like,
 .comment-content .actions .reply,
 .comment-content .actions .edit,
@@ -1715,6 +1699,22 @@ ul ul li:not(:first-child):not(:last-child):hover {
   opacity: 1;
 }
 
+.comment-content .actions .like::before {
+  content: attr(data-like);
+}
+
+.comment-content .actions .upvotes::before {
+  content: attr(data-likers);
+}
+
+.comment-content .actions .edit::before {
+  content: "Edit";
+}
+
+.comment-content .actions .delete::before {
+  content: "Delete";
+}
+
 .comment-content .actions .reply:hover {
   border-bottom: 2px solid transparent;
   opacity: 0.8;
@@ -1722,6 +1722,34 @@ ul ul li:not(:first-child):not(:last-child):hover {
 
 .comment-content .actions .upvotes {
   padding-bottom: 0.2rem;
+  position: relative;
+}
+
+.comment-content .actions .upvotes::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #a1c4cf;
+  background-color: #ffffff;
+  padding: 1.1rem;
+  font-family: "Lexend Deca", sans-serif;
+  border-radius: 1000px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  top: 0rem;
+  left: -10vw;
+  pointer-events: none;
+}
+
+.comment-content .actions .upvotes:hover::before {
+  left: -3.5rem;
+  opacity: 1;
 }
 
 .comment-content .form-group {
