@@ -1648,6 +1648,22 @@ ul ul li:not(:first-child):not(:last-child):hover {
   }
 }
 
+.comment-content .actions .like::before {
+  content: attr(data-like);
+}
+
+.comment-content .actions .upvotes::before {
+  content: attr(data-likers);
+}
+
+.comment-content .actions .edit::before {
+  content: attr("Edit");
+}
+
+.comment-content .actions .delete::before {
+  content: attr("Delete");
+}
+
 .comment-content .actions .like,
 .comment-content .actions .reply,
 .comment-content .actions .edit,
@@ -1670,7 +1686,6 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .comment-content .actions .reply::before,
 .comment-content .actions .edit::before,
 .comment-content .actions .delete::before {
-  content: attr(data-like);
   position: absolute;
   top: 0;
   right: 0;
@@ -1687,13 +1702,16 @@ ul ul li:not(:first-child):not(:last-child):hover {
   transition: 0.2s ease;
   font-size: 0.7rem;
   padding: 0.5rem;
-  left: 0;
+  top: 0rem;
+  left: -10vw;
+  pointer-events: none;
 }
 
 .comment-content .actions .like:hover::before,
 .comment-content .actions .reply:hover::before,
 .comment-content .actions .edit:hover::before,
 .comment-content .actions .delete:hover::before {
+  left: -3.5rem;
   opacity: 1;
 }
 

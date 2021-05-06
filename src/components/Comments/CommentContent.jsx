@@ -406,7 +406,7 @@ const CommentContent = ({
 								)}
 							</div>
 							{comment.likers ? (
-								<p className="upvotes" title={comment.likers.sort()}>
+								<p className="upvotes" data-likers={comment.likers.sort()}>
 									{comment.upvotes}
 								</p>
 							) : (
@@ -419,13 +419,11 @@ const CommentContent = ({
 							)}
 							<FcEditImage
 								className="edit"
-								title="Edit"
 								onClick={() => editHandler(comment.id)}
 							/>
 							<FcEmptyTrash
 								className="delete"
 								onClick={() => deleteHandler(comment.id)}
-								title="Delete"
 							/>
 						</div>
 						{replying && (

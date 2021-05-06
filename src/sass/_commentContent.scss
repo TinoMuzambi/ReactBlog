@@ -127,6 +127,28 @@
 			}
 		}
 
+		.like {
+			&::before {
+				content: attr(data-like);
+			}
+		}
+		.upvotes {
+			&::before {
+				content: attr(data-likers);
+			}
+		}
+		.edit {
+			&::before {
+				content: attr("Edit");
+			}
+		}
+
+		.delete {
+			&::before {
+				content: attr("Delete");
+			}
+		}
+
 		.like,
 		.reply,
 		.edit,
@@ -142,15 +164,17 @@
 			}
 
 			&::before {
-				content: attr(data-like);
 				@include titleBox();
 				font-size: 0.7rem;
 				padding: 0.5rem;
-				left: 0;
+				top: 0rem;
+				left: -10vw;
+				pointer-events: none;
 			}
 
 			&:hover {
 				&::before {
+					left: -3.5rem;
 					opacity: 1;
 				}
 			}
