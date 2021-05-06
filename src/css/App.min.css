@@ -13,6 +13,13 @@ body {
   background: white;
 }
 
+@media only screen and (max-width: 768px) {
+  html *::before,
+  body *::before {
+    content: none !important;
+  }
+}
+
 html.dark,
 body.dark {
   background: #1d1d1d;
