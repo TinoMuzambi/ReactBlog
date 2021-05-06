@@ -191,7 +191,7 @@
 			position: relative;
 
 			&::before {
-				content: "Likers: " attr(data-likers);
+				content: attr(data-likers);
 				@include titleBox();
 				font-size: 0.7rem;
 				padding: 0.5rem;

@@ -408,7 +408,7 @@ const CommentContent = ({
 							{comment.likers.length > 0 ? (
 								<p
 									className="upvotes"
-									data-likers={comment.likers.sort().join(", ")}
+									data-likers={"Likers:\n\n" + comment.likers.sort().join(", ")}
 								>
 									{comment.upvotes}
 								</p>
