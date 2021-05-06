@@ -72,13 +72,14 @@
 				&::before {
 					@include titleBox();
 					content: attr(data-date);
-					top: -1rem;
+					top: -2rem;
 					padding: 0.3rem;
 					left: 4.5rem;
 				}
 
 				&:hover {
 					&::before {
+						top: -1rem;
 						opacity: 1;
 					}
 				}
@@ -145,7 +146,7 @@
 				@include titleBox();
 				font-size: 0.7rem;
 				padding: 0.5rem;
-				top: 1.5rem;
+				top: 0;
 				left: 0;
 				pointer-events: none;
 				z-index: 5;
@@ -153,6 +154,7 @@
 
 			&:hover {
 				&::before {
+					top: 1.5rem;
 					opacity: 1;
 				}
 			}
@@ -192,7 +194,7 @@
 				@include titleBox();
 				font-size: 0.7rem;
 				padding: 0.5rem;
-				top: 1rem;
+				top: 0;
 				left: 0;
 				pointer-events: none;
 				z-index: 5;
@@ -200,6 +202,7 @@
 
 			&:hover {
 				&::before {
+					top: 1rem;
 					opacity: 1;
 				}
 			}
