@@ -406,7 +406,10 @@ const CommentContent = ({
 								)}
 							</div>
 							{comment.likers ? (
-								<p className="upvotes" data-likers={comment.likers.sort()}>
+								<p
+									className="upvotes"
+									data-likers={comment.likers.sort().join(", ")}
+								>
 									{comment.upvotes}
 								</p>
 							) : (
