@@ -29,7 +29,7 @@ body.dark {
 html.dark *::before,
 body.dark *::before {
   background: white !important;
-  color: #a1c4cf;
+  color: #1d1d1d !important;
 }
 
 html.dark textarea.text,
@@ -151,6 +151,7 @@ body.dark .dark-toggle {
 html.dark .dark-toggle::before,
 body.dark .dark-toggle::before {
   background: #1d1d1d !important;
+  color: #a1c4cf !important;
 }
 
 html.dark .dark-toggle:hover, html.dark .dark-toggle:focus,
@@ -188,7 +189,7 @@ body.dark .dark-toggle:focus {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #a1c4cf;
+  color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
@@ -197,6 +198,7 @@ body.dark .dark-toggle:focus {
   transition: 0.2s ease;
   border-radius: 0;
   background: #ffffff !important;
+  color: #a1c4cf !important;
   border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
   pointer-events: none;
@@ -1376,7 +1378,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #a1c4cf;
+  color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
@@ -1632,7 +1634,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #a1c4cf;
+  color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
@@ -1736,7 +1738,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #a1c4cf;
+  color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;
@@ -1790,7 +1792,7 @@ ul ul li:not(:first-child):not(:last-child):hover {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  color: #a1c4cf;
+  color: #ffffff;
   background-color: #1d1d1d;
   padding: 1.1rem;
   font-family: "Lexend Deca", sans-serif;

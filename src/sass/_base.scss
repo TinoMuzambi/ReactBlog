@@ -23,7 +23,7 @@ $Livvic: "Livvic", sans-serif;
 	right: 0;
 	opacity: 0;
 	width: max-content;
-	color: $midnight;
+	color: $white;
 	background-color: rgb(29, 29, 29);
 	padding: 1.1rem;
 	font-family: $Lexend;
@@ -60,7 +60,7 @@ body {
 
 		*::before {
 			background: white !important;
-			color: $midnight;
+			color: rgb(29, 29, 29) !important;
 		}
 
 		textarea.text {
@@ -134,6 +134,7 @@ body {
 
 			&::before {
 				background: rgb(29, 29, 29) !important;
+				color: $midnight !important;
 			}
 
 			&:hover,
@@ -166,6 +167,7 @@ body {
 		@include titleBox();
 		border-radius: 0;
 		background: $white !important;
+		color: $midnight !important;
 		border-top-left-radius: 1000px;
 		border-bottom-left-radius: 1000px;
 		pointer-events: none;
