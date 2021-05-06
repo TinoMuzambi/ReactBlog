@@ -1443,7 +1443,8 @@ ul ul li:not(:first-child):not(:last-child):hover {
 .react-confirm-alert-overlay .confirm {
   margin: 2rem 2rem 0;
   border-radius: 1rem;
-  border: solid 1px #a1c4cf;
+  -webkit-box-shadow: 0 0 10px 0 rgba(161, 196, 207, 0.7);
+          box-shadow: 0 0 10px 0 rgba(161, 196, 207, 0.7);
   padding: 1.5rem;
   background: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   opacity: 0.8;

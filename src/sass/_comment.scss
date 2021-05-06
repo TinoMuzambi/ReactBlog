@@ -14,7 +14,7 @@
 	.confirm {
 		margin: 2rem 2rem 0;
 		border-radius: 1rem;
-		border: solid 1px $midnight;
+		box-shadow: 0 0 10px 0 rgba($color: $midnight, $alpha: 0.7);
 		padding: 1.5rem;
 		background: $sky;
 		opacity: 0.8;
