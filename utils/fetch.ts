@@ -2,7 +2,6 @@ import StoryblokClient from "storyblok-js-client";
 
 import { titleCase } from "./helpers";
 
-// const BASE_URL = "https://api.storyblok.com/v1/cdn";
 const Storyblok = new StoryblokClient({
 	accessToken: process.env.REACT_APP_STORYBLOK_KEY,
 	cache: {
