@@ -6,18 +6,14 @@ import { GetStaticProps } from "next";
 import Storyblok from "../lib/storyblok";
 import useStoryblok from "../lib/storyblok-hook";
 import { HomeProps } from "../interfaces";
+import Page from "../components/Page";
 
 const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
-	const [queryText, setQueryText] = useState("");
-	const [searching, setSearching] = useState(false);
-	const [dark, setDark] = useState(false);
-	const [fetching, setFetching] = useState(true);
-	const [blogs, setBlogs] = useState([]);
-	const [categories, setCategories] = useState([]);
-	const [featuredItem, setFeaturedItem] = useState({});
+	const storyblokUser = useStoryblok(story);
+
 	return (
-		<main>
-			<p>Clean Next.js with TypeScript and Sass Boilerplate</p>
+		<main className="home">
+			<Page content={storyblokUser?.content} />
 		</main>
 	);
 };
