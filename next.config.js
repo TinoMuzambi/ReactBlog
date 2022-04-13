@@ -6,4 +6,7 @@ module.exports = {
 		REACT_APP_FIREBASE_KEY: process.env.REACT_APP_FIREBASE_KEY,
 		STORYBLOK_ENV: process.env.STORYBLOK_ENV,
 	},
+	rules: {
+		"@next/next/no-img-element": "off",
+	},
 };
