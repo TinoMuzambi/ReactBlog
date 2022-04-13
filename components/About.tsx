@@ -5,7 +5,7 @@ const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
 		<section className="site-title">
 			<div className="site-background text-center">
-				<DynamicComponent blok={blok.image} />
+				<DynamicComponent blok={blok.image[0]} />
 				<h1>{blok.title}</h1>
 				<h2>
 					<s>{blok.fake_job_title}</s>&nbsp;{blok.job_title}
