@@ -2,8 +2,20 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
+	interface MyCustomCSS extends React.CSSProperties {
+		"--bg-image": string;
+	}
+
 	return (
-		<section className="site-title">
+		<section
+			className="site-title"
+			style={
+				{
+					"--bg-image":
+						`url(${blok.background_image[0].image.filename})` as string,
+				} as MyCustomCSS
+			}
+		>
 			<div className="site-background text-center">
 				<DynamicComponent blok={blok.image[0]} />
 				<h1>{blok.title}</h1>
