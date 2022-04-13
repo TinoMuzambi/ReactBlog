@@ -21,3 +21,7 @@ export interface PlaceholderProps {
 export interface blokProps {
 	blok: any;
 }
+
+export interface PageProps {
+	content: any;
+}
