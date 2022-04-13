@@ -9,6 +9,8 @@ const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
 		<section
 			className="site-title"
+			data-aos="fade-up"
+			data-aos-delay="100"
 			style={
 				{
 					"--bg-image":
