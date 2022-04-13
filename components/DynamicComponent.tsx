@@ -1,7 +1,12 @@
-import Placeholder from "./Placeholder";
 import { blokProps } from "../interfaces";
+import Placeholder from "./Placeholder";
+import About from "./About";
+import Image from "./Image";
 
-const Components: any = {};
+const Components: any = {
+	about: About,
+	image: Image,
+};
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	if (typeof Components[blok?.component] !== "undefined") {
