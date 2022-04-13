@@ -1,9 +1,23 @@
-# Clean Next.js with TypeScript and Sass Boilerplate
+# Blog.TinoMuzambi
 
-## Usage
+My blog site build with React and styled with SCSS.
 
-1. `git clone https://github.com/TinoMuzambi/CleanNext.jsBoilerplate .`
-2. Switch to the `with-typescript-sass-eslint` branch
-3. `rm -rf .git`
-4. `git init`
-5. `yarn`
+## Content
+
+This blog makes use of a CMS (Content Management System) to deliver the content. I went with [Storyblok](https://www.storyblok.com/) for it's easy to use UI, and API.
+
+## Custom Components
+
+This website makes use of multiple custom components that I built in place of using pre-built JS libraries. Namely:
+
+### Custom Pagination
+
+This component accepts a list of content and breaks it up into multiple pages. It accepts several props which it uses to determine which items to display on which page.
+
+### Custom Comments Section
+
+This component is a full-fledged comments section complete with liking, replying and deleting comments.
+
+It uses Firebase for authentication which allows for signing in with Google as well as signing in anonymously.
+
+It uses Firebase's Firestore for storing comment data as well as user data.
