@@ -7,9 +7,19 @@
 		"type-check": "tsc"
 	},
 	"dependencies": {
+		"aos": "^2.3.4",
+		"axios": "^0.26.1",
+		"emailjs-com": "^3.2.0",
+		"firebase": "^9.6.10",
+		"moment": "^2.29.2",
 		"next": "latest",
 		"react": "latest",
-		"react-dom": "latest"
+		"react-confirm-alert": "^2.8.0",
+		"react-dom": "latest",
+		"react-icons": "^4.3.1",
+		"react-moment": "^1.1.2",
+		"react-player": "^2.10.0",
+		"storyblok-js-client": "^4.3.1"
 	},
 	"devDependencies": {
 		"@types/node": "latest",
