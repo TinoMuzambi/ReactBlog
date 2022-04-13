@@ -47,10 +47,10 @@ const Meta: React.FC<MetaProps> = ({
 );
 
 Meta.defaultProps = {
-	title: "Next.js Boilerplate",
-	keywords: "next.js",
-	description: "Clean Next.js with TypeScript and Sass Boilerplate",
-	image: "https://unsplash.it/1000",
+	title: "Blog.TinoMuzambi",
+	keywords: "blog, lifestyle, tech",
+	description: "Blog.TinoMuzambi",
+	image: "https://a.storyblok.com/f/105639/512x512/03489159d5/logo512.png",
 	url: BASE_URL,
 };
 
