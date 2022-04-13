@@ -1,0 +1,56 @@
+.wrapper {
+	margin-top: 1rem;
+
+	.comment {
+		position: relative;
+	}
+}
+
+.react-confirm-alert-overlay {
+	background: none !important;
+	justify-content: flex-end !important;
+	align-items: flex-start !important;
+
+	.confirm {
+		margin: 2rem 2rem 0;
+		border-radius: 1rem;
+		box-shadow: 0 0 10px 0 rgba($color: $midnight, $alpha: 0.7);
+		padding: 1.5rem;
+		background: $sky;
+		opacity: 0.8;
+
+		@include mq(768px) {
+			opacity: 1;
+		}
+
+		.title {
+			margin: 0;
+			font-size: 1.5rem;
+			color: white !important;
+		}
+
+		.text {
+			color: white !important;
+		}
+
+		.buttons {
+			display: flex;
+			gap: 1rem;
+
+			button {
+				background: $white;
+				border: none;
+				outline: none;
+				border-radius: 10000px;
+				padding: 1rem 2rem;
+				cursor: pointer;
+				transition: 0.2s;
+
+				&:hover,
+				&:focus {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

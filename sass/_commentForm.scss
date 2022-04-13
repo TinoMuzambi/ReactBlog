@@ -1,0 +1,38 @@
+.form {
+	width: 100%;
+
+	&.sm {
+		width: 90%;
+	}
+
+	.text {
+		box-sizing: content-box;
+		padding: 20px;
+		outline: none;
+		resize: none;
+		height: 3.5rem;
+		width: inherit;
+		border: solid 2px #b9b6e5;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-bottom: none;
+		font-family: $Lexend;
+	}
+
+	.submit {
+		box-sizing: content-box;
+		background: $sky;
+		outline: none;
+		padding: 20px;
+		border: none;
+		cursor: pointer;
+		width: inherit;
+		margin-top: -0.25rem;
+		border-left: solid 2px #b9b6e5;
+		border-right: solid 2px #b9b6e5;
+		border-bottom: solid 2px #b9b6e5;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		color: $text-light;
+	}
+}

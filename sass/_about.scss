@@ -1,0 +1,24 @@
+.site-title {
+	background: url("https://a.storyblok.com/f/105639/1920x1280/90ad8a6a38/background.jpg");
+	background-size: cover;
+	height: 100vh;
+	@include flexRowCenter;
+
+	img {
+		border-radius: 50%;
+		width: 250px;
+		height: 250px;
+		border: 2px solid #6caed5;
+		pointer-events: none;
+	}
+
+	.site-background {
+		padding-top: 10rem;
+		color: $white;
+	}
+
+	h1,
+	h3 {
+		margin: 0.3rem;
+	}
+}
