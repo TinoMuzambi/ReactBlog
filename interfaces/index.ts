@@ -9,3 +9,15 @@ export interface MetaProps {
 	url?: string;
 	image?: string;
 }
+
+export interface HomeProps {
+	story: any;
+}
+
+export interface PlaceholderProps {
+	componentName: string;
+}
+
+export interface blokProps {
+	blok: any;
+}

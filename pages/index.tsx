@@ -5,8 +5,9 @@ import AOS from "aos";
 import { GetStaticProps } from "next";
 import Storyblok from "../lib/storyblok";
 import useStoryblok from "../lib/storyblok-hook";
+import { HomeProps } from "../interfaces";
 
-const Home: React.FC = (): JSX.Element => {
+const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const [queryText, setQueryText] = useState("");
 	const [searching, setSearching] = useState(false);
 	const [dark, setDark] = useState(false);
