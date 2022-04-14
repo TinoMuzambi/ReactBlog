@@ -49,7 +49,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							)}
 						</div>
 					</section>
-					<DynamicComponent blok={blok.sidebar} />
+					<DynamicComponent blok={blok.sidebar[0]} />
 				</section>
 			</section>
 		</>
