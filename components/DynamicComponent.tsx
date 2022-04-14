@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import FooterColumn from "./FooterColumn";
 import Categories from "./Categories";
 import Sidebar from "./Sidebar";
+import SideBlog from "./SideBlog";
 
 const Components: any = {
 	about: About,
@@ -32,6 +33,7 @@ const Components: any = {
 	footer_column: FooterColumn,
 	categories: Categories,
 	sidebar: Sidebar,
+	sideblog: SideBlog,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
