@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 
 import { blokProps } from "../interfaces";
+import DynamicComponent from "./DynamicComponent";
 
 const Navbar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const toggleCollapse = () => {
@@ -29,9 +30,7 @@ const Navbar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				</div>
 				<ul className="nav-items">
 					{blok.links.map((link: any, key: number) => (
-						<Link href={link.link} key={key}>
-							<a>{link.text}</a>
-						</Link>
+						<DynamicComponent blok={link} key={key} />
 					))}
 				</ul>
 			</div>

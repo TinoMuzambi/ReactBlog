@@ -17,6 +17,7 @@ import Categories from "./Categories";
 import Sidebar from "./Sidebar";
 import SideBlog from "./SideBlog";
 import Navbar from "./Navbar";
+import NavLink from "./NavLink";
 
 const Components: any = {
 	about: About,
@@ -36,6 +37,7 @@ const Components: any = {
 	sidebar: Sidebar,
 	sideblog: SideBlog,
 	navbar: Navbar,
+	nav_link: NavLink,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
