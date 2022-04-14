@@ -11,6 +11,7 @@ import Text from "./Text";
 import Icon from "./Icon";
 import SocialIcons from "./SocialIcons";
 import ImageGrid from "./ImageGrid";
+import Footer from "./Footer";
 
 const Components: any = {
 	about: About,
@@ -24,6 +25,7 @@ const Components: any = {
 	icon: Icon,
 	social_icons: SocialIcons,
 	image_grid: ImageGrid,
+	footer: Footer,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
