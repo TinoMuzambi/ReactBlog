@@ -21,7 +21,7 @@ const Components: any = {
 	category: Category,
 	blog: Blog,
 	blogs: Blogs,
-	threeItemGrid: ThreeItemGrid,
+	three_item_grid: ThreeItemGrid,
 	text: Text,
 	icon: Icon,
 	social_icons: SocialIcons,
