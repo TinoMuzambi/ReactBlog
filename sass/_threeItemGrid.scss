@@ -1,0 +1,15 @@
+.three-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-items: center;
+	gap: 2rem;
+
+	@include mq(1024px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mq(768px) {
+		grid-template-columns: 1fr;
+	}
+}
