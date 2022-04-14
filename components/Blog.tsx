@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 import Link from "next/link";
 import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import Moment from "react-moment";

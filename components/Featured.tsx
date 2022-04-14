@@ -1,5 +1,6 @@
 import YouTube from "react-youtube";
 import Moment from "react-moment";
+import ReactMarkdown from "react-markdown";
 
 import { blokProps } from "../interfaces";
 
@@ -30,7 +31,7 @@ const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<h3>
 					Updated on <Moment format="MMM DD, YYYY">{blok.updated_date}</Moment>
 				</h3>
-				<p>{blok.tag}</p>
+				<ReactMarkdown children={blok.tag} />
 			</div>
 		</div>
 	);
