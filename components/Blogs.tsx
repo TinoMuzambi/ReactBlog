@@ -1,7 +1,24 @@
+import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
+import Pagination from "./Pagination";
 
 const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
+	const handlePageChange = (paginatedBlogs: any[]) => {
+		// Handing pagination page changes.
+		// setDisplayBlogs(paginatedBlogs);
+	};
+
+	const customLabels = {
+		// Custom labels for pagination.
+		previous: <FaChevronLeft />,
+		next: <FaChevronRight />,
+	};
+
+	const ref = useRef(null);
+
 	return (
 		<>
 			<div className="posts">
@@ -18,7 +35,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 									onChangePage={handlePageChange}
 									pageSize={4}
 									customLabels={customLabels}
-									customRef={blogsRef}
+									customRef={ref}
 								/>
 							)}
 						</div>

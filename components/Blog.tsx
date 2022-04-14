@@ -1,11 +1,5 @@
 import Link from "next/link";
-import {
-	FaUser,
-	FaCalendar,
-	FaArrowRight,
-	FaChevronLeft,
-	FaChevronRight,
-} from "react-icons/fa";
+import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import Moment from "react-moment";
 
 import { blokProps } from "../interfaces";

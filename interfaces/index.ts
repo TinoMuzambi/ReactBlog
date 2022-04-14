@@ -1,4 +1,4 @@
-import { Ref } from "react";
+import { MutableRefObject } from "react";
 
 export interface WrapperProps {
 	children: JSX.Element | JSX.Element[];
@@ -38,5 +38,5 @@ export interface PaginationProps {
 	items: any[];
 	onChangePage: Function;
 	customLabels: Labels;
-	customRef: Ref<HTMLDivElement>;
+	customRef: MutableRefObject<null | HTMLDivElement>;
 }
