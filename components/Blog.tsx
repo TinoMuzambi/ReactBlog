@@ -43,7 +43,7 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<Link href={`/blogs/${blok.url}`}>
 					<a>
 						{blok.title}
-						<ReactMarkdown children={blok.content} />
+						<ReactMarkdown children={blok.excerpt} />
 						{/* {ReactHtmlParser(
                             blok.content.slice(0, blok.content.indexOf("<br>")) + "</p>"
                         )}{" "} */}
