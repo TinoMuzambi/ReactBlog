@@ -12,17 +12,29 @@ const Icon: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
 		<a href={blok.link} target="_blank" rel="noreferrer">
 			{blok.social_platform === "Facebook" ? (
-				<FaFacebookF />
+				<span>
+					<FaFacebookF />
+				</span>
 			) : blok.social_platform === "Twitter" ? (
-				<FaTwitter />
+				<span>
+					<FaTwitter />
+				</span>
 			) : blok.social_platform === "Instagram" ? (
-				<FaInstagram />
+				<span>
+					<FaInstagram />
+				</span>
 			) : blok.social_platform === "YouTube" ? (
-				<FaYoutube />
+				<span>
+					<FaYoutube />
+				</span>
 			) : blok.social_platform === "LinkedIn" ? (
-				<FaLinkedinIn />
+				<span>
+					<FaLinkedinIn />
+				</span>
 			) : (
-				<FaFacebookF />
+				<span>
+					<FaFacebookF />
+				</span>
 			)}
 		</a>
 	);
