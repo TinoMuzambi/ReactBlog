@@ -2,7 +2,6 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const Footer: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	console.log(blok);
 	return (
 		<section className="footer">
 			<footer className="footer">
