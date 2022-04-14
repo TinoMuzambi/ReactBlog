@@ -13,6 +13,7 @@ import SocialIcons from "./SocialIcons";
 import ImageGrid from "./ImageGrid";
 import Footer from "./Footer";
 import FooterColumn from "./FooterColumn";
+import Categories from "./Categories";
 
 const Components: any = {
 	about: About,
@@ -28,6 +29,7 @@ const Components: any = {
 	image_grid: ImageGrid,
 	footer: Footer,
 	footer_column: FooterColumn,
+	categories: Categories,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
