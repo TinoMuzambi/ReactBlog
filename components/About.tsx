@@ -11,6 +11,7 @@ const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			className="site-title"
 			data-aos="fade-up"
 			data-aos-delay="100"
+			id="about"
 			style={
 				{
 					"--bg-image":

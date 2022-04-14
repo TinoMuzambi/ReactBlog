@@ -3,7 +3,7 @@ import DynamicComponent from "./DynamicComponent";
 
 const Footer: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
-		<section className="footer">
+		<section className="footer" id="footer">
 			<footer className="footer">
 				<div className="container">
 					<DynamicComponent blok={blok.grid[0]} />
