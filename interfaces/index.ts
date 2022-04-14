@@ -1,3 +1,5 @@
+import { Ref } from "react";
+
 export interface WrapperProps {
 	children: JSX.Element | JSX.Element[];
 }
@@ -24,4 +26,17 @@ export interface blokProps {
 
 export interface PageProps {
 	content: any;
+}
+
+type Labels = {
+	previous: JSX.Element;
+	next: JSX.Element;
+};
+
+export interface PaginationProps {
+	pageSize: number;
+	items: any[];
+	onChangePage: Function;
+	customLabels: Labels;
+	customRef: Ref<HTMLDivElement>;
 }
