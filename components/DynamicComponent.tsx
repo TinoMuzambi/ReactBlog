@@ -7,6 +7,7 @@ import Category from "./Category";
 import Blog from "./Blog";
 import Blogs from "./Blogs";
 import ThreeItemGrid from "./ThreeItemGrid";
+import Text from "./Text";
 
 const Components: any = {
 	about: About,
@@ -16,6 +17,7 @@ const Components: any = {
 	blog: Blog,
 	blogs: Blogs,
 	threeItemGrid: ThreeItemGrid,
+	text: Text,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
