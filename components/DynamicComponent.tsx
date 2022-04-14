@@ -8,6 +8,7 @@ import Blog from "./Blog";
 import Blogs from "./Blogs";
 import ThreeItemGrid from "./ThreeItemGrid";
 import Text from "./Text";
+import Icon from "./Icon";
 
 const Components: any = {
 	about: About,
@@ -18,6 +19,7 @@ const Components: any = {
 	blogs: Blogs,
 	threeItemGrid: ThreeItemGrid,
 	text: Text,
+	icon: Icon,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
