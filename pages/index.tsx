@@ -7,6 +7,7 @@ import Storyblok from "../lib/storyblok";
 import useStoryblok from "../lib/storyblok-hook";
 import { HomeProps } from "../interfaces";
 import Page from "../components/Page";
+import Preload from "../components/Preload";
 
 const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const storyblokUser = useStoryblok(story);
@@ -14,6 +15,19 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 
 	useEffect(() => {
 		AOS.init(); // Initialise animate on scroll library.
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener("load", () => {
+			const preloader = document.querySelector(".preload");
+			preloader?.classList.add("finish");
+		});
+		return () => {
+			window.removeEventListener("load", () => {
+				const preloader = document.querySelector(".preload");
+				preloader?.classList.add("finish");
+			});
+		};
 	}, []);
 
 	useEffect(() => {
@@ -29,30 +43,33 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	}, []);
 
 	return (
-		<main className="home">
-			<button
-				className="dark-toggle"
-				data-mode={dark ? "Switch to light mode" : "Switch to dark mode"}
-				onClick={() => {
-					setDark(!dark);
+		<>
+			<Preload />
+			<main className="home">
+				<button
+					className="dark-toggle"
+					data-mode={dark ? "Switch to light mode" : "Switch to dark mode"}
+					onClick={() => {
+						setDark(!dark);
 
-					document.body.classList.remove("dark");
+						document.body.classList.remove("dark");
 
-					!dark
-						? document.body.classList.add("dark")
-						: document.body.classList.remove("dark");
+						!dark
+							? document.body.classList.add("dark")
+							: document.body.classList.remove("dark");
 
-					localStorage.setItem("blogtino-dark", JSON.stringify(!dark));
-				}}
-			>
-				{dark ? (
-					<RiLightbulbFlashLine className="icon" />
-				) : (
-					<RiLightbulbFill className="icon" />
-				)}
-			</button>
-			<Page content={storyblokUser?.content} />
-		</main>
+						localStorage.setItem("blogtino-dark", JSON.stringify(!dark));
+					}}
+				>
+					{dark ? (
+						<RiLightbulbFlashLine className="icon" />
+					) : (
+						<RiLightbulbFill className="icon" />
+					)}
+				</button>
+				<Page content={storyblokUser?.content} />
+			</main>
+		</>
 	);
 };
 
