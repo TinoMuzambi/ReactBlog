@@ -1,6 +1,8 @@
+/* eslint-disable react/no-children-prop */
 import Link from "next/link";
 import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import Moment from "react-moment";
+import ReactMarkdown from "react-markdown";
 
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
@@ -41,6 +43,7 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<Link href={`/blogs/${blok.url}`}>
 					<a>
 						{blok.title}
+						<ReactMarkdown children={blok.content} />
 						{/* {ReactHtmlParser(
                             blok.content.slice(0, blok.content.indexOf("<br>")) + "</p>"
                         )}{" "} */}

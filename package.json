@@ -17,6 +17,7 @@
 		"react-confirm-alert": "^2.8.0",
 		"react-dom": "latest",
 		"react-icons": "^4.3.1",
+		"react-markdown": "^8.0.2",
 		"react-moment": "^1.1.2",
 		"react-youtube": "^8.2.1",
 		"remark-parse": "^10.0.1",
