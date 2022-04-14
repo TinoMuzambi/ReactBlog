@@ -1,5 +1,5 @@
 .site-title {
-	background: var(--bg-image);
+	background: var(--bg-image,"https://a.storyblok.com/f/153994/1920x1280/ad94868c91/background.jpeg");
 	background-size: cover;
 	height: 100vh;
 	@include flexRowCenter;
