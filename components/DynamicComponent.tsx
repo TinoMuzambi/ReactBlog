@@ -14,6 +14,7 @@ import ImageGrid from "./ImageGrid";
 import Footer from "./Footer";
 import FooterColumn from "./FooterColumn";
 import Categories from "./Categories";
+import Sidebar from "./Sidebar";
 
 const Components: any = {
 	about: About,
@@ -30,6 +31,7 @@ const Components: any = {
 	footer: Footer,
 	footer_column: FooterColumn,
 	categories: Categories,
+	sidebar: Sidebar,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
