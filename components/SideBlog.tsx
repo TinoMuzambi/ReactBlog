@@ -6,7 +6,6 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const SideBlog: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	console.log(blok);
 	return (
 		<div className="post-content" data-aos="flip-up" data-aos-delay="200">
 			<div className="post-image">

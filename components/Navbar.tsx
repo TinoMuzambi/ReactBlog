@@ -33,6 +33,7 @@ const Navbar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 						<DynamicComponent blok={link} key={key} />
 					))}
 				</ul>
+				<DynamicComponent blok={blok.social_icons[0]} />
 			</div>
 		</nav>
 	);
