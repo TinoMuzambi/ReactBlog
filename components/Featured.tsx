@@ -14,14 +14,6 @@ const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			>
 				<h1 className="featured-title text-center">{blok.title}</h1>
 				<div className="item-container">
-					{/* <ReactPlayer
-						url={blok.video_link}
-						id={0}
-						className="item"
-						width="100%"
-						height="100%"
-						controls={true}
-					/> */}
 					<YouTube
 						className="item"
 						opts={{
