@@ -3,6 +3,7 @@ import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import Moment from "react-moment";
 
 import { blokProps } from "../interfaces";
+import DynamicComponent from "./DynamicComponent";
 
 const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
@@ -16,7 +17,7 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<div>
 					<Link href={`/blogs/${blok.url}`}>
 						<a>
-							<img src={blok.image} className="img" alt="shower" />
+							<DynamicComponent blok={blok.image[0]} />
 						</a>
 					</Link>
 				</div>
