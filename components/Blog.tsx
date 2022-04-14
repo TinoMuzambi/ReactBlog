@@ -44,10 +44,6 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 					<a>
 						{blok.title}
 						<ReactMarkdown children={blok.excerpt} />
-						{/* {ReactHtmlParser(
-                            blok.content.slice(0, blok.content.indexOf("<br>")) + "</p>"
-                        )}{" "} */}
-						{/* Parse first paragraph of HTML blog content. */}
 						<button className="btn post-btn">
 							Read More &nbsp;{" "}
 							<i className="fas fa-arrow-right">
