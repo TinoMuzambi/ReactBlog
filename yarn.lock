@@ -2722,7 +2722,7 @@ space-separated-tokens@^2.0.0:
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-2.0.1.tgz#43193cec4fb858a2ce934b7f98b7f2c18107098b"
   integrity sha512-ekwEbFp5aqSPKaqeY1PGrlGQxPNaq+Cnx4+bE2D8sciBQrHpbwoBbawqTN2+6jPs9IdWxxiUcN0K2pkczD3zmw==
 
-storyblok-js-client@^4.3.1:
+storyblok-js-client@latest:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.3.1.tgz#fa17e9ce47cc827e7d835481a5f77d3d44580e19"
   integrity sha512-kdv7G0+0BsCzbVRjAnRC00GPRRWfP0YK0yE0gUj3waEc2ekwxV9iHQBR9cRxz3YYk/hLWn3zJg8lTTrQmzQsdg==
