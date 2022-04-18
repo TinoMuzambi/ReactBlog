@@ -29,7 +29,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							{blok.blogs.length ? (
 								<>
 									{blok.blogs.map((blog: any, key: number) => (
-										<DynamicComponent blok={blog} key={key} />
+										<DynamicComponent blok={blog.content} key={key} />
 									))}
 									<div className="page-holder text-center">
 										{/* Pagination element */}
