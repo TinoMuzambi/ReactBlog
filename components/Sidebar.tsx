@@ -5,7 +5,14 @@ const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	return (
 		<aside className="sidebar">
 			<div className="category">
-				<DynamicComponent blok={blok.categories[0]} />
+				<DynamicComponent
+					blok={{
+						categories: blok.categories.map(
+							(category: any) => category.content
+						),
+						component: "categories",
+					}}
+				/>
 			</div>
 			<div className="other-posts">
 				<h2>{blok.type === "future" ? "Future" : "Other"} Blogs</h2>
