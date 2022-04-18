@@ -42,8 +42,7 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 		}
 	}, []);
 
-	// console.log({ storyblokUser, story });
-	console.log(story);
+	console.log(storyblokUser);
 
 	return (
 		<>
@@ -95,7 +94,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	return {
 		props: {
-			story: data ? { ...data.story, ...data.rels } : false,
+			story: data ? data.story : false,
 			preview: context.preview || false,
 		},
 		revalidate: 10,
