@@ -1,10 +1,12 @@
 import YouTube from "react-youtube";
 import Moment from "react-moment";
-import ReactMarkdown from "react-markdown";
+import { render } from "storyblok-rich-text-react-renderer";
+import { markdownToRichtext } from "storyblok-markdown-richtext";
 
 import { blokProps } from "../interfaces";
 
 const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
+	const richtextData = markdownToRichtext(blok.tag);
 	return (
 		<div className="container">
 			<div
@@ -31,7 +33,7 @@ const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<h3>
 					Updated on <Moment format="MMM DD, YYYY">{blok.updated_date}</Moment>
 				</h3>
-				<ReactMarkdown children={blok.tag} />
+				<div>{render(richtextData)}</div>
 			</div>
 		</div>
 	);

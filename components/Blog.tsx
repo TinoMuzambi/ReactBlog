@@ -42,9 +42,11 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			</div>
 			<div className="post-title">
 				<Link href={`/blogs/${blok.url}`}>
+					<a>{blok.title}</a>
+				</Link>
+				<div>{render(richtextData)}</div>
+				<Link href={`/blogs/${blok.url}`}>
 					<a>
-						{blok.title}
-						{render(richtextData)}
 						<button className="btn post-btn">
 							Read More &nbsp;{" "}
 							<i className="fas fa-arrow-right">
