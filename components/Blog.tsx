@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { FaUser, FaCalendar, FaArrowRight } from "react-icons/fa";
 import Moment from "react-moment";
-import ReactMarkdown from "react-markdown";
+import { render } from "storyblok-rich-text-react-renderer";
+import { markdownToRichtext } from "storyblok-markdown-richtext";
 
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
+	const richtextData = markdownToRichtext(blok.excerpt);
 	return (
 		<div
 			className="post-content"
@@ -42,7 +44,7 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<Link href={`/blogs/${blok.url}`}>
 					<a>
 						{blok.title}
-						<ReactMarkdown children={blok.excerpt} />
+						{render(richtextData)}
 						<button className="btn post-btn">
 							Read More &nbsp;{" "}
 							<i className="fas fa-arrow-right">

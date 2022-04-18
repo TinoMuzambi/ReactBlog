@@ -17,11 +17,12 @@
 		"react-confirm-alert": "^2.8.0",
 		"react-dom": "latest",
 		"react-icons": "^4.3.1",
-		"react-markdown": "^8.0.2",
 		"react-moment": "^1.1.2",
 		"react-youtube": "^8.2.1",
 		"remark-parse": "^10.0.1",
 		"storyblok-js-client": "latest",
+		"storyblok-markdown-richtext": "^1.0.1",
+		"storyblok-rich-text-react-renderer": "^2.5.2",
 		"unified": "^10.1.2"
 	},
 	"devDependencies": {
@@ -29,6 +30,7 @@
 		"@types/node": "latest",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
+		"@types/turndown": "^5.0.1",
 		"eslint": "8.11.0",
 		"eslint-config-next": "12.1.0",
 		"sass": "latest",
