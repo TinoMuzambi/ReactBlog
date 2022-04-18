@@ -30,7 +30,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 								<>
 									{blok.blogs
 										.sort((a: any, b: any) =>
-											b.content.date.localeCompare(a.content.date)
+											b.content?.date.localeCompare(a.content?.date)
 										)
 										.map((blog: any, key: number) => (
 											<DynamicComponent blok={blog.content} key={key} />
