@@ -42,6 +42,9 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 		}
 	}, []);
 
+	// console.log({ storyblokUser, story });
+	console.log(story);
+
 	return (
 		<>
 			<Preload />
@@ -80,6 +83,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	let params = {
 		version: process.env.STORYBLOK_ENV as string,
 		cv: Date.now(),
+		resolve_relations: "blog.category,sideblog.category",
 	};
 
 	if (context.preview) {
@@ -91,7 +95,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	return {
 		props: {
-			story: data ? data.story : false,
+			story: data ? { ...data.story, ...data.rels } : false,
 			preview: context.preview || false,
 		},
 		revalidate: 10,
