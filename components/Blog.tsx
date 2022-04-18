@@ -8,7 +8,8 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	const richtextData = markdownToRichtext(blok.excerpt);
+	const richtextData = markdownToRichtext(blok?.excerpt || "");
+
 	return (
 		<div
 			className="post-content"
@@ -20,7 +21,7 @@ const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<div>
 					<Link href={`/blogs/${blok.url}`}>
 						<a>
-							<DynamicComponent blok={blok.image[0]} />
+							<DynamicComponent blok={blok?.image[0]} />
 						</a>
 					</Link>
 				</div>

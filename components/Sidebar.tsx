@@ -20,7 +20,7 @@ const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 					<DynamicComponent
 						blok={{
 							...blog.content,
-							component: blog.content.future ? "sideblog" : "blog",
+							component: blog.content?.future ? "sideblog" : "blog",
 						}}
 						key={key}
 					/>
