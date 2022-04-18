@@ -17,7 +17,13 @@ const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			<div className="other-posts">
 				<h2>{blok.type === "future" ? "Future" : "Other"} Blogs</h2>
 				{blok.other_blogs.map((blog: any, key: number) => (
-					<DynamicComponent blok={blog} key={key} />
+					<DynamicComponent
+						blok={{
+							...blog.content,
+							component: blog.content.future ? "sideblog" : "blog",
+						}}
+						key={key}
+					/>
 				))}
 			</div>
 		</aside>

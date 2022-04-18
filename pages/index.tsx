@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		version: process.env.STORYBLOK_ENV as string,
 		cv: Date.now(),
 		resolve_relations:
-			"blog.category,sideblog.category,sidebar.categories,blogs.blogs",
+			"blog.category,sideblog.category,sidebar.categories,blogs.blogs,sidebar.other_blogs",
 	};
 
 	if (context.preview) {
