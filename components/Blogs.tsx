@@ -28,9 +28,13 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							<h1>Blogs</h1>
 							{blok.blogs.length ? (
 								<>
-									{blok.blogs.map((blog: any, key: number) => (
-										<DynamicComponent blok={blog.content} key={key} />
-									))}
+									{blok.blogs
+										.sort((a: any, b: any) =>
+											b.content.date.localeCompare(a.content.date)
+										)
+										.map((blog: any, key: number) => (
+											<DynamicComponent blok={blog.content} key={key} />
+										))}
 									<div className="page-holder text-center">
 										{/* Pagination element */}
 										{blok.blogs.length && (
