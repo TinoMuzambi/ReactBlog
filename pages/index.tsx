@@ -3,6 +3,7 @@ import { AiOutlineReload } from "react-icons/ai";
 import { RiLightbulbFlashLine, RiLightbulbFill } from "react-icons/ri";
 import AOS from "aos";
 import { GetStaticProps } from "next";
+
 import Storyblok from "../lib/storyblok";
 import useStoryblok from "../lib/storyblok-hook";
 import { HomeProps } from "../interfaces";
