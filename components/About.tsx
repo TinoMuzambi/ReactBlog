@@ -1,11 +1,7 @@
-import { blokProps } from "../interfaces";
+import { blokProps, MyCustomCSS } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	interface MyCustomCSS extends React.CSSProperties {
-		"--bg-image": string;
-	}
-
 	return (
 		<section
 			className="site-title"

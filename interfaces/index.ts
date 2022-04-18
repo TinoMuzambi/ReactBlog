@@ -40,3 +40,7 @@ export interface PaginationProps {
 	customLabels: Labels;
 	customRef: MutableRefObject<null | HTMLDivElement>;
 }
+
+export interface MyCustomCSS extends React.CSSProperties {
+	"--bg-image": string;
+}

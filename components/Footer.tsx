@@ -1,6 +1,6 @@
 import { FaArrowCircleUp } from "react-icons/fa";
 
-import { blokProps } from "../interfaces";
+import { blokProps, MyCustomCSS } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
 const Footer: React.FC<blokProps> = ({ blok }): JSX.Element => {
@@ -9,7 +9,16 @@ const Footer: React.FC<blokProps> = ({ blok }): JSX.Element => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 	return (
-		<section className="footer" id="footer">
+		<section
+			className="footer"
+			id="footer"
+			style={
+				{
+					"--bg-image":
+						`url(${blok.background_image[0].image.filename})` as string,
+				} as MyCustomCSS
+			}
+		>
 			<footer className="footer">
 				<div className="container">
 					<DynamicComponent blok={blok.grid[0]} />
