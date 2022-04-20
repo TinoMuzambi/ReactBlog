@@ -18,6 +18,7 @@ import Sidebar from "./Sidebar";
 import SideBlog from "./SideBlog";
 import Navbar from "./Navbar";
 import NavLink from "./NavLink";
+import BlogPage from "./BlogPage";
 
 const Components: any = {
 	about: About,
@@ -38,6 +39,7 @@ const Components: any = {
 	sideblog: SideBlog,
 	navbar: Navbar,
 	nav_link: NavLink,
+	blog_page: BlogPage,
 };
 
 const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
