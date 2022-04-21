@@ -15,22 +15,22 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 		AOS.init(); // Initialise animate on scroll library.
 	}, []);
 
-	useEffect(() => {
-		window.addEventListener("load", () => {
-			const preloader = document.querySelector(".preload");
-			preloader?.classList.add("finish");
-		});
-		return () => {
-			window.removeEventListener("load", () => {
-				const preloader = document.querySelector(".preload");
-				preloader?.classList.add("finish");
-			});
-		};
-	}, []);
+	// useEffect(() => {
+	// 	window.addEventListener("load", () => {
+	// 		const preloader = document.querySelector(".preload");
+	// 		preloader?.classList.add("finish");
+	// 	});
+	// 	return () => {
+	// 		window.removeEventListener("load", () => {
+	// 			const preloader = document.querySelector(".preload");
+	// 			preloader?.classList.add("finish");
+	// 		});
+	// 	};
+	// }, []);
 
 	return (
 		<>
-			<Preload />
+			{/* <Preload /> */}
 			<main className="home">
 				<Page content={storyblokUser?.content} />
 			</main>

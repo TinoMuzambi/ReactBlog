@@ -1,4 +1,3 @@
-import YouTube from "react-youtube";
 import Moment from "react-moment";
 import { render } from "storyblok-rich-text-react-renderer";
 import { markdownToRichtext } from "storyblok-markdown-richtext";
@@ -17,16 +16,16 @@ const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			>
 				<h1 className="featured-title text-center">{blok.title}</h1>
 				<div className="item-container">
-					<YouTube
-						className="item"
-						opts={{
-							height: "100%",
-							width: "100%",
-							playerVars: { autoplay: 0 },
-						}}
-						videoId={blok.video_link.substring(
+					<iframe
+						width="100%"
+						height="100%"
+						src={`https://www.youtube.com/embed/${blok.video_link.substring(
 							blok.video_link.lastIndexOf("/") + 1
-						)}
+						)}`}
+						frameBorder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+						title={blok.video_title}
 					/>
 				</div>
 				<h2>{blok.video_title}</h2>
