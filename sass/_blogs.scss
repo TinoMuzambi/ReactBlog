@@ -35,6 +35,13 @@
 				outline: none;
 				color: $text-gray;
 			}
+
+		}
+
+		.blog-html {
+			a {
+				color: skyblue;
+			}
 		}
 
 		.post-image {
@@ -83,7 +90,7 @@
 			}
 		}
 
-		blockquote {
+		blockquote > * {
 			text-indent: -0.45em;
 			font-size: 80px;
 			width: 95%;
@@ -100,6 +107,8 @@
 			}
 
 			&::before {
+				background: none !important;
+				color: unset !important;
 				content: open-quote;
 			}
 		}
