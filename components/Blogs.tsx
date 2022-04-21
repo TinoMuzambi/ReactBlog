@@ -25,7 +25,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 				<section className="site-content">
 					<section className="blogs">
 						<div className="posts">
-							<h1>Blogs</h1>
+							<h1>{blok.title}</h1>
 							{blok.blogs.length ? (
 								<>
 									{blok.blogs
