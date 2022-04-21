@@ -47,11 +47,6 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 
 						{/* <Comments url={pathname} /> */}
 					</div>
-					{/* <Sidebar
-						categories={categories}
-						blogs={filteredBlogs}
-						future={blog.future}
-					/> */}
 					<DynamicComponent blok={sidebar} />
 				</div>
 			</main>
