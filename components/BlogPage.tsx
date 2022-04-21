@@ -8,11 +8,13 @@ import DynamicComponent from "./DynamicComponent";
 import Meta from "./Meta";
 
 const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	console.log(blok);
-	const richtextData = markdownToRichtext(blok?.content || "");
+	const blog = blok.blogs[0].content;
+	const sidebar = blok.sidebar[0];
+	const richtextData = markdownToRichtext(blog.content || "");
+
 	return (
 		<>
-			<Meta title={`${blok.title} | Blog.TinoMuzambi`} />
+			<Meta title={`${blog.title} | Blog.TinoMuzambi`} />
 			<main className="container" id="blogs">
 				<div className="site-content">
 					<div className="posts">
@@ -22,7 +24,7 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							data-aos-delay="200"
 						>
 							<div className="post-title">
-								<h1>{blok.title}</h1>
+								<h1>{blog.title}</h1>
 								<h3>
 									<i className="fas fa-user text-gray">
 										<FaUser />
@@ -31,11 +33,11 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 									<i className="fas fa-calendar-alt text-gray">
 										<FaCalendar />
 									</i>
-									&nbsp;<Moment format="MMM DD, YYYY">{blok.date}</Moment>
+									&nbsp;<Moment format="MMM DD, YYYY">{blog.date}</Moment>
 								</h3>
 								<div className="post-image">
 									<div>
-										<DynamicComponent blok={blok.image[0]} />
+										<DynamicComponent blok={blog.image[0]} />
 									</div>
 								</div>
 							</div>
@@ -50,6 +52,7 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 						blogs={filteredBlogs}
 						future={blog.future}
 					/> */}
+					<DynamicComponent blok={sidebar} />
 				</div>
 			</main>
 		</>

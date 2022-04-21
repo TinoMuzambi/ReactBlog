@@ -7,6 +7,7 @@ import useStoryblok from "../../lib/storyblok-hook";
 
 const Blog: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const storyblokUser = useStoryblok(story);
+
 	return (
 		<>
 			<Page content={storyblokUser?.content} />
@@ -57,8 +58,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	let blog = data.story.content.body.find(
 		(item: any) => item.component === "blogs"
-	).blogs[0];
-	blog = { ...blog.content, component: "blog_page" };
+	);
+	blog = {
+		...blog,
+		component: "blog_page",
+	};
 
 	let body: any[] = [];
 	for (let i = 0; i < data.story.content.body.length; i++) {
