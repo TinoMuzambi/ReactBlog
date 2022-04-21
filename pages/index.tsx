@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { AiOutlineReload } from "react-icons/ai";
-import { RiLightbulbFlashLine, RiLightbulbFill } from "react-icons/ri";
+import { useEffect } from "react";
 import AOS from "aos";
 import { GetStaticProps } from "next";
 
@@ -12,7 +10,6 @@ import Preload from "../components/Preload";
 
 const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const storyblokUser = useStoryblok(story);
-	const [dark, setDark] = useState(false);
 
 	useEffect(() => {
 		AOS.init(); // Initialise animate on scroll library.
@@ -31,43 +28,10 @@ const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
 		};
 	}, []);
 
-	useEffect(() => {
-		const lsDark = JSON.parse(localStorage.getItem("blogtino-dark") as string);
-		if (lsDark === true || lsDark === false) {
-			setDark(lsDark);
-			document.body.classList.remove("dark");
-
-			lsDark
-				? document.body.classList.add("dark")
-				: document.body.classList.remove("dark");
-		}
-	}, []);
-
 	return (
 		<>
 			<Preload />
 			<main className="home">
-				<button
-					className="dark-toggle"
-					data-mode={dark ? "Switch to light mode" : "Switch to dark mode"}
-					onClick={() => {
-						setDark(!dark);
-
-						document.body.classList.remove("dark");
-
-						!dark
-							? document.body.classList.add("dark")
-							: document.body.classList.remove("dark");
-
-						localStorage.setItem("blogtino-dark", JSON.stringify(!dark));
-					}}
-				>
-					{dark ? (
-						<RiLightbulbFlashLine className="icon" />
-					) : (
-						<RiLightbulbFill className="icon" />
-					)}
-				</button>
 				<Page content={storyblokUser?.content} />
 			</main>
 		</>
