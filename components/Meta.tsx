@@ -43,6 +43,7 @@ const Meta: React.FC<MetaProps> = ({
 
 		{/* Add your preconnect links here  */}
 		<link rel="preconnect" href="https://a.storyblok.com" />
+		<base target="_blank" />
 	</Head>
 );
 
