@@ -8,7 +8,7 @@ import DynamicComponent from "./DynamicComponent";
 import Meta from "./Meta";
 
 const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
-	// console.log(blok);
+	console.log(blok);
 	const richtextData = markdownToRichtext(blok?.content || "");
 	return (
 		<>

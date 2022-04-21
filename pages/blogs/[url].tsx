@@ -55,12 +55,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	let { data } = await Storyblok.get(`cdn/stories/blogs/${slug}`, params);
 
-	// console.log(data.story);
 	let blog = data.story.content.body.find(
 		(item: any) => item.component === "blogs"
 	).blogs[0];
-	blog = { ...blog, content: { ...blog.content, component: "blog_page" } };
-	console.log(blog);
+	blog = { ...blog.content, component: "blog_page" };
+
+	let body: any[] = [];
+	for (let i = 0; i < data.story.content.body.length; i++) {
+		const item = data.story.content.body[i];
+		if (item.component === "blogs") {
+			body.push(blog);
+		} else {
+			body.push(item);
+		}
+	}
+
 	return {
 		props: {
 			story: data
@@ -68,7 +77,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 						...data.story,
 						content: {
 							...data.story.content,
-							body: [...data.story.content.body],
+							body: body,
 						},
 				  }
 				: false,
