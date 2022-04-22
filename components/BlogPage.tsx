@@ -1,7 +1,6 @@
 import { FaCalendar, FaUser } from "react-icons/fa";
 import Moment from "react-moment";
-import { render } from "storyblok-rich-text-react-renderer";
-import { markdownToRichtext } from "storyblok-markdown-richtext";
+import kramed from "kramed";
 
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
@@ -10,7 +9,7 @@ import Meta from "./Meta";
 const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const blog = blok.blogs[0].content;
 	const sidebar = blok.sidebar[0];
-	const richtextData = markdownToRichtext(blog.content || "");
+	const richtextData = kramed(blog.content as string);
 
 	return (
 		<>
@@ -42,7 +41,10 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 								</div>
 							</div>
 
-							<div className="blog-html">{render(richtextData)}</div>
+							<div
+								className="blog-html"
+								dangerouslySetInnerHTML={{ __html: richtextData }}
+							></div>
 						</div>
 
 						{/* <Comments url={pathname} /> */}

@@ -1800,6 +1800,11 @@ kleur@^4.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.4.tgz#8c202987d7e577766d039a8cd461934c01cda04d"
   integrity sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==
 
+kramed@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/kramed/-/kramed-0.5.6.tgz#5c37979bcbb59cbb7a8d231049409298857b5162"
+  integrity sha1-XDeXm8u1nLt6jSMQSUCSmIV7UWI=
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
@@ -2695,10 +2700,10 @@ storyblok-markdown-richtext@^1.0.1:
     prosemirror-markdown "^1.4.5"
     prosemirror-model "^1.10.0"
 
-storyblok-rich-text-react-renderer@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.5.2.tgz#20001a4e7d88405568af130d9db50fde98f6418d"
-  integrity sha512-JgTPUJsPmxhmkKpP6nNivaGiIP0Te0+HXNSDm4df6CWSCi+LSrfrYGh9OFx+Bla1UujWhdxCj9OpY3dXzbdv3w==
+storyblok-rich-text-react-renderer@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.5.3.tgz#8024fc084dcb5827a661d84e4e559185cda24442"
+  integrity sha512-0ZbgSXyxRZjfVse0tfV8Nsf2OVpWH6TAOgG1A6KtgwPQjIxpH+nStm7MtzLclMYkEfB89GJMYh0BsBZ3JlMSEA==
 
 string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.3"
