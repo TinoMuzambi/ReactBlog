@@ -44,3 +44,11 @@ export interface PaginationProps {
 export interface MyCustomCSS extends React.CSSProperties {
 	"--bg-image": string;
 }
+
+export interface CommentFormProps {
+	sm: boolean;
+	editText: string;
+	handleSubmit: Function;
+	commentText: string;
+	setCommentText: Function;
+}
