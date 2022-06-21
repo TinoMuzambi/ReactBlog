@@ -216,7 +216,7 @@ export const confirmLikeOwnComments = () => {
 export const postToCommentsDB = async (
 	updatedComments: any[],
 	getData: Function,
-	setCommentText: Function,
+	setCommentText: Function | null,
 	db: any
 ) => {
 	const commentsDBRef = db.collection("comments").doc("comments");
