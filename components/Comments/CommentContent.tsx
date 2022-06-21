@@ -273,6 +273,8 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
+	const loop1 = () => {};
+
 	const addComment = () => {
 		// Adding comment logic
 		if (commentText.trim()) {
@@ -303,7 +305,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 								} else {
 									newComments[i].comments[j].replies = [newComment];
 								}
-								break loop1;
+								return;
 							}
 						}
 					} else {
@@ -329,7 +331,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 												newComment,
 											];
 										}
-										break loop1;
+										return;
 									}
 								}
 							}
