@@ -52,3 +52,44 @@ export interface CommentFormProps {
 	commentText: string;
 	setCommentText: Function;
 }
+
+export interface CommentContentProps {
+	comment: CommentContentModel;
+	deleteHandler: Function;
+	user: UserModel;
+	comments: any[];
+	getData: Function;
+	setComments: Function;
+	url: string;
+	db: any;
+	users: UserModel[];
+}
+
+export interface CommentContentModel {
+	comment: string;
+	date: any;
+	id: number;
+	image: string;
+	level: "zero" | "one" | "two";
+	likers: string[];
+	replies: CommentContentModel[];
+	upvotes: number;
+	user: string;
+}
+
+export interface CommentModel {
+	blog_url: string;
+	comments: CommentContentModel[];
+}
+
+export interface UserModel {
+	email: string;
+	id: number;
+	image: string;
+	role: "user" | "moderator" | "admin";
+	liked_ids: number[];
+	username: string;
+	displayName: string;
+	isAnonymous: boolean;
+	photoURL: string;
+}
