@@ -76,6 +76,10 @@ export interface CommentProps {
 	db: any;
 }
 
+export interface CommentsProps {
+	url: string;
+}
+
 export interface CommentContentModel {
 	comment: string;
 	date: any;
