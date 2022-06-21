@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import Moment from "react-moment";
 import kramed from "kramed";
@@ -5,11 +6,13 @@ import kramed from "kramed";
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 import Meta from "./Meta";
+import Comments from "./Comments/Comments";
 
 const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const blog = blok.blogs[0].content;
 	const sidebar = blok.sidebar[0];
 	const richtextData = kramed(blog.content as string);
+	const router = useRouter();
 
 	return (
 		<>
@@ -47,7 +50,7 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							></div>
 						</div>
 
-						{/* <Comments url={pathname} /> */}
+						<Comments url={router.pathname} />
 					</div>
 					<DynamicComponent blok={sidebar} />
 				</div>
