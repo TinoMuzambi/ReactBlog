@@ -1,4 +1,4 @@
-import { MutableRefObject } from "react";
+import { FormEventHandler, MutableRefObject } from "react";
 
 export interface WrapperProps {
 	children: JSX.Element | JSX.Element[];
@@ -47,8 +47,8 @@ export interface MyCustomCSS extends React.CSSProperties {
 
 export interface CommentFormProps {
 	sm: boolean;
-	editText: string;
-	handleSubmit: Function;
+	editText?: string;
+	handleSubmit: FormEventHandler<HTMLFormElement>;
 	commentText: string;
 	setCommentText: Function;
 }

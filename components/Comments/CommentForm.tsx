@@ -18,7 +18,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
 
 	return (
 		// Sm for smaller form for styling
-		<form className={`form ${sm && "sm"}`} onSubmit={(e) => handleSubmit(e)}>
+		<form className={`form ${sm && "sm"}`} onSubmit={handleSubmit}>
 			<textarea
 				name="text"
 				className="text"
