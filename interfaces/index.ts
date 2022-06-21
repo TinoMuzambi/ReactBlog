@@ -65,6 +65,17 @@ export interface CommentContentProps {
 	users: UserModel[];
 }
 
+export interface CommentProps {
+	commentProp: CommentModel;
+	user: UserModel;
+	comments: CommentModel[];
+	users: UserModel[];
+	getData: Function;
+	setComments: Function;
+	url: string;
+	db: any;
+}
+
 export interface CommentContentModel {
 	comment: string;
 	date: any;
