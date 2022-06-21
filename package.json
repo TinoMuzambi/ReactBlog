@@ -1,45 +1,42 @@
 {
-	"name": "blog_site",
-	"version": "11.1.0",
 	"private": true,
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"type-check": "tsc"
+	},
 	"dependencies": {
 		"@react-firebase/auth": "^0.2.10",
 		"aos": "^2.3.4",
-		"axios": "^0.21.1",
-		"emailjs-com": "^2.6.4",
-		"firebase": "^8.2.9",
-		"moment": "^2.29.1",
-		"react": "^17.0.2",
-		"react-confirm-alert": "^2.7.0",
-		"react-dom": "^17.0.2",
-		"react-helmet": "^6.1.0",
-		"react-html-parser": "^2.0.2",
-		"react-icons": "^3.11.0",
-		"react-moment": "^0.9.7",
-		"react-player": "^2.9.0",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "3.4.1",
-		"storyblok-js-client": "^3.3.1"
+		"axios": "^0.26.1",
+		"emailjs-com": "^3.2.0",
+		"firebase": "8.2.9",
+		"kramed": "^0.5.6",
+		"lodash": "^4.17.21",
+		"moment": "^2.29.2",
+		"next": "latest",
+		"react": "latest",
+		"react-confirm-alert": "^2.8.0",
+		"react-dom": "latest",
+		"react-icons": "^4.3.1",
+		"react-moment": "^1.1.2",
+		"remark-parse": "^10.0.1",
+		"storyblok-js-client": "latest",
+		"storyblok-markdown-richtext": "^1.0.1",
+		"storyblok-rich-text-react-renderer": "^2.5.3",
+		"unified": "^10.1.2"
 	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+	"devDependencies": {
+		"@types/aos": "^3.0.4",
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@types/react-dom": "latest",
+		"@types/turndown": "^5.0.1",
+		"eslint": "8.11.0",
+		"eslint-config-next": "12.1.0",
+		"sass": "latest",
+		"typescript": "latest"
 	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+	"license": "MIT"
 }

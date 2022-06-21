@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Josefin+Sans&family=Lexend+Deca&family=Livvic&ourier+Prime&display=swap");
+
+/*      Theme colors        */
+$text-gray: #3f4954;
+$text-light: #686666da;
+$white: #ffffff;
+$bg-color: white;
+$midnight: #a1c4cf;
+
+/* gradient color   */
+$sky: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
+
+/*      theme font-family   */
+$Abel: "Abel", sans-serif;
+$Anton: "Anton", sans-serif;
+$Josefin: "Josefin Sans", sans-serif;
+$Lexend: "Lexend Deca", sans-serif;
+$Livvic: "Livvic", sans-serif;
+
+@mixin titleBox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+	width: max-content;
+	color: $white;
+	background-color: rgb(29, 29, 29);
+	padding: 1.1rem;
+	font-family: $Lexend;
+	border-radius: 1000px;
+	transition: 0.2s ease;
+}
+
+@mixin mq($size) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $bg-color;
+	scroll-behavior: smooth;
+
+	@include mq(768px) {
+		*::before {
+			content: none !important;
+		}
+	}
+
+	&.dark {
+		$bg-color: rgb(29, 29, 29);
+		$white: rgb(203, 203, 203);
+		background: $bg-color;
+		color: $white;
+
+		*::before {
+			background: white !important;
+			color: rgb(29, 29, 29) !important;
+		}
+
+		textarea.text {
+			background: $bg-color;
+			color: $white !important;
+
+			&::placeholder {
+				color: rgba($color: $white, $alpha: 0.6);
+			}
+		}
+
+		.search-input {
+			color: $white !important;
+			border-color: $white;
+
+			&::placeholder {
+				color: rgba($color: $white, $alpha: 0.3);
+			}
+		}
+
+		h1,
+		h2,
+		h3.side-future,
+		.text {
+			color: $white !important;
+		}
+
+		.nav {
+			background: $bg-color;
+		}
+
+		a,
+		p,
+		.text-gray {
+			color: $white;
+		}
+
+		.pagination {
+			li {
+				color: $white;
+			}
+
+			li:not(:first-child):not(:last-child) {
+				color: $bg-color !important;
+				background: $white !important;
+			}
+		}
+
+		.site-content .other-posts .post-info {
+			background: $bg-color !important;
+			color: $white;
+
+			i {
+				color: $white !important;
+			}
+		}
+
+		.picsart-list {
+			color: $white;
+		}
+
+		.icon-wrapper {
+			&.large {
+				background: $bg-color;
+			}
+		}
+
+		.dark-toggle {
+			background: $bg-color;
+			box-shadow: 1px 1px 20px 0px rgba($color: $white, $alpha: 0.8);
+
+			&::before {
+				background: rgb(29, 29, 29) !important;
+				color: $midnight !important;
+			}
+
+			&:hover,
+			&:focus {
+				opacity: 0.9;
+				box-shadow: 1px 1px 40px 0px rgba($color: $white, $alpha: 0.8);
+			}
+		}
+	}
+}
+
+.dark-toggle {
+	position: absolute;
+	top: 4rem;
+	right: 1rem;
+	padding: 0.5rem;
+	background: $white;
+	outline: none;
+	border: none;
+	border-radius: 50%;
+	opacity: 0.8;
+	z-index: 5;
+	cursor: pointer;
+	color: $midnight;
+	box-shadow: 1px 1px 20px 0px rgba($color: $text-gray, $alpha: 0.8);
+
+	&::before {
+		content: attr(data-mode);
+		z-index: -5;
+		@include titleBox();
+		border-radius: 0;
+		background: $white !important;
+		color: $midnight !important;
+		border-top-left-radius: 1000px;
+		border-bottom-left-radius: 1000px;
+		pointer-events: none;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.9;
+		box-shadow: 1px 1px 40px 0px rgba($color: $text-gray, $alpha: 0.8);
+	}
+
+	&:hover {
+		&::before {
+			right: 1.3rem;
+			opacity: 1;
+		}
+	}
+
+	.icon {
+		font-size: 2rem;
+	}
+}
+
+%flex {
+	display: flex;
+}
+
+%point {
+	cursor: pointer;
+}
+
+@mixin flexColCenter {
+	@extend %flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin flexRowCenter {
+	@extend %flex;
+	justify-content: center;
+}
+
+@mixin flexAllRow {
+	@extend %flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flexAllCol {
+	@extend %flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* ---------------- Global Classes ---------------*/
+
+a {
+	text-decoration: none;
+	color: $text-gray;
+}
+
+.flex-row {
+	@extend %flex;
+	flex-wrap: wrap;
+}
+
+ul {
+	list-style-type: none;
+}
+
+h1 {
+	font-family: $Lexend;
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-family: $Lexend;
+}
+
+h3 {
+	font-family: $Abel;
+	font-size: 1.3rem;
+}
+
+button.btn {
+	border: none;
+	border-radius: 2rem;
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	font-family: $Livvic;
+	@extend %point;
+}
+
+span {
+	font-family: $Abel;
+}
+
+span.code {
+	font-family: "Courier Prime", monospace;
+}
+
+.container {
+	margin: 0 5vw;
+}
+
+.text-gray {
+	color: $text-gray;
+}
+
+p {
+	font-family: $Lexend;
+	color: $text-light;
+}
+
+img {
+	object-fit: cover;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.no-click {
+	pointer-events: none;
+}
+
+/* ------x------- Global Classes -------x-------*/

@@ -1,0 +1,10 @@
+.featured {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+
+	.item-container {
+		aspect-ratio: 16 / 9;
+	}
+}
+
