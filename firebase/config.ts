@@ -13,7 +13,7 @@ export const firebaseConfig = {
 };
 // Initialize Firebase
 if (!firebase.apps.length) {
-	firebase.initializeApp({});
+	firebase.initializeApp(firebaseConfig);
 } else {
 	firebase.app(); // if already initialized, use that one
 }
