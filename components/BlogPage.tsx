@@ -14,6 +14,7 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const richtextData = kramed(blog.content as string);
 	const router = useRouter();
 
+	console.log(router.asPath);
 	return (
 		<>
 			<Meta title={`${blog.title} | Blog.TinoMuzambi`} />
@@ -50,7 +51,7 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 							></div>
 						</div>
 
-						<Comments url={router.pathname} />
+						<Comments url={router.asPath.substring(7)} />
 					</div>
 					<DynamicComponent blok={sidebar} />
 				</div>
