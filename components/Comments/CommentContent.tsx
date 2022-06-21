@@ -42,7 +42,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 	url,
 	db,
 	users,
-}) => {
+}): JSX.Element => {
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
