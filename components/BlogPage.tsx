@@ -14,7 +14,6 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const richtextData = kramed(blog.content as string);
 	const router = useRouter();
 
-	console.log(router.asPath);
 	return (
 		<>
 			<Meta title={`${blog.title} | Blog.TinoMuzambi`} />
