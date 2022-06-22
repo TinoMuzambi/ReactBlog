@@ -1,10 +1,10 @@
-.pagination,
-ul {
-	@include flexAllRow;
-	font-family: $Lexend;
-	gap: 1rem;
-
+.pagination {
+	
 	ul {
+		@include flexAllRow;
+		list-style: none;
+		font-family: $Lexend;
+		gap: 1rem;
 		margin: 0;
 		padding: 0;
 
