@@ -282,3 +282,6 @@ export const sendEmail = (
 		)
 		.then();
 };
+
+export const elipsise = (text: string, limit: number): string =>
+	`${text.substring(0, limit - 3)}...`;
