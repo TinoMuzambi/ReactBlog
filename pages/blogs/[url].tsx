@@ -10,7 +10,6 @@ import { BASE_URL } from "../../utils";
 const Blog: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const storyblokUser = useStoryblok(story);
 	const blog = storyblokUser?.content.body[1].blogs[0].content;
-	console.log(blog);
 
 	return (
 		<>

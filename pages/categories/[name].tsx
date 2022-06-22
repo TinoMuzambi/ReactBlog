@@ -25,7 +25,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 
 	let { data } = await Storyblok.get(`cdn/stories/${slug}`, params);
-	console.log(data);
 
 	const paths = data.stories.map((story: any) => {
 		const name = story.slug;
