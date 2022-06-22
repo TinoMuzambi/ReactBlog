@@ -7,6 +7,7 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 import Meta from "./Meta";
 import Comments from "./Comments/Comments";
+import { BASE_URL } from "../utils";
 
 const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const blog = blok.blogs[0].content;
@@ -16,7 +17,12 @@ const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
 
 	return (
 		<>
-			<Meta title={`${blog.title} | Blog.TinoMuzambi`} />
+			<Meta
+				title={`${blog.title} | Blog.TinoMuzambi`}
+				description={blog.excerpt}
+				image={blog.image[0].image.filename}
+				url={`${BASE_URL}/blogs/${blog.url}`}
+			/>
 			<main className="container" id="blogs">
 				<div className="site-content">
 					<div className="posts">
