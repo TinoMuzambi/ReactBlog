@@ -290,4 +290,4 @@ export const sendEmail = (
  * @returns A string cut off at the limit and with an ellips appended to the end.
  */
 export const elipsise = (text: string, limit: number): string =>
-	`${text.substring(0, limit - 3)}...`;
+	`${text.substring(0, limit - 7)}...`;
