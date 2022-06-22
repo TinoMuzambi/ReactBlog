@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { MetaProps } from "../interfaces";
 import { BASE_URL } from "../utils";
+import { elipsise } from "../utils/helpers";
 
 const Meta: React.FC<MetaProps> = ({
 	title,
@@ -20,7 +21,7 @@ const Meta: React.FC<MetaProps> = ({
 		<meta name="keywords" content={keywords} key="keywords" />
 		<meta
 			name="description"
-			content={description?.substring(0, 300)}
+			content={elipsise(description || "", 300)}
 			key="name-description"
 		/>
 
@@ -28,7 +29,7 @@ const Meta: React.FC<MetaProps> = ({
 		<meta itemProp="name" content={title} key="item-name" />
 		<meta
 			itemProp="description"
-			content={description?.substring(0, 300)}
+			content={elipsise(description || "", 300)}
 			key="item-description"
 		/>
 		<meta itemProp="image" content={image} key="item-image" />
@@ -39,7 +40,7 @@ const Meta: React.FC<MetaProps> = ({
 		<meta property="og:title" content={title} key="og-title" />
 		<meta
 			property="og:description"
-			content={description?.substring(0, 300)}
+			content={elipsise(description || "", 300)}
 			key="og-description"
 		/>
 		<meta property="og:image" content={image} key="og-image" />
@@ -53,14 +54,14 @@ const Meta: React.FC<MetaProps> = ({
 		<meta name="twitter:title" content={title} key="twitter-title" />
 		<meta
 			name="twitter:description"
-			content={description?.substring(0, 200)}
+			content={elipsise(description || "", 200)}
 			key="twitter-description"
 		/>
 		<meta name="twitter:image" content={image} key="twitter-image" />
 
 		<meta charSet="utf-8" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name={title} content={description?.substring(0, 300)} key="name" />
+		<meta name={title} content={elipsise(description || "", 300)} key="name" />
 		<link rel="apple-touch-icon" href="/logo192.png" />
 		<link rel="manifest" href="/manifest.json" />
 		<title>{title}</title>
