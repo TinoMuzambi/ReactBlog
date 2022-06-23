@@ -16,7 +16,9 @@ const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			</div>
 			<div className="other-posts">
 				<h2>{blok.type === "future" ? "Future" : "Other"} Blogs</h2>
-				{blok.other_blogs.map((blog: any, key: number) => (
+				{blok.other_blogs.sort((a: any, b: any) =>
+											b.content?.date.localeCompare(a.content?.date)
+										).map((blog: any, key: number) => (
 					<DynamicComponent
 						blok={{
 							...blog.content,
