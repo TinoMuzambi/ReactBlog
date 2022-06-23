@@ -403,7 +403,7 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 								</div>
 							))
 						) : (
-							<h2 className="no-blogs">Be the first to comment!</h2>
+							<h2 className="no-blogs">Comments are currently down...</h2>
 						)}
 					</div>
 				);
