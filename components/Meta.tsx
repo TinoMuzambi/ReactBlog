@@ -68,6 +68,13 @@ const Meta: React.FC<MetaProps> = ({
 
 		{/* Add your preconnect links here  */}
 		<link rel="preconnect" href="https://a.storyblok.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossOrigin="true"
+		/>
+
 		<base target="_blank" />
 	</Head>
 );
