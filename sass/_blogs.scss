@@ -13,7 +13,7 @@
 			padding: 1rem 2rem;
 			position: relative;
 
-			a {
+			& > a {
 				font-family: $Anton;
 				font-size: 1.5rem;
 
@@ -21,6 +21,13 @@
 					font-size: 1rem;
 				}
 			}
+
+			p {
+				a {
+					color: skyblue;
+				}
+			}
+
 
 			.editing-title {
 				font-family: $Lexend;
