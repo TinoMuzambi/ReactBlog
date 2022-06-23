@@ -39,6 +39,14 @@ code {
 	font-size: 1rem;
 }
 
+pre {
+	overflow: auto;
+	background: rgb(18, 18, 18);
+	border-radius: .5rem;
+	padding: 1rem;
+	color: rgb(203, 203, 203);
+}
+
 html,
 body {
 	margin: 0;
