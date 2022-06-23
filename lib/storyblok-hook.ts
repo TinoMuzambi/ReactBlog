@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Storyblok from "../lib/storyblok";
+import { BASE_URL } from "../utils";
 
 export default function useStoryblok(originalStory: any) {
 	let [story, setStory] = useState(originalStory);
@@ -11,7 +12,17 @@ export default function useStoryblok(originalStory: any) {
 		const { StoryblokBridge } = window as any;
 		if (typeof StoryblokBridge !== "undefined") {
 			// initialize the bridge with your token
-			const storyblokInstance = new StoryblokBridge();
+
+			const storyblokInstance = new StoryblokBridge({
+				resolveRelations: [
+					"blog.category",
+					"sideblog.category",
+					"sidebar.categories",
+					"blogs.blogs",
+					"sidebar.other_blogs",
+				],
+				customParent: BASE_URL,
+			});
 
 			// reload on Next.js page on save or publish event in the Visual Editor
 			storyblokInstance.on(["change", "published"], () => location.reload());
