@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const Search: React.FC = (): JSX.Element => {
 	const router = useRouter();
+
 	useEffect(() => {
 		router.push({
 			pathname: "/",
@@ -12,6 +13,10 @@ const Search: React.FC = (): JSX.Element => {
 		});
 	}, [router]);
 
-	return <></>;
+	return (
+		<main>
+			<h1>Redirecting...</h1>
+		</main>
+	);
 };
 export default Search;
