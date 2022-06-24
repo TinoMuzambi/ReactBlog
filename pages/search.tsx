@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+
+import { useDidMountEffect } from "../utils";
 
 const Search: React.FC = (): JSX.Element => {
 	const router = useRouter();
 
-	useEffect(() => {
+	useDidMountEffect(() => {
 		router.push({
 			pathname: "/",
 			query: {
