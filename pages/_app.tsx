@@ -1,8 +1,11 @@
+import { FirebaseAuthProvider } from "@react-firebase/auth";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import firebase from "firebase";
 
 import Wrapper from "../components/Wrapper";
 import "../sass/App.scss";
+import { firebaseConfig } from "../firebase/config";
 
 const MyApp: Function = ({ Component, pageProps }: AppProps) => {
 	useEffect(() => {
@@ -19,9 +22,16 @@ const MyApp: Function = ({ Component, pageProps }: AppProps) => {
 		if (process.env.NODE_ENV === "production") disableReactDevTools();
 	}, []);
 	return (
-		<Wrapper>
-			<Component {...pageProps} />
-		</Wrapper>
+		// @ts-ignore
+		<FirebaseAuthProvider
+			databaseURL=""
+			firebase={firebase}
+			{...firebaseConfig}
+		>
+			<Wrapper>
+				<Component {...pageProps} />
+			</Wrapper>
+		</FirebaseAuthProvider>
 	);
 };
 
