@@ -12,8 +12,10 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const [currPage, setCurrPage] = useState(0);
 
 	const noPages = Math.ceil(blok.blogs.length / 3);
+	console.log({ function: "Blogs", noPages });
 
 	const handlePageChange = (start: number, end: number) => {
+		console.log({ function: "handlePageChange", start, end });
 		// Handing pagination page changes.
 		setStartPos(start);
 		setEndPos(end);
@@ -22,11 +24,19 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 
 	useDidMountEffect(() => {
 		const noItems = getNoItemsOnPage(blok.blogs.length, 3, currPage);
+		console.log({
+			function: "useDidMountEffect1",
+			noItems,
+			start: currPage * 3,
+			end: currPage * 3 + noItems,
+		});
 
 		handlePageChange(currPage * 3, currPage * 3 + noItems);
+		console.log({ function: "useDidMountEffect1", startPos, endPos });
 	}, [blok.blogs.length, currPage]);
 
 	useDidMountEffect(() => {
+		console.log({ function: "useDidMountEffect2", num: 0 });
 		setCurrPage(0);
 	}, []);
 
@@ -34,7 +44,9 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	 * Switch to next page of items check against going past last page.
 	 */
 	const nextPage = () => {
+		console.log({ function: "nextPage", currPage, before: true });
 		setCurrPage(currPage + 1);
+		console.log({ function: "nextPage", currPage, before: true });
 		if (currPage >= noPages - 1) {
 			setCurrPage(noPages - 1);
 		}
@@ -44,7 +56,9 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	 * Switch to previous page of items and check against going before first page.
 	 */
 	const prevPage = () => {
+		console.log({ function: "prevPage", currPage, before: true });
 		setCurrPage(currPage - 1);
+		console.log({ function: "prevPage", currPage, before: false });
 		if (currPage <= 0) {
 			setCurrPage(0);
 		}
@@ -55,6 +69,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	 * @param page The page to switch to.
 	 */
 	const setDirectPage = (page: number) => {
+		console.log({ function: "setDirectPage", page });
 		setCurrPage(page);
 	};
 
