@@ -96,7 +96,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 						<div className="search-wrapper">
 							<div className="search-field">
 								<input
-									type="text"
+									type="search"
 									id="searchBlogs"
 									placeholder="Search Blogs"
 									className="search-input"
