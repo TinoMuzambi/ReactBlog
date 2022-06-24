@@ -77,6 +77,18 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			<section className="container" id="blogs">
 				<section className="site-content">
 					<section className="blogs">
+						<div className="search-wrapper">
+							<div className="search-field">
+								<input
+									type="text"
+									id="searchBlogs"
+									placeholder="Search Blogs"
+									className="search-input"
+									// value={query}
+									// onChange={(e) => searchBlogs(e.target.value)}
+								/>
+							</div>
+						</div>
 						<div className="posts" ref={ref}>
 							<h1>{blok.title}</h1>
 							{blok.blogs.length ? (
@@ -85,7 +97,7 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 										.sort((a: any, b: any) =>
 											b.content?.date.localeCompare(a.content?.date)
 										)
-										.slice(startPos, endPos)
+										// .slice(startPos, endPos)
 										.map((blog: any, key: number) => (
 											<DynamicComponent blok={blog.content} key={key} />
 										))}
