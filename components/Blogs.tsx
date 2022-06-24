@@ -10,6 +10,9 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const [startPos, setStartPos] = useState(0);
 	const [endPos, setEndPos] = useState(0);
 	const [currPage, setCurrPage] = useState(0);
+	const [query, setQuery] = useState("");
+	const [displayBlogs, setDisplayBlogs] = useState(blok.blogs);
+	const [originalBlogs, _] = useState(blok.blogs);
 
 	const noPages = Math.ceil(blok.blogs.length / 3);
 
@@ -17,17 +20,10 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 		// Handing pagination page changes.
 		setStartPos(start);
 		setEndPos(end);
-		console.log({ start, end });
 	};
 
 	useEffect(() => {
 		const noItems = getNoItemsOnPage(blok.blogs.length, 3, currPage);
-		console.log({
-			function: "useEffect1",
-			noItems,
-			start: currPage * 3,
-			end: currPage * 3 + noItems,
-		});
 
 		handlePageChange(currPage * 3, currPage * 3 + noItems);
 	}, [blok.blogs.length, currPage]);
@@ -35,6 +31,17 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	useEffect(() => {
 		setCurrPage(0);
 	}, []);
+
+	useEffect(() => {
+		setDisplayBlogs(
+			originalBlogs.filter(
+				(blog: any) =>
+					blog.content.url.toLowerCase().includes(query.toLowerCase()) ||
+					blog.content.title.toLowerCase().includes(query.toLowerCase()) ||
+					blog.content.content.toLowerCase().includes(query.toLowerCase())
+			)
+		);
+	}, [originalBlogs, query]);
 
 	/**
 	 * Switch to next page of items check against going past last page.
@@ -84,26 +91,27 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 									id="searchBlogs"
 									placeholder="Search Blogs"
 									className="search-input"
-									// value={query}
-									// onChange={(e) => searchBlogs(e.target.value)}
+									value={query}
+									onChange={(e) => setQuery(e.target.value)}
 								/>
 							</div>
 						</div>
 						<div className="posts" ref={ref}>
 							<h1>{blok.title}</h1>
-							{blok.blogs.length ? (
+							{displayBlogs.length ? (
 								<>
-									{blok.blogs
+									{displayBlogs
 										.sort((a: any, b: any) =>
 											b.content?.date.localeCompare(a.content?.date)
 										)
+
 										// .slice(startPos, endPos)
 										.map((blog: any, key: number) => (
 											<DynamicComponent blok={blog.content} key={key} />
 										))}
 									<div className="page-holder text-center">
 										{/* Pagination element */}
-										{blok.blogs.length && (
+										{displayBlogs.length && (
 											<div
 												className="pagination"
 												onClick={() => executeScroll(ref)}
