@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import { blokProps } from "../interfaces";
@@ -6,10 +6,19 @@ import DynamicComponent from "./DynamicComponent";
 import Pagination from "./Pagination";
 
 const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
+	const [displayBlogs, setDisplayBlogs] = useState(blok.blogs);
+	const [blogItems, setBlogItems] = useState(blok.blogs);
+
 	const handlePageChange = (paginatedBlogs: any[]) => {
 		// Handing pagination page changes.
-		// setDisplayBlogs(paginatedBlogs);
+		console.log(paginatedBlogs);
+		setDisplayBlogs(paginatedBlogs);
 	};
+
+	useEffect(() => {
+		setBlogItems(blok.blogs);
+		setDisplayBlogs(blok.blogs);
+	}, [blok.blogs]);
 
 	const customLabels = {
 		// Custom labels for pagination.
@@ -26,9 +35,9 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 					<section className="blogs">
 						<div className="posts">
 							<h1>{blok.title}</h1>
-							{blok.blogs.length ? (
+							{displayBlogs.length ? (
 								<>
-									{blok.blogs
+									{displayBlogs
 										.sort((a: any, b: any) =>
 											b.content?.date.localeCompare(a.content?.date)
 										)
@@ -37,11 +46,11 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 										))}
 									<div className="page-holder text-center">
 										{/* Pagination element */}
-										{blok.blogs.length && (
+										{blogItems.length && (
 											<Pagination
 												items={blok.blogs}
 												onChangePage={handlePageChange}
-												pageSize={4}
+												pageSize={3}
 												customLabels={customLabels}
 												customRef={ref}
 											/>
