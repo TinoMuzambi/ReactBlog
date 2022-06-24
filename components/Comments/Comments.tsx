@@ -1,4 +1,9 @@
-import React, { FormEventHandler, useEffect, useState } from "react";
+import React, {
+	FormEventHandler,
+	useCallback,
+	useEffect,
+	useState,
+} from "react";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
@@ -25,16 +30,7 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 
 	const db = firebase.firestore();
 
-	useEffect(() => {
-		getData();
-		//eslint-disable-next-line
-	}, []);
-
-	useEffect(() => {
-		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
-	}, [comments, url]);
-
-	const getData = async () => {
+	const getData = useCallback(async () => {
 		// Get data from firestore and set state with fresh data.
 		setFetching(true);
 		let comms: CommentModel[] = [];
@@ -45,6 +41,7 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 			.get()
 			.then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
+					console.log({ comms });
 					comms = doc.data().comments;
 				});
 			});
@@ -62,7 +59,15 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 		setUsers(dbUsers);
 
 		setFetching(false);
-	};
+	}, [db]);
+
+	useEffect(() => {
+		getData();
+	}, [getData]);
+
+	useEffect(() => {
+		setFilteredComments(comments.filter((comment) => comment.blog_url === url));
+	}, [comments, url]);
 
 	if (fetching) {
 		return <Loader />;
@@ -72,6 +77,7 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user }: { isSignedIn: boolean; user: UserModel }) => {
 				const signInWithGoogle = async () => {
+					console.log("google");
 					if (!isSignedIn) {
 						const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 						await firebase.auth().signInWithPopup(googleAuthProvider);
@@ -79,6 +85,7 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 				};
 
 				const signInAnon = () => {
+					console.log("anon");
 					!isSignedIn && firebase.auth().signInAnonymously();
 				};
 
