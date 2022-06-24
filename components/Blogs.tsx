@@ -26,6 +26,10 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 		handlePageChange(currPage * 3, currPage * 3 + noItems);
 	}, [blok.blogs.length, currPage]);
 
+	useDidMountEffect(() => {
+		setCurrPage(0);
+	}, []);
+
 	/**
 	 * Switch to next page of items check against going past last page.
 	 */
