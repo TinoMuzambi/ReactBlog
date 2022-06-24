@@ -1,15 +1,27 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Meta from "../../components/Meta";
 
 import Page from "../../components/Page";
 import { HomeProps } from "../../interfaces";
 import Storyblok from "../../lib/storyblok";
 import useStoryblok from "../../lib/storyblok-hook";
+import { BASE_URL } from "../../utils";
 
 const CategoryPage: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const storyblokUser = useStoryblok(story);
 
+	const title = storyblokUser?.content.body[1].title;
+	const image = storyblokUser?.content.body[2].image;
+	const description = storyblokUser?.content.body[3].text;
+
 	return (
 		<>
+			<Meta
+				title={`${title} | Blog.TinoMuzambi`}
+				description={description}
+				image={image.filename}
+				url={`${BASE_URL}/categories/${title.toLowerCase()}`}
+			/>
 			<Page content={storyblokUser?.content} />
 		</>
 	);
