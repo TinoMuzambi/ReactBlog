@@ -20,6 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
 	useEffect(() => {
 		setCurrItems(items);
+		console.log({ items });
 	}, [items]);
 
 	useEffect(() => {
@@ -27,8 +28,9 @@ const Pagination: React.FC<PaginationProps> = ({
 		// eslint-disable-next-line
 	}, [currPage]);
 
-	// Switch to next page of items.
-	// Check against going past last page.
+	/**
+	 * Switch to next page of items check against going past last page.
+	 */
 	const nextPage = () => {
 		setCurrPage(currPage + 1);
 		if (currPage >= noPages - 1) {
@@ -36,8 +38,9 @@ const Pagination: React.FC<PaginationProps> = ({
 		}
 	};
 
-	// Switch to previous page of items.
-	// Check against going before first page.
+	/**
+	 * Switch to previous page of items and check against going before first page.
+	 */
 	const prevPage = () => {
 		setCurrPage(currPage - 1);
 		if (currPage <= 0) {
@@ -45,13 +48,21 @@ const Pagination: React.FC<PaginationProps> = ({
 		}
 	};
 
-	// Directly switch to clicked on page.
+	/**
+	 * Directly switch to clicked on page.
+	 * @param page The page to switch to.
+	 */
 	const setDirectPage = (page: number) => {
 		setCurrPage(page);
 	};
 
-	// Given the length of the items, the number of items per page and the current page,
-	// Return the number of items that should be on that page.
+	/**
+	 * Computes the number of items that should be visible on a given page.
+	 * @param length The length of the items.
+	 * @param perPage The number of items that should be visible per page.
+	 * @param page The current page.
+	 * @returns The number of items that should be on the current page
+	 */
 	const getNoItemsOnPage = (length: number, perPage: number, page: number) => {
 		let globalCount = 1;
 		for (let i = 0; i < length; i++) {
@@ -72,7 +83,9 @@ const Pagination: React.FC<PaginationProps> = ({
 		return 0;
 	};
 
-	// Get the items to currently display.
+	/**
+	 * Get the items to currently display.
+	 */
 	const getCurrItems = () => {
 		const noItems = getNoItemsOnPage(items.length, pageSize, currPage);
 		setCurrItems(
