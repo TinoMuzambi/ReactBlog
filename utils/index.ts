@@ -16,7 +16,7 @@ export const getNoItemsOnPage = (
 	length: number,
 	perPage: number,
 	page: number
-) => Math.ceil((length - page * perPage) / (perPage - page));
+): number => Math.ceil((length - page * perPage) / (perPage - page));
 
 /**
  * Custom hook to only run the callback function after the initial render.
