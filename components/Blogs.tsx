@@ -22,21 +22,22 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 		console.log({ start, end });
 	};
 
-	useDidMountEffect(() => {
+	useEffect(() => {
 		const noItems = getNoItemsOnPage(blok.blogs.length, 3, currPage);
 		console.log({
-			function: "useDidMountEffect1",
+			function: "useEffect1",
 			noItems,
 			start: currPage * 3,
 			end: currPage * 3 + noItems,
 		});
 
 		handlePageChange(currPage * 3, currPage * 3 + noItems);
-		console.log({ function: "useDidMountEffect1", startPos, endPos });
+		console.log({ function: "useEffect1", startPos, endPos });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [blok.blogs.length, currPage]);
 
-	useDidMountEffect(() => {
-		console.log({ function: "useDidMountEffect2", num: 0 });
+	useEffect(() => {
+		console.log({ function: "useEffect2", num: 0 });
 		setCurrPage(0);
 	}, []);
 
