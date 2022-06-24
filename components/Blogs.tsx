@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -14,7 +15,12 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const [displayBlogs, setDisplayBlogs] = useState(blok.blogs);
 	const [originalBlogs, _] = useState(blok.blogs);
 
+	const router = useRouter();
 	const noPages = Math.ceil(blok.blogs.length / 3);
+
+	useEffect(() => {
+		if (router.query.search) setQuery(router.query.search as string);
+	}, [router]);
 
 	const handlePageChange = (start: number, end: number) => {
 		// Handing pagination page changes.
