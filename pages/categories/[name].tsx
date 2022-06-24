@@ -13,6 +13,13 @@ const CategoryPage: React.FC<HomeProps> = ({ story }): JSX.Element => {
 	const title = storyblokUser?.content.body[1].title;
 	const image = storyblokUser?.content.body[2].image;
 	const description = storyblokUser?.content.body[3].text;
+	const content = {
+		...storyblokUser?.content,
+		body: [
+			...storyblokUser?.content.body.slice(0, 2),
+			storyblokUser?.content.body[4],
+		],
+	};
 
 	return (
 		<>
@@ -22,7 +29,7 @@ const CategoryPage: React.FC<HomeProps> = ({ story }): JSX.Element => {
 				image={image.filename}
 				url={`${BASE_URL}/categories/${title.toLowerCase()}`}
 			/>
-			<Page content={storyblokUser?.content} />
+			<Page content={content} />
 		</>
 	);
 };
