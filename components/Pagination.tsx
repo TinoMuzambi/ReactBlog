@@ -20,7 +20,6 @@ const Pagination: React.FC<PaginationProps> = ({
 
 	useEffect(() => {
 		setCurrItems(items);
-		console.log({ items });
 	}, [items]);
 
 	useEffect(() => {
