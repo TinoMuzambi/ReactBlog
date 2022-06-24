@@ -19,7 +19,10 @@ const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
 	const noPages = Math.ceil(blok.blogs.length / 3);
 
 	useEffect(() => {
-		if (router.query.search) setQuery(router.query.search as string);
+		if (router.query.search) {
+			setQuery(router.query.search as string);
+			executeScroll(ref);
+		}
 	}, [router]);
 
 	const handlePageChange = (start: number, end: number) => {
