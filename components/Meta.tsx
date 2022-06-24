@@ -64,12 +64,6 @@ const Meta: React.FC<MetaProps> = ({
 		<meta name={title} content={elipsise(description || "", 300)} key="name" />
 		<link rel="apple-touch-icon" href="/logo192.png" />
 		<link rel="manifest" href="/manifest.json" />
-		<link
-			type="application/opensearchdescription+xml"
-			rel="search"
-			href="https://blog.tinomuzambi.com/opensearch.xml"
-			title="Blog.TinoMuzambi"
-		/>
 		<title>{title}</title>
 
 		{/* Add your preconnect links here  */}
