@@ -4,7 +4,7 @@ My blog site build with Next.js and styled with SCSS.
 
 ## Content
 
-This blog makes use of a CMS (Content Management System) to deliver the content. I went with [Storyblok](https://www.storyblok.com/) for it's easy to use UI, and API.
+This blog makes use of a CMS (Content Management System) to deliver the content. I went with [Storyblok](https://www.storyblok.com/) for its easy to use UI, and API.
 
 ## Custom Components
 
