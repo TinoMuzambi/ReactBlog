@@ -1,6 +1,6 @@
 # Blog.TinoMuzambi
 
-My blog site build with React and styled with SCSS.
+My blog site build with Next.js and styled with SCSS.
 
 ## Content
 
