@@ -197,8 +197,11 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
+	/**
+	 * Handler for enabling replies.
+	 * @returns Function that handles next steps.
+	 */
 	const replyHandler = () => {
-		// Handler for enabling replies.
 		if (user) {
 			setEditText("");
 			setReplying(!replying);
