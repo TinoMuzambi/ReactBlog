@@ -210,8 +210,11 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
+	/**
+	 * Editing comment logic.
+	 * @returns Handler for enabling replies.
+	 */
 	const editComment = () => {
-		// Editing comment logic.
 		if (commentText.trim()) {
 			const currComments = comments.find((c) => c.blog_url === url);
 
