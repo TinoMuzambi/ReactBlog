@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEventHandler } from "react";
+import { useState, useEffect /*FormEventHandler */ } from "react";
 import {
 	FcEmptyTrash,
 	FcLike,
@@ -9,8 +9,8 @@ import Moment from "react-moment";
 
 import {
 	CommentContentModel,
-	CommentContentProps,
-	UserModel,
+	/*CommentContentProps,
+	UserModel,*/
 } from "../../interfaces";
 import {
 	confirmCommentContent,
