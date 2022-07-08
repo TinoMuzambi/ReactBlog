@@ -32,7 +32,7 @@ import {
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
-const CommentContent: React.FC<CommentContentProps> = ({
+const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 	comment,
 	deleteHandler,
 	user,
@@ -42,12 +42,13 @@ const CommentContent: React.FC<CommentContentProps> = ({
 	url,
 	db,
 	users,
-}): JSX.Element => {
+}) /*: JSX.Element*/ => {
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
 	const [editID, setEditID] = useState(-1);
-	const [currUserData, setCurrUserData] = useState<UserModel | undefined>();
+	const [currUserData, setCurrUserData] =
+		useState /*<UserModel | undefined>*/();
 
 	useEffect(() => {
 		// Set current user data on user change.
@@ -56,7 +57,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	}, [user, users]);
 
-	const editHandler = async (id: number) => {
+	const editHandler = async (id /*: number*/) => {
 		// Handler for editing comment with given id.
 		if (user) {
 			if (user.displayName === comment.user) {
@@ -75,7 +76,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
-	const like = (commentParam: CommentContentModel) => {
+	const like = (commentParam /*: CommentContentModel*/) => {
 		let upvotes = commentParam.upvotes;
 		let likers = commentParam.likers;
 
@@ -356,7 +357,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
-	const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+	const handleSubmit /*: FormEventHandler<HTMLFormElement>*/ = async (e) => {
 		// Handler for new/edited comments.
 		e.preventDefault();
 
