@@ -32,7 +32,7 @@ import {
 } from "../../utils/helpers";
 import CommentForm from "./CommentForm";
 
-const CommentContent: React.FC<CommentContentProps> = ({
+const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 	comment,
 	deleteHandler,
 	user,
@@ -42,12 +42,13 @@ const CommentContent: React.FC<CommentContentProps> = ({
 	url,
 	db,
 	users,
-}): JSX.Element => {
+}) /*: JSX.Element*/ => {
 	const [replying, setReplying] = useState(false);
 	const [commentText, setCommentText] = useState("");
 	const [editText, setEditText] = useState("");
 	const [editID, setEditID] = useState(-1);
-	const [currUserData, setCurrUserData] = useState<UserModel | undefined>();
+	const [currUserData, setCurrUserData] =
+		useState /*<UserModel | undefined>*/();
 
 	useEffect(() => {
 		// Set current user data on user change.
@@ -56,8 +57,12 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	}, [user, users]);
 
-	const editHandler = async (id: number) => {
-		// Handler for editing comment with given id.
+	/**
+	 * Handle requests for editing comments.
+	 * @param {number} id The id of the comment you want to edit.
+	 * @returns Function that handles next steps.
+	 */
+	const editHandler = async (id /*: number*/) => {
 		if (user) {
 			if (user.displayName === comment.user) {
 				setEditText(comment.comment);
@@ -75,7 +80,12 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
-	const like = (commentParam: CommentContentModel) => {
+	/**
+	 * Handle requests for liking/unliking comments
+	 * @param {CommentContentModel} commentParam The comment you want to like.
+	 * @returns Function that handles next steps.
+	 */
+	const like = (commentParam /*: CommentContentModel*/) => {
 		let upvotes = commentParam.upvotes;
 		let likers = commentParam.likers;
 
@@ -187,8 +197,11 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
+	/**
+	 * Handler for enabling replies.
+	 * @returns Function that handles next steps.
+	 */
 	const replyHandler = () => {
-		// Handler for enabling replies.
 		if (user) {
 			setEditText("");
 			setReplying(!replying);
@@ -197,8 +210,11 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
+	/**
+	 * Editing comment logic.
+	 * @returns Handler for enabling replies.
+	 */
 	const editComment = () => {
-		// Editing comment logic.
 		if (commentText.trim()) {
 			const currComments = comments.find((c) => c.blog_url === url);
 
@@ -273,10 +289,11 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
-	const loop1 = () => {};
-
+	/**
+	 * Adding comment logic
+	 * @returns Handler for enabling replies.
+	 */
 	const addComment = () => {
-		// Adding comment logic
 		if (commentText.trim()) {
 			const newComment = {
 				id: comments[comments.length - 1],
@@ -305,7 +322,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 								} else {
 									newComments[i].comments[j].replies = [newComment];
 								}
-								return;
+								break loop1;
 							}
 						}
 					} else {
@@ -331,7 +348,7 @@ const CommentContent: React.FC<CommentContentProps> = ({
 												newComment,
 											];
 										}
-										return;
+										break loop1;
 									}
 								}
 							}
@@ -356,8 +373,12 @@ const CommentContent: React.FC<CommentContentProps> = ({
 		}
 	};
 
-	const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
-		// Handler for new/edited comments.
+	/**
+	 * Handler for new/edited comments.
+	 * @param e Event parameter
+	 * @returns Function that handles next steps.
+	 */
+	const handleSubmit /*: FormEventHandler<HTMLFormElement>*/ = async (e) => {
 		e.preventDefault();
 
 		if (user) {

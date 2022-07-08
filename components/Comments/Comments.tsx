@@ -41,7 +41,6 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 			.get()
 			.then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
-					console.log({ comms });
 					comms = doc.data().comments;
 				});
 			});
@@ -77,7 +76,6 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 		<FirebaseAuthConsumer>
 			{({ isSignedIn, user }: { isSignedIn: boolean; user: UserModel }) => {
 				const signInWithGoogle = async () => {
-					console.log("google");
 					if (!isSignedIn) {
 						const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 						await firebase.auth().signInWithPopup(googleAuthProvider);
@@ -85,7 +83,6 @@ const Comments: React.FC<CommentsProps> = ({ url }) => {
 				};
 
 				const signInAnon = () => {
-					console.log("anon");
 					!isSignedIn && firebase.auth().signInAnonymously();
 				};
 
