@@ -80,6 +80,11 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
+	/**
+	 * Handle requests for liking/unliking comments
+	 * @param {CommentContentModel} commentParam The comment you want to like.
+	 * @returns Function that handles next steps.
+	 */
 	const like = (commentParam /*: CommentContentModel*/) => {
 		let upvotes = commentParam.upvotes;
 		let likers = commentParam.likers;
