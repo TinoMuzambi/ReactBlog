@@ -322,7 +322,7 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 								} else {
 									newComments[i].comments[j].replies = [newComment];
 								}
-								return;
+								break loop1;
 							}
 						}
 					} else {
@@ -348,7 +348,7 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 												newComment,
 											];
 										}
-										return;
+										break loop1;
 									}
 								}
 							}
@@ -373,8 +373,12 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
+	/**
+	 * Handler for new/edited comments.
+	 * @param e Event parameter
+	 * @returns Function that handles next steps.
+	 */
 	const handleSubmit /*: FormEventHandler<HTMLFormElement>*/ = async (e) => {
-		// Handler for new/edited comments.
 		e.preventDefault();
 
 		if (user) {
