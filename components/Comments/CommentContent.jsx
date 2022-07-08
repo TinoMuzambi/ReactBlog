@@ -289,95 +289,87 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
-	const BreakError = {};
-
 	/**
 	 * Adding comment logic
 	 * @returns Handler for enabling replies.
 	 */
 	const addComment = () => {
-		try {
-			if (commentText.trim()) {
-				const newComment = {
-					id: comments[comments.length - 1],
-					user: user.displayName || "Anonymous",
-					image: user.photoURL || ANON_IMAGE,
-					comment: commentText,
-					date: new Date(),
-					upvotes: 0,
-					likers: [],
-					level: getNextLevel(comment.level),
-				};
+		if (commentText.trim()) {
+			const newComment = {
+				id: comments[comments.length - 1],
+				user: user.displayName || "Anonymous",
+				image: user.photoURL || ANON_IMAGE,
+				comment: commentText,
+				date: new Date(),
+				upvotes: 0,
+				likers: [],
+				level: getNextLevel(comment.level),
+			};
 
-				comments[comments.length - 1]++;
-				let newComments = comments;
-				let target;
-				loop1: for (let i = 0; i < newComments.length; i++) {
-					if (newComments[i]?.blog_url === url) {
-						if (newComment.level === "one") {
-							for (let j = 0; j < newComments[i]?.comments.length; j++) {
-								if (newComments[i].comments[j].id === comment.id) {
-									target = users.find(
-										(u) => u.username === newComments[i].comments[j].user
-									)?.email;
-									if (newComments[i].comments[j].replies) {
-										newComments[i].comments[j].replies.push(newComment);
-									} else {
-										newComments[i].comments[j].replies = [newComment];
-									}
-									throw BreakError;
-								}
-							}
-						} else {
-							for (let j = 0; j < newComments[i]?.comments.length; j++) {
+			comments[comments.length - 1]++;
+			let newComments = comments;
+			let target;
+			loop1: for (let i = 0; i < newComments.length; i++) {
+				if (newComments[i]?.blog_url === url) {
+					if (newComment.level === "one") {
+						for (let j = 0; j < newComments[i]?.comments.length; j++) {
+							if (newComments[i].comments[j].id === comment.id) {
+								target = users.find(
+									(u) => u.username === newComments[i].comments[j].user
+								)?.email;
 								if (newComments[i].comments[j].replies) {
-									for (
-										let k = 0;
-										k < newComments[i].comments[j].replies.length;
-										k++
-									) {
-										if (
-											newComments[i].comments[j].replies[k].id === comment.id
-										) {
-											target = users.find(
-												(u) =>
-													u.username ===
-													newComments[i].comments[j].replies[k].user
-											)?.email;
-											if (newComments[i].comments[j].replies[k].replies) {
-												newComments[i].comments[j].replies[k].replies.push(
-													newComment
-												);
-											} else {
-												newComments[i].comments[j].replies[k].replies = [
-													newComment,
-												];
-											}
-											throw BreakError;
+									newComments[i].comments[j].replies.push(newComment);
+								} else {
+									newComments[i].comments[j].replies = [newComment];
+								}
+								break loop1;
+							}
+						}
+					} else {
+						for (let j = 0; j < newComments[i]?.comments.length; j++) {
+							if (newComments[i].comments[j].replies) {
+								for (
+									let k = 0;
+									k < newComments[i].comments[j].replies.length;
+									k++
+								) {
+									if (newComments[i].comments[j].replies[k].id === comment.id) {
+										target = users.find(
+											(u) =>
+												u.username ===
+												newComments[i].comments[j].replies[k].user
+										)?.email;
+										if (newComments[i].comments[j].replies[k].replies) {
+											newComments[i].comments[j].replies[k].replies.push(
+												newComment
+											);
+										} else {
+											newComments[i].comments[j].replies[k].replies = [
+												newComment,
+											];
 										}
+										break loop1;
 									}
 								}
 							}
 						}
 					}
 				}
-
-				setComments(newComments);
-
-				if (target)
-					sendEmail(
-						target,
-						user.displayName || "An anonymous reader",
-						url,
-						newComment.comment,
-						newComment.level
-					);
-				postToCommentsDB(comments, getData, setCommentText, db);
-			} else {
-				return confirmCommentContent();
 			}
-		} catch (error) {
-			if (err !== BreakError) throw err;
+
+			setComments(newComments);
+
+			if (target)
+				sendEmail(
+					target,
+					user.displayName || "An anonymous reader",
+					url,
+					newComment.comment,
+					newComment.level
+				);
+			postToCommentsDB(comments, getData, setCommentText, db);
+		} else {
+			return confirmCommentContent();
 		}
 	};
 
