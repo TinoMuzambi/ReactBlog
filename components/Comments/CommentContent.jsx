@@ -408,9 +408,19 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 							<div className="group">
 								<div className="details">
 									<h4 className="author">{comment.user}</h4>
-									<h5 className="date" data-date={comment.date.toDate()}>
+
+									<h5
+										className="date"
+										data-date={
+											comment.date.seconds
+												? comment.date.toDate()
+												: comment.date
+										}
+									>
 										<Moment format="MMM DD, YYYY">
-											{comment.date.toDate()}
+											{comment.date.seconds
+												? comment.date.toDate()
+												: comment.date}
 										</Moment>
 									</h5>
 								</div>
