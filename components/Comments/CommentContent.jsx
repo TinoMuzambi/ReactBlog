@@ -289,10 +289,11 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	};
 
-	const loop1 = () => {};
-
+	/**
+	 * Adding comment logic
+	 * @returns Handler for enabling replies.
+	 */
 	const addComment = () => {
-		// Adding comment logic
 		if (commentText.trim()) {
 			const newComment = {
 				id: comments[comments.length - 1],
