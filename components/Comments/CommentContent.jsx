@@ -57,8 +57,12 @@ const CommentContent /*: React.FC<CommentContentProps>*/ = ({
 		}
 	}, [user, users]);
 
+	/**
+	 * Handle requests for editing comments.
+	 * @param {number} id The id of the comment you want to edit.
+	 * @returns Function that handles next steps.
+	 */
 	const editHandler = async (id /*: number*/) => {
-		// Handler for editing comment with given id.
 		if (user) {
 			if (user.displayName === comment.user) {
 				setEditText(comment.comment);
