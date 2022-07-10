@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 				: false,
 			preview: context.preview || false,
 		},
-		revalidate: 10,
+		revalidate: 60,
 	};
 };
 

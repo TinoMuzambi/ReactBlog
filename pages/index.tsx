@@ -61,6 +61,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 			story: data ? data.story : false,
 			preview: context.preview || false,
 		},
-		revalidate: 10,
+		revalidate: 60,
 	};
 };
