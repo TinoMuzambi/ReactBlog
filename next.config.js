@@ -7,7 +7,9 @@ module.exports = {
 		STORYBLOK_ENV: process.env.STORYBLOK_ENV,
 		ANALYTICS_CODE: process.env.ANALYTICS_CODE,
 	},
+	// Force WASM SWC
+	swcMinify: true,
 	experimental: {
-		swcLoader: false,
+		swcLoader: true,
 	},
 };

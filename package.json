@@ -8,8 +8,9 @@
 	},
 	"dependencies": {
 		"@react-firebase/auth": "^0.2.10",
+		"@vercel/next": "^4.4.2",
 		"aos": "^2.3.4",
-		"axios": "^0.26.1",
+		"axios": "0.27.2",
 		"emailjs-com": "^3.2.0",
 		"firebase": "8.2.9",
 		"kramed": "^0.5.6",
@@ -29,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@types/aos": "^3.0.4",
-		"@types/node": "latest",
+		"@types/node": "18.17.15",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
 		"@types/turndown": "^5.0.1",
