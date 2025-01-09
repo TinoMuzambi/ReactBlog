@@ -7,7 +7,7 @@ import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 import Comments from "./Comments/Comments";
 
-const BlogPage: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const BlogPage: React.FC<blokProps> = ({ blok }) => {
 	const blog = blok.blogs[0].content;
 	const sidebar = blok.sidebar[0];
 	const richtextData = kramed(blog.content as string);

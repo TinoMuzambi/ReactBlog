@@ -1,7 +1,7 @@
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const ImageGrid: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const ImageGrid: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<a href={blok.link} target="_blank" rel="noreferrer">
 			<div className="flex-row">

@@ -1,4 +1,4 @@
-import { FormEventHandler, MutableRefObject } from "react";
+import { FormEventHandler, JSX, MutableRefObject } from "react";
 
 export interface WrapperProps {
 	children: JSX.Element | JSX.Element[];

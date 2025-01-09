@@ -1,7 +1,8 @@
+import { JSX } from "react";
 import { blokProps, MyCustomCSS } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const About: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const About: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<section
 			className="site-title"

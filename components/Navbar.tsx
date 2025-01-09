@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const Navbar: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Navbar: React.FC<blokProps> = ({ blok }) => {
 	const toggleCollapse = () => {
 		// Toggle collapse class on navbar.
 		const nav = document.querySelector(".nav");

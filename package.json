@@ -16,7 +16,7 @@
 		"kramed": "^0.5.6",
 		"lodash": "^4.17.21",
 		"moment": "^2.29.2",
-		"next": "latest",
+		"next": "^15.1.4",
 		"react": "latest",
 		"react-confirm-alert": "^2.8.0",
 		"react-dom": "latest",
@@ -31,7 +31,7 @@
 	"devDependencies": {
 		"@types/aos": "^3.0.4",
 		"@types/node": "18.17.15",
-		"@types/react": "latest",
+		"@types/react": "^19.0.4",
 		"@types/react-dom": "latest",
 		"@types/turndown": "^5.0.1",
 		"eslint": "8.11.0",

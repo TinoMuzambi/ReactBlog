@@ -5,12 +5,12 @@ import { BASE_URL } from "../utils";
 import { elipsise } from "../utils/helpers";
 
 const Meta: React.FC<MetaProps> = ({
-	title,
-	description,
-	keywords,
-	url,
-	image,
-}): JSX.Element => (
+	title = "Blog.TinoMuzambi",
+	description = "Welcome to Blog.TinoMuzambi. All things tech, lifestyle and random.",
+	keywords = "blog, lifestyle, tech",
+	url = BASE_URL,
+	image = "https://a.storyblok.com/f/105639/512x512/03489159d5/logo512.png",
+}) => (
 	<Head>
 		<meta
 			name="viewport"
@@ -72,20 +72,13 @@ const Meta: React.FC<MetaProps> = ({
 		<link
 			rel="preconnect"
 			href="https://fonts.gstatic.com"
-			crossOrigin="true"
+			crossOrigin="anonymous"
 		/>
 
 		<base target="_blank" />
 	</Head>
 );
 
-Meta.defaultProps = {
-	title: "Blog.TinoMuzambi",
-	keywords: "blog, lifestyle, tech",
-	description:
-		"Welcome to Blog.TinoMuzambi. All things tech, lifestyle and random.",
-	image: "https://a.storyblok.com/f/105639/512x512/03489159d5/logo512.png",
-	url: BASE_URL,
-};
+// Removed defaultProps as default parameters are now used
 
 export default Meta;

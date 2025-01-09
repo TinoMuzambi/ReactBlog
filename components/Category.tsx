@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { blokProps } from "../interfaces";
 
-const Category: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Category: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<Link
 			href={`/categories/${blok.name.toLowerCase()}`}

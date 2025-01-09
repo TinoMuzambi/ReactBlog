@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { blokProps } from "../interfaces";
 
-const NavLink: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const NavLink: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<Link href={blok.link}>
 			<a>

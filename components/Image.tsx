@@ -1,6 +1,6 @@
 import { blokProps } from "../interfaces";
 
-const Image: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Image: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<img
 			src={blok.image.filename}

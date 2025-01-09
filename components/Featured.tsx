@@ -4,7 +4,7 @@ import { markdownToRichtext } from "storyblok-markdown-richtext";
 
 import { blokProps } from "../interfaces";
 
-const Featured: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Featured: React.FC<blokProps> = ({ blok }) => {
 	const richtextData = markdownToRichtext(blok.tag);
 	return (
 		<div className="container">

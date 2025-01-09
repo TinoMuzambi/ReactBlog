@@ -3,7 +3,7 @@ import { FaArrowCircleUp } from "react-icons/fa";
 import { blokProps, MyCustomCSS } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const Footer: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Footer: React.FC<blokProps> = ({ blok }) => {
 	const scrollTop = () => {
 		// Scroll to top handler.
 		window.scrollTo({ top: 0, behavior: "smooth" });

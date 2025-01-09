@@ -1,8 +1,6 @@
 import { PlaceholderProps } from "../interfaces";
 
-const Placeholder: React.FC<PlaceholderProps> = ({
-	componentName,
-}): JSX.Element => (
+const Placeholder: React.FC<PlaceholderProps> = ({ componentName }) => (
 	<div className="placeholder">
 		<p>
 			The component <strong>{componentName}</strong> has not been created yet.

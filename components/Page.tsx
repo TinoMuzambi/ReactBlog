@@ -1,7 +1,7 @@
 import DynamicComponent from "./DynamicComponent";
 import { PageProps } from "../interfaces";
 
-const Page: React.FC<PageProps> = ({ content }): JSX.Element => {
+const Page: React.FC<PageProps> = ({ content }) => {
 	return (
 		<section className="page">
 			{content?.body?.map((blok: any) => (

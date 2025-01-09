@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 import { useDidMountEffect } from "../utils";
 
-const Search: React.FC = (): JSX.Element => {
+const Search: React.FC = () => {
 	const router = useRouter();
 
 	useDidMountEffect(() => {

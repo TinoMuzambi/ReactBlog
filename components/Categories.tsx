@@ -1,7 +1,7 @@
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const Categories: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Categories: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<>
 			<h2>Categories</h2>

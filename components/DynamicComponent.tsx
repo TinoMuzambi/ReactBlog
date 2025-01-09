@@ -42,7 +42,7 @@ const Components: any = {
 	blog_page: BlogPage,
 };
 
-const DynamicComponent: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const DynamicComponent: React.FC<blokProps> = ({ blok }) => {
 	if (typeof Components[blok?.component] !== "undefined") {
 		const Component = Components[blok?.component];
 

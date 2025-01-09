@@ -1,7 +1,7 @@
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Sidebar: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<aside className="sidebar">
 			<div className="category">
@@ -16,17 +16,19 @@ const Sidebar: React.FC<blokProps> = ({ blok }): JSX.Element => {
 			</div>
 			<div className="other-posts">
 				<h2>{blok.type === "future" ? "Future" : "Other"} Blogs</h2>
-				{blok.other_blogs.sort((a: any, b: any) =>
-											b.content?.date.localeCompare(a.content?.date)
-										).map((blog: any, key: number) => (
-					<DynamicComponent
-						blok={{
-							...blog.content,
-							component: "sideblog",
-						}}
-						key={key}
-					/>
-				))}
+				{blok.other_blogs
+					.sort((a: any, b: any) =>
+						b.content?.date.localeCompare(a.content?.date)
+					)
+					.map((blog: any, key: number) => (
+						<DynamicComponent
+							blok={{
+								...blog.content,
+								component: "sideblog",
+							}}
+							key={key}
+						/>
+					))}
 			</div>
 		</aside>
 	);

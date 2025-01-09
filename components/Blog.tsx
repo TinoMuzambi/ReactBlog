@@ -7,7 +7,7 @@ import { markdownToRichtext } from "storyblok-markdown-richtext";
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const Blog: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Blog: React.FC<blokProps> = ({ blok }) => {
 	const richtextData = markdownToRichtext(blok?.excerpt || "");
 
 	return (

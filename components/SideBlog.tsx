@@ -5,7 +5,7 @@ import Moment from "react-moment";
 import { blokProps } from "../interfaces";
 import DynamicComponent from "./DynamicComponent";
 
-const SideBlog: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const SideBlog: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<div className="post-content" data-aos="flip-up" data-aos-delay="200">
 			<div className="post-image">

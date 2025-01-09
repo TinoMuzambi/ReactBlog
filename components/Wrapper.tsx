@@ -4,7 +4,7 @@ import { RiLightbulbFlashLine, RiLightbulbFill } from "react-icons/ri";
 import { WrapperProps } from "../interfaces";
 import Meta from "./Meta";
 
-const Wrapper: React.FC<WrapperProps> = ({ children }): JSX.Element => {
+const Wrapper: React.FC<WrapperProps> = ({ children }) => {
 	const [dark, setDark] = useState(false);
 
 	useEffect(() => {

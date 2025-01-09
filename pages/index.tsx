@@ -8,7 +8,7 @@ import { HomeProps } from "../interfaces";
 import Page from "../components/Page";
 import Preload from "../components/Preload";
 
-const Home: React.FC<HomeProps> = ({ story }): JSX.Element => {
+const Home: React.FC<HomeProps> = ({ story }) => {
 	const storyblokUser = useStoryblok(story);
 
 	useEffect(() => {
@@ -43,14 +43,17 @@ export default Home;
 export const getStaticProps: GetStaticProps = async (context) => {
 	let slug = "home";
 	let params = {
-		version: process.env.STORYBLOK_ENV as string,
+		version: process.env.STORYBLOK_ENV as "published" | "draft" | undefined,
 		cv: Date.now(),
 		resolve_relations:
 			"blog.category,sideblog.category,sidebar.categories,blogs.blogs,sidebar.other_blogs",
 	};
 
 	if (context.preview) {
-		params.version = process.env.STORYBLOK_ENV as string;
+		params.version = process.env.STORYBLOK_ENV as
+			| "published"
+			| "draft"
+			| undefined;
 		params.cv = Date.now();
 	}
 

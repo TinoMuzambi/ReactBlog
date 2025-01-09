@@ -8,7 +8,7 @@ import {
 
 import { blokProps } from "../interfaces";
 
-const Icon: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Icon: React.FC<blokProps> = ({ blok }) => {
 	return (
 		<a href={blok.link} target="_blank" rel="noreferrer">
 			{blok.social_platform === "Facebook" ? (

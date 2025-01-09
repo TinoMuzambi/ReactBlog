@@ -7,7 +7,7 @@ import { getNoItemsOnPage } from "../utils";
 import { executeScroll } from "../utils/helpers";
 import DynamicComponent from "./DynamicComponent";
 
-const Blogs: React.FC<blokProps> = ({ blok }): JSX.Element => {
+const Blogs: React.FC<blokProps> = ({ blok }) => {
 	const [startPos, setStartPos] = useState(0);
 	const [endPos, setEndPos] = useState(0);
 	const [currPage, setCurrPage] = useState(0);

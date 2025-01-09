@@ -1,4 +1,4 @@
-const Loader: React.FC = (): JSX.Element => {
+const Loader: React.FC = () => {
 	return (
 		<div className="loader">
 			<div className="box">

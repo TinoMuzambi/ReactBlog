@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import { confirmAlert } from "react-confirm-alert";
 
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -22,7 +22,7 @@ const Comment: React.FC<CommentProps> = ({
 	setComments,
 	url,
 	db,
-}): JSX.Element => {
+}) => {
 	const [currComments, setCurrComments] = useState(commentProp);
 
 	const confirmDelete = (id: number) => {

@@ -37,7 +37,10 @@ export default function useStoryblok(originalStory: any) {
 			// live update the story on enter editor
 			storyblokInstance.on("enterEditmode", (event: any) => {
 				Storyblok.get(`cdn/stories/${event.storyId}`, {
-					version: process.env.STORYBLOK_ENV as string,
+					version: process.env.STORYBLOK_ENV as
+						| "published"
+						| "draft"
+						| undefined,
 				})
 					.then(({ data }) => {
 						if (data.story) {
