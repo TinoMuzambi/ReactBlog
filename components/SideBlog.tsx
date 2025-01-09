@@ -14,10 +14,8 @@ const SideBlog: React.FC<blokProps> = ({ blok }) => {
 					{blok.future ? (
 						<DynamicComponent blok={blok.image[0]} />
 					) : (
-						<Link href={`/blogs/${blok.url}`}>
-							<a>
-								<DynamicComponent blok={blok.image[0]} />
-							</a>
+						<Link href={`/blogs/${blok.url}`} passHref>
+							<DynamicComponent blok={blok.image[0]} />
 						</Link>
 					)}
 				</div>
@@ -42,9 +40,7 @@ const SideBlog: React.FC<blokProps> = ({ blok }) => {
 				{blok.future ? (
 					<h3 className="side-future">{blok.title}</h3>
 				) : (
-					<Link href={`/blogs/${blok.url}`}>
-						<a>{blok.title}</a>
-					</Link>
+					<Link href={`/blogs/${blok.url}`}>{blok.title}</Link>
 				)}
 			</div>
 		</div>

@@ -4,10 +4,8 @@ import { blokProps } from "../interfaces";
 
 const NavLink: React.FC<blokProps> = ({ blok }) => {
 	return (
-		<Link href={blok.link}>
-			<a>
-				<li className="nav-link">{blok.text}</li>
-			</a>
+		<Link href={blok.link} passHref>
+			<li className="nav-link">{blok.text}</li>
 		</Link>
 	);
 };

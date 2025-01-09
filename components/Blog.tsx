@@ -19,10 +19,8 @@ const Blog: React.FC<blokProps> = ({ blok }) => {
 		>
 			<div className="post-image">
 				<div>
-					<Link href={`/blogs/${blok.url}`}>
-						<a>
-							<DynamicComponent blok={blok?.image[0]} />
-						</a>
+					<Link href={`/blogs/${blok.url}`} passHref>
+						<DynamicComponent blok={blok?.image[0]} />
 					</Link>
 				</div>
 				<div className="post-info flex-row">
@@ -42,19 +40,17 @@ const Blog: React.FC<blokProps> = ({ blok }) => {
 				</div>
 			</div>
 			<div className="post-title">
-				<Link href={`/blogs/${blok.url}`}>
-					<a>{blok.title}</a>
+				<Link href={`/blogs/${blok.url}`} passHref>
+					{blok.title}
 				</Link>
 				<div>{render(richtextData)}</div>
-				<Link href={`/blogs/${blok.url}`}>
-					<a>
-						<button className="btn post-btn">
-							Read More &nbsp;{" "}
-							<i className="fas fa-arrow-right">
-								<FaArrowRight />
-							</i>
-						</button>
-					</a>
+				<Link href={`/blogs/${blok.url}`} passHref>
+					<button className="btn post-btn">
+						Read More &nbsp;{" "}
+						<i className="fas fa-arrow-right">
+							<FaArrowRight />
+						</i>
+					</button>
 				</Link>
 			</div>
 			{/* <hr className={`${key === blogs.length - 1 ? "is-hidden" : ""}`}></hr> */}

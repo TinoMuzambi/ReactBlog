@@ -7,13 +7,12 @@ const Category: React.FC<blokProps> = ({ blok }) => {
 		<Link
 			href={`/categories/${blok.name.toLowerCase()}`}
 			key={blok.name as string}
+			passHref
 		>
-			<a href="">
-				<li className="list-items" data-aos="fade-left" data-aos-delay="200">
-					{blok.name}
-					<span>({blok.count})</span>
-				</li>
-			</a>
+			<li className="list-items" data-aos="fade-left" data-aos-delay="200">
+				{blok.name}
+				<span>({blok.count})</span>
+			</li>
 		</Link>
 	);
 };

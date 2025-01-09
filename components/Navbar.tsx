@@ -17,9 +17,7 @@ const Navbar: React.FC<blokProps> = ({ blok }) => {
 		<nav className="nav" id="nav">
 			<div className="nav-menu">
 				<div className="nav-brand">
-					<Link href="/">
-						<a>{blok.title}</a>
-					</Link>
+					<Link href="/">{blok.title}</Link>
 				</div>
 				<div className="toggle-collapse">
 					<div className="toggle-icons">
