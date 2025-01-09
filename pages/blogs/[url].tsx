@@ -14,10 +14,10 @@ const Blog: React.FC<HomeProps> = ({ story }) => {
 	return (
 		<>
 			<Meta
-				title={`${blog.title} | Blog.TinoMuzambi`}
-				description={blog.excerpt}
-				image={blog.image[0].image.filename}
-				url={`${BASE_URL}/blogs/${blog.url}`}
+				title={`${blog?.title} | Blog.TinoMuzambi`}
+				description={blog?.excerpt}
+				image={blog?.image[0].image.filename}
+				url={`${BASE_URL}/blogs/${blog?.url}`}
 			/>
 			<Page content={storyblokUser?.content} />
 		</>
