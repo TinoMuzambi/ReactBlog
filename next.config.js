@@ -7,4 +7,7 @@ module.exports = {
 		STORYBLOK_ENV: process.env.STORYBLOK_ENV,
 		ANALYTICS_CODE: process.env.ANALYTICS_CODE,
 	},
+	experimental: {
+		swcLoader: false,
+	},
 };
