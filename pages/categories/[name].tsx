@@ -35,15 +35,15 @@ const CategoryPage: React.FC<HomeProps> = ({ story }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	let slug = "?starts_with=categories";
 	let params = {
+		starts_with: "categories",
 		version: process.env.STORYBLOK_ENV as "published" | "draft" | undefined,
 		cv: Date.now(),
 		resolve_relations:
 			"blog.category,sideblog.category,sidebar.categories,blogs.blogs,sidebar.other_blogs",
 	};
 
-	let { data } = await Storyblok.get(`cdn/stories/${slug}`, params);
+	let { data } = await Storyblok.get(`cdn/stories`, params);
 
 	const paths = data.stories.map((story: any) => {
 		const name = story.slug;
