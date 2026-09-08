@@ -28,7 +28,7 @@ const Blog: React.FC<HomeProps> = ({ story }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
 	let params = {
 		starts_with: "blogs",
-		version: process.env.STORYBLOK_ENV as "published" | "draft" | undefined,
+		version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION as "published" | "draft" | undefined,
 		cv: Date.now(),
 		resolve_relations:
 			"blog.category,sideblog.category,sidebar.categories,blogs.blogs,sidebar.other_blogs",
@@ -53,14 +53,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	let slug = context?.params?.url;
 	let params = {
-		version: process.env.STORYBLOK_ENV as "published" | "draft" | undefined,
+		version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION as "published" | "draft" | undefined,
 		cv: Date.now(),
 		resolve_relations:
 			"blog.category,sideblog.category,sidebar.categories,blogs.blogs,sidebar.other_blogs",
 	};
 
 	if (context.preview) {
-		params.version = process.env.STORYBLOK_ENV as "published" | "draft";
+		params.version = process.env.NEXT_PUBLIC_STORYBLOK_VERSION as "published" | "draft";
 		params.cv = Date.now();
 	}
 
