@@ -29,4 +29,8 @@ identifiers, so their `NEXT_PUBLIC_` names make that exposure explicit. Do not
 add database credentials, mail account passwords, private API keys, or personal
 Storyblok tokens to `next.config.js`.
 
+`next.config.js` temporarily accepts the legacy deployment names for these same
+browser-safe identifiers so existing Vercel environments keep building while
+they are renamed. The compatibility mapping must not be used for secrets.
+
 Verify changes with `yarn type-check` and `yarn build`.
