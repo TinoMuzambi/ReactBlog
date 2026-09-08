@@ -21,3 +21,16 @@ This component is a full-fledged comments section complete with liking, replying
 It uses Firebase for authentication which allows for signing in with Google as well as signing in anonymously.
 
 It uses Firebase's Firestore for storing comment data as well as user data.
+
+## Environment variables
+
+Copy `.env.example` to `.env.local`. The listed values are browser SDK
+identifiers, so their `NEXT_PUBLIC_` names make that exposure explicit. Do not
+add database credentials, mail account passwords, private API keys, or personal
+Storyblok tokens to `next.config.js`.
+
+`next.config.js` temporarily accepts the legacy deployment names for these same
+browser-safe identifiers so existing Vercel environments keep building while
+they are renamed. The compatibility mapping must not be used for secrets.
+
+Verify changes with `yarn type-check` and `yarn build`.

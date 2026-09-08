@@ -3,7 +3,7 @@ import StoryblokClient from "storyblok-js-client";
 import { titleCase } from "./helpers";
 
 const Storyblok = new StoryblokClient({
-	accessToken: process.env.REACT_APP_STORYBLOK_KEY,
+	accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
 	cache: {
 		clear: "auto",
 		type: "memory",

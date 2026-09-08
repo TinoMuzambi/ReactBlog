@@ -1,10 +1,10 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 // import { seedDatabase } from "./seed";
 
 export const firebaseConfig = {
-	apiKey: process.env.REACT_APP_FIREBASE_KEY as string,
+	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY as string,
 	authDomain: "blogtinomuzambi-6b696.firebaseapp.com",
 	projectId: "blogtinomuzambi-6b696",
 	storageBucket: "blogtinomuzambi-6b696.appspot.com",

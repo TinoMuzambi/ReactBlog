@@ -265,7 +265,7 @@ export const sendEmail = (
 	comment_body: string,
 	level: string
 ) => {
-	init(process.env.REACT_APP_MAIL_PASS as string);
+	init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string);
 
 	const templateParams = {
 		to_mail: target,

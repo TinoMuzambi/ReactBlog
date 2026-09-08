@@ -8,18 +8,16 @@
 	},
 	"dependencies": {
 		"@react-firebase/auth": "^0.2.10",
-		"@vercel/next": "^4.4.2",
 		"aos": "^2.3.4",
-		"axios": "0.27.2",
+		"axios": "1.20.0",
 		"emailjs-com": "^3.2.0",
-		"firebase": "8.2.9",
+		"firebase": "12.18.0",
 		"kramed": "^0.5.6",
-		"lodash": "^4.17.21",
 		"moment": "^2.29.2",
-		"next": "^15.1.4",
-		"react": "latest",
+		"next": "15.5.25",
+		"react": "19.2.8",
 		"react-confirm-alert": "^2.8.0",
-		"react-dom": "latest",
+		"react-dom": "19.2.8",
 		"react-icons": "^4.3.1",
 		"react-moment": "^1.1.2",
 		"remark-parse": "^10.0.1",
@@ -30,14 +28,21 @@
 	},
 	"devDependencies": {
 		"@types/aos": "^3.0.4",
-		"@types/node": "18.17.15",
-		"@types/react": "^19.0.4",
-		"@types/react-dom": "latest",
+		"@types/node": "24.10.1",
+		"@types/react": "19.2.7",
+		"@types/react-dom": "19.2.3",
 		"@types/turndown": "^5.0.1",
-		"eslint": "8.11.0",
-		"eslint-config-next": "12.1.0",
-		"sass": "latest",
-		"typescript": "latest"
+		"eslint": "8.57.1",
+		"eslint-config-next": "15.5.25",
+		"sass": "1.93.3",
+		"typescript": "5.9.3"
+	},
+	"resolutions": {
+		"diff": "5.2.2",
+		"linkify-it": "5.0.2",
+		"markdown-it": "14.2.0",
+		"postcss": "8.5.23",
+		"websocket-driver": "0.7.5"
 	},
 	"license": "MIT"
 }

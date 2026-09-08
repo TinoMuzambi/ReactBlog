@@ -1,7 +1,7 @@
 import { FirebaseAuthProvider } from "@react-firebase/auth";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
 
 import Wrapper from "../components/Wrapper";
 import "../sass/App.scss";
