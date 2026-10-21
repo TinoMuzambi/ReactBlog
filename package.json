@@ -17,8 +17,8 @@
 		"firebase": "12.18.0",
 		"kramed": "^0.5.6",
 		"lodash": "4.18.1",
-		"moment": "^2.29.2",
-		"next": "15.5.25",
+		"moment": "2.31.0",
+		"next": "15.5.27",
 		"react": "19.2.8",
 		"react-confirm-alert": "^2.8.0",
 		"react-dom": "19.2.8",
@@ -37,15 +37,18 @@
 		"@types/react-dom": "19.2.3",
 		"@types/turndown": "^5.0.1",
 		"eslint": "8.57.1",
-		"eslint-config-next": "15.5.25",
+		"eslint-config-next": "15.5.27",
 		"sass": "1.93.3",
 		"typescript": "5.9.3"
 	},
 	"resolutions": {
 		"diff": "5.2.2",
 		"linkify-it": "5.0.2",
-		"markdown-it": "14.2.0",
+		"@grpc/grpc-js": "1.13.6",
+		"markdown-it": "14.3.3",
 		"postcss": "8.5.23",
+		"sharp": "0.35.5",
+		"source-map-js": "1.2.2",
 		"websocket-driver": "0.7.5"
 	},
 	"license": "MIT"
